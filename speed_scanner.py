@@ -29,13 +29,12 @@ ALLOWED_ARMOR_TYPES = []
 ALLOWED_WEAPON_TYPES = []
 ALLOWED_TYPES = []
 
-
 # === SCAN PROFILE DEFINITIONS ===
 SCAN_PROFILES = {
     "full": {
         # Filters by different armour bonuses
         # E.g. any combination of ["Speed", "Prismatic", "Haste"]
-        "FILTER_TYPE": ["Speed", "Prismatic", "Haste"],
+        "FILTER_TYPE": ["Speed"],
 
         # Defines the allowed item slots for filtering
         # E.g. ["Head", "Chest", "Shoulder", "Waist", "Legs", "Wrist", "Hands", "Back", "Feet"]
@@ -74,7 +73,7 @@ MAX_ILVL = 668
 MAX_REALMS = 25
 
 # Toggles full debugging metadata
-PRINT_FULL_METADATA = True  # Set to True to print full auction metadata per matching item
+PRINT_FULL_METADATA = False  # Set to True to print full auction metadata per matching item
 
 # Region to query ('us' or 'eu')
 REGION = 'us' 
@@ -847,11 +846,11 @@ def write_csv(results, filename=CSV_FILENAME):
 # === USER INTERFACE ===
 def select_scan_profile():
     """Prompts the user to choose between full and custom scan profiles."""
-    choice = input(f"{'Items Profile':<12} | Everything(1) or Custom(2): ").strip() or "1"
+    choice = input(f"{'Items Profile':<12} | Custom(1) or Everything(2): ").strip() or "1"
     if choice == "1":
-        return "full"
-    elif choice == "2":
         return "custom"
+    elif choice == "2":
+        return "full"
     else:
         print("❌ Invalid choice. Defaulting to 'full' scan profile.")
         return "full"
@@ -927,14 +926,16 @@ def main():
             )
         )
 
-    # Write to CSV and/or print to console
+   # Write to CSV and/or print to console
     if all_results:
         write_csv(all_results)
 
         # Sort and print output to terminal
         all_results.sort(key=lambda x: x['ilvl'], reverse=True)
 
-        print(f"\n{'Realm':<20} {'Item ID':<10} {'Name':<40} {'ilvl':<6} {'Buyout'}")
+        # Print table header (aligned)
+        print(f"\n{'Realm':<19} {'Item ID':<9} {'Type':<14} {'Slot':<19} {'Name':<35} {'ilvl':>7} {'Buyout':>8}")
+        
         for r in all_results:
             realm_name = next((n for i, n in realms if i == r['realm_id']), f"Realm-{r['realm_id']}")
             item_id = r['item_id']
@@ -942,15 +943,30 @@ def main():
             ilvl = r['ilvl']
             gold = int(r['buyout']) // 10000 if r['buyout'] else 0
 
-            # Apply colour formatting
-            ilvl_str = f"\033[94m{ilvl:<6}\033[0m"
-            gold_str = f"{gold:,}".replace(",", "'")
+            # Fetch additional details for Type and Slot
+            item_info = fetch_item_info(session, headers, item_id, item_cache)
+            item_type = item_info.get('armor_type', 'Unknown')
+            item_slot = item_info.get('slot_type', 'Unknown')
+
+            # Apply spacing BEFORE coloring
+            realm_str = f"✅ {realm_name:<17}"  # Include checkmark inside column
+            item_id_str = f"{item_id:<10}"
+            type_str = f"{item_type:<15}"
+            slot_str = f"{item_slot:<20}"
+            name_str = f"{name:<35}"
+            ilvl_str = f"{ilvl:>6}"
+            gold_str = f"{gold:>10,}".replace(",", "'")
+
+            # Apply colors AFTER spacing
+            ilvl_str = f"\033[94m{ilvl_str}\033[0m"
             gold_str = f"{gold_str}\033[33mg\033[0m"
 
-            print(f"✅ {realm_name:<17} {item_id:<10} {name:<40} {ilvl_str} {gold_str}")
+            print(f"{realm_str}{item_id_str}{type_str}{slot_str}{name_str}{ilvl_str} {gold_str}")
+
+        print(f"\033[92m\nFound \033[93m{len(all_results)} \033[92mitems matching the filters: \033[94m{', '.join(FILTER_TYPE)}\033[0m\n")
+
     else:
         logging.info("❌ No matching Speed-stat items found.")
-
 
 if __name__ == '__main__':
     main()
