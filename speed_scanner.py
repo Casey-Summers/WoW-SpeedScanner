@@ -52,16 +52,16 @@ SCAN_PROFILES = {
     },
     "custom": {
         # Filters by different armour bonuses
-        "FILTER_TYPE": ["Speed", "Haste"],
+        "FILTER_TYPE": ["Speed", "Haste", "Prismatic"],
 
         # Defines the allowed item slots for filtering
-        "ALLOWED_ARMOR_SLOTS": ["Head", "Chest", "Shoulder", "Waist", "Legs", "Wrist", "Hands", "Back", "Feet"],
-        "ALLOWED_WEAPON_SLOTS": ["One-Hand", "Two-Hand", "Main-Hand", "Off-Hand", "Ranged"],
-        "ALLOWED_ACCESSORY_SLOTS": ["Finger", "Trinket", "Held In Off-hand", "Neck"],
+        "ALLOWED_ARMOR_SLOTS": ["Waist", "Legs", "Wrist", "Hands", "Back", "Feet"],
+        "ALLOWED_WEAPON_SLOTS": ["One-Hand", "Two-Hand", "Main-Hand", "Off-Hand"],
+        "ALLOWED_ACCESSORY_SLOTS": ["Finger", "Trinket", "Held In Off-hand"],
 
         # Defines the allowed armor types for filtering
-        "ALLOWED_ARMOR_TYPES": ["Cloth", "Leather", "Mail", "Plate", "Miscellaneous"],
-        "ALLOWED_WEAPON_TYPES": ["Dagger", "Sword", "Axe", "Mace", "Fist Weapon", "Polearm", "Staff", "Warglaives", "Gun", "Bow", "Crossbow", "Thrown", "Wand"]
+        "ALLOWED_ARMOR_TYPES": ["Cloth", "Leather", "Miscellaneous"],
+        "ALLOWED_WEAPON_TYPES": ["Dagger", "Mace", "Fist Weapon", "Polearm", "Staff"]
     }
 }
 
@@ -85,8 +85,9 @@ HASTE_IDS = [18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34,
 
 # Filenames for output and caching
 CSV_FILENAME = 'CSVs/speed_gear.csv'
-TOKEN_CACHE = 'Tokens/token_cache.json'
 REALM_CSV = 'CSVs/realm_map.csv'
+LOADED_SERVERS_CSV = 'CSVs/loaded_servers.csv'
+TOKEN_CACHE = 'Tokens/token_cache.json'
 BONUS_DATA_FILE = 'RaidBots_APIs/bonus_data_cache.json'
 BONUS_DATA_URL = 'https://www.raidbots.com/static/data/live/bonuses.json' # Provides bonus ID adjustments (level increases per bonus)
 
@@ -146,9 +147,6 @@ INVENTORY_TYPE_MAP = {
 }
 
 # Build filter presence dictionary
-
-
-
 def apply_scan_profile(profile_name):
     """
     Applies the selected scan profile to the global constants used throughout the scan logic.
@@ -576,6 +574,97 @@ def resolve_realm_input(user_input):
     raise ValueError(f"Unknown realm input: {user_input}")
 
 
+def load_or_init_scan_order(realm_map, filename=LOADED_SERVERS_CSV):
+    """
+    Load scan order from CSV or initialize if missing. Realms not yet recorded are treated as outdated.
+
+    Args:
+        realm_map (dict): Current loaded realm mapping.
+        filename (str): Path to the loaded server CSV.
+
+    Returns:
+        list of (realm_id, realm_name): Sorted by least recently scanned.
+    """
+    scan_records = {}
+
+    if os.path.exists(filename):
+        try:
+            with open(filename, newline='', encoding='utf-8') as f:
+                reader = csv.DictReader(f)
+                for row in reader:
+                    rid = int(row['realm_id'])
+                    scan_records[rid] = {
+                        'realm_name': row['realm_name'],
+                        'last_scanned': row.get('last_scanned', '0')
+                    }
+        except Exception as e:
+            logging.warning(f"⚠️ Failed to load scan history: {e}")
+
+    # Add any new realms from realm_map not in cache
+    for slug, info in realm_map.items():
+        rid = info['id']
+        if rid not in scan_records:
+            scan_records[rid] = {
+                'realm_name': info['name'],
+                'last_scanned': '0'
+            }
+
+    # Sort by oldest scan date
+    sorted_realms = sorted(
+        scan_records.items(),
+        key=lambda kv: kv[1]['last_scanned']
+    )
+
+    return [(rid, data['realm_name']) for rid, data in sorted_realms[:MAX_REALMS]]
+
+
+def update_single_scan_timestamp(realm_id, realm_name, filename=LOADED_SERVERS_CSV):
+    """
+    Immediately update the scan timestamp for a single realm.
+
+    Args:
+        realm_id (int): Realm ID.
+        realm_name (str): Human-readable realm name.
+        filename (str): Path to the CSV cache.
+    """
+    now_str = time.strftime('%Y-%m-%dT%H:%M:%S', time.localtime())
+    existing = {}
+
+    # Load existing cache
+    if os.path.exists(filename):
+        try:
+            with open(filename, newline='', encoding='utf-8') as f:
+                reader = csv.DictReader(f)
+                for row in reader:
+                    rid = int(row['realm_id'])
+                    existing[rid] = {
+                        'realm_name': row['realm_name'],
+                        'last_scanned': row.get('last_scanned', '0')
+                    }
+        except Exception as e:
+            logging.warning(f"⚠️ Could not load existing scan cache: {e}")
+
+    # Update or insert this realm
+    existing[realm_id] = {
+        'realm_name': realm_name,
+        'last_scanned': now_str
+    }
+
+    # Write back updated file
+    try:
+        with open(filename, 'w', newline='', encoding='utf-8') as f:
+            writer = csv.DictWriter(f, fieldnames=['realm_id', 'realm_name', 'last_scanned'])
+            writer.writeheader()
+            for rid, data in sorted(existing.items(), key=lambda kv: kv[1]['last_scanned']):
+                writer.writerow({
+                    'realm_id': rid,
+                    'realm_name': data['realm_name'],
+                    'last_scanned': data['last_scanned']
+                })
+    except Exception as e:
+        logging.warning(f"❌ Failed to update scan cache for realm {realm_id}: {e}")
+
+
 # === ITEM AND AUCTION LOGIC ===
 def fetch_item_info(session, headers, item_id, cache):
     """
@@ -906,7 +995,12 @@ def main():
         realm_id, display_name = resolve_realm_input(test_realm)
         realms = [(realm_id, display_name)]
     else:
-        realms = [(info['id'], info['name']) for info in realm_map.values()][:MAX_REALMS]
+        try:
+            realms = load_or_init_scan_order(realm_map)
+        except Exception as e:
+            logging.warning(f"⚠️ Failed to load scan order. Falling back to default order. Reason: {e}")
+            realms = [(info['id'], info['name']) for info in realm_map.values()][:MAX_REALMS]
+
 
     # Format the list of filters into a readable string like: "Prismatic, Haste, Speed"
     filter_str = ", ".join(FILTER_TYPE)
@@ -925,6 +1019,12 @@ def main():
                 session, headers, rid, display_name, item_cache, raidbots_data, fallback_data, curve_data
             )
         )
+        if not test_mode:
+            try:
+                update_single_scan_timestamp(rid, display_name)
+            except Exception as e:
+                logging.warning(f"⚠️ Failed to write scan cache for realm {display_name} ({rid}): {e}")
+
 
    # Write to CSV and/or print to console
     if all_results:
@@ -934,7 +1034,7 @@ def main():
         all_results.sort(key=lambda x: x['ilvl'], reverse=True)
 
         # Print table header (aligned)
-        print(f"\n{'Realm':<19} {'Item ID':<9} {'Type':<14} {'Slot':<19} {'Name':<35} {'ilvl':>7} {'Buyout':>8}")
+        print(f"\n{'Realm':<21} {'Item ID':<10} {'Type':<14} {'Slot':<15} {'Name':<35} {'ilvl':>9} {'Buyout':>10}")
         
         for r in all_results:
             realm_name = next((n for i, n in realms if i == r['realm_id']), f"Realm-{r['realm_id']}")
@@ -949,13 +1049,13 @@ def main():
             item_slot = item_info.get('slot_type', 'Unknown')
 
             # Apply spacing BEFORE coloring
-            realm_str = f"✅ {realm_name:<17}"  # Include checkmark inside column
-            item_id_str = f"{item_id:<10}"
+            realm_str = f"✅ {realm_name:<19}"  # Include checkmark inside column
+            item_id_str = f"{item_id:<11}"
             type_str = f"{item_type:<15}"
-            slot_str = f"{item_slot:<20}"
+            slot_str = f"{item_slot:<16}"
             name_str = f"{name:<35}"
-            ilvl_str = f"{ilvl:>6}"
-            gold_str = f"{gold:>10,}".replace(",", "'")
+            ilvl_str = f"{ilvl:>8}"
+            gold_str = f"{gold:>12,}".replace(",", "'")
 
             # Apply colors AFTER spacing
             ilvl_str = f"\033[94m{ilvl_str}\033[0m"
@@ -964,7 +1064,6 @@ def main():
             print(f"{realm_str}{item_id_str}{type_str}{slot_str}{name_str}{ilvl_str} {gold_str}")
 
         print(f"\033[92m\nFound \033[93m{len(all_results)} \033[92mitems matching the filters: \033[94m{', '.join(FILTER_TYPE)}\033[0m\n")
-
     else:
         logging.info("❌ No matching Speed-stat items found.")
 
