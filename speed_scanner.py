@@ -55,12 +55,9 @@ SCAN_PROFILES = {
         "FILTER_TYPE": ["Haste", "Prismatic"],
 
         # Defines the allowed item slots for filtering
-        # "ALLOWED_ARMOR_SLOTS": ["Waist", "Legs", "Wrist", "Hands", "Back", "Feet"]
-        "ALLOWED_ARMOR_SLOTS": [],
-        # "ALLOWED_WEAPON_SLOTS": ["One-Hand", "Two-Hand", "Main-Hand", "Off-Hand"]
-        "ALLOWED_WEAPON_SLOTS": [],
-        # "ALLOWED_ACCESSORY_SLOTS": ["Finger", "Trinket", "Held In Off-hand"]
-        "ALLOWED_ACCESSORY_SLOTS": ["Finger"],
+        "ALLOWED_ARMOR_SLOTS": ["Waist", "Legs", "Wrist", "Hands", "Back", "Feet"],
+        "ALLOWED_WEAPON_SLOTS": ["One-Hand", "Two-Hand", "Main-Hand", "Off-Hand"],
+        "ALLOWED_ACCESSORY_SLOTS": ["Finger", "Trinket", "Held In Off-hand"],
 
         # Defines the allowed armor types for filtering
         "ALLOWED_ARMOR_TYPES": ["Cloth", "Leather", "Miscellaneous"],
@@ -938,7 +935,7 @@ def write_csv(results, filename=CSV_FILENAME):
 # === USER INTERFACE ===
 def select_scan_profile():
     """Prompts the user to choose between full and custom scan profiles."""
-    choice = input(f"{'Items Profile':<12} | Custom(1) or Everything(2): ").strip() or "1"
+    choice = input(f"{'Item Profile':<13} | Custom(1) or Everything(2): ").strip() or "1"
     if choice == "1":
         return "custom"
     elif choice == "2":
@@ -952,7 +949,7 @@ def select_scan_type():
     """Prompts the user to choose between a test scan or a full scan, returning the mode and test realm if applicable."""
     choice = input(f"{'Scan Type':<13} | Single Realm(1) or All Realms(2): ").strip() or "2"
     if choice == "1":
-        test_realm = input(f"{'Test realm':<13} | Enter the realm name or ID: ").strip()
+        test_realm = input(f"{'Realm Choice':<13} | Enter the realm name or ID: ").strip()
         return True, test_realm
     return False, None
 
@@ -1037,7 +1034,7 @@ def main():
         all_results.sort(key=lambda x: x['ilvl'], reverse=True)
 
         # Print table header (aligned)
-        print(f"\n{'Realm':<21} {'Item ID':<10} {'Type':<14} {'Slot':<15} {'Name':<35} {'ilvl':>9} {'Buyout':>10}")
+        print(f"\n{'Realm':<21} {'Item ID':<10} {'Type':<14} {'Slot':<15} {'Name':<33} {'ilvl':>10} {'Buyout':>10}")
         
         for r in all_results:
             realm_name = next((n for i, n in realms if i == r['realm_id']), f"Realm-{r['realm_id']}")
