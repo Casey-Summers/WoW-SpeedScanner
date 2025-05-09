@@ -1,0 +1,379 @@
+{
+  "7175": {
+    "id": 7175,
+    "base_level": 29,
+    "base_level_priority": 1
+  },
+  "7176": {
+    "id": 7176,
+    "base_level": 65,
+    "base_level_priority": 1
+  },
+  "7177": {
+    "id": 7177,
+    "base_level": 94,
+    "base_level_priority": 1
+  },
+  "7178": {
+    "id": 7178,
+    "base_level": 127,
+    "base_level_priority": 1
+  },
+  "7179": {
+    "id": 7179,
+    "base_level": 163,
+    "base_level_priority": 1
+  },
+  "7180": {
+    "id": 7180,
+    "base_level": 55,
+    "base_level_priority": 1
+  },
+  "8785": {
+    "id": 8785,
+    "base_level": 400,
+    "base_level_priority": 500
+  },
+  "8836": {
+    "id": 8836,
+    "base_level": 382,
+    "base_level_priority": 100
+  },
+  "8837": {
+    "id": 8837,
+    "base_level": 306,
+    "base_level_priority": 100
+  },
+  "8839": {
+    "id": 8839,
+    "base_level": 333,
+    "base_level_priority": 100
+  },
+  "8841": {
+    "id": 8841,
+    "base_level": 320,
+    "base_level_priority": 100
+  },
+  "8843": {
+    "id": 8843,
+    "base_level": 346,
+    "base_level_priority": 100
+  },
+  "8844": {
+    "id": 8844,
+    "base_level": 372,
+    "base_level_priority": 100
+  },
+  "8845": {
+    "id": 8845,
+    "base_level": 395,
+    "base_level_priority": 85
+  },
+  "8846": {
+    "id": 8846,
+    "base_level": 408,
+    "base_level_priority": 85
+  },
+  "8847": {
+    "id": 8847,
+    "base_level": 330,
+    "base_level_priority": 1
+  },
+  "8848": {
+    "id": 8848,
+    "base_level": 356,
+    "base_level_priority": 1
+  },
+  "8849": {
+    "id": 8849,
+    "base_level": 343,
+    "base_level_priority": 1
+  },
+  "8850": {
+    "id": 8850,
+    "base_level": 369,
+    "base_level_priority": 1,
+    "quality": 4
+  },
+  "8851": {
+    "id": 8851,
+    "base_level": 330,
+    "base_level_priority": 100
+  },
+  "8903": {
+    "id": 8903,
+    "base_level": 1,
+    "base_level_priority": 99
+  },
+  "9128": {
+    "id": 9128,
+    "base_level": 333,
+    "base_level_priority": 100
+  },
+  "9234": {
+    "id": 9234,
+    "base_level": 424,
+    "base_level_priority": 1
+  },
+  "9311": {
+    "id": 9311,
+    "base_level": 366,
+    "base_level_priority": 100
+  },
+  "9351": {
+    "id": 9351,
+    "base_level": 408,
+    "base_level_priority": 100
+  },
+  "9365": {
+    "id": 9365,
+    "base_level": 382,
+    "base_level_priority": 90,
+    "tag": "Ingenuity Crafted"
+  },
+  "9366": {
+    "id": 9366,
+    "base_level": 411,
+    "base_level_priority": 70,
+    "tag": "Shadowflame Crafted"
+  },
+  "9367": {
+    "id": 9367,
+    "base_level": 411,
+    "base_level_priority": 0
+  },
+  "9371": {
+    "id": 9371,
+    "base_level": 382,
+    "base_level_priority": 1,
+    "quality": 3
+  },
+  "9372": {
+    "id": 9372,
+    "base_level": 395,
+    "base_level_priority": 1,
+    "quality": 4
+  },
+  "9373": {
+    "id": 9373,
+    "base_level": 424,
+    "base_level_priority": 65
+  },
+  "9374": {
+    "id": 9374,
+    "base_level": 421,
+    "base_level_priority": 65
+  },
+  "9375": {
+    "id": 9375,
+    "base_level": 434,
+    "base_level_priority": 65
+  },
+  "9376": {
+    "id": 9376,
+    "base_level": 434,
+    "base_level_priority": 65
+  },
+  "9498": {
+    "id": 9498,
+    "base_level": 450,
+    "base_level_priority": 70,
+    "tag": "Dream Crafted"
+  },
+  "9499": {
+    "id": 9499,
+    "base_level": 463,
+    "base_level_priority": 65
+  },
+  "9500": {
+    "id": 9500,
+    "base_level": 473,
+    "base_level_priority": 65
+  },
+  "9502": {
+    "id": 9502,
+    "base_level": 434,
+    "base_level_priority": 1,
+    "quality": 4
+  },
+  "9527": {
+    "id": 9527,
+    "base_level": 399,
+    "base_level_priority": 100
+  },
+  "10222": {
+    "id": 10222,
+    "base_level": 593,
+    "base_level_priority": 70,
+    "tag": "Omen Crafted"
+  },
+  "10249": {
+    "id": 10249,
+    "base_level": 489,
+    "base_level_priority": 70,
+    "tag": "Awakened Crafted"
+  },
+  "10250": {
+    "id": 10250,
+    "base_level": 438,
+    "base_level_priority": 100
+  },
+  "10349": {
+    "id": 10349,
+    "tag": "Beginner Crafted",
+    "base_level": 564,
+    "base_level_priority": 70
+  },
+  "10357": {
+    "id": 10357,
+    "base_level": 473,
+    "base_level_priority": 1,
+    "quality": 4
+  },
+  "10358": {
+    "id": 10358,
+    "base_level": 502,
+    "base_level_priority": 65
+  },
+  "10359": {
+    "id": 10359,
+    "base_level": 512,
+    "base_level_priority": 65
+  },
+  "10421": {
+    "id": 10421,
+    "base_level": 593,
+    "base_level_priority": 100
+  },
+  "10827": {
+    "id": 10827,
+    "base_level": 538,
+    "base_level_priority": 100
+  },
+  "10828": {
+    "id": 10828,
+    "base_level": 564,
+    "base_level_priority": 100
+  },
+  "10829": {
+    "id": 10829,
+    "base_level": 590,
+    "base_level_priority": 100
+  },
+  "10840": {
+    "id": 10840,
+    "quality": 2,
+    "base_level": 545,
+    "base_level_priority": 1000
+  },
+  "10841": {
+    "id": 10841,
+    "quality": 3,
+    "base_level": 558,
+    "base_level_priority": 1000
+  },
+  "10842": {
+    "id": 10842,
+    "quality": 4,
+    "base_level": 597,
+    "base_level_priority": 1000
+  },
+  "11142": {
+    "id": 11142,
+    "base_level": 577,
+    "base_level_priority": 1,
+    "quality": 4
+  },
+  "11143": {
+    "id": 11143,
+    "base_level": 606,
+    "base_level_priority": 65
+  },
+  "11144": {
+    "id": 11144,
+    "base_level": 623,
+    "base_level_priority": 65
+  },
+  "11295": {
+    "id": 11295,
+    "base_level": 515,
+    "base_level_priority": 100
+  },
+  "11297": {
+    "id": 11297,
+    "base_level": 545,
+    "base_level_priority": 100
+  },
+  "11318": {
+    "id": 11318,
+    "base_level": 545,
+    "base_level_priority": 3000
+  },
+  "11330": {
+    "id": 11330,
+    "base_level": 545,
+    "base_level_priority": 1
+  },
+  "11331": {
+    "id": 11331,
+    "base_level": 561,
+    "base_level_priority": 1
+  },
+  "11332": {
+    "id": 11332,
+    "base_level": 350,
+    "base_level_priority": 1
+  },
+  "11338": {
+    "id": 11338,
+    "quality": 3,
+    "base_level": 554,
+    "base_level_priority": 0
+  },
+  "12015": {
+    "id": 12015,
+    "quality": 2,
+    "base_level": 571,
+    "base_level_priority": 1000
+  },
+  "12016": {
+    "id": 12016,
+    "quality": 3,
+    "base_level": 584,
+    "base_level_priority": 1000
+  },
+  "12017": {
+    "id": 12017,
+    "quality": 4,
+    "base_level": 623,
+    "base_level_priority": 1000
+  },
+  "12024": {
+    "id": 12024,
+    "quality": 3,
+    "base_level": 593,
+    "base_level_priority": 0
+  },
+  "12040": {
+    "id": 12040,
+    "base_level": 632,
+    "base_level_priority": 70,
+    "tag": "Fortune Crafted"
+  },
+  "12041": {
+    "id": 12041,
+    "base_level": 616,
+    "base_level_priority": 1,
+    "quality": 4
+  },
+  "12042": {
+    "id": 12042,
+    "base_level": 645,
+    "base_level_priority": 65
+  },
+  "12043": {
+    "id": 12043,
+    "base_level": 662,
+    "base_level_priority": 65
+  }
+}

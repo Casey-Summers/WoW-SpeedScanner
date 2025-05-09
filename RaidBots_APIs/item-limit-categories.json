@@ -1,0 +1,2714 @@
+{
+  "2": {
+    "id": 2,
+    "name": "Jeweler's Gems",
+    "quantity": 3,
+    "flags": 1
+  },
+  "3": {
+    "id": 3,
+    "name": "Healthstone",
+    "quantity": 1,
+    "flags": 0
+  },
+  "4": {
+    "id": 4,
+    "name": "Mana Gem",
+    "quantity": 1,
+    "flags": 0
+  },
+  "6": {
+    "id": 6,
+    "name": "Stormjewel",
+    "quantity": 1,
+    "flags": 1
+  },
+  "7": {
+    "id": 7,
+    "name": "Enchanted Pearl",
+    "quantity": 1,
+    "flags": 1
+  },
+  "8": {
+    "id": 8,
+    "name": "Binding Light",
+    "quantity": 1,
+    "flags": 1
+  },
+  "9": {
+    "id": 9,
+    "name": "Binding Stone",
+    "quantity": 1,
+    "flags": 1
+  },
+  "10": {
+    "id": 10,
+    "name": "Death's Choice",
+    "quantity": 1,
+    "flags": 1
+  },
+  "11": {
+    "id": 11,
+    "name": "Death's Verdict",
+    "quantity": 1,
+    "flags": 1
+  },
+  "12": {
+    "id": 12,
+    "name": "Eitrigg's Oath",
+    "quantity": 1,
+    "flags": 1
+  },
+  "13": {
+    "id": 13,
+    "name": "Fervor of the Frostborn",
+    "quantity": 1,
+    "flags": 1
+  },
+  "14": {
+    "id": 14,
+    "name": "Fetish of Volatile Power",
+    "quantity": 1,
+    "flags": 1
+  },
+  "15": {
+    "id": 15,
+    "name": "Juggernaut's Vitality",
+    "quantity": 1,
+    "flags": 1
+  },
+  "16": {
+    "id": 16,
+    "name": "Reign of the Dead",
+    "quantity": 1,
+    "flags": 1
+  },
+  "17": {
+    "id": 17,
+    "name": "Reign of the Unliving",
+    "quantity": 1,
+    "flags": 1
+  },
+  "18": {
+    "id": 18,
+    "name": "Satrina's Impeding Scarab",
+    "quantity": 1,
+    "flags": 1
+  },
+  "19": {
+    "id": 19,
+    "name": "Solace of the Defeated",
+    "quantity": 1,
+    "flags": 1
+  },
+  "20": {
+    "id": 20,
+    "name": "Solace of the Fallen",
+    "quantity": 1,
+    "flags": 1
+  },
+  "21": {
+    "id": 21,
+    "name": "Talisman of Volatile Power",
+    "quantity": 1,
+    "flags": 1
+  },
+  "22": {
+    "id": 22,
+    "name": "Vengeance of the Forsaken",
+    "quantity": 1,
+    "flags": 1
+  },
+  "23": {
+    "id": 23,
+    "name": "Victor's Call",
+    "quantity": 1,
+    "flags": 1
+  },
+  "24": {
+    "id": 24,
+    "name": "Band of Callous Aggression",
+    "quantity": 1,
+    "flags": 0
+  },
+  "25": {
+    "id": 25,
+    "name": "Band of Deplorable Violence",
+    "quantity": 1,
+    "flags": 1
+  },
+  "26": {
+    "id": 26,
+    "name": "Band of the Traitor King",
+    "quantity": 1,
+    "flags": 0
+  },
+  "27": {
+    "id": 27,
+    "name": "Band of the Twin Val'kyr",
+    "quantity": 1,
+    "flags": 1
+  },
+  "28": {
+    "id": 28,
+    "name": "Band of the Violent Temperment",
+    "quantity": 1,
+    "flags": 1
+  },
+  "29": {
+    "id": 29,
+    "name": "Carnivorous Band",
+    "quantity": 1,
+    "flags": 1
+  },
+  "30": {
+    "id": 30,
+    "name": "Circle of the Darkmender",
+    "quantity": 1,
+    "flags": 1
+  },
+  "31": {
+    "id": 31,
+    "name": "Firestorm Band",
+    "quantity": 1,
+    "flags": 1
+  },
+  "32": {
+    "id": 32,
+    "name": "Firestorm Ring",
+    "quantity": 1,
+    "flags": 1
+  },
+  "33": {
+    "id": 33,
+    "name": "Gormok's Band",
+    "quantity": 1,
+    "flags": 1
+  },
+  "34": {
+    "id": 34,
+    "name": "Loop of the Twin Val'kyr",
+    "quantity": 1,
+    "flags": 1
+  },
+  "35": {
+    "id": 35,
+    "name": "Lurid Manifestation",
+    "quantity": 1,
+    "flags": 1
+  },
+  "36": {
+    "id": 36,
+    "name": "Planestalker Band",
+    "quantity": 1,
+    "flags": 1
+  },
+  "37": {
+    "id": 37,
+    "name": "Planestalker Signet",
+    "quantity": 1,
+    "flags": 1
+  },
+  "38": {
+    "id": 38,
+    "name": "Ring of Callous Aggression",
+    "quantity": 1,
+    "flags": 1
+  },
+  "39": {
+    "id": 39,
+    "name": "Ring of Callous Aggression",
+    "quantity": 1,
+    "flags": 1
+  },
+  "40": {
+    "id": 40,
+    "name": "Ring of the Darkmender",
+    "quantity": 1,
+    "flags": 1
+  },
+  "41": {
+    "id": 41,
+    "name": "Ring of the Violent Temperament",
+    "quantity": 1,
+    "flags": 1
+  },
+  "42": {
+    "id": 42,
+    "name": "Signet of the Traitor King",
+    "quantity": 1,
+    "flags": 1
+  },
+  "43": {
+    "id": 43,
+    "name": "Test Ring Limit",
+    "quantity": 1,
+    "flags": 1
+  },
+  "44": {
+    "id": 44,
+    "name": "Althor's Abacus",
+    "quantity": 1,
+    "flags": 1
+  },
+  "45": {
+    "id": 45,
+    "name": "Bauble of True Blood",
+    "quantity": 1,
+    "flags": 1
+  },
+  "46": {
+    "id": 46,
+    "name": "Corpse Tongue Coin",
+    "quantity": 1,
+    "flags": 1
+  },
+  "47": {
+    "id": 47,
+    "name": "Deathbringer's Will",
+    "quantity": 1,
+    "flags": 1
+  },
+  "48": {
+    "id": 48,
+    "name": "Dislodged Foreign Object",
+    "quantity": 1,
+    "flags": 1
+  },
+  "49": {
+    "id": 49,
+    "name": "Phylactery of the Nameless Lich",
+    "quantity": 1,
+    "flags": 1
+  },
+  "50": {
+    "id": 50,
+    "name": "Tiny Abomination in a Jar",
+    "quantity": 1,
+    "flags": 1
+  },
+  "51": {
+    "id": 51,
+    "name": "Sindragosa's Flawless Fang",
+    "quantity": 1,
+    "flags": 1
+  },
+  "52": {
+    "id": 52,
+    "name": "Abomination's Bloody Ring",
+    "quantity": 1,
+    "flags": 1
+  },
+  "53": {
+    "id": 53,
+    "name": "Signet of Putrefaction",
+    "quantity": 1,
+    "flags": 1
+  },
+  "54": {
+    "id": 54,
+    "name": "Cerise Coiled Ring",
+    "quantity": 1,
+    "flags": 1
+  },
+  "55": {
+    "id": 55,
+    "name": "Rotface's Rupturing Ring",
+    "quantity": 1,
+    "flags": 1
+  },
+  "56": {
+    "id": 56,
+    "name": "Saurfang's Cold-Forged Band",
+    "quantity": 1,
+    "flags": 1
+  },
+  "57": {
+    "id": 57,
+    "name": "Seal of the Twilight Queen",
+    "quantity": 1,
+    "flags": 1
+  },
+  "58": {
+    "id": 58,
+    "name": "Thrice Fanged Signet",
+    "quantity": 1,
+    "flags": 1
+  },
+  "59": {
+    "id": 59,
+    "name": "Band of the Bone Colossus",
+    "quantity": 1,
+    "flags": 1
+  },
+  "60": {
+    "id": 60,
+    "name": "Devium's Eternally Cold Ring",
+    "quantity": 1,
+    "flags": 1
+  },
+  "61": {
+    "id": 61,
+    "name": "Seal of Many Mouths",
+    "quantity": 1,
+    "flags": 1
+  },
+  "62": {
+    "id": 62,
+    "name": "Frostbrood Sapphire Ring",
+    "quantity": 1,
+    "flags": 1
+  },
+  "63": {
+    "id": 63,
+    "name": "Juggernaut Band",
+    "quantity": 1,
+    "flags": 1
+  },
+  "64": {
+    "id": 64,
+    "name": "Loop of the Endless Labyrinth",
+    "quantity": 1,
+    "flags": 1
+  },
+  "65": {
+    "id": 65,
+    "name": "Marrowgar's Frigid Eye",
+    "quantity": 1,
+    "flags": 1
+  },
+  "66": {
+    "id": 66,
+    "name": "Memory of Malygos",
+    "quantity": 1,
+    "flags": 1
+  },
+  "67": {
+    "id": 67,
+    "name": "Might of Blight",
+    "quantity": 1,
+    "flags": 1
+  },
+  "68": {
+    "id": 68,
+    "name": "Ring of Maddening Whispers",
+    "quantity": 1,
+    "flags": 1
+  },
+  "69": {
+    "id": 69,
+    "name": "Ring of Rapid Ascent",
+    "quantity": 1,
+    "flags": 1
+  },
+  "70": {
+    "id": 70,
+    "name": "Skeleton Lord's Circle",
+    "quantity": 1,
+    "flags": 1
+  },
+  "71": {
+    "id": 71,
+    "name": "Valanar's Other Signet Ring",
+    "quantity": 1,
+    "flags": 1
+  },
+  "72": {
+    "id": 72,
+    "name": "Incarnadine Band of Mending",
+    "quantity": 1,
+    "flags": 1
+  },
+  "73": {
+    "id": 73,
+    "name": "Muradin's Spyglass",
+    "quantity": 1,
+    "flags": 1
+  },
+  "74": {
+    "id": 74,
+    "name": "Sliver of Pure Ice",
+    "quantity": 1,
+    "flags": 1
+  },
+  "75": {
+    "id": 75,
+    "name": "Unidentifiable Organ",
+    "quantity": 1,
+    "flags": 1
+  },
+  "76": {
+    "id": 76,
+    "name": "Whispering Fanged Skull",
+    "quantity": 1,
+    "flags": 1
+  },
+  "77": {
+    "id": 77,
+    "name": "Twilight Scale",
+    "quantity": 1,
+    "flags": 1
+  },
+  "78": {
+    "id": 78,
+    "name": "Ring of Phased Regeneration",
+    "quantity": 1,
+    "flags": 1
+  },
+  "79": {
+    "id": 79,
+    "name": "Saviana's Tribute",
+    "quantity": 1,
+    "flags": 1
+  },
+  "80": {
+    "id": 80,
+    "name": "Signet of Twilight",
+    "quantity": 1,
+    "flags": 1
+  },
+  "81": {
+    "id": 81,
+    "name": "Zarithrian's Offering",
+    "quantity": 1,
+    "flags": 1
+  },
+  "82": {
+    "id": 82,
+    "name": "Sharpened Twilight Scale",
+    "quantity": 1,
+    "flags": 1
+  },
+  "83": {
+    "id": 83,
+    "name": "Petrified Twilight Scale",
+    "quantity": 1,
+    "flags": 1
+  },
+  "84": {
+    "id": 84,
+    "name": "Glowing Twilight Scale",
+    "quantity": 1,
+    "flags": 1
+  },
+  "85": {
+    "id": 85,
+    "name": "Charred Twilight Scale",
+    "quantity": 1,
+    "flags": 1
+  },
+  "86": {
+    "id": 86,
+    "name": "Guild Flask",
+    "quantity": 1,
+    "flags": 0
+  },
+  "89": {
+    "id": 89,
+    "name": "Crushing Weight",
+    "quantity": 1,
+    "flags": 1
+  },
+  "90": {
+    "id": 90,
+    "name": "Essence of the Cyclone",
+    "quantity": 1,
+    "flags": 1
+  },
+  "91": {
+    "id": 91,
+    "name": "Fall of Mortality",
+    "quantity": 1,
+    "flags": 1
+  },
+  "92": {
+    "id": 92,
+    "name": "Heart of Ignacious",
+    "quantity": 1,
+    "flags": 1
+  },
+  "93": {
+    "id": 93,
+    "name": "Theralion's Mirror",
+    "quantity": 1,
+    "flags": 1
+  },
+  "94": {
+    "id": 94,
+    "name": "Vial of Stolen Memories",
+    "quantity": 1,
+    "flags": 1
+  },
+  "95": {
+    "id": 95,
+    "name": "Bell of Enraging Resonance",
+    "quantity": 1,
+    "flags": 1
+  },
+  "96": {
+    "id": 96,
+    "name": "Heart of Rage",
+    "quantity": 1,
+    "flags": 1
+  },
+  "97": {
+    "id": 97,
+    "name": "Jar of Ancient Remedies",
+    "quantity": 1,
+    "flags": 1
+  },
+  "98": {
+    "id": 98,
+    "name": "Prestor's Talisman of Machination",
+    "quantity": 1,
+    "flags": 1
+  },
+  "99": {
+    "id": 99,
+    "name": "Symbiotic Worm",
+    "quantity": 1,
+    "flags": 1
+  },
+  "100": {
+    "id": 100,
+    "name": "Might of the Ocean",
+    "quantity": 1,
+    "flags": 1
+  },
+  "101": {
+    "id": 101,
+    "name": "Porcelain Crab",
+    "quantity": 1,
+    "flags": 1
+  },
+  "102": {
+    "id": 102,
+    "name": "Sea Star",
+    "quantity": 1,
+    "flags": 1
+  },
+  "103": {
+    "id": 103,
+    "name": "Grace of the Herald",
+    "quantity": 1,
+    "flags": 1
+  },
+  "104": {
+    "id": 104,
+    "name": "Witching Hourglass",
+    "quantity": 1,
+    "flags": 1
+  },
+  "105": {
+    "id": 105,
+    "name": "Key to the Endless Chamber",
+    "quantity": 1,
+    "flags": 1
+  },
+  "106": {
+    "id": 106,
+    "name": "Leaden Despair",
+    "quantity": 1,
+    "flags": 1
+  },
+  "107": {
+    "id": 107,
+    "name": "Magnetite Mirror",
+    "quantity": 1,
+    "flags": 1
+  },
+  "108": {
+    "id": 108,
+    "name": "Tear of Blood",
+    "quantity": 1,
+    "flags": 1
+  },
+  "109": {
+    "id": 109,
+    "name": "Tendrils of Burrowing Dark",
+    "quantity": 1,
+    "flags": 1
+  },
+  "110": {
+    "id": 110,
+    "name": "Heart of Thunder",
+    "quantity": 1,
+    "flags": 1
+  },
+  "111": {
+    "id": 111,
+    "name": "Rainsong",
+    "quantity": 1,
+    "flags": 1
+  },
+  "112": {
+    "id": 112,
+    "name": "Heart of Solace",
+    "quantity": 1,
+    "flags": 1
+  },
+  "113": {
+    "id": 113,
+    "name": "Sorrowsong",
+    "quantity": 1,
+    "flags": 1
+  },
+  "114": {
+    "id": 114,
+    "name": "Tia's Grace",
+    "quantity": 1,
+    "flags": 1
+  },
+  "115": {
+    "id": 115,
+    "name": "Anhuur's Hymnal",
+    "quantity": 1,
+    "flags": 1
+  },
+  "116": {
+    "id": 116,
+    "name": "Blood of Isiset",
+    "quantity": 1,
+    "flags": 1
+  },
+  "117": {
+    "id": 117,
+    "name": "Left Eye of Rajh",
+    "quantity": 1,
+    "flags": 1
+  },
+  "118": {
+    "id": 118,
+    "name": "Right Eye of Rajh",
+    "quantity": 1,
+    "flags": 1
+  },
+  "119": {
+    "id": 119,
+    "name": "Corrupted Egg Shell",
+    "quantity": 1,
+    "flags": 1
+  },
+  "120": {
+    "id": 120,
+    "name": "Gale of Shadows",
+    "quantity": 1,
+    "flags": 1
+  },
+  "121": {
+    "id": 121,
+    "name": "Mark of Khardros",
+    "quantity": 1,
+    "flags": 1
+  },
+  "122": {
+    "id": 122,
+    "name": "Skardyn's Grace",
+    "quantity": 1,
+    "flags": 1
+  },
+  "123": {
+    "id": 123,
+    "name": "Throngus's Finger",
+    "quantity": 1,
+    "flags": 1
+  },
+  "129": {
+    "id": 129,
+    "name": "Bile-O-Tron Nut",
+    "quantity": 1,
+    "flags": 1
+  },
+  "130": {
+    "id": 130,
+    "name": "Alchemist Stone",
+    "quantity": 1,
+    "flags": 1
+  },
+  "132": {
+    "id": 132,
+    "name": "Scales of Life",
+    "quantity": 1,
+    "flags": 1
+  },
+  "133": {
+    "id": 133,
+    "name": "Variable Pulse Lightning Capacitor",
+    "quantity": 1,
+    "flags": 1
+  },
+  "134": {
+    "id": 134,
+    "name": "Jaws of Defeat",
+    "quantity": 1,
+    "flags": 1
+  },
+  "135": {
+    "id": 135,
+    "name": "The Hungerer",
+    "quantity": 1,
+    "flags": 1
+  },
+  "136": {
+    "id": 136,
+    "name": "Apparatus of Khaz'goroth",
+    "quantity": 1,
+    "flags": 1
+  },
+  "137": {
+    "id": 137,
+    "name": "Spidersilk Spindle",
+    "quantity": 1,
+    "flags": 1
+  },
+  "138": {
+    "id": 138,
+    "name": "Necromantic Focus",
+    "quantity": 1,
+    "flags": 1
+  },
+  "139": {
+    "id": 139,
+    "name": "Eye of Blazing Power",
+    "quantity": 1,
+    "flags": 1
+  },
+  "140": {
+    "id": 140,
+    "name": "Matrix Restabilizer",
+    "quantity": 1,
+    "flags": 1
+  },
+  "141": {
+    "id": 141,
+    "name": "Vessel of Acceleration",
+    "quantity": 1,
+    "flags": 1
+  },
+  "142": {
+    "id": 142,
+    "name": "Stay of Execution",
+    "quantity": 1,
+    "flags": 1
+  },
+  "143": {
+    "id": 143,
+    "name": "Rune of Zeth",
+    "quantity": 1,
+    "flags": 1
+  },
+  "145": {
+    "id": 145,
+    "name": "Fiery Quintessence",
+    "quantity": 1,
+    "flags": 1
+  },
+  "146": {
+    "id": 146,
+    "name": "Ancient Petrified Seed",
+    "quantity": 1,
+    "flags": 1
+  },
+  "147": {
+    "id": 147,
+    "name": "Essence of the Eternal Flame",
+    "quantity": 1,
+    "flags": 1
+  },
+  "148": {
+    "id": 148,
+    "name": "Blazejewel",
+    "quantity": 1,
+    "flags": 1
+  },
+  "150": {
+    "id": 150,
+    "name": "Signet of the Avengers",
+    "quantity": 1,
+    "flags": 1
+  },
+  "151": {
+    "id": 151,
+    "name": "Widow's Kiss",
+    "quantity": 1,
+    "flags": 1
+  },
+  "152": {
+    "id": 152,
+    "name": "Crystal Prison Band",
+    "quantity": 1,
+    "flags": 1
+  },
+  "153": {
+    "id": 153,
+    "name": "Alysrazor's Band",
+    "quantity": 1,
+    "flags": 1
+  },
+  "155": {
+    "id": 155,
+    "name": "Brimstone Ring",
+    "quantity": 1,
+    "flags": 1
+  },
+  "158": {
+    "id": 158,
+    "name": "Theck's Emberseal",
+    "quantity": 1,
+    "flags": 1
+  },
+  "166": {
+    "id": 166,
+    "name": "Emergency Descent Loop",
+    "quantity": 1,
+    "flags": 1
+  },
+  "167": {
+    "id": 167,
+    "name": "Seal of the Grand Architect",
+    "quantity": 1,
+    "flags": 1
+  },
+  "168": {
+    "id": 168,
+    "name": "Band of Reconstruction",
+    "quantity": 1,
+    "flags": 1
+  },
+  "169": {
+    "id": 169,
+    "name": "Signet of the Resolute",
+    "quantity": 1,
+    "flags": 1
+  },
+  "170": {
+    "id": 170,
+    "name": "Ring of Torn Flesh",
+    "quantity": 1,
+    "flags": 1
+  },
+  "171": {
+    "id": 171,
+    "name": "Breathstealer Band",
+    "quantity": 1,
+    "flags": 1
+  },
+  "172": {
+    "id": 172,
+    "name": "Hardheart Ring",
+    "quantity": 1,
+    "flags": 1
+  },
+  "173": {
+    "id": 173,
+    "name": "Seal of Primordial Shadow",
+    "quantity": 1,
+    "flags": 1
+  },
+  "174": {
+    "id": 174,
+    "name": "Infinite Loop",
+    "quantity": 1,
+    "flags": 1
+  },
+  "175": {
+    "id": 175,
+    "name": "Signet of Suturing",
+    "quantity": 1,
+    "flags": 1
+  },
+  "176": {
+    "id": 176,
+    "name": "Signet of Grasping Mouths",
+    "quantity": 1,
+    "flags": 1
+  },
+  "177": {
+    "id": 177,
+    "name": "Ring of the Riven",
+    "quantity": 1,
+    "flags": 1
+  },
+  "178": {
+    "id": 178,
+    "name": "Curled Twilight Claw",
+    "quantity": 1,
+    "flags": 1
+  },
+  "179": {
+    "id": 179,
+    "name": "Reflection of the Light",
+    "quantity": 1,
+    "flags": 1
+  },
+  "180": {
+    "id": 180,
+    "name": "Bottled Wishes",
+    "quantity": 1,
+    "flags": 1
+  },
+  "181": {
+    "id": 181,
+    "name": "Kiroptyric Sigil",
+    "quantity": 1,
+    "flags": 1
+  },
+  "182": {
+    "id": 182,
+    "name": "Rotting Skull",
+    "quantity": 1,
+    "flags": 1
+  },
+  "183": {
+    "id": 183,
+    "name": "Fire of the Deep",
+    "quantity": 1,
+    "flags": 1
+  },
+  "184": {
+    "id": 184,
+    "name": "Eye of Unmaking",
+    "quantity": 1,
+    "flags": 1
+  },
+  "185": {
+    "id": 185,
+    "name": "Wrath of Unchaining",
+    "quantity": 1,
+    "flags": 1
+  },
+  "186": {
+    "id": 186,
+    "name": "Resolve of Undying",
+    "quantity": 1,
+    "flags": 1
+  },
+  "187": {
+    "id": 187,
+    "name": "Will of Unbinding",
+    "quantity": 1,
+    "flags": 1
+  },
+  "188": {
+    "id": 188,
+    "name": "Heart of Unliving",
+    "quantity": 1,
+    "flags": 1
+  },
+  "189": {
+    "id": 189,
+    "name": "Creche of the Final Dragon",
+    "quantity": 1,
+    "flags": 1
+  },
+  "190": {
+    "id": 190,
+    "name": "Soulshifter Vortex",
+    "quantity": 1,
+    "flags": 1
+  },
+  "191": {
+    "id": 191,
+    "name": "Bone-Link Fetish",
+    "quantity": 1,
+    "flags": 1
+  },
+  "192": {
+    "id": 192,
+    "name": "Vial of Shadows",
+    "quantity": 1,
+    "flags": 1
+  },
+  "193": {
+    "id": 193,
+    "name": "Indomitable Pride",
+    "quantity": 1,
+    "flags": 1
+  },
+  "194": {
+    "id": 194,
+    "name": "Cunning of the Cruel",
+    "quantity": 1,
+    "flags": 1
+  },
+  "195": {
+    "id": 195,
+    "name": "Windward Heart",
+    "quantity": 1,
+    "flags": 1
+  },
+  "196": {
+    "id": 196,
+    "name": "Starcatcher Compass",
+    "quantity": 1,
+    "flags": 1
+  },
+  "197": {
+    "id": 197,
+    "name": "Seal of the Seven Signs",
+    "quantity": 1,
+    "flags": 1
+  },
+  "198": {
+    "id": 198,
+    "name": "Insignia of the Corrupted Mind",
+    "quantity": 1,
+    "flags": 1
+  },
+  "201": {
+    "id": 201,
+    "name": "Mogu Treasure",
+    "quantity": 1,
+    "flags": 0
+  },
+  "203": {
+    "id": 203,
+    "name": "Jeweler's Facet",
+    "quantity": 2,
+    "flags": 1
+  },
+  "204": {
+    "id": 204,
+    "name": "Familiar Stone",
+    "quantity": 1,
+    "flags": 0
+  },
+  "205": {
+    "id": 205,
+    "name": "Brilliant Mana Gem",
+    "quantity": 1,
+    "flags": 0
+  },
+  "206": {
+    "id": 206,
+    "name": "Darkmoon Card of the Mists",
+    "quantity": 1,
+    "flags": 1
+  },
+  "207": {
+    "id": 207,
+    "name": "Crystal of Fear",
+    "quantity": 1,
+    "flags": 1
+  },
+  "208": {
+    "id": 208,
+    "name": "Bottle of Infinite Stars",
+    "quantity": 1,
+    "flags": 1
+  },
+  "209": {
+    "id": 209,
+    "name": "Darkmist Vortex",
+    "quantity": 1,
+    "flags": 1
+  },
+  "210": {
+    "id": 210,
+    "name": "Essence of Terror",
+    "quantity": 1,
+    "flags": 1
+  },
+  "211": {
+    "id": 211,
+    "name": "Jade Bandit Figurine",
+    "quantity": 1,
+    "flags": 1
+  },
+  "212": {
+    "id": 212,
+    "name": "Jade Charioteer Figurine",
+    "quantity": 1,
+    "flags": 1
+  },
+  "213": {
+    "id": 213,
+    "name": "Jade Courtesan Figurine",
+    "quantity": 1,
+    "flags": 1
+  },
+  "214": {
+    "id": 214,
+    "name": "Jade Magistrate Figurine",
+    "quantity": 1,
+    "flags": 1
+  },
+  "215": {
+    "id": 215,
+    "name": "Jade Warlord Figurine",
+    "quantity": 1,
+    "flags": 1
+  },
+  "216": {
+    "id": 216,
+    "name": "Lei Shen's Final Orders",
+    "quantity": 1,
+    "flags": 1
+  },
+  "217": {
+    "id": 217,
+    "name": "Light of the Cosmos",
+    "quantity": 1,
+    "flags": 1
+  },
+  "218": {
+    "id": 218,
+    "name": "Qin-xi's Polarizing Seal",
+    "quantity": 1,
+    "flags": 1
+  },
+  "219": {
+    "id": 219,
+    "name": "Spirits of the Sun",
+    "quantity": 1,
+    "flags": 1
+  },
+  "220": {
+    "id": 220,
+    "name": "Stuff of Nightmares",
+    "quantity": 1,
+    "flags": 1
+  },
+  "221": {
+    "id": 221,
+    "name": "Terror in the Mists",
+    "quantity": 1,
+    "flags": 1
+  },
+  "222": {
+    "id": 222,
+    "name": "Vial of Dragon's Blood",
+    "quantity": 1,
+    "flags": 1
+  },
+  "223": {
+    "id": 223,
+    "name": "Band of Bursting Novas",
+    "quantity": 1,
+    "flags": 1
+  },
+  "224": {
+    "id": 224,
+    "name": "Circuit of the Frail Soul",
+    "quantity": 1,
+    "flags": 1
+  },
+  "225": {
+    "id": 225,
+    "name": "Dread Shadow Ring",
+    "quantity": 1,
+    "flags": 1
+  },
+  "226": {
+    "id": 226,
+    "name": "Feng's Ring of Dreams",
+    "quantity": 1,
+    "flags": 1
+  },
+  "227": {
+    "id": 227,
+    "name": "Feng's Seal of Binding",
+    "quantity": 1,
+    "flags": 1
+  },
+  "228": {
+    "id": 228,
+    "name": "Fragment of Fear Made Flesh",
+    "quantity": 1,
+    "flags": 1
+  },
+  "229": {
+    "id": 229,
+    "name": "Painful Thorned Ring",
+    "quantity": 1,
+    "flags": 1
+  },
+  "230": {
+    "id": 230,
+    "name": "Regail's Band of the Endless",
+    "quantity": 1,
+    "flags": 1
+  },
+  "231": {
+    "id": 231,
+    "name": "Ring of the Bladed Tempest",
+    "quantity": 1,
+    "flags": 1
+  },
+  "232": {
+    "id": 232,
+    "name": "Ring of the Shattered Shell",
+    "quantity": 1,
+    "flags": 1
+  },
+  "233": {
+    "id": 233,
+    "name": "Seal of the Profane",
+    "quantity": 1,
+    "flags": 1
+  },
+  "234": {
+    "id": 234,
+    "name": "Vizier's Ruby Signet",
+    "quantity": 1,
+    "flags": 1
+  },
+  "235": {
+    "id": 235,
+    "name": "Watersoul Signet",
+    "quantity": 1,
+    "flags": 1
+  },
+  "236": {
+    "id": 236,
+    "name": "Curios of the Golden Lotus",
+    "quantity": 1,
+    "flags": 1
+  },
+  "237": {
+    "id": 237,
+    "name": "Curios of the Shado-Pan",
+    "quantity": 1,
+    "flags": 1
+  },
+  "238": {
+    "id": 238,
+    "name": "Curios of the Shado-Pan",
+    "quantity": 1,
+    "flags": 1
+  },
+  "239": {
+    "id": 239,
+    "name": "Flashy Black Diamond Rings",
+    "quantity": 1,
+    "flags": 1
+  },
+  "240": {
+    "id": 240,
+    "name": "Sturdy Trap",
+    "quantity": 1,
+    "flags": 0
+  },
+  "241": {
+    "id": 241,
+    "name": "Brutal Insignia of the Dominance Offensive",
+    "quantity": 1,
+    "flags": 1
+  },
+  "242": {
+    "id": 242,
+    "name": "Greater Insignia of Operation: Shieldwall",
+    "quantity": 1,
+    "flags": 1
+  },
+  "243": {
+    "id": 243,
+    "name": "Lesser Insignia of the Dominance Offensive",
+    "quantity": 1,
+    "flags": 1
+  },
+  "244": {
+    "id": 244,
+    "name": "Lesser Insignia of Operation: Shieldwall",
+    "quantity": 1,
+    "flags": 1
+  },
+  "245": {
+    "id": 245,
+    "name": "Curios of Operation: Shieldwall",
+    "quantity": 1,
+    "flags": 1
+  },
+  "246": {
+    "id": 246,
+    "name": "Curios of the Dominance Offensive",
+    "quantity": 1,
+    "flags": 1
+  },
+  "247": {
+    "id": 247,
+    "name": "Challenge Card",
+    "quantity": 1,
+    "flags": 0
+  },
+  "249": {
+    "id": 249,
+    "name": "Gore-Soaked Gear",
+    "quantity": 1,
+    "flags": 1
+  },
+  "250": {
+    "id": 250,
+    "name": "Curios of the Shado-Pan Assault",
+    "quantity": 1,
+    "flags": 1
+  },
+  "251": {
+    "id": 251,
+    "name": "Jin'rokh's Soulcrystal",
+    "quantity": 1,
+    "flags": 1
+  },
+  "252": {
+    "id": 252,
+    "name": "Ring of Shamuru",
+    "quantity": 1,
+    "flags": 1
+  },
+  "253": {
+    "id": 253,
+    "name": "Jin'rokh's Dreamshard",
+    "quantity": 1,
+    "flags": 1
+  },
+  "254": {
+    "id": 254,
+    "name": "Durumu's Captive Eyeball",
+    "quantity": 1,
+    "flags": 1
+  },
+  "255": {
+    "id": 255,
+    "name": "Spinescale Seal",
+    "quantity": 1,
+    "flags": 1
+  },
+  "256": {
+    "id": 256,
+    "name": "Sign of the Bloodied God",
+    "quantity": 1,
+    "flags": 1
+  },
+  "257": {
+    "id": 257,
+    "name": "Durumu's Severed Tentacle",
+    "quantity": 1,
+    "flags": 1
+  },
+  "258": {
+    "id": 258,
+    "name": "Ro'shak's Remembrance",
+    "quantity": 1,
+    "flags": 1
+  },
+  "259": {
+    "id": 259,
+    "name": "Band of the Scaled Tyrant",
+    "quantity": 1,
+    "flags": 1
+  },
+  "260": {
+    "id": 260,
+    "name": "Petrified Eye of the Basilisk",
+    "quantity": 1,
+    "flags": 1
+  },
+  "261": {
+    "id": 261,
+    "name": "Bad Juju",
+    "quantity": 1,
+    "flags": 1
+  },
+  "262": {
+    "id": 262,
+    "name": "Breath of the Hydra",
+    "quantity": 1,
+    "flags": 1
+  },
+  "263": {
+    "id": 263,
+    "name": "Cha-Ye's Essence of Brilliance",
+    "quantity": 1,
+    "flags": 1
+  },
+  "264": {
+    "id": 264,
+    "name": "Delicate Vial of the Sanguinaire",
+    "quantity": 1,
+    "flags": 1
+  },
+  "265": {
+    "id": 265,
+    "name": "Fabled Feather of Ji-Kun",
+    "quantity": 1,
+    "flags": 1
+  },
+  "266": {
+    "id": 266,
+    "name": "Fortitude of the Zandalari",
+    "quantity": 1,
+    "flags": 1
+  },
+  "267": {
+    "id": 267,
+    "name": "Gaze of the Twins",
+    "quantity": 1,
+    "flags": 1
+  },
+  "268": {
+    "id": 268,
+    "name": "Horridon's Last Gasp",
+    "quantity": 1,
+    "flags": 1
+  },
+  "269": {
+    "id": 269,
+    "name": "Inscribed Bag of Hydra-Spawn",
+    "quantity": 1,
+    "flags": 1
+  },
+  "270": {
+    "id": 270,
+    "name": "Ji-Kun's Rising Winds",
+    "quantity": 1,
+    "flags": 1
+  },
+  "271": {
+    "id": 271,
+    "name": "Lightning-Imbued Chalice",
+    "quantity": 1,
+    "flags": 1
+  },
+  "272": {
+    "id": 272,
+    "name": "Primordius' Talisman of Rage",
+    "quantity": 1,
+    "flags": 1
+  },
+  "273": {
+    "id": 273,
+    "name": "Renataki's Soul Charm",
+    "quantity": 1,
+    "flags": 1
+  },
+  "274": {
+    "id": 274,
+    "name": "Rune of Re-Origination",
+    "quantity": 1,
+    "flags": 1
+  },
+  "275": {
+    "id": 275,
+    "name": "Soul Barrier",
+    "quantity": 1,
+    "flags": 1
+  },
+  "276": {
+    "id": 276,
+    "name": "Spark of Zandalar",
+    "quantity": 1,
+    "flags": 1
+  },
+  "277": {
+    "id": 277,
+    "name": "Stolen Relic of Zuldazar",
+    "quantity": 1,
+    "flags": 1
+  },
+  "278": {
+    "id": 278,
+    "name": "Talisman of Bloodlust",
+    "quantity": 1,
+    "flags": 1
+  },
+  "279": {
+    "id": 279,
+    "name": "Unerring Vision of Lei Shen",
+    "quantity": 1,
+    "flags": 1
+  },
+  "280": {
+    "id": 280,
+    "name": "Wushoolay's Final Choice",
+    "quantity": 1,
+    "flags": 1
+  },
+  "281": {
+    "id": 281,
+    "name": "Curios of the Kirin Tor Offensive",
+    "quantity": 1,
+    "flags": 1
+  },
+  "282": {
+    "id": 282,
+    "name": "Curios of the Sunreaver Onslaught",
+    "quantity": 1,
+    "flags": 1
+  },
+  "283": {
+    "id": 283,
+    "name": "Talismans of the Shado-Pan Assault",
+    "quantity": 1,
+    "flags": 1
+  },
+  "287": {
+    "id": 287,
+    "name": "Cloak of Virtue",
+    "quantity": 1,
+    "flags": 1
+  },
+  "288": {
+    "id": 288,
+    "name": "",
+    "quantity": 1,
+    "flags": 1
+  },
+  "289": {
+    "id": 289,
+    "name": "",
+    "quantity": 1,
+    "flags": 1
+  },
+  "290": {
+    "id": 290,
+    "name": "",
+    "quantity": 1,
+    "flags": 1
+  },
+  "291": {
+    "id": 291,
+    "name": "",
+    "quantity": 1,
+    "flags": 1
+  },
+  "292": {
+    "id": 292,
+    "name": "",
+    "quantity": 1,
+    "flags": 1
+  },
+  "293": {
+    "id": 293,
+    "name": "",
+    "quantity": 1,
+    "flags": 1
+  },
+  "294": {
+    "id": 294,
+    "name": "",
+    "quantity": 1,
+    "flags": 1
+  },
+  "295": {
+    "id": 295,
+    "name": "Discipline of Xuen",
+    "quantity": 1,
+    "flags": 1
+  },
+  "296": {
+    "id": 296,
+    "name": "Yu'on's Bite",
+    "quantity": 1,
+    "flags": 1
+  },
+  "297": {
+    "id": 297,
+    "name": "Contemplation of Chi-Ji",
+    "quantity": 1,
+    "flags": 1
+  },
+  "298": {
+    "id": 298,
+    "name": "Alacrity of Xuen",
+    "quantity": 1,
+    "flags": 1
+  },
+  "299": {
+    "id": 299,
+    "name": "Resolve of Niuzao",
+    "quantity": 1,
+    "flags": 1
+  },
+  "300": {
+    "id": 300,
+    "name": "Petrified Pennyroyal Ring",
+    "quantity": 1,
+    "flags": 1
+  },
+  "301": {
+    "id": 301,
+    "name": "Extinguished Ember of Galakras",
+    "quantity": 1,
+    "flags": 1
+  },
+  "302": {
+    "id": 302,
+    "name": "Iyyokuk's Hereditary Seal",
+    "quantity": 1,
+    "flags": 1
+  },
+  "303": {
+    "id": 303,
+    "name": "Seal of Eternal Sorrow",
+    "quantity": 1,
+    "flags": 1
+  },
+  "304": {
+    "id": 304,
+    "name": "Seal of Sullen Fury",
+    "quantity": 1,
+    "flags": 1
+  },
+  "305": {
+    "id": 305,
+    "name": "Laser-Slice Signet",
+    "quantity": 1,
+    "flags": 1
+  },
+  "306": {
+    "id": 306,
+    "name": "Signet of the Dinomancers",
+    "quantity": 1,
+    "flags": 1
+  },
+  "307": {
+    "id": 307,
+    "name": "Sorrowpath Signet",
+    "quantity": 1,
+    "flags": 1
+  },
+  "308": {
+    "id": 308,
+    "name": "Asgorathian Blood Seal",
+    "quantity": 1,
+    "flags": 1
+  },
+  "309": {
+    "id": 309,
+    "name": "Seal of the Forgotten Kings",
+    "quantity": 1,
+    "flags": 1
+  },
+  "310": {
+    "id": 310,
+    "name": "PH",
+    "quantity": 1,
+    "flags": 1
+  },
+  "311": {
+    "id": 311,
+    "name": "Bloodclaw Band",
+    "quantity": 1,
+    "flags": 1
+  },
+  "312": {
+    "id": 312,
+    "name": "Galakrond Control Band",
+    "quantity": 1,
+    "flags": 1
+  },
+  "313": {
+    "id": 313,
+    "name": "Ring of the Iron Tomb",
+    "quantity": 1,
+    "flags": 1
+  },
+  "314": {
+    "id": 314,
+    "name": "Devilfang Band",
+    "quantity": 1,
+    "flags": 1
+  },
+  "315": {
+    "id": 315,
+    "name": "PH",
+    "quantity": 1,
+    "flags": 1
+  },
+  "316": {
+    "id": 316,
+    "name": "Reality Ripper Ring",
+    "quantity": 1,
+    "flags": 1
+  },
+  "317": {
+    "id": 317,
+    "name": "Swift Serpent Signet",
+    "quantity": 1,
+    "flags": 1
+  },
+  "318": {
+    "id": 318,
+    "name": "Ring of Restless Energy",
+    "quantity": 1,
+    "flags": 1
+  },
+  "319": {
+    "id": 319,
+    "name": "Kil'ruk's Band of Ascendancy",
+    "quantity": 1,
+    "flags": 1
+  },
+  "320": {
+    "id": 320,
+    "name": "Assurance of Consequence",
+    "quantity": 1,
+    "flags": 1
+  },
+  "321": {
+    "id": 321,
+    "name": "Purified Bindings of Immerseus",
+    "quantity": 1,
+    "flags": 1
+  },
+  "322": {
+    "id": 322,
+    "name": "Nazgrim's Burnished Insignia",
+    "quantity": 1,
+    "flags": 1
+  },
+  "323": {
+    "id": 323,
+    "name": "Fusion-Fire Core",
+    "quantity": 1,
+    "flags": 1
+  },
+  "324": {
+    "id": 324,
+    "name": "Rook's Unlucky Talisman",
+    "quantity": 1,
+    "flags": 1
+  },
+  "325": {
+    "id": 325,
+    "name": "Juggernaut's Focusing Crystal",
+    "quantity": 1,
+    "flags": 1
+  },
+  "326": {
+    "id": 326,
+    "name": "Evil Eye of Galakras",
+    "quantity": 1,
+    "flags": 1
+  },
+  "327": {
+    "id": 327,
+    "name": "Prismatic Prison of Pride",
+    "quantity": 1,
+    "flags": 1
+  },
+  "328": {
+    "id": 328,
+    "name": "Kardris' Toxic Totem",
+    "quantity": 1,
+    "flags": 1
+  },
+  "329": {
+    "id": 329,
+    "name": "Haromm's Talisman",
+    "quantity": 1,
+    "flags": 1
+  },
+  "330": {
+    "id": 330,
+    "name": "Sigil of Rampage",
+    "quantity": 1,
+    "flags": 1
+  },
+  "331": {
+    "id": 331,
+    "name": "Frenzied Crystal of Rage",
+    "quantity": 1,
+    "flags": 1
+  },
+  "332": {
+    "id": 332,
+    "name": "Thok's Acid-Grooved Tooth",
+    "quantity": 1,
+    "flags": 1
+  },
+  "333": {
+    "id": 333,
+    "name": "Thok's Tail Tip",
+    "quantity": 1,
+    "flags": 1
+  },
+  "334": {
+    "id": 334,
+    "name": "Vial of Living Corruption",
+    "quantity": 1,
+    "flags": 1
+  },
+  "335": {
+    "id": 335,
+    "name": "Curse of Hubris",
+    "quantity": 1,
+    "flags": 1
+  },
+  "336": {
+    "id": 336,
+    "name": "Skeer's Bloodsoaked Talisman",
+    "quantity": 1,
+    "flags": 1
+  },
+  "337": {
+    "id": 337,
+    "name": "Dysmorphic Samophlange of Discontinuity",
+    "quantity": 1,
+    "flags": 1
+  },
+  "338": {
+    "id": 338,
+    "name": "Black Blood of Y'Shaarj",
+    "quantity": 1,
+    "flags": 1
+  },
+  "339": {
+    "id": 339,
+    "name": "Ticking Ebon Detonator",
+    "quantity": 1,
+    "flags": 1
+  },
+  "340": {
+    "id": 340,
+    "name": "Blackrock Crucible",
+    "quantity": 3,
+    "flags": 0
+  },
+  "341": {
+    "id": 341,
+    "name": "Warlords Crafted",
+    "quantity": 3,
+    "flags": 1
+  },
+  "342": {
+    "id": 342,
+    "name": "Engineering Workshop Item",
+    "quantity": 1,
+    "flags": 0
+  },
+  "343": {
+    "id": 343,
+    "name": "Garrison Fruit",
+    "quantity": 5,
+    "flags": 0
+  },
+  "344": {
+    "id": 344,
+    "name": "Enchanter's Illusion",
+    "quantity": 1,
+    "flags": 0
+  },
+  "345": {
+    "id": 345,
+    "name": "Band of the Archmage",
+    "quantity": 1,
+    "flags": 1
+  },
+  "346": {
+    "id": 346,
+    "name": "Legion Crafted",
+    "quantity": 3,
+    "flags": 1
+  },
+  "347": {
+    "id": 347,
+    "name": "Ghost Pirate Ring",
+    "quantity": 1,
+    "flags": 1
+  },
+  "348": {
+    "id": 348,
+    "name": "Saber's Eye",
+    "quantity": 1,
+    "flags": 1
+  },
+  "349": {
+    "id": 349,
+    "name": "Demonbane",
+    "quantity": 1,
+    "flags": 1
+  },
+  "350": {
+    "id": 350,
+    "name": "Crafted Relic",
+    "quantity": 1,
+    "flags": 1
+  },
+  "351": {
+    "id": 351,
+    "name": "Crimson Vial",
+    "quantity": 3,
+    "flags": 0
+  },
+  "352": {
+    "id": 352,
+    "name": "Nimble Brew",
+    "quantity": 2,
+    "flags": 0
+  },
+  "353": {
+    "id": 353,
+    "name": "Test Item Limit Category Crafted",
+    "quantity": 3,
+    "flags": 1
+  },
+  "357": {
+    "id": 357,
+    "name": "Legion Legendary",
+    "quantity": 1,
+    "flags": 1
+  },
+  "358": {
+    "id": 358,
+    "name": "Invader Bands",
+    "quantity": 1,
+    "flags": 1
+  },
+  "359": {
+    "id": 359,
+    "name": "Invader Trinkets",
+    "quantity": 1,
+    "flags": 1
+  },
+  "360": {
+    "id": 360,
+    "name": "Violet Seals",
+    "quantity": 1,
+    "flags": 1
+  },
+  "361": {
+    "id": 361,
+    "name": "Eyes of the Hounds",
+    "quantity": 1,
+    "flags": 1
+  },
+  "362": {
+    "id": 362,
+    "name": "Path of the Titans",
+    "quantity": 1,
+    "flags": 1
+  },
+  "463": {
+    "id": 463,
+    "name": "Kraken's Eye",
+    "quantity": 1,
+    "flags": 1
+  },
+  "464": {
+    "id": 464,
+    "name": "Kraken's Eye Loop",
+    "quantity": 1,
+    "flags": 1
+  },
+  "465": {
+    "id": 465,
+    "name": "Red Punchcard",
+    "quantity": 1,
+    "flags": 1
+  },
+  "466": {
+    "id": 466,
+    "name": "Yellow Punchcard",
+    "quantity": 1,
+    "flags": 1
+  },
+  "467": {
+    "id": 467,
+    "name": "Blue Punchcard",
+    "quantity": 1,
+    "flags": 1
+  },
+  "468": {
+    "id": 468,
+    "name": "Leviathan's Eye",
+    "quantity": 1,
+    "flags": 1
+  },
+  "469": {
+    "id": 469,
+    "name": "Leviathan's Eye Loop",
+    "quantity": 1,
+    "flags": 1
+  },
+  "471": {
+    "id": 471,
+    "name": "Phial of Serenity",
+    "quantity": 3,
+    "flags": 0
+  },
+  "472": {
+    "id": 472,
+    "name": "Darkmoon Deck",
+    "quantity": 1,
+    "flags": 1
+  },
+  "473": {
+    "id": 473,
+    "name": "Shadowlands Crafted Legendary",
+    "quantity": 1,
+    "flags": 1
+  },
+  "474": {
+    "id": 474,
+    "name": "Gladiator's Medallions",
+    "quantity": 1,
+    "flags": 1
+  },
+  "481": {
+    "id": 481,
+    "name": "Shadowlands Crafted",
+    "quantity": 1,
+    "flags": 1
+  },
+  "482": {
+    "id": 482,
+    "name": "Blood Shard of Rev",
+    "quantity": 1,
+    "flags": 1
+  },
+  "483": {
+    "id": 483,
+    "name": "Blood Shard of Jas",
+    "quantity": 1,
+    "flags": 1
+  },
+  "484": {
+    "id": 484,
+    "name": "Blood Shard of Bek",
+    "quantity": 1,
+    "flags": 1
+  },
+  "486": {
+    "id": 486,
+    "name": "Frost Shard of Cor",
+    "quantity": 1,
+    "flags": 1
+  },
+  "487": {
+    "id": 487,
+    "name": "Frost Shard of Kyr",
+    "quantity": 1,
+    "flags": 1
+  },
+  "488": {
+    "id": 488,
+    "name": "Frost Shard of Tel",
+    "quantity": 1,
+    "flags": 1
+  },
+  "489": {
+    "id": 489,
+    "name": "Unholy Shard of Dyz",
+    "quantity": 1,
+    "flags": 1
+  },
+  "490": {
+    "id": 490,
+    "name": "Unholy Shard of Oth",
+    "quantity": 1,
+    "flags": 1
+  },
+  "491": {
+    "id": 491,
+    "name": "Unholy Shard of Zed",
+    "quantity": 1,
+    "flags": 1
+  },
+  "492": {
+    "id": 492,
+    "name": "Personal Melody",
+    "quantity": 1,
+    "flags": 1
+  },
+  "493": {
+    "id": 493,
+    "name": "Battle Rhythms",
+    "quantity": 1,
+    "flags": 1
+  },
+  "494": {
+    "id": 494,
+    "name": "Pocopoc Harmony",
+    "quantity": 1,
+    "flags": 1
+  },
+  "496": {
+    "id": 496,
+    "name": "Enlightened Legendary",
+    "quantity": 1,
+    "flags": 1
+  },
+  "501": {
+    "id": 501,
+    "name": "Primalist Gem",
+    "quantity": 1,
+    "flags": 1
+  },
+  "502": {
+    "id": 502,
+    "name": "Idol of the Aspects",
+    "quantity": 1,
+    "flags": 1
+  },
+  "503": {
+    "id": 503,
+    "name": "Inscription Head",
+    "quantity": 1,
+    "flags": 1
+  },
+  "504": {
+    "id": 504,
+    "name": "Conjured Dessert",
+    "quantity": 1,
+    "flags": 0
+  },
+  "505": {
+    "id": 505,
+    "name": "Toolkit",
+    "quantity": 1,
+    "flags": 1
+  },
+  "506": {
+    "id": 506,
+    "name": "Head",
+    "quantity": 1,
+    "flags": 1
+  },
+  "507": {
+    "id": 507,
+    "name": "Enchanting Focus",
+    "quantity": 1,
+    "flags": 1
+  },
+  "508": {
+    "id": 508,
+    "name": "Back",
+    "quantity": 1,
+    "flags": 1
+  },
+  "509": {
+    "id": 509,
+    "name": "Magnifying Glass",
+    "quantity": 1,
+    "flags": 1
+  },
+  "510": {
+    "id": 510,
+    "name": "Chest",
+    "quantity": 1,
+    "flags": 1
+  },
+  "511": {
+    "id": 511,
+    "name": "Hands",
+    "quantity": 1,
+    "flags": 1
+  },
+  "512": {
+    "id": 512,
+    "name": "Embellished",
+    "quantity": 2,
+    "flags": 1
+  },
+  "513": {
+    "id": 513,
+    "name": "Back",
+    "quantity": 1,
+    "flags": 1
+  },
+  "514": {
+    "id": 514,
+    "name": "Chest",
+    "quantity": 1,
+    "flags": 1
+  },
+  "515": {
+    "id": 515,
+    "name": "Hands",
+    "quantity": 1,
+    "flags": 1
+  },
+  "516": {
+    "id": 516,
+    "name": "Head",
+    "quantity": 1,
+    "flags": 1
+  },
+  "517": {
+    "id": 517,
+    "name": "Toolkit",
+    "quantity": 1,
+    "flags": 1
+  },
+  "518": {
+    "id": 518,
+    "name": "Back",
+    "quantity": 1,
+    "flags": 1
+  },
+  "519": {
+    "id": 519,
+    "name": "Chest",
+    "quantity": 1,
+    "flags": 1
+  },
+  "520": {
+    "id": 520,
+    "name": "Hands",
+    "quantity": 1,
+    "flags": 1
+  },
+  "521": {
+    "id": 521,
+    "name": "Head",
+    "quantity": 1,
+    "flags": 1
+  },
+  "522": {
+    "id": 522,
+    "name": "Back",
+    "quantity": 1,
+    "flags": 1
+  },
+  "523": {
+    "id": 523,
+    "name": "Chest",
+    "quantity": 1,
+    "flags": 1
+  },
+  "524": {
+    "id": 524,
+    "name": "Hands",
+    "quantity": 1,
+    "flags": 1
+  },
+  "525": {
+    "id": 525,
+    "name": "Head",
+    "quantity": 1,
+    "flags": 1
+  },
+  "526": {
+    "id": 526,
+    "name": "Toolkit",
+    "quantity": 1,
+    "flags": 1
+  },
+  "527": {
+    "id": 527,
+    "name": "Back",
+    "quantity": 1,
+    "flags": 1
+  },
+  "528": {
+    "id": 528,
+    "name": "Chest",
+    "quantity": 1,
+    "flags": 1
+  },
+  "529": {
+    "id": 529,
+    "name": "Hands",
+    "quantity": 1,
+    "flags": 1
+  },
+  "530": {
+    "id": 530,
+    "name": "Head",
+    "quantity": 1,
+    "flags": 1
+  },
+  "531": {
+    "id": 531,
+    "name": "Toolkit",
+    "quantity": 1,
+    "flags": 1
+  },
+  "532": {
+    "id": 532,
+    "name": "Back",
+    "quantity": 1,
+    "flags": 1
+  },
+  "533": {
+    "id": 533,
+    "name": "Chest",
+    "quantity": 1,
+    "flags": 1
+  },
+  "534": {
+    "id": 534,
+    "name": "Hands",
+    "quantity": 1,
+    "flags": 1
+  },
+  "535": {
+    "id": 535,
+    "name": "Head",
+    "quantity": 1,
+    "flags": 1
+  },
+  "536": {
+    "id": 536,
+    "name": "Back",
+    "quantity": 1,
+    "flags": 1
+  },
+  "537": {
+    "id": 537,
+    "name": "Chest",
+    "quantity": 1,
+    "flags": 1
+  },
+  "538": {
+    "id": 538,
+    "name": "Hands",
+    "quantity": 1,
+    "flags": 1
+  },
+  "539": {
+    "id": 539,
+    "name": "Head",
+    "quantity": 1,
+    "flags": 1
+  },
+  "540": {
+    "id": 540,
+    "name": "Back",
+    "quantity": 1,
+    "flags": 1
+  },
+  "541": {
+    "id": 541,
+    "name": "Chest",
+    "quantity": 1,
+    "flags": 1
+  },
+  "542": {
+    "id": 542,
+    "name": "Hands",
+    "quantity": 1,
+    "flags": 1
+  },
+  "543": {
+    "id": 543,
+    "name": "Head",
+    "quantity": 1,
+    "flags": 1
+  },
+  "544": {
+    "id": 544,
+    "name": "Toolkit",
+    "quantity": 1,
+    "flags": 1
+  },
+  "545": {
+    "id": 545,
+    "name": "Back",
+    "quantity": 1,
+    "flags": 1
+  },
+  "546": {
+    "id": 546,
+    "name": "Chest",
+    "quantity": 1,
+    "flags": 1
+  },
+  "547": {
+    "id": 547,
+    "name": "Hands",
+    "quantity": 1,
+    "flags": 1
+  },
+  "548": {
+    "id": 548,
+    "name": "Head",
+    "quantity": 1,
+    "flags": 1
+  },
+  "549": {
+    "id": 549,
+    "name": "Toolkit",
+    "quantity": 1,
+    "flags": 1
+  },
+  "550": {
+    "id": 550,
+    "name": "Back",
+    "quantity": 1,
+    "flags": 1
+  },
+  "551": {
+    "id": 551,
+    "name": "Chest",
+    "quantity": 1,
+    "flags": 1
+  },
+  "552": {
+    "id": 552,
+    "name": "Hands",
+    "quantity": 1,
+    "flags": 1
+  },
+  "553": {
+    "id": 553,
+    "name": "Head",
+    "quantity": 1,
+    "flags": 1
+  },
+  "554": {
+    "id": 554,
+    "name": "Toolkit",
+    "quantity": 1,
+    "flags": 1
+  },
+  "555": {
+    "id": 555,
+    "name": "Back",
+    "quantity": 1,
+    "flags": 1
+  },
+  "556": {
+    "id": 556,
+    "name": "Chest",
+    "quantity": 1,
+    "flags": 1
+  },
+  "557": {
+    "id": 557,
+    "name": "Hands",
+    "quantity": 1,
+    "flags": 1
+  },
+  "558": {
+    "id": 558,
+    "name": "Head",
+    "quantity": 1,
+    "flags": 1
+  },
+  "559": {
+    "id": 559,
+    "name": "Back",
+    "quantity": 1,
+    "flags": 1
+  },
+  "560": {
+    "id": 560,
+    "name": "Chest",
+    "quantity": 1,
+    "flags": 1
+  },
+  "561": {
+    "id": 561,
+    "name": "Hands",
+    "quantity": 1,
+    "flags": 1
+  },
+  "562": {
+    "id": 562,
+    "name": "Head",
+    "quantity": 1,
+    "flags": 1
+  },
+  "563": {
+    "id": 563,
+    "name": "Back",
+    "quantity": 1,
+    "flags": 1
+  },
+  "564": {
+    "id": 564,
+    "name": "Chest",
+    "quantity": 1,
+    "flags": 1
+  },
+  "565": {
+    "id": 565,
+    "name": "Hands",
+    "quantity": 1,
+    "flags": 1
+  },
+  "566": {
+    "id": 566,
+    "name": "Head",
+    "quantity": 1,
+    "flags": 1
+  },
+  "567": {
+    "id": 567,
+    "name": "Toolkit",
+    "quantity": 1,
+    "flags": 1
+  },
+  "568": {
+    "id": 568,
+    "name": "Cobalt Ring of Power",
+    "quantity": 1,
+    "flags": 1
+  },
+  "569": {
+    "id": 569,
+    "name": "Alarm-O-Turret",
+    "quantity": 1,
+    "flags": 1
+  },
+  "570": {
+    "id": 570,
+    "name": "Arclight Vital Correctors",
+    "quantity": 1,
+    "flags": 1
+  },
+  "571": {
+    "id": 571,
+    "name": "Breath of Neltharion",
+    "quantity": 1,
+    "flags": 1
+  },
+  "572": {
+    "id": 572,
+    "name": "Grounded Circuitry",
+    "quantity": 1,
+    "flags": 1
+  },
+  "573": {
+    "id": 573,
+    "name": "Plane Displacer",
+    "quantity": 1,
+    "flags": 1
+  },
+  "574": {
+    "id": 574,
+    "name": "Polarity Amplifier",
+    "quantity": 1,
+    "flags": 1
+  },
+  "575": {
+    "id": 575,
+    "name": "Supercollide-O-Tron",
+    "quantity": 1,
+    "flags": 1
+  },
+  "596": {
+    "id": 596,
+    "name": "Mojo Crystal",
+    "quantity": 1,
+    "flags": 0
+  },
+  "597": {
+    "id": 597,
+    "name": "Rot Resistant Cauldron",
+    "quantity": 1,
+    "flags": 0
+  },
+  "598": {
+    "id": 598,
+    "name": "Fleeting Phial",
+    "quantity": 2,
+    "flags": 0
+  },
+  "599": {
+    "id": 599,
+    "name": "Shadowflame Rockets",
+    "quantity": 1,
+    "flags": 1
+  },
+  "600": {
+    "id": 600,
+    "name": "Delves Keystone",
+    "quantity": 5,
+    "flags": 0
+  },
+  "607": {
+    "id": 607,
+    "name": "Fleeting Flask",
+    "quantity": 1,
+    "flags": 0
+  },
+  "608": {
+    "id": 608,
+    "name": "Fleeting Potion",
+    "quantity": 20,
+    "flags": 0
+  },
+  "614": {
+    "id": 614,
+    "name": "Algari Diamond",
+    "quantity": 1,
+    "flags": 1
+  },
+  "643": {
+    "id": 643,
+    "name": "Prototype",
+    "quantity": 1,
+    "flags": 0
+  },
+  "644": {
+    "id": 644,
+    "name": "Feet",
+    "quantity": 1,
+    "flags": 1
+  },
+  "645": {
+    "id": 645,
+    "name": "Lightning Tether",
+    "quantity": 1,
+    "flags": 1
+  },
+  "646": {
+    "id": 646,
+    "name": "Overclocked S.E.L.F.I.E. Camera",
+    "quantity": 1,
+    "flags": 1
+  },
+  "647": {
+    "id": 647,
+    "name": "Earthen Delivery Drill",
+    "quantity": 1,
+    "flags": 1
+  },
+  "648": {
+    "id": 648,
+    "name": "Heartseeking Health Injector",
+    "quantity": 1,
+    "flags": 1
+  },
+  "649": {
+    "id": 649,
+    "name": "Profession Bag",
+    "quantity": 2,
+    "flags": 0
+  },
+  "650": {
+    "id": 650,
+    "name": "Weaverline Threads",
+    "quantity": 100,
+    "flags": 0
+  },
+  "651": {
+    "id": 651,
+    "name": "Weaverline Skill Thread",
+    "quantity": 100,
+    "flags": 0
+  },
+  "652": {
+    "id": 652,
+    "name": "Ghoulfish",
+    "quantity": 1,
+    "flags": 0
+  },
+  "653": {
+    "id": 653,
+    "name": "Best Friend",
+    "quantity": 1,
+    "flags": 0
+  },
+  "680": {
+    "id": 680,
+    "name": "Void-Touched",
+    "quantity": 1,
+    "flags": 1
+  },
+  "681": {
+    "id": 681,
+    "name": "Hallowed Tome",
+    "quantity": 1,
+    "flags": 1
+  },
+  "682": {
+    "id": 682,
+    "name": "Baleful Excerpt",
+    "quantity": 1,
+    "flags": 1
+  }
+}

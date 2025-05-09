@@ -1,0 +1,8787 @@
+{
+  "6272": {
+    "id": 116854,
+    "index": 0,
+    "spell": {
+      "id": 300470,
+      "name": "Shroud of Resolve",
+      "icon": "inv_misc_cape_deathwingraid_d_03"
+    }
+  },
+  "6273": {
+    "id": 116854,
+    "index": 0,
+    "spell": {
+      "id": 300470,
+      "name": "Shroud of Resolve",
+      "icon": "inv_misc_cape_deathwingraid_d_03"
+    }
+  },
+  "6274": {
+    "id": 116854,
+    "index": 0,
+    "spell": {
+      "id": 300470,
+      "name": "Shroud of Resolve",
+      "icon": "inv_misc_cape_deathwingraid_d_03"
+    }
+  },
+  "6275": {
+    "id": 116854,
+    "index": 0,
+    "spell": {
+      "id": 300470,
+      "name": "Shroud of Resolve",
+      "icon": "inv_misc_cape_deathwingraid_d_03"
+    }
+  },
+  "6276": {
+    "id": 116854,
+    "index": 0,
+    "spell": {
+      "id": 300470,
+      "name": "Shroud of Resolve",
+      "icon": "inv_misc_cape_deathwingraid_d_03"
+    }
+  },
+  "6277": {
+    "id": 116854,
+    "index": 0,
+    "spell": {
+      "id": 300470,
+      "name": "Shroud of Resolve",
+      "icon": "inv_misc_cape_deathwingraid_d_03"
+    }
+  },
+  "6278": {
+    "id": 116854,
+    "index": 0,
+    "spell": {
+      "id": 300470,
+      "name": "Shroud of Resolve",
+      "icon": "inv_misc_cape_deathwingraid_d_03"
+    }
+  },
+  "6279": {
+    "id": 116854,
+    "index": 0,
+    "spell": {
+      "id": 300470,
+      "name": "Shroud of Resolve",
+      "icon": "inv_misc_cape_deathwingraid_d_03"
+    }
+  },
+  "6280": {
+    "id": 116854,
+    "index": 0,
+    "spell": {
+      "id": 300470,
+      "name": "Shroud of Resolve",
+      "icon": "inv_misc_cape_deathwingraid_d_03"
+    }
+  },
+  "6281": {
+    "id": 116854,
+    "index": 0,
+    "spell": {
+      "id": 300470,
+      "name": "Shroud of Resolve",
+      "icon": "inv_misc_cape_deathwingraid_d_03"
+    }
+  },
+  "6282": {
+    "id": 116854,
+    "index": 0,
+    "spell": {
+      "id": 300470,
+      "name": "Shroud of Resolve",
+      "icon": "inv_misc_cape_deathwingraid_d_03"
+    }
+  },
+  "6283": {
+    "id": 116780,
+    "index": 0,
+    "spell": {
+      "id": 317860,
+      "name": "Draconic Empowerment",
+      "icon": "inv_misc_head_dragon_black"
+    }
+  },
+  "6284": {
+    "id": 116854,
+    "index": 0,
+    "spell": {
+      "id": 300470,
+      "name": "Shroud of Resolve",
+      "icon": "inv_misc_cape_deathwingraid_d_03"
+    }
+  },
+  "6285": {
+    "id": 116854,
+    "index": 0,
+    "spell": {
+      "id": 300470,
+      "name": "Shroud of Resolve",
+      "icon": "inv_misc_cape_deathwingraid_d_03"
+    }
+  },
+  "6286": {
+    "id": 116854,
+    "index": 0,
+    "spell": {
+      "id": 300470,
+      "name": "Shroud of Resolve",
+      "icon": "inv_misc_cape_deathwingraid_d_03"
+    }
+  },
+  "6434": {
+    "id": 420,
+    "index": 0,
+    "spell": {
+      "id": 13518,
+      "name": "Poison",
+      "icon": "spell_nature_corrosivebreath"
+    }
+  },
+  "6437": {
+    "id": 116155,
+    "index": 2,
+    "spell": {
+      "id": 315277,
+      "name": "Strikethrough",
+      "icon": "achievement_profession_fishing_findfish"
+    }
+  },
+  "6438": {
+    "id": 116156,
+    "index": 3,
+    "spell": {
+      "id": 315281,
+      "name": "Strikethrough",
+      "icon": "achievement_profession_fishing_findfish"
+    }
+  },
+  "6439": {
+    "id": 116157,
+    "index": 4,
+    "spell": {
+      "id": 315282,
+      "name": "Strikethrough",
+      "icon": "achievement_profession_fishing_findfish"
+    }
+  },
+  "6440": {
+    "id": 116214,
+    "index": 2
+  },
+  "6442": {
+    "id": 116214,
+    "index": 2
+  },
+  "6443": {
+    "id": 116214,
+    "index": 2
+  },
+  "6444": {
+    "id": 116214,
+    "index": 2
+  },
+  "6445": {
+    "id": 116214,
+    "index": 2
+  },
+  "6449": {
+    "id": 116213,
+    "index": 2
+  },
+  "6471": {
+    "id": 116221,
+    "index": 2,
+    "spell": {
+      "id": 315529,
+      "name": "Masterful",
+      "icon": "ability_rogue_sinistercalling"
+    }
+  },
+  "6472": {
+    "id": 116222,
+    "index": 2,
+    "spell": {
+      "id": 315530,
+      "name": "Masterful",
+      "icon": "ability_rogue_sinistercalling"
+    }
+  },
+  "6473": {
+    "id": 116223,
+    "index": 2,
+    "spell": {
+      "id": 315531,
+      "name": "Masterful",
+      "icon": "ability_rogue_sinistercalling"
+    }
+  },
+  "6474": {
+    "id": 116224,
+    "index": 2,
+    "spell": {
+      "id": 315544,
+      "name": "Expedient",
+      "icon": "ability_mage_netherwindpresence"
+    }
+  },
+  "6475": {
+    "id": 116225,
+    "index": 2,
+    "spell": {
+      "id": 315545,
+      "name": "Expedient",
+      "icon": "ability_mage_netherwindpresence"
+    }
+  },
+  "6476": {
+    "id": 116226,
+    "index": 2,
+    "spell": {
+      "id": 315546,
+      "name": "Expedient",
+      "icon": "ability_mage_netherwindpresence"
+    }
+  },
+  "6477": {
+    "id": 116227,
+    "index": 2,
+    "spell": {
+      "id": 315549,
+      "name": "Versatile",
+      "icon": "spell_arcane_arcanetactics"
+    }
+  },
+  "6478": {
+    "id": 116228,
+    "index": 2,
+    "spell": {
+      "id": 315552,
+      "name": "Versatile",
+      "icon": "spell_arcane_arcanetactics"
+    }
+  },
+  "6479": {
+    "id": 116229,
+    "index": 2,
+    "spell": {
+      "id": 315553,
+      "name": "Versatile",
+      "icon": "spell_arcane_arcanetactics"
+    }
+  },
+  "6480": {
+    "id": 116230,
+    "index": 2,
+    "spell": {
+      "id": 315554,
+      "name": "Severe",
+      "icon": "ability_priest_shadowyapparition"
+    }
+  },
+  "6481": {
+    "id": 116231,
+    "index": 2,
+    "spell": {
+      "id": 315557,
+      "name": "Severe",
+      "icon": "ability_priest_shadowyapparition"
+    }
+  },
+  "6482": {
+    "id": 116232,
+    "index": 2,
+    "spell": {
+      "id": 315558,
+      "name": "Severe",
+      "icon": "ability_priest_shadowyapparition"
+    }
+  },
+  "6483": {
+    "id": 116233,
+    "index": 2,
+    "spell": {
+      "id": 315607,
+      "name": "Avoidant",
+      "icon": "spell_warlock_demonsoul"
+    }
+  },
+  "6484": {
+    "id": 116234,
+    "index": 2,
+    "spell": {
+      "id": 315608,
+      "name": "Avoidant",
+      "icon": "spell_warlock_demonsoul"
+    }
+  },
+  "6485": {
+    "id": 116235,
+    "index": 2,
+    "spell": {
+      "id": 315609,
+      "name": "Avoidant",
+      "icon": "spell_warlock_demonsoul"
+    }
+  },
+  "6486": {
+    "id": 116236,
+    "index": 2,
+    "spell": {
+      "id": 315574,
+      "name": "Glimpse of Clarity",
+      "icon": "ability_warlock_soulswap"
+    }
+  },
+  "6487": {
+    "id": 116237,
+    "index": 2
+  },
+  "6488": {
+    "id": 116238,
+    "index": 2
+  },
+  "6489": {
+    "id": 116239,
+    "index": 2
+  },
+  "6490": {
+    "id": 116240,
+    "index": 2
+  },
+  "6491": {
+    "id": 116241,
+    "index": 2
+  },
+  "6492": {
+    "id": 116242,
+    "index": 2
+  },
+  "6493": {
+    "id": 116243,
+    "index": 2,
+    "spell": {
+      "id": 315590,
+      "name": "Siphoner",
+      "icon": "spell_shadow_lifedrain02_purple"
+    }
+  },
+  "6494": {
+    "id": 116244,
+    "index": 2,
+    "spell": {
+      "id": 315591,
+      "name": "Siphoner",
+      "icon": "spell_shadow_lifedrain02_purple"
+    }
+  },
+  "6495": {
+    "id": 116245,
+    "index": 2,
+    "spell": {
+      "id": 315592,
+      "name": "Siphoner",
+      "icon": "spell_shadow_lifedrain02_purple"
+    }
+  },
+  "6496": {
+    "id": 116246,
+    "index": 2
+  },
+  "6497": {
+    "id": 116247,
+    "index": 2
+  },
+  "6498": {
+    "id": 116248,
+    "index": 2
+  },
+  "6537": {
+    "id": 116782,
+    "index": 2,
+    "spell": {
+      "id": 318276,
+      "name": "Twilight Devastation",
+      "icon": "spell_priest_voidsear"
+    }
+  },
+  "6538": {
+    "id": 116783,
+    "index": 2,
+    "spell": {
+      "id": 318477,
+      "name": "Twilight Devastation",
+      "icon": "spell_priest_voidsear"
+    }
+  },
+  "6539": {
+    "id": 116784,
+    "index": 2,
+    "spell": {
+      "id": 318478,
+      "name": "Twilight Devastation",
+      "icon": "spell_priest_voidsear"
+    }
+  },
+  "6540": {
+    "id": 116785,
+    "index": 2,
+    "spell": {
+      "id": 318286,
+      "name": "Void Ritual",
+      "icon": "spell_shadow_shadesofdarkness"
+    }
+  },
+  "6541": {
+    "id": 116786,
+    "index": 2,
+    "spell": {
+      "id": 318479,
+      "name": "Void Ritual",
+      "icon": "spell_shadow_shadesofdarkness"
+    }
+  },
+  "6542": {
+    "id": 116787,
+    "index": 2,
+    "spell": {
+      "id": 318480,
+      "name": "Void Ritual",
+      "icon": "spell_shadow_shadesofdarkness"
+    }
+  },
+  "6543": {
+    "id": 116788,
+    "index": 2,
+    "spell": {
+      "id": 318481,
+      "name": "Twisted Appendage",
+      "icon": "achievement_boss_yoggsaron_01"
+    }
+  },
+  "6544": {
+    "id": 116789,
+    "index": 2,
+    "spell": {
+      "id": 318482,
+      "name": "Twisted Appendage",
+      "icon": "achievement_boss_yoggsaron_01"
+    }
+  },
+  "6545": {
+    "id": 116790,
+    "index": 2,
+    "spell": {
+      "id": 318483,
+      "name": "Twisted Appendage",
+      "icon": "achievement_boss_yoggsaron_01"
+    }
+  },
+  "6546": {
+    "id": 116791,
+    "index": 2,
+    "spell": {
+      "id": 318239,
+      "name": "Glimpse of Clarity",
+      "icon": "ability_warlock_soulswap"
+    }
+  },
+  "6547": {
+    "id": 116792,
+    "index": 2,
+    "spell": {
+      "id": 318303,
+      "name": "Ineffable Truth",
+      "icon": "inv_wand_1h_nzothraid_d_01"
+    }
+  },
+  "6548": {
+    "id": 116793,
+    "index": 2,
+    "spell": {
+      "id": 318484,
+      "name": "Ineffable Truth",
+      "icon": "inv_wand_1h_nzothraid_d_01"
+    }
+  },
+  "6549": {
+    "id": 116794,
+    "index": 2,
+    "spell": {
+      "id": 318280,
+      "name": "Echoing Void",
+      "icon": "ability_priest_voidentropy"
+    }
+  },
+  "6550": {
+    "id": 116795,
+    "index": 2,
+    "spell": {
+      "id": 318485,
+      "name": "Echoing Void",
+      "icon": "ability_priest_voidentropy"
+    }
+  },
+  "6551": {
+    "id": 116796,
+    "index": 2,
+    "spell": {
+      "id": 318486,
+      "name": "Echoing Void",
+      "icon": "ability_priest_voidentropy"
+    }
+  },
+  "6552": {
+    "id": 116797,
+    "index": 2,
+    "spell": {
+      "id": 318274,
+      "name": "Infinite Stars",
+      "icon": "ability_druid_starfall"
+    }
+  },
+  "6553": {
+    "id": 116798,
+    "index": 2,
+    "spell": {
+      "id": 318487,
+      "name": "Infinite Stars",
+      "icon": "ability_druid_starfall"
+    }
+  },
+  "6554": {
+    "id": 116799,
+    "index": 2,
+    "spell": {
+      "id": 318488,
+      "name": "Infinite Stars",
+      "icon": "ability_druid_starfall"
+    }
+  },
+  "6555": {
+    "id": 116800,
+    "index": 2,
+    "spell": {
+      "id": 318266,
+      "name": "Racing Pulse",
+      "icon": "ability_warrior_bloodfrenzy"
+    }
+  },
+  "6556": {
+    "id": 116801,
+    "index": 2,
+    "spell": {
+      "id": 318268,
+      "name": "Deadly Momentum",
+      "icon": "ability_hunter_raptorstrike"
+    }
+  },
+  "6557": {
+    "id": 116802,
+    "index": 2,
+    "spell": {
+      "id": 318269,
+      "name": "Honed Mind",
+      "icon": "spell_nature_focusedmind"
+    }
+  },
+  "6558": {
+    "id": 116803,
+    "index": 2,
+    "spell": {
+      "id": 318270,
+      "name": "Surging Vitality",
+      "icon": "ability_hunter_onewithnature"
+    }
+  },
+  "6559": {
+    "id": 116804,
+    "index": 2,
+    "spell": {
+      "id": 318492,
+      "name": "Racing Pulse",
+      "icon": "ability_warrior_bloodfrenzy"
+    }
+  },
+  "6560": {
+    "id": 116805,
+    "index": 2,
+    "spell": {
+      "id": 318496,
+      "name": "Racing Pulse",
+      "icon": "ability_warrior_bloodfrenzy"
+    }
+  },
+  "6561": {
+    "id": 116806,
+    "index": 2,
+    "spell": {
+      "id": 318493,
+      "name": "Deadly Momentum",
+      "icon": "ability_hunter_raptorstrike"
+    }
+  },
+  "6562": {
+    "id": 116807,
+    "index": 2,
+    "spell": {
+      "id": 318497,
+      "name": "Deadly Momentum",
+      "icon": "ability_hunter_raptorstrike"
+    }
+  },
+  "6563": {
+    "id": 116808,
+    "index": 2,
+    "spell": {
+      "id": 318494,
+      "name": "Honed Mind",
+      "icon": "spell_nature_focusedmind"
+    }
+  },
+  "6564": {
+    "id": 116809,
+    "index": 2,
+    "spell": {
+      "id": 318498,
+      "name": "Honed Mind",
+      "icon": "spell_nature_focusedmind"
+    }
+  },
+  "6565": {
+    "id": 116810,
+    "index": 2,
+    "spell": {
+      "id": 318495,
+      "name": "Surging Vitality",
+      "icon": "ability_hunter_onewithnature"
+    }
+  },
+  "6566": {
+    "id": 116811,
+    "index": 2,
+    "spell": {
+      "id": 318499,
+      "name": "Surging Vitality",
+      "icon": "ability_hunter_onewithnature"
+    }
+  },
+  "6567": {
+    "id": 116812,
+    "index": 2,
+    "spell": {
+      "id": 318294,
+      "name": "Devour Vitality",
+      "icon": "warlock_spelldrain"
+    }
+  },
+  "6568": {
+    "id": 116813,
+    "index": 2,
+    "spell": {
+      "id": 316780,
+      "name": "Whispered Truths",
+      "icon": "ability_hunter_mastertactitian"
+    }
+  },
+  "6569": {
+    "id": 116814,
+    "index": 2,
+    "spell": {
+      "id": 317290,
+      "name": "Lash of the Void",
+      "icon": "spell_priest_voidtendrils"
+    }
+  },
+  "6570": {
+    "id": 116815,
+    "index": 2,
+    "spell": {
+      "id": 318299,
+      "name": "Flash of Insight",
+      "icon": "spell_shadow_unholyfrenzy"
+    }
+  },
+  "6571": {
+    "id": 116816,
+    "index": 2,
+    "spell": {
+      "id": 318293,
+      "name": "Searing Flames",
+      "icon": "inv_misc_head_dragon_black_nightmare"
+    }
+  },
+  "6572": {
+    "id": 116817,
+    "index": 2,
+    "spell": {
+      "id": 316651,
+      "name": "Obsidian Skin",
+      "icon": "ability_golemthunderclap"
+    }
+  },
+  "6573": {
+    "id": 116818,
+    "index": 2,
+    "spell": {
+      "id": 318272,
+      "name": "Gushing Wound",
+      "icon": "ability_ironmaidens_corruptedblood"
+    }
+  },
+  "6577": {
+    "id": 116854,
+    "index": 0,
+    "spell": {
+      "id": 300470,
+      "name": "Shroud of Resolve",
+      "icon": "inv_misc_cape_deathwingraid_d_03"
+    }
+  },
+  "6580": {
+    "id": 116854,
+    "index": 0,
+    "spell": {
+      "id": 300470,
+      "name": "Shroud of Resolve",
+      "icon": "inv_misc_cape_deathwingraid_d_03"
+    }
+  },
+  "6581": {
+    "id": 116854,
+    "index": 0,
+    "spell": {
+      "id": 300470,
+      "name": "Shroud of Resolve",
+      "icon": "inv_misc_cape_deathwingraid_d_03"
+    }
+  },
+  "6582": {
+    "id": 116854,
+    "index": 0,
+    "spell": {
+      "id": 300470,
+      "name": "Shroud of Resolve",
+      "icon": "inv_misc_cape_deathwingraid_d_03"
+    }
+  },
+  "6583": {
+    "id": 116854,
+    "index": 0,
+    "spell": {
+      "id": 300470,
+      "name": "Shroud of Resolve",
+      "icon": "inv_misc_cape_deathwingraid_d_03"
+    }
+  },
+  "6584": {
+    "id": 116854,
+    "index": 0,
+    "spell": {
+      "id": 300470,
+      "name": "Shroud of Resolve",
+      "icon": "inv_misc_cape_deathwingraid_d_03"
+    }
+  },
+  "6585": {
+    "id": 116854,
+    "index": 0,
+    "spell": {
+      "id": 300470,
+      "name": "Shroud of Resolve",
+      "icon": "inv_misc_cape_deathwingraid_d_03"
+    }
+  },
+  "6586": {
+    "id": 116854,
+    "index": 0,
+    "spell": {
+      "id": 300470,
+      "name": "Shroud of Resolve",
+      "icon": "inv_misc_cape_deathwingraid_d_03"
+    }
+  },
+  "6587": {
+    "id": 116854,
+    "index": 0,
+    "spell": {
+      "id": 300470,
+      "name": "Shroud of Resolve",
+      "icon": "inv_misc_cape_deathwingraid_d_03"
+    }
+  },
+  "6588": {
+    "id": 116854,
+    "index": 0,
+    "spell": {
+      "id": 300470,
+      "name": "Shroud of Resolve",
+      "icon": "inv_misc_cape_deathwingraid_d_03"
+    }
+  },
+  "6589": {
+    "id": 116854,
+    "index": 0,
+    "spell": {
+      "id": 300470,
+      "name": "Shroud of Resolve",
+      "icon": "inv_misc_cape_deathwingraid_d_03"
+    }
+  },
+  "6590": {
+    "id": 116854,
+    "index": 0,
+    "spell": {
+      "id": 300470,
+      "name": "Shroud of Resolve",
+      "icon": "inv_misc_cape_deathwingraid_d_03"
+    }
+  },
+  "6591": {
+    "id": 116854,
+    "index": 0,
+    "spell": {
+      "id": 300470,
+      "name": "Shroud of Resolve",
+      "icon": "inv_misc_cape_deathwingraid_d_03"
+    }
+  },
+  "6592": {
+    "id": 116854,
+    "index": 0,
+    "spell": {
+      "id": 300470,
+      "name": "Shroud of Resolve",
+      "icon": "inv_misc_cape_deathwingraid_d_03"
+    }
+  },
+  "6593": {
+    "id": 116854,
+    "index": 0,
+    "spell": {
+      "id": 300470,
+      "name": "Shroud of Resolve",
+      "icon": "inv_misc_cape_deathwingraid_d_03"
+    }
+  },
+  "6594": {
+    "id": 116854,
+    "index": 0,
+    "spell": {
+      "id": 300470,
+      "name": "Shroud of Resolve",
+      "icon": "inv_misc_cape_deathwingraid_d_03"
+    }
+  },
+  "6595": {
+    "id": 116854,
+    "index": 0,
+    "spell": {
+      "id": 300470,
+      "name": "Shroud of Resolve",
+      "icon": "inv_misc_cape_deathwingraid_d_03"
+    }
+  },
+  "6596": {
+    "id": 116854,
+    "index": 0,
+    "spell": {
+      "id": 300470,
+      "name": "Shroud of Resolve",
+      "icon": "inv_misc_cape_deathwingraid_d_03"
+    }
+  },
+  "6597": {
+    "id": 116854,
+    "index": 0,
+    "spell": {
+      "id": 300470,
+      "name": "Shroud of Resolve",
+      "icon": "inv_misc_cape_deathwingraid_d_03"
+    }
+  },
+  "6598": {
+    "id": 116854,
+    "index": 0,
+    "spell": {
+      "id": 300470,
+      "name": "Shroud of Resolve",
+      "icon": "inv_misc_cape_deathwingraid_d_03"
+    }
+  },
+  "6599": {
+    "id": 116854,
+    "index": 0,
+    "spell": {
+      "id": 300470,
+      "name": "Shroud of Resolve",
+      "icon": "inv_misc_cape_deathwingraid_d_03"
+    }
+  },
+  "6600": {
+    "id": 116854,
+    "index": 0,
+    "spell": {
+      "id": 300470,
+      "name": "Shroud of Resolve",
+      "icon": "inv_misc_cape_deathwingraid_d_03"
+    }
+  },
+  "6601": {
+    "id": 116854,
+    "index": 0,
+    "spell": {
+      "id": 300470,
+      "name": "Shroud of Resolve",
+      "icon": "inv_misc_cape_deathwingraid_d_03"
+    }
+  },
+  "6602": {
+    "id": 116854,
+    "index": 0,
+    "spell": {
+      "id": 300470,
+      "name": "Shroud of Resolve",
+      "icon": "inv_misc_cape_deathwingraid_d_03"
+    }
+  },
+  "6603": {
+    "id": 116854,
+    "index": 0,
+    "spell": {
+      "id": 300470,
+      "name": "Shroud of Resolve",
+      "icon": "inv_misc_cape_deathwingraid_d_03"
+    }
+  },
+  "6653": {
+    "id": 117295,
+    "index": 0
+  },
+  "6669": {
+    "id": 117297,
+    "index": 0
+  },
+  "6670": {
+    "id": 117298,
+    "index": 0
+  },
+  "6671": {
+    "id": 117299,
+    "index": 0
+  },
+  "6678": {
+    "id": 117300,
+    "index": 0
+  },
+  "6679": {
+    "id": 117301,
+    "index": 0
+  },
+  "6680": {
+    "id": 117302,
+    "index": 0
+  },
+  "6681": {
+    "id": 117368,
+    "index": 0,
+    "spell": {
+      "id": 324375,
+      "name": "Alchemical Longevity",
+      "icon": "inv_alchemy_80_flask01orange"
+    }
+  },
+  "6684": {
+    "id": 117326,
+    "index": 0
+  },
+  "6685": {
+    "id": 117330,
+    "index": 0
+  },
+  "6686": {
+    "id": 117329,
+    "index": 0
+  },
+  "6687": {
+    "id": 117328,
+    "index": 0
+  },
+  "6690": {
+    "id": 117327,
+    "index": 0
+  },
+  "6720": {
+    "id": 117369,
+    "index": 0,
+    "spell": {
+      "id": 324376,
+      "name": "Culinary Longevity",
+      "icon": "inv_holiday_beerfestsausage04"
+    }
+  },
+  "6721": {
+    "id": 117371,
+    "index": 0
+  },
+  "6722": {
+    "id": 117374,
+    "index": 0
+  },
+  "6723": {
+    "id": 117373,
+    "index": 0
+  },
+  "6724": {
+    "id": 117372,
+    "index": 0
+  },
+  "6725": {
+    "id": 117370,
+    "index": 0
+  },
+  "6726": {
+    "id": 117327,
+    "index": 0
+  },
+  "6727": {
+    "id": 117327,
+    "index": 0
+  },
+  "6728": {
+    "id": 117327,
+    "index": 0
+  },
+  "6729": {
+    "id": 117327,
+    "index": 0
+  },
+  "6730": {
+    "id": 117327,
+    "index": 0
+  },
+  "6731": {
+    "id": 117329,
+    "index": 0
+  },
+  "6732": {
+    "id": 117329,
+    "index": 0
+  },
+  "6733": {
+    "id": 117329,
+    "index": 0
+  },
+  "6734": {
+    "id": 117329,
+    "index": 0
+  },
+  "6735": {
+    "id": 117329,
+    "index": 0
+  },
+  "6737": {
+    "id": 117328,
+    "index": 0
+  },
+  "6738": {
+    "id": 117328,
+    "index": 0
+  },
+  "6739": {
+    "id": 117328,
+    "index": 0
+  },
+  "6740": {
+    "id": 117328,
+    "index": 0
+  },
+  "6743": {
+    "id": 117382,
+    "index": 0
+  },
+  "6823": {
+    "id": 117575,
+    "index": 0,
+    "spell": {
+      "id": 327508,
+      "name": "Slick Ice",
+      "icon": "inv_enchant_shardshadowfrostlarge"
+    }
+  },
+  "6828": {
+    "id": 117914,
+    "index": 0,
+    "spell": {
+      "id": 327284,
+      "name": "Cold Front",
+      "icon": "ability_mage_coldasice"
+    }
+  },
+  "6829": {
+    "id": 117915,
+    "index": 0,
+    "spell": {
+      "id": 327364,
+      "name": "Freezing Winds",
+      "icon": "spell_shadow_soulleech_2"
+    }
+  },
+  "6830": {
+    "id": 117916,
+    "index": 0,
+    "spell": {
+      "id": 327492,
+      "name": "Glacial Fragments",
+      "icon": "artifactability_frostmage_blackicicles"
+    }
+  },
+  "6831": {
+    "id": 117917,
+    "index": 0,
+    "spell": {
+      "id": 327489,
+      "name": "Expanded Potential",
+      "icon": "ability_mage_potentspirit"
+    }
+  },
+  "6832": {
+    "id": 117918,
+    "index": 0,
+    "spell": {
+      "id": 327365,
+      "name": "Disciplinary Command",
+      "icon": "spell_fire_masterofelements"
+    }
+  },
+  "6833": {
+    "id": 117919,
+    "index": 0,
+    "spell": {
+      "id": 327273,
+      "name": "Elemental Redirection",
+      "icon": "trade_engineering"
+    }
+  },
+  "6834": {
+    "id": 117920,
+    "index": 0,
+    "spell": {
+      "id": 327351,
+      "name": "Temporal Warp",
+      "icon": "ability_bossmagistrix_timewarp2"
+    }
+  },
+  "6899": {
+    "id": 117932,
+    "index": 0,
+    "spell": {
+      "id": 329049,
+      "name": "Luxurious Feather",
+      "icon": "inv_icon_feather01a"
+    }
+  },
+  "6900": {
+    "id": 117933,
+    "index": 0,
+    "spell": {
+      "id": 329058,
+      "name": "Shadowy Rabbit's Paw",
+      "icon": "inv_misc_wolffoot_black"
+    }
+  },
+  "6904": {
+    "id": 117952,
+    "index": 0
+  },
+  "6905": {
+    "id": 117945,
+    "index": 0,
+    "spell": {
+      "id": 329169,
+      "name": "Hydrodynamic Accelerator",
+      "icon": "inv_engineering_gravitationalreductionslippers"
+    }
+  },
+  "6906": {
+    "id": 117951,
+    "index": 0
+  },
+  "6915": {
+    "id": 125523,
+    "index": 2,
+    "spell": {
+      "id": 330765,
+      "name": "Unbound Changeling",
+      "icon": "spell_animaardenweald_nova"
+    }
+  },
+  "6916": {
+    "id": 125525,
+    "index": 2,
+    "spell": {
+      "id": 330080,
+      "name": "Unbound Changeling",
+      "icon": "inv_pet_spectralporcupinered"
+    }
+  },
+  "6917": {
+    "id": 125526,
+    "index": 2,
+    "spell": {
+      "id": 330733,
+      "name": "Unbound Changeling",
+      "icon": "inv_pet_spectralporcupinegreen"
+    }
+  },
+  "6918": {
+    "id": 125527,
+    "index": 2,
+    "spell": {
+      "id": 330734,
+      "name": "Unbound Changeling",
+      "icon": "inv_pet_spectralporcupineblue"
+    }
+  },
+  "6920": {
+    "id": 125657,
+    "index": 2,
+    "spell": {
+      "id": 332299,
+      "name": "Mistcaller Ocarina",
+      "icon": "inv_misc_primitive_toy03"
+    }
+  },
+  "6921": {
+    "id": 125658,
+    "index": 2,
+    "spell": {
+      "id": 332300,
+      "name": "Mistcaller Ocarina",
+      "icon": "inv_misc_primitive_toy03"
+    }
+  },
+  "6922": {
+    "id": 125659,
+    "index": 2,
+    "spell": {
+      "id": 332301,
+      "name": "Mistcaller Ocarina",
+      "icon": "inv_misc_primitive_toy03"
+    }
+  },
+  "6923": {
+    "id": 125660,
+    "index": 2,
+    "spell": {
+      "id": 330067,
+      "name": "Mistcaller Ocarina",
+      "icon": "inv_misc_primitive_toy03"
+    }
+  },
+  "6924": {
+    "id": 125672,
+    "index": 0,
+    "spell": {
+      "id": 332618,
+      "name": "Reinforced Girdle",
+      "icon": "inv_belt_27"
+    }
+  },
+  "6925": {
+    "id": 125673,
+    "index": 0,
+    "spell": {
+      "id": 332684,
+      "name": "Craftsman's Pouch",
+      "icon": "trade_engineering"
+    }
+  },
+  "6926": {
+    "id": 125679,
+    "index": 0,
+    "spell": {
+      "id": 332769,
+      "name": "Arcane Harmony",
+      "icon": "ability_creature_cursed_04"
+    }
+  },
+  "6927": {
+    "id": 125682,
+    "index": 0,
+    "spell": {
+      "id": 332892,
+      "name": "Arcane Bombardment",
+      "icon": "ability_mage_arcanebarrage"
+    }
+  },
+  "6928": {
+    "id": 125683,
+    "index": 0,
+    "spell": {
+      "id": 332928,
+      "name": "Siphon Storm",
+      "icon": "ability_monk_forcesphere_arcane"
+    }
+  },
+  "6929": {
+    "id": 125684,
+    "index": 0,
+    "spell": {
+      "id": 332950,
+      "name": "Fire Proc (DNT)",
+      "icon": "trade_engineering"
+    }
+  },
+  "6930": {
+    "id": 125685,
+    "index": 0,
+    "spell": {
+      "id": 332979,
+      "name": "Necrostatic Micro Capacitor",
+      "icon": "trade_engineering"
+    }
+  },
+  "6931": {
+    "id": 125686,
+    "index": 0,
+    "spell": {
+      "id": 333030,
+      "name": "Fevered Incantation",
+      "icon": "inv_misc_enchantedpearld"
+    }
+  },
+  "6932": {
+    "id": 125690,
+    "index": 0,
+    "spell": {
+      "id": 333097,
+      "name": "Firestorm",
+      "icon": "spell_fire_burnout"
+    }
+  },
+  "6933": {
+    "id": 125696,
+    "index": 0,
+    "spell": {
+      "id": 333167,
+      "name": "Molten Skyfall",
+      "icon": "spell_mage_meteor"
+    }
+  },
+  "6934": {
+    "id": 125702,
+    "index": 0,
+    "spell": {
+      "id": 333313,
+      "name": "Sun King's Blessing",
+      "icon": "ability_mage_firestarter"
+    }
+  },
+  "6936": {
+    "id": 125705,
+    "index": 0,
+    "spell": {
+      "id": 333373,
+      "name": "Triune Ward",
+      "icon": "inv_jewelry_amulet_01"
+    }
+  },
+  "6937": {
+    "id": 125707,
+    "index": 0,
+    "spell": {
+      "id": 333393,
+      "name": "Grisly Icicle",
+      "icon": "inv_weapon_shortblade_84"
+    }
+  },
+  "6940": {
+    "id": 125901,
+    "index": 0,
+    "spell": {
+      "id": 334501,
+      "name": "Bryndaor's Might",
+      "icon": "ability_creature_cursed_04"
+    }
+  },
+  "6941": {
+    "id": 125903,
+    "index": 0,
+    "spell": {
+      "id": 334525,
+      "name": "Crimson Rune Weapon",
+      "icon": "70_inscription_vantus_rune_nightmare"
+    }
+  },
+  "6942": {
+    "id": 125912,
+    "index": 0,
+    "spell": {
+      "id": 334547,
+      "name": "Vampiric Aura",
+      "icon": "spell_shadow_lifedrain"
+    }
+  },
+  "6943": {
+    "id": 125913,
+    "index": 0,
+    "spell": {
+      "id": 334580,
+      "name": "Gorefiend's Domination",
+      "icon": "ability_butcher_exsanguination"
+    }
+  },
+  "6944": {
+    "id": 125914,
+    "index": 0,
+    "spell": {
+      "id": 334583,
+      "name": "Koltira's Favor",
+      "icon": "spell_shadow_focusedpower"
+    }
+  },
+  "6945": {
+    "id": 125915,
+    "index": 0,
+    "spell": {
+      "id": 334678,
+      "name": "Biting Cold",
+      "icon": "ability_deathknight_remorselesswinters2"
+    }
+  },
+  "6946": {
+    "id": 125916,
+    "index": 0,
+    "spell": {
+      "id": 334692,
+      "name": "Absolute Zero",
+      "icon": "spell_frost_frostnova"
+    }
+  },
+  "6947": {
+    "id": 125919,
+    "index": 0,
+    "spell": {
+      "id": 334728,
+      "name": "Death's Embrace",
+      "icon": "ability_deathknight_deathsiphon2"
+    }
+  },
+  "6948": {
+    "id": 125929,
+    "index": 0,
+    "spell": {
+      "id": 334724,
+      "name": "Grip of the Everlasting",
+      "icon": "ability_deathknight_icygrip"
+    }
+  },
+  "6949": {
+    "id": 125933,
+    "index": 0,
+    "spell": {
+      "id": 334836,
+      "name": "Reanimated Shambler",
+      "icon": "spell_holy_turnundead"
+    }
+  },
+  "6950": {
+    "id": 125936,
+    "index": 0,
+    "spell": {
+      "id": 334888,
+      "name": "Frenzied Monstrosity",
+      "icon": "ability_warlock_baneofhavoc"
+    }
+  },
+  "6951": {
+    "id": 125937,
+    "index": 0,
+    "spell": {
+      "id": 334898,
+      "name": "Death's Certainty",
+      "icon": "ability_warrior_unrelentingassault"
+    }
+  },
+  "6952": {
+    "id": 125939,
+    "index": 0,
+    "spell": {
+      "id": 334949,
+      "name": "Deadliest Coil",
+      "icon": "spell_shadow_deathcoil"
+    }
+  },
+  "6953": {
+    "id": 125950,
+    "index": 0,
+    "spell": {
+      "id": 334974,
+      "name": "Superstrain",
+      "icon": "spell_deathknight_explode_ghoul"
+    }
+  },
+  "6954": {
+    "id": 125984,
+    "index": 0,
+    "spell": {
+      "id": 335177,
+      "name": "Phearomones",
+      "icon": "spell_shadow_auraofdarkness"
+    }
+  },
+  "6955": {
+    "id": 125986,
+    "index": 0,
+    "spell": {
+      "id": 335214,
+      "name": "Leaper",
+      "icon": "ability_vehicle_launchplayer"
+    }
+  },
+  "6956": {
+    "id": 125989,
+    "index": 0,
+    "spell": {
+      "id": 335229,
+      "name": "Thunderlord",
+      "icon": "ability_vehicle_electrocharge"
+    }
+  },
+  "6957": {
+    "id": 125992,
+    "index": 0,
+    "spell": {
+      "id": 335239,
+      "name": "The Wall",
+      "icon": "ability_warrior_shieldguard"
+    }
+  },
+  "6958": {
+    "id": 125994,
+    "index": 0,
+    "spell": {
+      "id": 335253,
+      "name": "Misshapen Mirror",
+      "icon": "inv_spiritshard_02"
+    }
+  },
+  "6959": {
+    "id": 125998,
+    "index": 0,
+    "spell": {
+      "id": 335266,
+      "name": "Signet of Tormented Kings",
+      "icon": "inv_60crafted_ring4b"
+    }
+  },
+  "6960": {
+    "id": 126000,
+    "index": 0,
+    "spell": {
+      "id": 335274,
+      "name": "Battlelord",
+      "icon": "ability_pvp_hardiness"
+    }
+  },
+  "6961": {
+    "id": 126004,
+    "index": 0,
+    "spell": {
+      "id": 335451,
+      "name": "Exploiter",
+      "icon": "inv_sword_48"
+    }
+  },
+  "6962": {
+    "id": 126005,
+    "index": 0,
+    "spell": {
+      "id": 335458,
+      "name": "Enduring Blow",
+      "icon": "ability_titankeeper_piercingcorruption"
+    }
+  },
+  "6963": {
+    "id": 126009,
+    "index": 0,
+    "spell": {
+      "id": 335555,
+      "name": "Cadence of Fujieda",
+      "icon": "ability_garrosh_hellscreams_warsong"
+    }
+  },
+  "6964": {
+    "id": 126010,
+    "index": 0,
+    "spell": {
+      "id": 335567,
+      "name": "Deathmaker",
+      "icon": "ability_warrior_warbringer"
+    }
+  },
+  "6965": {
+    "id": 126011,
+    "index": 0,
+    "spell": {
+      "id": 335582,
+      "name": "Reckless Defense",
+      "icon": "spell_warrior_paintrain"
+    }
+  },
+  "6966": {
+    "id": 126014,
+    "index": 0,
+    "spell": {
+      "id": 335594,
+      "name": "Will of the Berserker",
+      "icon": "inv_helm_laughingskull_01"
+    }
+  },
+  "6967": {
+    "id": 126021,
+    "index": 0,
+    "spell": {
+      "id": 335629,
+      "name": "Unbreakable Will",
+      "icon": "ability_warrior_stalwartprotector"
+    }
+  },
+  "6968": {
+    "id": 116794,
+    "index": 2,
+    "spell": {
+      "id": 318280,
+      "name": "Echoing Void",
+      "icon": "ability_priest_voidentropy"
+    }
+  },
+  "6969": {
+    "id": 126030,
+    "index": 0,
+    "spell": {
+      "id": 335718,
+      "name": "Reprisal",
+      "icon": "ability_warrior_unrelentingassault"
+    }
+  },
+  "6970": {
+    "id": 126031,
+    "index": 0,
+    "spell": {
+      "id": 335282,
+      "name": "Unhinged",
+      "icon": "ability_warrior_savageblow"
+    }
+  },
+  "6971": {
+    "id": 126038,
+    "index": 0,
+    "spell": {
+      "id": 335758,
+      "name": "Seismic Reverberation",
+      "icon": "ability_warrior_bloodnova"
+    }
+  },
+  "6972": {
+    "id": 126134,
+    "index": 0,
+    "spell": {
+      "id": 336470,
+      "name": "Vault of Heavens",
+      "icon": "priest_spell_leapoffaith_b"
+    }
+  },
+  "6973": {
+    "id": 126160,
+    "index": 0,
+    "spell": {
+      "id": 336400,
+      "name": "Divine Image",
+      "icon": "inv_pet_naaru"
+    }
+  },
+  "6974": {
+    "id": 126162,
+    "index": 0,
+    "spell": {
+      "id": 336266,
+      "name": "Flash Concentration",
+      "icon": "ability_priest_flashoflight"
+    }
+  },
+  "6975": {
+    "id": 126163,
+    "index": 0,
+    "spell": {
+      "id": 336370,
+      "name": "Cauterizing Shadows",
+      "icon": "spell_shadow_twistedfaith"
+    }
+  },
+  "6976": {
+    "id": 126164,
+    "index": 0,
+    "spell": {
+      "id": 336011,
+      "name": "The Penitent One",
+      "icon": "spell_holy_penance"
+    }
+  },
+  "6977": {
+    "id": 126165,
+    "index": 0,
+    "spell": {
+      "id": 336314,
+      "name": "Harmonious Apparatus",
+      "icon": "spell_holy_serendipity"
+    }
+  },
+  "6978": {
+    "id": 126166,
+    "index": 0,
+    "spell": {
+      "id": 336507,
+      "name": "Crystalline Reflection",
+      "icon": "ability_priest_reflectiveshield"
+    }
+  },
+  "6979": {
+    "id": 126167,
+    "index": 0,
+    "spell": {
+      "id": 336133,
+      "name": "Kiss of Death",
+      "icon": "inv_offhand_1h_zuldazarraid_d_02"
+    }
+  },
+  "6980": {
+    "id": 126168,
+    "index": 0,
+    "spell": {
+      "id": 336067,
+      "name": "Clarity of Mind",
+      "icon": "spell_holy_spiritualguidence"
+    }
+  },
+  "6981": {
+    "id": 126169,
+    "index": 0,
+    "spell": {
+      "id": 336165,
+      "name": "Painbreaker Psalm",
+      "icon": "inv_misc_scrollunrolled01d"
+    }
+  },
+  "6982": {
+    "id": 126170,
+    "index": 0,
+    "spell": {
+      "id": 336143,
+      "name": "Shadowflame Prism",
+      "icon": "inv_jewelcrafting_shadowsongamethyst_02"
+    }
+  },
+  "6983": {
+    "id": 126172,
+    "index": 0,
+    "spell": {
+      "id": 336214,
+      "name": "Eternal Call to the Void",
+      "icon": "achievement_boss_yoggsaron_01"
+    }
+  },
+  "6984": {
+    "id": 126174,
+    "index": 0,
+    "spell": {
+      "id": 337477,
+      "name": "X'anshi, Return of Archbishop Benedictus",
+      "icon": "inv_cape_mail_legiondungeon_c_03"
+    }
+  },
+  "6985": {
+    "id": 126176,
+    "index": 0,
+    "spell": {
+      "id": 336741,
+      "name": "Ancestral Reminder",
+      "icon": "spell_shaman_ancestralawakening"
+    }
+  },
+  "6986": {
+    "id": 126177,
+    "index": 0,
+    "spell": {
+      "id": 336739,
+      "name": "Deeptremor Stone",
+      "icon": "spell_nature_earthelemental_totem"
+    }
+  },
+  "6987": {
+    "id": 126178,
+    "index": 0,
+    "spell": {
+      "id": 336738,
+      "name": "Deeply Rooted Elements",
+      "icon": "inv_misc_herb_liferoot_stem"
+    }
+  },
+  "6988": {
+    "id": 126179,
+    "index": 0,
+    "spell": {
+      "id": 336735,
+      "name": "Chains of Devastation",
+      "icon": "spell_nature_chainlightning"
+    }
+  },
+  "6989": {
+    "id": 126180,
+    "index": 0,
+    "spell": {
+      "id": 336734,
+      "name": "Skybreaker's Fiery Demise",
+      "icon": "spell_fire_elemental_totem"
+    }
+  },
+  "6990": {
+    "id": 126181,
+    "index": 0,
+    "spell": {
+      "id": 336730,
+      "name": "Elemental Equilibrium",
+      "icon": "ability_shaman_ascendance"
+    }
+  },
+  "6991": {
+    "id": 126182,
+    "index": 0,
+    "spell": {
+      "id": 336215,
+      "name": "Echoes of Great Sundering",
+      "icon": "spell_shaman_earthquake"
+    }
+  },
+  "6992": {
+    "id": 126183,
+    "index": 0,
+    "spell": {
+      "id": 336063,
+      "name": "Windspeaker's Lava Resurgence",
+      "icon": "spell_shaman_lavaburst"
+    }
+  },
+  "6993": {
+    "id": 126184,
+    "index": 0,
+    "spell": {
+      "id": 335902,
+      "name": "Doom Winds",
+      "icon": "ability_ironmaidens_swirlingvortex"
+    }
+  },
+  "6994": {
+    "id": 126185,
+    "index": 0,
+    "spell": {
+      "id": 335899,
+      "name": "Legacy of the Frost Witch",
+      "icon": "ability_thunderking_thunderstruck"
+    }
+  },
+  "6995": {
+    "id": 126186,
+    "index": 0,
+    "spell": {
+      "id": 335897,
+      "name": "Witch Doctor's Wolf Bones",
+      "icon": "inv_misc_bone_09"
+    }
+  },
+  "6996": {
+    "id": 126187,
+    "index": 0,
+    "spell": {
+      "id": 335895,
+      "name": "Primal Lava Actuators",
+      "icon": "spell_shaman_stormearthfire"
+    }
+  },
+  "6997": {
+    "id": 126188,
+    "index": 0,
+    "spell": {
+      "id": 335893,
+      "name": "Jonat's Natural Focus",
+      "icon": "spell_nature_healingwavegreater"
+    }
+  },
+  "6998": {
+    "id": 126189,
+    "index": 0,
+    "spell": {
+      "id": 335891,
+      "name": "Spiritwalker's Tidal Totem",
+      "icon": "spell_frost_summonwaterelemental"
+    }
+  },
+  "6999": {
+    "id": 126190,
+    "index": 0,
+    "spell": {
+      "id": 335889,
+      "name": "Primal Tide Core",
+      "icon": "ability_shaman_repulsiontotem"
+    }
+  },
+  "7000": {
+    "id": 126191,
+    "index": 0,
+    "spell": {
+      "id": 335886,
+      "name": "Earthen Harmony",
+      "icon": "item_earthenmight"
+    }
+  },
+  "7002": {
+    "id": 126211,
+    "index": 0,
+    "spell": {
+      "id": 336897,
+      "name": "Twins of the Sun Priestess",
+      "icon": "spell_fire_felflamering_red"
+    }
+  },
+  "7003": {
+    "id": 126212,
+    "index": 0,
+    "spell": {
+      "id": 336742,
+      "name": "Call of the Wild",
+      "icon": "ability_hunter_invigeration"
+    }
+  },
+  "7004": {
+    "id": 126213,
+    "index": 0,
+    "spell": {
+      "id": 336743,
+      "name": "Nesingwary's Trapping Apparatus",
+      "icon": "ability_hunter_steeltrap"
+    }
+  },
+  "7005": {
+    "id": 126214,
+    "index": 0,
+    "spell": {
+      "id": 336745,
+      "name": "Soulforge Embers",
+      "icon": "ability_warlock_burningembers"
+    }
+  },
+  "7006": {
+    "id": 126215,
+    "index": 0,
+    "spell": {
+      "id": 336747,
+      "name": "Craven Strategem",
+      "icon": "ability_rogue_feigndeath"
+    }
+  },
+  "7007": {
+    "id": 126216,
+    "index": 0,
+    "spell": {
+      "id": 336819,
+      "name": "Dire Command",
+      "icon": "ability_hunter_sickem"
+    }
+  },
+  "7008": {
+    "id": 126217,
+    "index": 0,
+    "spell": {
+      "id": 336822,
+      "name": "Flamewaker's Cobra Sting",
+      "icon": "ability_hunter_cobrashot"
+    }
+  },
+  "7009": {
+    "id": 126218,
+    "index": 0,
+    "spell": {
+      "id": 336830,
+      "name": "Qa'pla, Eredun War Order",
+      "icon": "ability_hunter_barbedshot"
+    }
+  },
+  "7010": {
+    "id": 126219,
+    "index": 0,
+    "spell": {
+      "id": 336844,
+      "name": "Rylakstalker's Piercing Fangs",
+      "icon": "inv_misc_monsterfang_02"
+    }
+  },
+  "7011": {
+    "id": 126220,
+    "index": 0,
+    "spell": {
+      "id": 336849,
+      "name": "Eagletalon's True Focus",
+      "icon": "ability_hunter_aspectoftheironhawk"
+    }
+  },
+  "7012": {
+    "id": 126221,
+    "index": 0,
+    "spell": {
+      "id": 336867,
+      "name": "Surging Shots",
+      "icon": "ability_hunter_resistanceisfutile"
+    }
+  },
+  "7013": {
+    "id": 126222,
+    "index": 0,
+    "spell": {
+      "id": 336870,
+      "name": "Serpentstalker's Trickery",
+      "icon": "inv_spear_07"
+    }
+  },
+  "7014": {
+    "id": 126223,
+    "index": 0,
+    "spell": {
+      "id": 336878,
+      "name": "Secrets of the Unblinking Vigil",
+      "icon": "inv_trickshot"
+    }
+  },
+  "7015": {
+    "id": 126224,
+    "index": 0,
+    "spell": {
+      "id": 336895,
+      "name": "Wildfire Cluster",
+      "icon": "inv_eng_bombfire"
+    }
+  },
+  "7016": {
+    "id": 126225,
+    "index": 0,
+    "spell": {
+      "id": 336901,
+      "name": "Rylakstalker's Confounding Strikes",
+      "icon": "ability_searingarrow"
+    }
+  },
+  "7017": {
+    "id": 126226,
+    "index": 0,
+    "spell": {
+      "id": 336902,
+      "name": "Latent Poison Injectors",
+      "icon": "ability_poisonarrow"
+    }
+  },
+  "7018": {
+    "id": 126227,
+    "index": 0,
+    "spell": {
+      "id": 336907,
+      "name": "Butcher's Bone Fragments",
+      "icon": "inv_skinning_80_bloodsoakedbone"
+    }
+  },
+  "7025": {
+    "id": 126293,
+    "index": 0,
+    "spell": {
+      "id": 337020,
+      "name": "Wilfred's Sigil of Superior Summoning",
+      "icon": "spell_warlock_demonicportal_purple"
+    }
+  },
+  "7026": {
+    "id": 126294,
+    "index": 0,
+    "spell": {
+      "id": 337038,
+      "name": "Claw of Endereth",
+      "icon": "inv_flaming_splinter"
+    }
+  },
+  "7027": {
+    "id": 126295,
+    "index": 0,
+    "spell": {
+      "id": 337057,
+      "name": "Relic of Demonic Synergy",
+      "icon": "spell_shadow_rune"
+    }
+  },
+  "7028": {
+    "id": 126297,
+    "index": 0,
+    "spell": {
+      "id": 337065,
+      "name": "Pillars of the Dark Portal",
+      "icon": "spell_warlock_demonicportal_green"
+    }
+  },
+  "7029": {
+    "id": 126299,
+    "index": 0,
+    "spell": {
+      "id": 337106,
+      "name": "Perpetual Agony of Azj'Aqir",
+      "icon": "spell_shadow_painandsuffering"
+    }
+  },
+  "7030": {
+    "id": 126301,
+    "index": 0,
+    "spell": {
+      "id": 337111,
+      "name": "Sacrolash's Dark Strike",
+      "icon": "spell_nzinsanity_fearofdeath"
+    }
+  },
+  "7031": {
+    "id": 126303,
+    "index": 0,
+    "spell": {
+      "id": 337122,
+      "name": "Malefic Wrath",
+      "icon": "spell_shadow_soulleech_3"
+    }
+  },
+  "7032": {
+    "id": 126305,
+    "index": 0,
+    "spell": {
+      "id": 337128,
+      "name": "Wrath of Consumption",
+      "icon": "spell_nature_drowsy"
+    }
+  },
+  "7033": {
+    "id": 126306,
+    "index": 0,
+    "spell": {
+      "id": 337135,
+      "name": "Implosive Potential",
+      "icon": "spell_warlock_summonimpoutland"
+    }
+  },
+  "7034": {
+    "id": 126307,
+    "index": 0,
+    "spell": {
+      "id": 337141,
+      "name": "Grim Inquisitor's Dread Calling",
+      "icon": "spell_warlock_calldreadstalkers"
+    }
+  },
+  "7035": {
+    "id": 126308,
+    "index": 0,
+    "spell": {
+      "id": 337146,
+      "name": "Forces of the Horned Nightmare",
+      "icon": "ability_warlock_handofguldan"
+    }
+  },
+  "7036": {
+    "id": 126309,
+    "index": 0,
+    "spell": {
+      "id": 337159,
+      "name": "Balespider's Burning Core",
+      "icon": "inv_trinket_firelands_02"
+    }
+  },
+  "7037": {
+    "id": 126310,
+    "index": 0,
+    "spell": {
+      "id": 337163,
+      "name": "Odr, Shawl of the Ymirjar",
+      "icon": "inv_cape_pandariapvp_d_01"
+    }
+  },
+  "7038": {
+    "id": 126311,
+    "index": 0,
+    "spell": {
+      "id": 337166,
+      "name": "Cinders of the Azj'Aqir",
+      "icon": "spell_fire_fireball"
+    }
+  },
+  "7039": {
+    "id": 126312,
+    "index": 0,
+    "spell": {
+      "id": 337169,
+      "name": "Madness of the Azj'Aqir",
+      "icon": "ability_warlock_chaosbolt"
+    }
+  },
+  "7040": {
+    "id": 126314,
+    "index": 0,
+    "spell": {
+      "id": 337272,
+      "name": "Embers of the Diabolic Raiment",
+      "icon": "inv_shoulder_robe_raidmage_j_01"
+    }
+  },
+  "7041": {
+    "id": 126324,
+    "index": 0,
+    "spell": {
+      "id": 337504,
+      "name": "Collective Anguish",
+      "icon": "artifactability_havocdemonhunter_anguishofthedeceiver"
+    }
+  },
+  "7042": {
+    "id": 126325,
+    "index": 0,
+    "spell": {
+      "id": 337532,
+      "name": "Half-Giant Empowerment",
+      "icon": "inv_archaeology_ogres_hargunn_eye"
+    }
+  },
+  "7043": {
+    "id": 126326,
+    "index": 0,
+    "spell": {
+      "id": 337534,
+      "name": "Darkglare Boon",
+      "icon": "inv_jewelry_necklace_53"
+    }
+  },
+  "7044": {
+    "id": 126327,
+    "index": 0,
+    "spell": {
+      "id": 337539,
+      "name": "Darkest Hour",
+      "icon": "ability_demonhunter_darkness"
+    }
+  },
+  "7045": {
+    "id": 126328,
+    "index": 0,
+    "spell": {
+      "id": 337541,
+      "name": "Spirit of the Darkness Flame",
+      "icon": "inv_misc_head_dragon_blue_nightmare"
+    }
+  },
+  "7046": {
+    "id": 126329,
+    "index": 0,
+    "spell": {
+      "id": 337544,
+      "name": "Razelikh's Defilement",
+      "icon": "ability_demonhunter_concentratedsigils"
+    }
+  },
+  "7047": {
+    "id": 126330,
+    "index": 0,
+    "spell": {
+      "id": 337545,
+      "name": "Fel Flame Fortification",
+      "icon": "spell_fire_felfire"
+    }
+  },
+  "7048": {
+    "id": 126331,
+    "index": 0,
+    "spell": {
+      "id": 337547,
+      "name": "Fiery Soul",
+      "icon": "inv__felbarrage"
+    }
+  },
+  "7049": {
+    "id": 126332,
+    "index": 0,
+    "spell": {
+      "id": 337548,
+      "name": "Inner Demons",
+      "icon": "ability_demonhunter_glide"
+    }
+  },
+  "7050": {
+    "id": 126333,
+    "index": 0,
+    "spell": {
+      "id": 337551,
+      "name": "Chaos Theory",
+      "icon": "inv_glaive_1h_artifactaldrochi_d_03dual"
+    }
+  },
+  "7051": {
+    "id": 126352,
+    "index": 0,
+    "spell": {
+      "id": 337685,
+      "name": "Erratic Fel Core",
+      "icon": "inv_archaeology_70_crystallineeyeofundravius"
+    }
+  },
+  "7052": {
+    "id": 126353,
+    "index": 0,
+    "spell": {
+      "id": 337775,
+      "name": "Fel Bombardment",
+      "icon": "inv_glaive_1h_npc_c_02"
+    }
+  },
+  "7053": {
+    "id": 126364,
+    "index": 0,
+    "spell": {
+      "id": 337600,
+      "name": "Uther's Devotion",
+      "icon": "spell_holy_greaterblessingofsalvation"
+    }
+  },
+  "7054": {
+    "id": 126365,
+    "index": 0,
+    "spell": {
+      "id": 337594,
+      "name": "The Mad Paragon",
+      "icon": "ability_paladin_conviction"
+    }
+  },
+  "7055": {
+    "id": 126366,
+    "index": 0,
+    "spell": {
+      "id": 337746,
+      "name": "Of Dusk and Dawn",
+      "icon": "spell_paladin_lightofdawn"
+    }
+  },
+  "7056": {
+    "id": 126367,
+    "index": 0,
+    "spell": {
+      "id": 337681,
+      "name": "The Magistrate's Judgment",
+      "icon": "ability_paladin_judgementsofthejust"
+    }
+  },
+  "7057": {
+    "id": 126368,
+    "index": 0,
+    "spell": {
+      "id": 337812,
+      "name": "Shadowbreaker, Dawn of the Sun",
+      "icon": "spell_paladin_clarityofpurpose"
+    }
+  },
+  "7058": {
+    "id": 126369,
+    "index": 0,
+    "spell": {
+      "id": 337777,
+      "name": "Inflorescence of the Sunwell",
+      "icon": "spell_lfieblood"
+    }
+  },
+  "7059": {
+    "id": 126370,
+    "index": 0,
+    "spell": {
+      "id": 337825,
+      "name": "Shock Barrier",
+      "icon": "spell_holy_greaterblessingoflight"
+    }
+  },
+  "7060": {
+    "id": 126371,
+    "index": 0,
+    "spell": {
+      "id": 337831,
+      "name": "Holy Avenger's Engraved Sigil",
+      "icon": "ability_bossfelmagnaron_runeempowered"
+    }
+  },
+  "7061": {
+    "id": 126372,
+    "index": 0,
+    "spell": {
+      "id": 337838,
+      "name": "The Ardent Protector's Sanctum",
+      "icon": "spell_holy_ardentdefender"
+    }
+  },
+  "7062": {
+    "id": 126373,
+    "index": 0,
+    "spell": {
+      "id": 337847,
+      "name": "Bulwark of Righteous Fury",
+      "icon": "spell_holy_sealofrighteousness"
+    }
+  },
+  "7063": {
+    "id": 126374,
+    "index": 0,
+    "spell": {
+      "id": 337850,
+      "name": "Reign of Endless Kings",
+      "icon": "ability_paladin_holyavenger"
+    }
+  },
+  "7064": {
+    "id": 126375,
+    "index": 0,
+    "spell": {
+      "id": 337247,
+      "name": "Final Verdict",
+      "icon": "spell_paladin_templarsverdict"
+    }
+  },
+  "7065": {
+    "id": 126376,
+    "index": 0,
+    "spell": {
+      "id": 337638,
+      "name": "Vanguard's Momentum",
+      "icon": "ability_paladin_speedoflight"
+    }
+  },
+  "7066": {
+    "id": 126377,
+    "index": 0,
+    "spell": {
+      "id": 337297,
+      "name": "Relentless Inquisitor",
+      "icon": "spell_holy_divinepurpose"
+    }
+  },
+  "7067": {
+    "id": 126378,
+    "index": 0,
+    "spell": {
+      "id": 337257,
+      "name": "Tempest of the Lightbringer",
+      "icon": "ability_paladin_divinestorm"
+    }
+  },
+  "7068": {
+    "id": 126404,
+    "index": 0,
+    "spell": {
+      "id": 337334,
+      "name": "Keefer's Skyreach",
+      "icon": "inv__fistofthewhitetiger"
+    }
+  },
+  "7069": {
+    "id": 126405,
+    "index": 0,
+    "spell": {
+      "id": 337292,
+      "name": "Last Emperor's Capacitor",
+      "icon": "ability_warrior_unrelentingassault"
+    }
+  },
+  "7070": {
+    "id": 126416,
+    "index": 0,
+    "spell": {
+      "id": 337481,
+      "name": "Xuen's Battlegear",
+      "icon": "monk_stance_whitetiger"
+    }
+  },
+  "7071": {
+    "id": 126417,
+    "index": 0,
+    "spell": {
+      "id": 337483,
+      "name": "Jade Ignition",
+      "icon": "ability_monk_chiexplosion"
+    }
+  },
+  "7072": {
+    "id": 126425,
+    "index": 0,
+    "spell": {
+      "id": 337473,
+      "name": "Tear of Morning",
+      "icon": "ability_monk_uplift"
+    }
+  },
+  "7073": {
+    "id": 126426,
+    "index": 0,
+    "spell": {
+      "id": 337225,
+      "name": "Yu'lon's Whisper",
+      "icon": "ability_monk_dragonkick"
+    }
+  },
+  "7074": {
+    "id": 126427,
+    "index": 0,
+    "spell": {
+      "id": 337343,
+      "name": "Clouded Focus",
+      "icon": "ability_monk_soothingmists"
+    }
+  },
+  "7075": {
+    "id": 126428,
+    "index": 0,
+    "spell": {
+      "id": 337172,
+      "name": "Ancient Teachings of the Monastery",
+      "icon": "passive_monk_teachingsofmonastery"
+    }
+  },
+  "7076": {
+    "id": 126429,
+    "index": 0,
+    "spell": {
+      "id": 338138,
+      "name": "Charred Passions",
+      "icon": "ability_monk_mightyoxkick"
+    }
+  },
+  "7077": {
+    "id": 126430,
+    "index": 0,
+    "spell": {
+      "id": 337288,
+      "name": "Stormstout's Last Keg",
+      "icon": "achievement_brewery_2"
+    }
+  },
+  "7078": {
+    "id": 126431,
+    "index": 0,
+    "spell": {
+      "id": 337290,
+      "name": "Mighty Pour",
+      "icon": "achievement_faction_brewmaster"
+    }
+  },
+  "7079": {
+    "id": 126432,
+    "index": 0,
+    "spell": {
+      "id": 337570,
+      "name": "Shaohao's Might",
+      "icon": "ability_monk_tigerpalm"
+    }
+  },
+  "7080": {
+    "id": 126433,
+    "index": 0,
+    "spell": {
+      "id": 337294,
+      "name": "Roll Out",
+      "icon": "ability_monk_roll"
+    }
+  },
+  "7081": {
+    "id": 126434,
+    "index": 0,
+    "spell": {
+      "id": 337296,
+      "name": "Fatal Touch",
+      "icon": "ability_monk_touchofdeath"
+    }
+  },
+  "7082": {
+    "id": 126672,
+    "index": 0,
+    "spell": {
+      "id": 337298,
+      "name": "Invoker's Delight",
+      "icon": "inv_inscription_80_warscroll_battleshout"
+    }
+  },
+  "7084": {
+    "id": 126458,
+    "index": 0,
+    "spell": {
+      "id": 338608,
+      "name": "Oath of the Elder Druid",
+      "icon": "spell_holy_blessingofagility"
+    }
+  },
+  "7085": {
+    "id": 126459,
+    "index": 0,
+    "spell": {
+      "id": 338657,
+      "name": "Circle of Life and Death",
+      "icon": "ability_druid_cyclone"
+    }
+  },
+  "7086": {
+    "id": 126460,
+    "index": 0,
+    "spell": {
+      "id": 338658,
+      "name": "Draught of Deep Focus",
+      "icon": "trade_alchemy_dpotion_d12"
+    }
+  },
+  "7087": {
+    "id": 126461,
+    "index": 0,
+    "spell": {
+      "id": 338661,
+      "name": "Oneth's Clear Vision",
+      "icon": "spell_arcane_invocation"
+    }
+  },
+  "7088": {
+    "id": 126462,
+    "index": 0,
+    "spell": {
+      "id": 338668,
+      "name": "Primordial Arcanic Pulsar",
+      "icon": "spell_arcane_arcane03"
+    }
+  },
+  "7089": {
+    "id": 126463,
+    "index": 0,
+    "spell": {
+      "id": 339144,
+      "name": "Cat-Eye Curio",
+      "icon": "inv_jewelcrafting_gem_30"
+    }
+  },
+  "7090": {
+    "id": 126464,
+    "index": 0,
+    "spell": {
+      "id": 339141,
+      "name": "Eye of Fearful Symmetry",
+      "icon": "ability_druid_healinginstincts"
+    }
+  },
+  "7091": {
+    "id": 126465,
+    "index": 0,
+    "spell": {
+      "id": 339139,
+      "name": "Apex Predator's Craving",
+      "icon": "ability_druid_primaltenacity"
+    }
+  },
+  "7092": {
+    "id": 126466,
+    "index": 0,
+    "spell": {
+      "id": 339060,
+      "name": "Luffa-Infused Embrace",
+      "icon": "inv_misc_herb_nightmarevine_stem"
+    }
+  },
+  "7093": {
+    "id": 126467,
+    "index": 0,
+    "spell": {
+      "id": 339063,
+      "name": "The Natural Order's Will",
+      "icon": "ability_druid_fortifiedbark"
+    }
+  },
+  "7094": {
+    "id": 126468,
+    "index": 0,
+    "spell": {
+      "id": 339056,
+      "name": "Ursoc's Fury Remembered",
+      "icon": "achievement_emeraldnightmare_ursoc"
+    }
+  },
+  "7095": {
+    "id": 126469,
+    "index": 0,
+    "spell": {
+      "id": 339062,
+      "name": "Legacy of the Sleeper",
+      "icon": "inv_hand_1h_artifactursoc_d_01"
+    }
+  },
+  "7096": {
+    "id": 126470,
+    "index": 0,
+    "spell": {
+      "id": 339064,
+      "name": "Memory of the Mother Tree",
+      "icon": "spell_druid_rampantgrowth"
+    }
+  },
+  "7097": {
+    "id": 126471,
+    "index": 0,
+    "spell": {
+      "id": 338831,
+      "name": "The Dark Titan's Lesson",
+      "icon": "spell_druid_germination_rejuvenation"
+    }
+  },
+  "7098": {
+    "id": 126472,
+    "index": 0,
+    "spell": {
+      "id": 338829,
+      "name": "Verdant Infusion",
+      "icon": "inv_relics_totemoflife"
+    }
+  },
+  "7099": {
+    "id": 126473,
+    "index": 0,
+    "spell": {
+      "id": 338832,
+      "name": "Vision of Unending Growth",
+      "icon": "achievement_dungeon_everbloom"
+    }
+  },
+  "7100": {
+    "id": 126501,
+    "index": 0,
+    "spell": {
+      "id": 338477,
+      "name": "Echo of Eonar",
+      "icon": "inv_elemental_spiritofharmony_2"
+    }
+  },
+  "7101": {
+    "id": 126502,
+    "index": 0,
+    "spell": {
+      "id": 339344,
+      "name": "Judgment of the Arbiter",
+      "icon": "inv_offhand_1h_artifactdoomhammer_d_02"
+    }
+  },
+  "7102": {
+    "id": 126505,
+    "index": 0,
+    "spell": {
+      "id": 339340,
+      "name": "Norgannon's Sagacity",
+      "icon": "achievement_dungeon_nexus80"
+    }
+  },
+  "7103": {
+    "id": 126506,
+    "index": 0,
+    "spell": {
+      "id": 339348,
+      "name": "Sephuz's Proclamation",
+      "icon": "inv_offhand_1h_deathwingraid_d_01"
+    }
+  },
+  "7104": {
+    "id": 126507,
+    "index": 0,
+    "spell": {
+      "id": 339351,
+      "name": "Stable Phantasma Lure",
+      "icon": "ability_ironmaidens_convulsiveshadows"
+    }
+  },
+  "7105": {
+    "id": 126508,
+    "index": 0,
+    "spell": {
+      "id": 339058,
+      "name": "Third Eye of the Jailer",
+      "icon": "inv_misc_masterofanatomy"
+    }
+  },
+  "7106": {
+    "id": 126509,
+    "index": 0,
+    "spell": {
+      "id": 338743,
+      "name": "Vitality Sacrifice",
+      "icon": "ability_rogue_vendetta"
+    }
+  },
+  "7107": {
+    "id": 126514,
+    "index": 0,
+    "spell": {
+      "id": 339942,
+      "name": "Balance of All Things",
+      "icon": "ability_druid_balanceofpower"
+    }
+  },
+  "7108": {
+    "id": 126550,
+    "index": 0,
+    "spell": {
+      "id": 339949,
+      "name": "Timeworn Dreambinder",
+      "icon": "ability_creature_cursed_04"
+    }
+  },
+  "7109": {
+    "id": 126554,
+    "index": 0,
+    "spell": {
+      "id": 340053,
+      "name": "Frenzyband",
+      "icon": "ability_deathwing_bloodcorruption_earth"
+    }
+  },
+  "7110": {
+    "id": 126557,
+    "index": 0,
+    "spell": {
+      "id": 340059,
+      "name": "Lycara's Fleeting Glimpse",
+      "icon": "spell_unused"
+    }
+  },
+  "7111": {
+    "id": 126561,
+    "index": 0,
+    "spell": {
+      "id": 340076,
+      "name": "Mark of the Master Assassin",
+      "icon": "inv_weapon_shortblade_25"
+    }
+  },
+  "7112": {
+    "id": 126562,
+    "index": 0,
+    "spell": {
+      "id": 340078,
+      "name": "Tiny Toxic Blade",
+      "icon": "ability_rogue_poisonedknife"
+    }
+  },
+  "7113": {
+    "id": 126563,
+    "index": 0,
+    "spell": {
+      "id": 340079,
+      "name": "Essence of Bloodfang",
+      "icon": "spell_shadow_lifedrain"
+    }
+  },
+  "7114": {
+    "id": 126564,
+    "index": 0,
+    "spell": {
+      "id": 340080,
+      "name": "Invigorating Shadowdust",
+      "icon": "ability_vanish"
+    }
+  },
+  "7115": {
+    "id": 126565,
+    "index": 0,
+    "spell": {
+      "id": 340081,
+      "name": "Dashing Scoundrel",
+      "icon": "ability_rogue_venomouswounds"
+    }
+  },
+  "7116": {
+    "id": 126566,
+    "index": 0,
+    "spell": {
+      "id": 340082,
+      "name": "Doomblade",
+      "icon": "ability_deathwing_bloodcorruption_earth"
+    }
+  },
+  "7117": {
+    "id": 126567,
+    "index": 0,
+    "spell": {
+      "id": 340083,
+      "name": "Zoldyck Insignia",
+      "icon": "archaeology_5_0_thunderkinginsignia"
+    }
+  },
+  "7118": {
+    "id": 126568,
+    "index": 0,
+    "spell": {
+      "id": 340084,
+      "name": "Duskwalker's Patch",
+      "icon": "inv_throwingknife_04"
+    }
+  },
+  "7119": {
+    "id": 126569,
+    "index": 0,
+    "spell": {
+      "id": 340085,
+      "name": "Greenskin's Wickers",
+      "icon": "ability_creature_cursed_04"
+    }
+  },
+  "7120": {
+    "id": 126570,
+    "index": 0,
+    "spell": {
+      "id": 340086,
+      "name": "Guile Charm",
+      "icon": "ability_rogue_preyontheweak"
+    }
+  },
+  "7121": {
+    "id": 126571,
+    "index": 0,
+    "spell": {
+      "id": 340087,
+      "name": "Celerity",
+      "icon": "ability_rogue_slicedice"
+    }
+  },
+  "7122": {
+    "id": 126572,
+    "index": 0,
+    "spell": {
+      "id": 340088,
+      "name": "Concealed Blunderbuss",
+      "icon": "inv_weapon_rifle_20"
+    }
+  },
+  "7123": {
+    "id": 126573,
+    "index": 0,
+    "spell": {
+      "id": 340089,
+      "name": "Finality",
+      "icon": "ability_rogue_eviscerate"
+    }
+  },
+  "7124": {
+    "id": 126574,
+    "index": 0,
+    "spell": {
+      "id": 340090,
+      "name": "Akaari's Soul Fragment",
+      "icon": "ability_warlock_soullink"
+    }
+  },
+  "7125": {
+    "id": 126575,
+    "index": 0,
+    "spell": {
+      "id": 340091,
+      "name": "The Rotten",
+      "icon": "spell_shadow_nightofthedead"
+    }
+  },
+  "7126": {
+    "id": 126576,
+    "index": 0,
+    "spell": {
+      "id": 340092,
+      "name": "Deathly Shadows",
+      "icon": "spell_nzinsanity_chasedbyshadows"
+    }
+  },
+  "7128": {
+    "id": 126770,
+    "index": 0,
+    "spell": {
+      "id": 340458,
+      "name": "Maraad's Dying Breath",
+      "icon": "paladin_icon_speedoflight"
+    }
+  },
+  "7159": {
+    "id": 127406,
+    "index": 0,
+    "spell": {
+      "id": 340197,
+      "name": "Maw Rattle",
+      "icon": "inv_ratmount"
+    }
+  },
+  "7160": {
+    "id": 127421,
+    "index": 0,
+    "spell": {
+      "id": 341724,
+      "name": "Rage of the Frozen Champion",
+      "icon": "spell_mage_frostbomb"
+    }
+  },
+  "7161": {
+    "id": 127433,
+    "index": 0,
+    "spell": {
+      "id": 341804,
+      "name": "Measured Contemplation",
+      "icon": "spell_paladin_divinecircle"
+    }
+  },
+  "7162": {
+    "id": 127475,
+    "index": 0,
+    "spell": {
+      "id": 342415,
+      "name": "Talbadar's Stratagem",
+      "icon": "spell_fire_twilightcano"
+    }
+  },
+  "7184": {
+    "id": 126686,
+    "index": 0,
+    "spell": {
+      "id": 343250,
+      "name": "Escape from Reality",
+      "icon": "monk_ability_transcendence"
+    }
+  },
+  "7218": {
+    "id": 136204,
+    "index": 0,
+    "spell": {
+      "id": 346264,
+      "name": "Darker Nature",
+      "icon": "ability_demonhunter_eyebeam"
+    }
+  },
+  "7219": {
+    "id": 136205,
+    "index": 0,
+    "spell": {
+      "id": 346279,
+      "name": "Burning Wound",
+      "icon": "spell_fire_felhellfire"
+    }
+  },
+  "7357": {
+    "id": 138395,
+    "index": 2
+  },
+  "7458": {
+    "id": 138570,
+    "index": 0,
+    "spell": {
+      "id": 364754,
+      "name": "Abomination's Frenzy",
+      "icon": "warlock_curse_shadow_aura"
+    }
+  },
+  "7466": {
+    "id": 138709,
+    "index": 0,
+    "spell": {
+      "id": 364755,
+      "name": "Rampant Transference",
+      "icon": "ability_ardenweald_deathknight"
+    }
+  },
+  "7467": {
+    "id": 138714,
+    "index": 0,
+    "spell": {
+      "id": 364748,
+      "name": "Final Sentence",
+      "icon": "ability_bastion_deathknight"
+    }
+  },
+  "7468": {
+    "id": 138715,
+    "index": 0,
+    "spell": {
+      "id": 364752,
+      "name": "Insatiable Hunger",
+      "icon": "spell_animarevendreth_groundstate"
+    }
+  },
+  "7469": {
+    "id": 138719,
+    "index": 0,
+    "spell": {
+      "id": 364934,
+      "name": "Glory",
+      "icon": "ability_maldraxxus_warrior"
+    }
+  },
+  "7470": {
+    "id": 138722,
+    "index": 0,
+    "spell": {
+      "id": 364933,
+      "name": "Sinful Surge",
+      "icon": "ability_revendreth_warrior"
+    }
+  },
+  "7471": {
+    "id": 138726,
+    "index": 0,
+    "spell": {
+      "id": 364931,
+      "name": "Nature's Fury",
+      "icon": "ability_ardenweald_warrior"
+    }
+  },
+  "7472": {
+    "id": 138727,
+    "index": 0,
+    "spell": {
+      "id": 364818,
+      "name": "Unbridled Swarm",
+      "icon": "ability_maldraxxus_druid"
+    }
+  },
+  "7473": {
+    "id": 138734,
+    "index": 0,
+    "spell": {
+      "id": 364853,
+      "name": "Harmonic Echo",
+      "icon": "ability_bastion_mage"
+    }
+  },
+  "7474": {
+    "id": 138729,
+    "index": 0,
+    "spell": {
+      "id": 364816,
+      "name": "Sinful Indulgence",
+      "icon": "ability_revendreth_druid"
+    }
+  },
+  "7475": {
+    "id": 138747,
+    "index": 0,
+    "spell": {
+      "id": 364855,
+      "name": "Death's Fathom",
+      "icon": "ability_maldraxxus_mage"
+    }
+  },
+  "7476": {
+    "id": 138750,
+    "index": 0,
+    "spell": {
+      "id": 364854,
+      "name": "Sinful Delight",
+      "icon": "ability_revendreth_mage"
+    }
+  },
+  "7477": {
+    "id": 138742,
+    "index": 0,
+    "spell": {
+      "id": 364815,
+      "name": "Kindred Affinity",
+      "icon": "ability_bastion_druid"
+    }
+  },
+  "7478": {
+    "id": 138802,
+    "index": 0,
+    "spell": {
+      "id": 364928,
+      "name": "Toxic Onslaught",
+      "icon": "ability_ardenweald_rogue"
+    }
+  },
+  "7570": {
+    "id": 139098,
+    "index": 0,
+    "spell": {
+      "id": 364736,
+      "name": "Splintered Elements",
+      "icon": "spell_nature_elementalprecision_1"
+    }
+  },
+  "7571": {
+    "id": 138799,
+    "index": 0,
+    "spell": {
+      "id": 364819,
+      "name": "Celestial Spirits",
+      "icon": "ability_ardenweald_druid"
+    }
+  },
+  "7572": {
+    "id": 138819,
+    "index": 0,
+    "spell": {
+      "id": 364927,
+      "name": "Obedience",
+      "icon": "ability_revendreth_rogue"
+    }
+  },
+  "7573": {
+    "id": 138822,
+    "index": 0,
+    "spell": {
+      "id": 364926,
+      "name": "Deathspike",
+      "icon": "ability_maldraxxus_rogue"
+    }
+  },
+  "7577": {
+    "id": 138842,
+    "index": 0,
+    "spell": {
+      "id": 364925,
+      "name": "Resounding Clarity",
+      "icon": "ability_bastion_rogue"
+    }
+  },
+  "7679": {
+    "id": 138976,
+    "index": 0,
+    "spell": {
+      "id": 364724,
+      "name": "Divine Resonance",
+      "icon": "ability_bastion_paladin"
+    }
+  },
+  "7680": {
+    "id": 138985,
+    "index": 0,
+    "spell": {
+      "id": 364719,
+      "name": "Duty-Bound Gavel",
+      "icon": "ability_maldraxxus_paladin"
+    }
+  },
+  "7681": {
+    "id": 138992,
+    "index": 0,
+    "spell": {
+      "id": 364827,
+      "name": "Agony Gaze",
+      "icon": "ability_revendreth_demonhunter"
+    }
+  },
+  "7698": {
+    "id": 138995,
+    "index": 0,
+    "spell": {
+      "id": 364825,
+      "name": "Blazing Slaughter",
+      "icon": "ability_ardenweald_demonhunter"
+    }
+  },
+  "7699": {
+    "id": 138998,
+    "index": 0,
+    "spell": {
+      "id": 364828,
+      "name": "Blind Faith",
+      "icon": "ability_bastion_demonhunter"
+    }
+  },
+  "7700": {
+    "id": 139005,
+    "index": 0,
+    "spell": {
+      "id": 364826,
+      "name": "Demonic Oath",
+      "icon": "ability_maldraxxus_demonhunter"
+    }
+  },
+  "7701": {
+    "id": 139008,
+    "index": 0,
+    "spell": {
+      "id": 364722,
+      "name": "Radiant Embers",
+      "icon": "ability_revendreth_paladin"
+    }
+  },
+  "7702": {
+    "id": 138983,
+    "index": 0,
+    "spell": {
+      "id": 364715,
+      "name": "Seasons of Plenty",
+      "icon": "ability_ardenweald_paladin_winter"
+    }
+  },
+  "7703": {
+    "id": 139044,
+    "index": 0,
+    "spell": {
+      "id": 364915,
+      "name": "Bwonsamdi's Pact",
+      "icon": "ability_ardenweald_priest"
+    }
+  },
+  "7704": {
+    "id": 139043,
+    "index": 0,
+    "spell": {
+      "id": 364914,
+      "name": "Shadow Word: Manipulation",
+      "icon": "ability_revendreth_priest"
+    }
+  },
+  "7705": {
+    "id": 139063,
+    "index": 0,
+    "spell": {
+      "id": 355441,
+      "name": "Mawsworn Shackles",
+      "icon": "trade_engineering"
+    }
+  },
+  "7706": {
+    "id": 139065,
+    "index": 0,
+    "spell": {
+      "id": 356565,
+      "name": "Shackles of Malediction",
+      "icon": "trade_engineering"
+    }
+  },
+  "7707": {
+    "id": 139070,
+    "index": 0,
+    "spell": {
+      "id": 364860,
+      "name": "Bountiful Brew",
+      "icon": "ability_maldraxxus_monk"
+    }
+  },
+  "7708": {
+    "id": 139201,
+    "index": 0,
+    "spell": {
+      "id": 364735,
+      "name": "Seeds of Rampant Growth",
+      "icon": "spell_lifegivingseed"
+    }
+  },
+  "7709": {
+    "id": 139202,
+    "index": 0,
+    "spell": {
+      "id": 364734,
+      "name": "Elemental Conduit",
+      "icon": "spell_animarevendreth_beam"
+    }
+  },
+  "7710": {
+    "id": 139203,
+    "index": 0,
+    "spell": {
+      "id": 364937,
+      "name": "Languishing Soul Detritus",
+      "icon": "ability_warlock_soulswap"
+    }
+  },
+  "7711": {
+    "id": 139199,
+    "index": 0,
+    "spell": {
+      "id": 364936,
+      "name": "Shard of Annihilation",
+      "icon": "inv_enchanting_wod_crystalshard"
+    }
+  },
+  "7712": {
+    "id": 139204,
+    "index": 0,
+    "spell": {
+      "id": 364935,
+      "name": "Decaying Soul Satchel",
+      "icon": "spell_misc_zandalari_council_soulswap"
+    }
+  },
+  "7713": {
+    "id": 139205,
+    "index": 0,
+    "spell": {
+      "id": 364938,
+      "name": "Contained Perpetual Explosion",
+      "icon": "ability_revendreth_warlock"
+    }
+  },
+  "7714": {
+    "id": 139206,
+    "index": 0,
+    "spell": {
+      "id": 364739,
+      "name": "Pact of the Soulstalkers",
+      "icon": "ability_bastion_hunter"
+    }
+  },
+  "7715": {
+    "id": 139207,
+    "index": 0,
+    "spell": {
+      "id": 364741,
+      "name": "Bag of Munitions",
+      "icon": "spell_animamaldraxxus_groundstate"
+    }
+  },
+  "7716": {
+    "id": 139208,
+    "index": 0,
+    "spell": {
+      "id": 364742,
+      "name": "Fragments of the Elder Antlers",
+      "icon": "trade_archaeology_antleredcloakclasp"
+    }
+  },
+  "7717": {
+    "id": 139211,
+    "index": 0,
+    "spell": {
+      "id": 364740,
+      "name": "Pouch of Razor Fragments",
+      "icon": "ability_hunter_razorwire"
+    }
+  },
+  "7718": {
+    "id": 139088,
+    "index": 0,
+    "spell": {
+      "id": 364858,
+      "name": "Call to Arms",
+      "icon": "ability_bastion_monk"
+    }
+  },
+  "7719": {
+    "id": 139091,
+    "index": 0,
+    "spell": {
+      "id": 356750,
+      "name": "Adjust Weapon",
+      "icon": "trade_engineering"
+    }
+  },
+  "7720": {
+    "id": 139091,
+    "index": 0,
+    "spell": {
+      "id": 356750,
+      "name": "Adjust Weapon",
+      "icon": "trade_engineering"
+    }
+  },
+  "7721": {
+    "id": 139095,
+    "index": 0,
+    "spell": {
+      "id": 364861,
+      "name": "Faeline Harmony",
+      "icon": "ability_ardenweald_monk"
+    }
+  },
+  "7722": {
+    "id": 139212,
+    "index": 0,
+    "spell": {
+      "id": 364733,
+      "name": "Raging Vesper Vortex",
+      "icon": "ability_bastion_shaman"
+    }
+  },
+  "7723": {
+    "id": 139091,
+    "index": 0,
+    "spell": {
+      "id": 356750,
+      "name": "Adjust Weapon",
+      "icon": "trade_engineering"
+    }
+  },
+  "7724": {
+    "id": 139091,
+    "index": 0,
+    "spell": {
+      "id": 356750,
+      "name": "Adjust Weapon",
+      "icon": "trade_engineering"
+    }
+  },
+  "7725": {
+    "id": 139091,
+    "index": 0,
+    "spell": {
+      "id": 356750,
+      "name": "Adjust Weapon",
+      "icon": "trade_engineering"
+    }
+  },
+  "7726": {
+    "id": 139111,
+    "index": 0,
+    "spell": {
+      "id": 364859,
+      "name": "Sinister Teachings",
+      "icon": "ability_revendreth_monk"
+    }
+  },
+  "7727": {
+    "id": 139114,
+    "index": 0,
+    "spell": {
+      "id": 364856,
+      "name": "Heart of the Fae",
+      "icon": "ability_ardenweald_mage"
+    }
+  },
+  "7728": {
+    "id": 139046,
+    "index": 0,
+    "spell": {
+      "id": 364913,
+      "name": "Spheres' Harmony",
+      "icon": "ability_bastion_priest"
+    }
+  },
+  "7729": {
+    "id": 139042,
+    "index": 0,
+    "spell": {
+      "id": 364916,
+      "name": "Pallid Command",
+      "icon": "ability_maldraxxus_priest"
+    }
+  },
+  "7730": {
+    "id": 139244,
+    "index": 0,
+    "spell": {
+      "id": 364930,
+      "name": "Elysian Might",
+      "icon": "ability_bastion_warrior"
+    }
+  },
+  "7735": {
+    "id": 139259,
+    "index": 2,
+    "spell": {
+      "id": 357585,
+      "name": "Render Tribute",
+      "icon": "inv_sword_2h_mawraid_d_01"
+    }
+  },
+  "7738": {
+    "id": 139261,
+    "index": 2,
+    "spell": {
+      "id": 358562,
+      "name": "Harsh Tutelage",
+      "icon": "inv_sword_2h_mawraid_d_01"
+    }
+  },
+  "7741": {
+    "id": 139262,
+    "index": 2,
+    "spell": {
+      "id": 358565,
+      "name": "Harsh Tutelage",
+      "icon": "inv_sword_2h_mawraid_d_01"
+    }
+  },
+  "7744": {
+    "id": 139263,
+    "index": 2,
+    "spell": {
+      "id": 358567,
+      "name": "Harsh Tutelage",
+      "icon": "inv_sword_2h_mawraid_d_01"
+    }
+  },
+  "7747": {
+    "id": 139264,
+    "index": 2,
+    "spell": {
+      "id": 358569,
+      "name": "Harsh Tutelage",
+      "icon": "inv_sword_2h_mawraid_d_01"
+    }
+  },
+  "7748": {
+    "id": 139265,
+    "index": 2,
+    "spell": {
+      "id": 358571,
+      "name": "Harsh Tutelage",
+      "icon": "inv_sword_2h_mawraid_d_01"
+    }
+  },
+  "7886": {
+    "id": 139450,
+    "index": 0,
+    "spell": {
+      "id": 361020,
+      "name": "Cosmic Protoweave",
+      "icon": "inv_enchant_optionalreagent_01"
+    }
+  },
+  "7887": {
+    "id": 139451,
+    "index": 0,
+    "spell": {
+      "id": 360046,
+      "name": "Infusion: Corpse Purification",
+      "icon": "trade_engineering"
+    }
+  },
+  "7888": {
+    "id": 139452,
+    "index": 0,
+    "spell": {
+      "id": 360072,
+      "name": "Magically Regulated Automa Core",
+      "icon": "inv_enchant_optionalreagent_02"
+    }
+  },
+  "7891": {
+    "id": 139525,
+    "index": 0,
+    "spell": {
+      "id": 360975,
+      "name": "Pure-Air Sail Extensions",
+      "icon": "spell_frost_arcticwinds"
+    }
+  },
+  "7892": {
+    "id": 139566,
+    "index": 0,
+    "spell": {
+      "id": 361287,
+      "name": "Erratic Genesis Matrix",
+      "icon": "spell_progenitor_buff"
+    }
+  },
+  "7914": {
+    "id": 140518,
+    "index": 0,
+    "spell": {
+      "id": 368212,
+      "name": "Devourer Essence Stone",
+      "icon": "spell_frost_frost"
+    }
+  },
+  "7917": {
+    "id": 139539,
+    "index": 0,
+    "spell": {
+      "id": 361118,
+      "name": "Sustaining Armor Polish",
+      "icon": "inv_alchemy_optionalreagent_01"
+    }
+  },
+  "7932": {
+    "id": 139830,
+    "index": 0,
+    "spell": {
+      "id": 363328,
+      "name": "Dimensional Translators",
+      "icon": "trade_engineering"
+    }
+  },
+  "7933": {
+    "id": 139831,
+    "index": 0,
+    "spell": {
+      "id": 363329,
+      "name": "Raw Speed",
+      "icon": "trade_engineering"
+    }
+  },
+  "7934": {
+    "id": 139832,
+    "index": 0,
+    "spell": {
+      "id": 363330,
+      "name": "Autorecreation",
+      "icon": "spell_progenitor_buff"
+    }
+  },
+  "7945": {
+    "id": 139981,
+    "index": 0,
+    "spell": {
+      "id": 364086,
+      "name": "Strip Advantage",
+      "icon": "trade_engineering"
+    }
+  },
+  "7946": {
+    "id": 139982,
+    "index": 0,
+    "spell": {
+      "id": 364087,
+      "name": "Cosmic Boom",
+      "icon": "trade_engineering"
+    }
+  },
+  "7947": {
+    "id": 140087,
+    "index": 0,
+    "spell": {
+      "id": 364999,
+      "name": "Crystallized",
+      "icon": "trade_engineering"
+    }
+  },
+  "7955": {
+    "id": 140058,
+    "index": 0,
+    "spell": {
+      "id": 364480,
+      "name": "Zereth Vision",
+      "icon": "trade_engineering"
+    }
+  },
+  "7956": {
+    "id": 140057,
+    "index": 0,
+    "spell": {
+      "id": 364478,
+      "name": "Treasurefinder",
+      "icon": "trade_engineering"
+    }
+  },
+  "7957": {
+    "id": 140056,
+    "index": 0,
+    "spell": {
+      "id": 364477,
+      "name": "Pocopoc Resonance",
+      "icon": "trade_engineering"
+    }
+  },
+  "7960": {
+    "id": 140133,
+    "index": 0,
+    "spell": {
+      "id": 365457,
+      "name": "Ephemera Harmonizing Stone",
+      "icon": "trade_engineering"
+    }
+  },
+  "8119": {
+    "id": 140407,
+    "index": 0,
+    "spell": {
+      "id": 364758,
+      "name": "Unity",
+      "icon": "achievement_mythicdungeons_shadowlands"
+    }
+  },
+  "8120": {
+    "id": 140408,
+    "index": 0,
+    "spell": {
+      "id": 364824,
+      "name": "Unity",
+      "icon": "achievement_mythicdungeons_shadowlands"
+    }
+  },
+  "8121": {
+    "id": 140409,
+    "index": 0,
+    "spell": {
+      "id": 364814,
+      "name": "Unity",
+      "icon": "achievement_mythicdungeons_shadowlands"
+    }
+  },
+  "8122": {
+    "id": 140410,
+    "index": 0,
+    "spell": {
+      "id": 364743,
+      "name": "Unity",
+      "icon": "achievement_mythicdungeons_shadowlands"
+    }
+  },
+  "8123": {
+    "id": 140411,
+    "index": 0,
+    "spell": {
+      "id": 364852,
+      "name": "Unity",
+      "icon": "achievement_mythicdungeons_shadowlands"
+    }
+  },
+  "8124": {
+    "id": 140412,
+    "index": 0,
+    "spell": {
+      "id": 364857,
+      "name": "Unity",
+      "icon": "achievement_mythicdungeons_shadowlands"
+    }
+  },
+  "8125": {
+    "id": 140413,
+    "index": 0,
+    "spell": {
+      "id": 364642,
+      "name": "Unity",
+      "icon": "achievement_mythicdungeons_shadowlands"
+    }
+  },
+  "8126": {
+    "id": 140414,
+    "index": 0,
+    "spell": {
+      "id": 364911,
+      "name": "Unity",
+      "icon": "achievement_mythicdungeons_shadowlands"
+    }
+  },
+  "8127": {
+    "id": 140415,
+    "index": 0,
+    "spell": {
+      "id": 364922,
+      "name": "Unity",
+      "icon": "achievement_mythicdungeons_shadowlands"
+    }
+  },
+  "8128": {
+    "id": 140416,
+    "index": 0,
+    "spell": {
+      "id": 364738,
+      "name": "Unity",
+      "icon": "achievement_mythicdungeons_shadowlands"
+    }
+  },
+  "8129": {
+    "id": 140417,
+    "index": 0,
+    "spell": {
+      "id": 364939,
+      "name": "Unity",
+      "icon": "achievement_mythicdungeons_shadowlands"
+    }
+  },
+  "8130": {
+    "id": 140418,
+    "index": 0,
+    "spell": {
+      "id": 364929,
+      "name": "Unity",
+      "icon": "achievement_mythicdungeons_shadowlands"
+    }
+  },
+  "8174": {
+    "id": 147811,
+    "index": 0,
+    "spell": {
+      "id": 372120,
+      "name": "Alchemical Flavor Pocket",
+      "icon": "inv_misc_food_legion_goochocovanilla_bottle"
+    }
+  },
+  "8175": {
+    "id": 147812,
+    "index": 0,
+    "spell": {
+      "id": 371700,
+      "name": "Potion Absorption Inhibitor",
+      "icon": "inv_misc_food_legion_gooamber_drop"
+    }
+  },
+  "8188": {
+    "id": 147859,
+    "index": 0,
+    "spell": {
+      "id": 396581,
+      "name": "Armor Spikes",
+      "icon": "inv_titanium_shield_spike"
+    }
+  },
+  "8404": {
+    "id": 147904,
+    "index": 0,
+    "spell": {
+      "id": 397315,
+      "name": "Alter Time",
+      "icon": "spell_mage_altertime"
+    }
+  },
+  "8405": {
+    "id": 172434,
+    "index": 0,
+    "spell": {
+      "id": 397316,
+      "name": "Alter Time",
+      "icon": "spell_mage_altertime"
+    }
+  },
+  "8406": {
+    "id": 172435,
+    "index": 0,
+    "spell": {
+      "id": 397317,
+      "name": "Alter Time",
+      "icon": "spell_mage_altertime"
+    }
+  },
+  "8408": {
+    "id": 147788,
+    "index": 0,
+    "spell": {
+      "id": 397272,
+      "name": "Anti-Magic Shell",
+      "icon": "spell_shadow_antimagicshell"
+    }
+  },
+  "8409": {
+    "id": 172413,
+    "index": 0,
+    "spell": {
+      "id": 397273,
+      "name": "Anti-Magic Shell",
+      "icon": "spell_shadow_antimagicshell"
+    }
+  },
+  "8410": {
+    "id": 172414,
+    "index": 0,
+    "spell": {
+      "id": 397274,
+      "name": "Anti-Magic Shell",
+      "icon": "spell_shadow_antimagicshell"
+    }
+  },
+  "8412": {
+    "id": 139642,
+    "index": 0,
+    "spell": {
+      "id": 397306,
+      "name": "Anti-Magic Zone",
+      "icon": "spell_deathknight_antimagiczone"
+    }
+  },
+  "8413": {
+    "id": 172428,
+    "index": 0,
+    "spell": {
+      "id": 397307,
+      "name": "Anti-Magic Zone",
+      "icon": "spell_deathknight_antimagiczone"
+    }
+  },
+  "8414": {
+    "id": 172429,
+    "index": 0,
+    "spell": {
+      "id": 397308,
+      "name": "Anti-Magic Zone",
+      "icon": "spell_deathknight_antimagiczone"
+    }
+  },
+  "8424": {
+    "id": 140596,
+    "index": 0,
+    "spell": {
+      "id": 397622,
+      "name": "Arcanosphere",
+      "icon": "ability_mage_arcanosphere"
+    }
+  },
+  "8425": {
+    "id": 172452,
+    "index": 0,
+    "spell": {
+      "id": 397623,
+      "name": "Arcanosphere",
+      "icon": "ability_mage_arcanosphere"
+    }
+  },
+  "8426": {
+    "id": 172453,
+    "index": 0,
+    "spell": {
+      "id": 397624,
+      "name": "Arcanosphere",
+      "icon": "ability_mage_arcanosphere"
+    }
+  },
+  "8436": {
+    "id": 139733,
+    "index": 0,
+    "spell": {
+      "id": 397661,
+      "name": "Blessed Hammer",
+      "icon": "paladin_retribution"
+    }
+  },
+  "8437": {
+    "id": 172465,
+    "index": 0,
+    "spell": {
+      "id": 397663,
+      "name": "Blessed Hammer",
+      "icon": "paladin_retribution"
+    }
+  },
+  "8438": {
+    "id": 172464,
+    "index": 0,
+    "spell": {
+      "id": 397665,
+      "name": "Blessed Hammer",
+      "icon": "paladin_retribution"
+    }
+  },
+  "8452": {
+    "id": 139739,
+    "index": 0,
+    "spell": {
+      "id": 397230,
+      "name": "Capacitor Totem",
+      "icon": "spell_nature_brilliance"
+    }
+  },
+  "8453": {
+    "id": 172394,
+    "index": 0,
+    "spell": {
+      "id": 397231,
+      "name": "Capacitor Totem",
+      "icon": "spell_nature_brilliance"
+    }
+  },
+  "8454": {
+    "id": 172395,
+    "index": 0,
+    "spell": {
+      "id": 397232,
+      "name": "Capacitor Totem",
+      "icon": "spell_nature_brilliance"
+    }
+  },
+  "8476": {
+    "id": 139641,
+    "index": 0,
+    "spell": {
+      "id": 397309,
+      "name": "Darkness",
+      "icon": "ability_demonhunter_darkness"
+    }
+  },
+  "8477": {
+    "id": 172430,
+    "index": 0,
+    "spell": {
+      "id": 397310,
+      "name": "Darkness",
+      "icon": "ability_demonhunter_darkness"
+    }
+  },
+  "8478": {
+    "id": 172431,
+    "index": 0,
+    "spell": {
+      "id": 397311,
+      "name": "Darkness",
+      "icon": "ability_demonhunter_darkness"
+    }
+  },
+  "8480": {
+    "id": 139540,
+    "index": 0,
+    "spell": {
+      "id": 397224,
+      "name": "Death Grip",
+      "icon": "spell_deathknight_strangulate"
+    }
+  },
+  "8481": {
+    "id": 172392,
+    "index": 0,
+    "spell": {
+      "id": 397225,
+      "name": "Death Grip",
+      "icon": "spell_deathknight_strangulate"
+    }
+  },
+  "8482": {
+    "id": 172393,
+    "index": 0,
+    "spell": {
+      "id": 397226,
+      "name": "Death Grip",
+      "icon": "spell_deathknight_strangulate"
+    }
+  },
+  "8492": {
+    "id": 147890,
+    "index": 0,
+    "spell": {
+      "id": 397275,
+      "name": "Dispersion",
+      "icon": "spell_shadow_dispersion"
+    }
+  },
+  "8493": {
+    "id": 172418,
+    "index": 0,
+    "spell": {
+      "id": 397276,
+      "name": "Dispersion",
+      "icon": "spell_shadow_dispersion"
+    }
+  },
+  "8494": {
+    "id": 172419,
+    "index": 0,
+    "spell": {
+      "id": 397278,
+      "name": "Dispersion",
+      "icon": "spell_shadow_dispersion"
+    }
+  },
+  "8496": {
+    "id": 140613,
+    "index": 0,
+    "spell": {
+      "id": 397632,
+      "name": "Dark Star",
+      "icon": "spell_priest_divinestar_shadow"
+    }
+  },
+  "8497": {
+    "id": 172454,
+    "index": 0,
+    "spell": {
+      "id": 397634,
+      "name": "Dark Star",
+      "icon": "spell_priest_divinestar_shadow"
+    }
+  },
+  "8498": {
+    "id": 172455,
+    "index": 0,
+    "spell": {
+      "id": 397636,
+      "name": "Dark Star",
+      "icon": "spell_priest_divinestar_shadow"
+    }
+  },
+  "8504": {
+    "id": 147782,
+    "index": 0,
+    "spell": {
+      "id": 397233,
+      "name": "Dragon's Breath",
+      "icon": "inv_misc_head_dragon_01"
+    }
+  },
+  "8505": {
+    "id": 172396,
+    "index": 0,
+    "spell": {
+      "id": 397234,
+      "name": "Dragon's Breath",
+      "icon": "inv_misc_head_dragon_01"
+    }
+  },
+  "8506": {
+    "id": 172397,
+    "index": 0,
+    "spell": {
+      "id": 397235,
+      "name": "Dragon's Breath",
+      "icon": "inv_misc_head_dragon_01"
+    }
+  },
+  "8512": {
+    "id": 147867,
+    "index": 0,
+    "spell": {
+      "id": 397639,
+      "name": "Earthbreaker",
+      "icon": "inv_ore_blackrock_nugget"
+    }
+  },
+  "8513": {
+    "id": 172456,
+    "index": 0,
+    "spell": {
+      "id": 397641,
+      "name": "Earthbreaker",
+      "icon": "inv_ore_blackrock_nugget"
+    }
+  },
+  "8514": {
+    "id": 172457,
+    "index": 0,
+    "spell": {
+      "id": 397643,
+      "name": "Earthbreaker",
+      "icon": "inv_ore_blackrock_nugget"
+    }
+  },
+  "8524": {
+    "id": 139533,
+    "index": 0,
+    "spell": {
+      "id": 397279,
+      "name": "Feign Death",
+      "icon": "ability_rogue_feigndeath"
+    }
+  },
+  "8525": {
+    "id": 172420,
+    "index": 0,
+    "spell": {
+      "id": 397280,
+      "name": "Feign Death",
+      "icon": "ability_rogue_feigndeath"
+    }
+  },
+  "8526": {
+    "id": 172421,
+    "index": 0,
+    "spell": {
+      "id": 397281,
+      "name": "Feign Death",
+      "icon": "ability_rogue_feigndeath"
+    }
+  },
+  "8544": {
+    "id": 139840,
+    "index": 0,
+    "spell": {
+      "id": 397236,
+      "name": "Frost Nova",
+      "icon": "spell_frost_frostnova"
+    }
+  },
+  "8545": {
+    "id": 172398,
+    "index": 0,
+    "spell": {
+      "id": 397237,
+      "name": "Frost Nova",
+      "icon": "spell_frost_frostnova"
+    }
+  },
+  "8546": {
+    "id": 172399,
+    "index": 0,
+    "spell": {
+      "id": 397238,
+      "name": "Frost Nova",
+      "icon": "spell_frost_frostnova"
+    }
+  },
+  "8560": {
+    "id": 139519,
+    "index": 0,
+    "spell": {
+      "id": 397646,
+      "name": "Frozen Orb",
+      "icon": "spell_frost_frozenorb"
+    }
+  },
+  "8561": {
+    "id": 172458,
+    "index": 0,
+    "spell": {
+      "id": 397710,
+      "name": "Frozen Orb",
+      "icon": "spell_frost_frozenorb"
+    }
+  },
+  "8562": {
+    "id": 172459,
+    "index": 0,
+    "spell": {
+      "id": 397712,
+      "name": "Frozen Orb",
+      "icon": "spell_frost_frozenorb"
+    }
+  },
+  "8572": {
+    "id": 147856,
+    "index": 0,
+    "spell": {
+      "id": 397324,
+      "name": "Grounding Totem",
+      "icon": "spell_nature_groundingtotem"
+    }
+  },
+  "8573": {
+    "id": 172436,
+    "index": 0,
+    "spell": {
+      "id": 397325,
+      "name": "Grounding Totem",
+      "icon": "spell_nature_groundingtotem"
+    }
+  },
+  "8574": {
+    "id": 172437,
+    "index": 0,
+    "spell": {
+      "id": 397326,
+      "name": "Grounding Totem",
+      "icon": "spell_nature_groundingtotem"
+    }
+  },
+  "8600": {
+    "id": 139529,
+    "index": 0,
+    "spell": {
+      "id": 397291,
+      "name": "Ice Block",
+      "icon": "spell_frost_frost"
+    }
+  },
+  "8601": {
+    "id": 172422,
+    "index": 0,
+    "spell": {
+      "id": 397292,
+      "name": "Ice Block",
+      "icon": "spell_frost_frost"
+    }
+  },
+  "8602": {
+    "id": 172423,
+    "index": 0,
+    "spell": {
+      "id": 397293,
+      "name": "Ice Block",
+      "icon": "spell_frost_frost"
+    }
+  },
+  "8604": {
+    "id": 140292,
+    "index": 0,
+    "spell": {
+      "id": 397239,
+      "name": "Ice Wall",
+      "icon": "ability_mage_icewall"
+    }
+  },
+  "8605": {
+    "id": 172400,
+    "index": 0,
+    "spell": {
+      "id": 397240,
+      "name": "Ice Wall",
+      "icon": "ability_mage_icewall"
+    }
+  },
+  "8606": {
+    "id": 172401,
+    "index": 0,
+    "spell": {
+      "id": 397241,
+      "name": "Ice Wall",
+      "icon": "ability_mage_icewall"
+    }
+  },
+  "8612": {
+    "id": 147839,
+    "index": 0,
+    "spell": {
+      "id": 397242,
+      "name": "Intimidating Shout",
+      "icon": "ability_golemthunderclap"
+    }
+  },
+  "8613": {
+    "id": 172402,
+    "index": 0,
+    "spell": {
+      "id": 397243,
+      "name": "Intimidating Shout",
+      "icon": "ability_golemthunderclap"
+    }
+  },
+  "8614": {
+    "id": 172403,
+    "index": 0,
+    "spell": {
+      "id": 397244,
+      "name": "Intimidating Shout",
+      "icon": "ability_golemthunderclap"
+    }
+  },
+  "8636": {
+    "id": 139635,
+    "index": 0,
+    "spell": {
+      "id": 397248,
+      "name": "Mighty Ox Kick",
+      "icon": "ability_monk_mightyoxkick"
+    }
+  },
+  "8637": {
+    "id": 172404,
+    "index": 0,
+    "spell": {
+      "id": 397249,
+      "name": "Mighty Ox Kick",
+      "icon": "ability_monk_mightyoxkick"
+    }
+  },
+  "8638": {
+    "id": 172405,
+    "index": 0,
+    "spell": {
+      "id": 397250,
+      "name": "Mighty Ox Kick",
+      "icon": "ability_monk_mightyoxkick"
+    }
+  },
+  "8652": {
+    "id": 139538,
+    "index": 0,
+    "spell": {
+      "id": 361095,
+      "name": "Mass Polymorph",
+      "icon": "spell_nature_doublepolymorph2"
+    }
+  },
+  "8688": {
+    "id": 147840,
+    "index": 0,
+    "spell": {
+      "id": 372406,
+      "name": "Shield Wall",
+      "icon": "ability_warrior_shieldwall"
+    }
+  },
+  "8700": {
+    "id": 139555,
+    "index": 0,
+    "spell": {
+      "id": 397312,
+      "name": "Smoke Bomb",
+      "icon": "ability_rogue_smoke"
+    }
+  },
+  "8701": {
+    "id": 172432,
+    "index": 0,
+    "spell": {
+      "id": 397313,
+      "name": "Smoke Bomb",
+      "icon": "ability_rogue_smoke"
+    }
+  },
+  "8702": {
+    "id": 172433,
+    "index": 0,
+    "spell": {
+      "id": 397314,
+      "name": "Smoke Bomb",
+      "icon": "ability_rogue_smoke"
+    }
+  },
+  "8708": {
+    "id": 139532,
+    "index": 0,
+    "spell": {
+      "id": 397294,
+      "name": "Spell Reflection",
+      "icon": "ability_warrior_shieldreflection"
+    }
+  },
+  "8709": {
+    "id": 172424,
+    "index": 0,
+    "spell": {
+      "id": 397295,
+      "name": "Spell Reflection",
+      "icon": "ability_warrior_shieldreflection"
+    }
+  },
+  "8710": {
+    "id": 172425,
+    "index": 0,
+    "spell": {
+      "id": 397296,
+      "name": "Spell Reflection",
+      "icon": "ability_warrior_shieldreflection"
+    }
+  },
+  "8724": {
+    "id": 147861,
+    "index": 0,
+    "spell": {
+      "id": 397265,
+      "name": "Thunderstorm",
+      "icon": "spell_shaman_thunderstorm"
+    }
+  },
+  "8725": {
+    "id": 172408,
+    "index": 0,
+    "spell": {
+      "id": 397266,
+      "name": "Thunderstorm",
+      "icon": "spell_shaman_thunderstorm"
+    }
+  },
+  "8726": {
+    "id": 172409,
+    "index": 0,
+    "spell": {
+      "id": 397267,
+      "name": "Thunderstorm",
+      "icon": "spell_shaman_thunderstorm"
+    }
+  },
+  "8732": {
+    "id": 147775,
+    "index": 0,
+    "spell": {
+      "id": 371793,
+      "name": "Typhoon",
+      "icon": "ability_druid_typhoon"
+    }
+  },
+  "8740": {
+    "id": 139531,
+    "index": 0,
+    "spell": {
+      "id": 397209,
+      "name": "Vanish",
+      "icon": "ability_vanish"
+    }
+  },
+  "8741": {
+    "id": 172426,
+    "index": 0,
+    "spell": {
+      "id": 397301,
+      "name": "Vanish",
+      "icon": "ability_vanish"
+    }
+  },
+  "8742": {
+    "id": 172427,
+    "index": 0,
+    "spell": {
+      "id": 397302,
+      "name": "Vanish",
+      "icon": "ability_vanish"
+    }
+  },
+  "8796": {
+    "id": 167059,
+    "index": 0,
+    "spell": {
+      "id": 377708,
+      "name": "Fang Adornments",
+      "icon": "inv_misc_blacksaberonfang"
+    }
+  },
+  "8797": {
+    "id": 167064,
+    "index": 0,
+    "spell": {
+      "id": 378758,
+      "name": "Toxified",
+      "icon": "inv_misc_food_legion_gooslime_chunk"
+    }
+  },
+  "8832": {
+    "id": 169758,
+    "index": 0,
+    "spell": {
+      "id": 381643,
+      "name": "Dragon Orb Tracker (DNT)",
+      "icon": "inv_icon_shadowcouncilorb_purple"
+    }
+  },
+  "8833": {
+    "id": 169761,
+    "index": 0,
+    "spell": {
+      "id": 381698,
+      "name": "Forgestorm",
+      "icon": "inv_mace_1h_dragondungeon_c_01"
+    }
+  },
+  "8834": {
+    "id": 169763,
+    "index": 0,
+    "spell": {
+      "id": 381712,
+      "name": "Dragon Orb Tracker 2H (DNT)",
+      "icon": "inv_misc_orb_05"
+    }
+  },
+  "8856": {
+    "id": 170028,
+    "index": 0,
+    "spell": {
+      "id": 382958,
+      "name": "Dragonflight Darkmoon Deck Shuffler (DNT)",
+      "icon": "inv_inscription_darkmooncard_repose_grey"
+    }
+  },
+  "8857": {
+    "id": 170029,
+    "index": 0,
+    "spell": {
+      "id": 382913,
+      "name": "Bronzescale Deckbox",
+      "icon": "inv_10_inscription3_darkmoondeckbox_bronze"
+    }
+  },
+  "8858": {
+    "id": 170030,
+    "index": 0,
+    "spell": {
+      "id": 383333,
+      "name": "Emberscale Deckbox",
+      "icon": "inv_10_inscription3_darkmoondeckbox_red"
+    }
+  },
+  "8859": {
+    "id": 170031,
+    "index": 0,
+    "spell": {
+      "id": 383336,
+      "name": "Azurescale Deckbox",
+      "icon": "inv_10_inscription3_darkmoondeckbox_blue"
+    }
+  },
+  "8860": {
+    "id": 170032,
+    "index": 0,
+    "spell": {
+      "id": 383337,
+      "name": "Jetscale Deckbox",
+      "icon": "inv_10_inscription3_darkmoondeckbox_black"
+    }
+  },
+  "8861": {
+    "id": 170033,
+    "index": 0,
+    "spell": {
+      "id": 383339,
+      "name": "Sagescale Deckbox",
+      "icon": "inv_10_inscription3_darkmoondeckbox_green"
+    }
+  },
+  "8863": {
+    "id": 170149,
+    "index": 0,
+    "spell": {
+      "id": 384338,
+      "name": "Tinker Safety Fuses",
+      "icon": "inv_eng_metalblingronear"
+    }
+  },
+  "8864": {
+    "id": 170150,
+    "index": 0,
+    "spell": {
+      "id": 384341,
+      "name": "Critical Failure Prevention Unit",
+      "icon": "trade_engineering"
+    }
+  },
+  "8865": {
+    "id": 170185,
+    "index": 0,
+    "spell": {
+      "id": 384489,
+      "name": "Spring-Loaded Capacitor Casing",
+      "icon": "trade_engineering"
+    }
+  },
+  "8866": {
+    "id": 172514,
+    "index": 0,
+    "spell": {
+      "id": 397625,
+      "name": "Spitfire",
+      "icon": "ability_warlock_fireandbrimstone"
+    }
+  },
+  "8867": {
+    "id": 172515,
+    "index": 0,
+    "spell": {
+      "id": 397626,
+      "name": "Spitfire",
+      "icon": "ability_warlock_fireandbrimstone"
+    }
+  },
+  "8868": {
+    "id": 172516,
+    "index": 0,
+    "spell": {
+      "id": 397627,
+      "name": "Spitfire",
+      "icon": "ability_warlock_fireandbrimstone"
+    }
+  },
+  "8872": {
+    "id": 170285,
+    "index": 0,
+    "spell": {
+      "id": 397648,
+      "name": "Holy Dragon Punch",
+      "icon": "ability_monk_hurricanestrike"
+    }
+  },
+  "8873": {
+    "id": 172460,
+    "index": 0,
+    "spell": {
+      "id": 397650,
+      "name": "Holy Dragon Punch",
+      "icon": "ability_monk_hurricanestrike"
+    }
+  },
+  "8874": {
+    "id": 172461,
+    "index": 0,
+    "spell": {
+      "id": 397652,
+      "name": "Holy Dragon Punch",
+      "icon": "ability_monk_hurricanestrike"
+    }
+  },
+  "8887": {
+    "id": 171794,
+    "index": 0,
+    "spell": {
+      "id": 397654,
+      "name": "Arcane Storm",
+      "icon": "spell_druid_astralstorm"
+    }
+  },
+  "8888": {
+    "id": 172462,
+    "index": 0,
+    "spell": {
+      "id": 397656,
+      "name": "Arcane Storm",
+      "icon": "spell_druid_astralstorm"
+    }
+  },
+  "8889": {
+    "id": 172463,
+    "index": 0,
+    "spell": {
+      "id": 397658,
+      "name": "Arcane Storm",
+      "icon": "spell_druid_astralstorm"
+    }
+  },
+  "8890": {
+    "id": 170291,
+    "index": 0,
+    "spell": {
+      "id": 397258,
+      "name": "Icebind",
+      "icon": "spell_mage_frostbomb"
+    }
+  },
+  "8891": {
+    "id": 172406,
+    "index": 0,
+    "spell": {
+      "id": 397261,
+      "name": "Icebind",
+      "icon": "spell_mage_frostbomb"
+    }
+  },
+  "8892": {
+    "id": 172407,
+    "index": 0,
+    "spell": {
+      "id": 397262,
+      "name": "Icebind",
+      "icon": "spell_mage_frostbomb"
+    }
+  },
+  "8893": {
+    "id": 170293,
+    "index": 0,
+    "spell": {
+      "id": 373016,
+      "name": "Dispersion",
+      "icon": "spell_shadow_dispersion"
+    }
+  },
+  "8896": {
+    "id": 170294,
+    "index": 0,
+    "spell": {
+      "id": 397680,
+      "name": "Flying Serpent Kick",
+      "icon": "ability_monk_flyingdragonkick"
+    }
+  },
+  "8897": {
+    "id": 172475,
+    "index": 0,
+    "spell": {
+      "id": 397683,
+      "name": "Flying Serpent Kick",
+      "icon": "ability_monk_flyingdragonkick"
+    }
+  },
+  "8898": {
+    "id": 172476,
+    "index": 0,
+    "spell": {
+      "id": 397686,
+      "name": "Flying Serpent Kick",
+      "icon": "ability_monk_flyingdragonkick"
+    }
+  },
+  "8912": {
+    "id": 170399,
+    "index": 0,
+    "spell": {
+      "id": 385336,
+      "name": "Room for Dessert",
+      "icon": "inv_misc_food_148_cupcake"
+    }
+  },
+  "8913": {
+    "id": 170400,
+    "index": 0,
+    "spell": {
+      "id": 415446,
+      "name": "Magazine of Healing Darts",
+      "icon": "inv_gizmo_runichealthinjector"
+    }
+  },
+  "8921": {
+    "id": 172410,
+    "index": 0,
+    "spell": {
+      "id": 397268,
+      "name": "Gorefiend's Grasp",
+      "icon": "ability_deathknight_aoedeathgrip"
+    }
+  },
+  "8922": {
+    "id": 172411,
+    "index": 0,
+    "spell": {
+      "id": 397269,
+      "name": "Gorefiend's Grasp",
+      "icon": "ability_deathknight_aoedeathgrip"
+    }
+  },
+  "8923": {
+    "id": 172412,
+    "index": 0,
+    "spell": {
+      "id": 397270,
+      "name": "Gorefiend's Grasp",
+      "icon": "ability_deathknight_aoedeathgrip"
+    }
+  },
+  "8932": {
+    "id": 170917,
+    "index": 0,
+    "spell": {
+      "id": 387335,
+      "name": "Blue Silken Lining",
+      "icon": "trade_engineering"
+    }
+  },
+  "8934": {
+    "id": 170959,
+    "index": 0,
+    "spell": {
+      "id": 387431,
+      "name": "Unity",
+      "icon": "achievement_mythicdungeons_shadowlands"
+    }
+  },
+  "8937": {
+    "id": 171010,
+    "index": 0,
+    "spell": {
+      "id": 396442,
+      "name": "Bronzed Grip Wrappings",
+      "icon": "trade_engineering"
+    }
+  },
+  "9131": {
+    "id": 172472,
+    "index": 0,
+    "spell": {
+      "id": 397207,
+      "name": "Fire Whirl",
+      "icon": "spell_fire_playingwithfire"
+    }
+  },
+  "9132": {
+    "id": 172473,
+    "index": 0,
+    "spell": {
+      "id": 397715,
+      "name": "Fire Whirl",
+      "icon": "spell_fire_playingwithfire"
+    }
+  },
+  "9133": {
+    "id": 172474,
+    "index": 0,
+    "spell": {
+      "id": 397717,
+      "name": "Fire Whirl",
+      "icon": "spell_fire_playingwithfire"
+    }
+  },
+  "9134": {
+    "id": 170286,
+    "index": 0,
+    "spell": {
+      "id": 376600,
+      "name": "Arcanobomb",
+      "icon": "spell_mage_flameorb_purple"
+    }
+  },
+  "9138": {
+    "id": 172466,
+    "index": 0,
+    "spell": {
+      "id": 397667,
+      "name": "Hellfire",
+      "icon": "spell_fire_incinerate"
+    }
+  },
+  "9139": {
+    "id": 172467,
+    "index": 0,
+    "spell": {
+      "id": 397669,
+      "name": "Hellfire",
+      "icon": "spell_fire_incinerate"
+    }
+  },
+  "9140": {
+    "id": 172468,
+    "index": 0,
+    "spell": {
+      "id": 397671,
+      "name": "Hellfire",
+      "icon": "spell_fire_incinerate"
+    }
+  },
+  "9141": {
+    "id": 172469,
+    "index": 0,
+    "spell": {
+      "id": 397673,
+      "name": "Shadow Barrage",
+      "icon": "spell_fire_twilightrainoffire"
+    }
+  },
+  "9142": {
+    "id": 172470,
+    "index": 0,
+    "spell": {
+      "id": 397675,
+      "name": "Shadow Barrage",
+      "icon": "spell_fire_twilightrainoffire"
+    }
+  },
+  "9143": {
+    "id": 172471,
+    "index": 0,
+    "spell": {
+      "id": 397677,
+      "name": "Shadow Barrage",
+      "icon": "spell_fire_twilightrainoffire"
+    }
+  },
+  "9152": {
+    "id": 172563,
+    "index": 0,
+    "spell": {
+      "id": 398378,
+      "name": "Fists of Earthen Fury",
+      "icon": "monk_ability_fistoffury"
+    }
+  },
+  "9153": {
+    "id": 172565,
+    "index": 0,
+    "spell": {
+      "id": 398383,
+      "name": "Fists of Earthen Fury",
+      "icon": "monk_ability_fistoffury"
+    }
+  },
+  "9154": {
+    "id": 172567,
+    "index": 0,
+    "spell": {
+      "id": 398389,
+      "name": "Fists of Earthen Fury",
+      "icon": "monk_ability_fistoffury"
+    }
+  },
+  "9155": {
+    "id": 172599,
+    "index": 0,
+    "spell": {
+      "id": 395758,
+      "name": "Shadow Barrage",
+      "icon": "spell_fire_twilightrainoffire"
+    }
+  },
+  "9157": {
+    "id": 172602,
+    "index": 0,
+    "spell": {
+      "id": 361126,
+      "name": "Death Grip",
+      "icon": "spell_deathknight_strangulate"
+    }
+  },
+  "9159": {
+    "id": 172629,
+    "index": 0,
+    "spell": {
+      "id": 398735,
+      "name": "Snowdrift",
+      "icon": "spell_fire_blueflamestrike"
+    }
+  },
+  "9160": {
+    "id": 172630,
+    "index": 0,
+    "spell": {
+      "id": 398737,
+      "name": "Snowdrift",
+      "icon": "spell_fire_blueflamestrike"
+    }
+  },
+  "9161": {
+    "id": 172631,
+    "index": 0,
+    "spell": {
+      "id": 398739,
+      "name": "Snowdrift",
+      "icon": "spell_fire_blueflamestrike"
+    }
+  },
+  "9162": {
+    "id": 172632,
+    "index": 0,
+    "spell": {
+      "id": 398721,
+      "name": "Snowdrift",
+      "icon": "spell_fire_blueflamestrike"
+    }
+  },
+  "9163": {
+    "id": 172646,
+    "index": 0,
+    "spell": {
+      "id": 373272,
+      "name": "Spitfire",
+      "icon": "ability_warlock_fireandbrimstone"
+    }
+  },
+  "9164": {
+    "id": 172647,
+    "index": 0,
+    "spell": {
+      "id": 361451,
+      "name": "Fire Whirl",
+      "icon": "spell_fire_playingwithfire"
+    }
+  },
+  "9165": {
+    "id": 172648,
+    "index": 0,
+    "spell": {
+      "id": 361372,
+      "name": "Frozen Orb",
+      "icon": "spell_frost_frozenorb"
+    }
+  },
+  "9166": {
+    "id": 172649,
+    "index": 0,
+    "spell": {
+      "id": 361382,
+      "name": "Arcanosphere",
+      "icon": "ability_mage_arcanosphere"
+    }
+  },
+  "9167": {
+    "id": 172650,
+    "index": 0,
+    "spell": {
+      "id": 362914,
+      "name": "Blessed Hammer",
+      "icon": "paladin_retribution"
+    }
+  },
+  "9168": {
+    "id": 172651,
+    "index": 0,
+    "spell": {
+      "id": 369774,
+      "name": "Dark Star",
+      "icon": "spell_priest_divinestar_shadow"
+    }
+  },
+  "9169": {
+    "id": 172652,
+    "index": 0,
+    "spell": {
+      "id": 361622,
+      "name": "Fists of Earthen Fury",
+      "icon": "monk_ability_fistoffury"
+    }
+  },
+  "9170": {
+    "id": 172653,
+    "index": 0,
+    "spell": {
+      "id": 373231,
+      "name": "Flying Serpent Kick",
+      "icon": "ability_monk_flyingdragonkick"
+    }
+  },
+  "9171": {
+    "id": 172654,
+    "index": 0,
+    "spell": {
+      "id": 373235,
+      "name": "Holy Dragon Punch",
+      "icon": "ability_monk_hurricanestrike"
+    }
+  },
+  "9172": {
+    "id": 172655,
+    "index": 0,
+    "spell": {
+      "id": 375685,
+      "name": "Earthbreaker",
+      "icon": "inv_ore_blackrock_nugget"
+    }
+  },
+  "9173": {
+    "id": 172656,
+    "index": 0,
+    "spell": {
+      "id": 387111,
+      "name": "Arcane Storm",
+      "icon": "spell_druid_astralstorm"
+    }
+  },
+  "9174": {
+    "id": 172657,
+    "index": 0,
+    "spell": {
+      "id": 362919,
+      "name": "Capacitor Totem",
+      "icon": "spell_nature_brilliance"
+    }
+  },
+  "9175": {
+    "id": 172658,
+    "index": 0,
+    "spell": {
+      "id": 371846,
+      "name": "Dragon's Breath",
+      "icon": "inv_misc_head_dragon_01"
+    }
+  },
+  "9176": {
+    "id": 172659,
+    "index": 0,
+    "spell": {
+      "id": 363355,
+      "name": "Frost Nova",
+      "icon": "spell_frost_frostnova"
+    }
+  },
+  "9177": {
+    "id": 172660,
+    "index": 0,
+    "spell": {
+      "id": 352278,
+      "name": "Ice Wall",
+      "icon": "ability_mage_icewall"
+    }
+  },
+  "9178": {
+    "id": 172661,
+    "index": 0,
+    "spell": {
+      "id": 372405,
+      "name": "Intimidating Shout",
+      "icon": "ability_golemthunderclap"
+    }
+  },
+  "9179": {
+    "id": 172662,
+    "index": 0,
+    "spell": {
+      "id": 361618,
+      "name": "Mighty Ox Kick",
+      "icon": "ability_monk_mightyoxkick"
+    }
+  },
+  "9180": {
+    "id": 172663,
+    "index": 0,
+    "spell": {
+      "id": 373239,
+      "name": "Icebind",
+      "icon": "spell_mage_frostbomb"
+    }
+  },
+  "9181": {
+    "id": 172664,
+    "index": 0,
+    "spell": {
+      "id": 372532,
+      "name": "Thunderstorm",
+      "icon": "spell_shaman_thunderstorm"
+    }
+  },
+  "9182": {
+    "id": 172665,
+    "index": 0,
+    "spell": {
+      "id": 361147,
+      "name": "Alter Time",
+      "icon": "spell_mage_altertime"
+    }
+  },
+  "9183": {
+    "id": 172666,
+    "index": 0,
+    "spell": {
+      "id": 371909,
+      "name": "Anti-Magic Shell",
+      "icon": "spell_shadow_antimagicshell"
+    }
+  },
+  "9184": {
+    "id": 172667,
+    "index": 0,
+    "spell": {
+      "id": 373016,
+      "name": "Dispersion",
+      "icon": "spell_shadow_dispersion"
+    }
+  },
+  "9185": {
+    "id": 172668,
+    "index": 0,
+    "spell": {
+      "id": 361063,
+      "name": "Feign Death",
+      "icon": "ability_rogue_feigndeath"
+    }
+  },
+  "9186": {
+    "id": 172669,
+    "index": 0,
+    "spell": {
+      "id": 372519,
+      "name": "Grounding Totem",
+      "icon": "spell_nature_groundingtotem"
+    }
+  },
+  "9187": {
+    "id": 172670,
+    "index": 0,
+    "spell": {
+      "id": 361059,
+      "name": "Ice Block",
+      "icon": "spell_frost_frost"
+    }
+  },
+  "9188": {
+    "id": 172671,
+    "index": 0,
+    "spell": {
+      "id": 361062,
+      "name": "Spell Reflection",
+      "icon": "ability_warrior_shieldreflection"
+    }
+  },
+  "9189": {
+    "id": 172672,
+    "index": 0,
+    "spell": {
+      "id": 361061,
+      "name": "Vanish",
+      "icon": "ability_vanish"
+    }
+  },
+  "9190": {
+    "id": 172673,
+    "index": 0,
+    "spell": {
+      "id": 361629,
+      "name": "Anti-Magic Zone",
+      "icon": "spell_deathknight_antimagiczone"
+    }
+  },
+  "9191": {
+    "id": 172678,
+    "index": 0,
+    "spell": {
+      "id": 374050,
+      "name": "Gorefiend's Grasp",
+      "icon": "ability_deathknight_aoedeathgrip"
+    }
+  },
+  "9192": {
+    "id": 172679,
+    "index": 0,
+    "spell": {
+      "id": 361628,
+      "name": "Darkness",
+      "icon": "ability_demonhunter_darkness"
+    }
+  },
+  "9193": {
+    "id": 172680,
+    "index": 0,
+    "spell": {
+      "id": 361150,
+      "name": "Smoke Bomb",
+      "icon": "ability_rogue_smoke"
+    }
+  },
+  "9194": {
+    "id": 172681,
+    "index": 0,
+    "spell": {
+      "id": 395724,
+      "name": "Arclight Cannon",
+      "icon": "inv_weapon_rifle_33"
+    }
+  },
+  "9195": {
+    "id": 172682,
+    "index": 0,
+    "spell": {
+      "id": 398735,
+      "name": "Snowdrift",
+      "icon": "spell_fire_blueflamestrike"
+    }
+  },
+  "9196": {
+    "id": 172683,
+    "index": 0,
+    "spell": {
+      "id": 398737,
+      "name": "Snowdrift",
+      "icon": "spell_fire_blueflamestrike"
+    }
+  },
+  "9197": {
+    "id": 172684,
+    "index": 0,
+    "spell": {
+      "id": 398739,
+      "name": "Snowdrift",
+      "icon": "spell_fire_blueflamestrike"
+    }
+  },
+  "9198": {
+    "id": 172685,
+    "index": 0,
+    "spell": {
+      "id": 385804,
+      "name": "Hunting Bow",
+      "icon": "inv_weapon_bow_11"
+    }
+  },
+  "9199": {
+    "id": 172686,
+    "index": 0,
+    "spell": {
+      "id": 398735,
+      "name": "Snowdrift",
+      "icon": "spell_fire_blueflamestrike"
+    }
+  },
+  "9200": {
+    "id": 172687,
+    "index": 0,
+    "spell": {
+      "id": 398737,
+      "name": "Snowdrift",
+      "icon": "spell_fire_blueflamestrike"
+    }
+  },
+  "9201": {
+    "id": 172688,
+    "index": 0,
+    "spell": {
+      "id": 398739,
+      "name": "Snowdrift",
+      "icon": "spell_fire_blueflamestrike"
+    }
+  },
+  "9202": {
+    "id": 172689,
+    "index": 0,
+    "spell": {
+      "id": 395014,
+      "name": "Vanguard Sword",
+      "icon": "inv_sword_1h_newplayer_a_03"
+    }
+  },
+  "9203": {
+    "id": 172690,
+    "index": 0,
+    "spell": {
+      "id": 395014,
+      "name": "Vanguard Sword",
+      "icon": "inv_sword_1h_newplayer_a_03"
+    }
+  },
+  "9204": {
+    "id": 172691,
+    "index": 0,
+    "spell": {
+      "id": 395014,
+      "name": "Vanguard Sword",
+      "icon": "inv_sword_1h_newplayer_a_03"
+    }
+  },
+  "9205": {
+    "id": 172692,
+    "index": 0,
+    "spell": {
+      "id": 395014,
+      "name": "Vanguard Sword",
+      "icon": "inv_sword_1h_newplayer_a_03"
+    }
+  },
+  "9206": {
+    "id": 172693,
+    "index": 0,
+    "spell": {
+      "id": 372331,
+      "name": "Frostscythe",
+      "icon": "inv_staff_78"
+    }
+  },
+  "9207": {
+    "id": 172694,
+    "index": 0,
+    "spell": {
+      "id": 372331,
+      "name": "Frostscythe",
+      "icon": "inv_staff_78"
+    }
+  },
+  "9208": {
+    "id": 172695,
+    "index": 0,
+    "spell": {
+      "id": 372331,
+      "name": "Frostscythe",
+      "icon": "inv_staff_78"
+    }
+  },
+  "9209": {
+    "id": 172696,
+    "index": 0,
+    "spell": {
+      "id": 372331,
+      "name": "Frostscythe",
+      "icon": "inv_staff_78"
+    }
+  },
+  "9210": {
+    "id": 172697,
+    "index": 0,
+    "spell": {
+      "id": 401321,
+      "name": "Blitzfire Revolver",
+      "icon": "inv_weapon_rifle_40"
+    }
+  },
+  "9211": {
+    "id": 172698,
+    "index": 0,
+    "spell": {
+      "id": 401321,
+      "name": "Blitzfire Revolver",
+      "icon": "inv_weapon_rifle_40"
+    }
+  },
+  "9212": {
+    "id": 172699,
+    "index": 0,
+    "spell": {
+      "id": 401321,
+      "name": "Blitzfire Revolver",
+      "icon": "inv_weapon_rifle_40"
+    }
+  },
+  "9213": {
+    "id": 172700,
+    "index": 0,
+    "spell": {
+      "id": 401321,
+      "name": "Blitzfire Revolver",
+      "icon": "inv_weapon_rifle_40"
+    }
+  },
+  "9237": {
+    "id": 173370,
+    "index": 0,
+    "spell": {
+      "id": 400698,
+      "name": "Griftah's All-Purpose Embellishing Powder",
+      "icon": "inv_misc_powder_mithril"
+    }
+  },
+  "9238": {
+    "id": 173386,
+    "index": 0,
+    "spell": {
+      "id": 361151,
+      "name": "Disengage",
+      "icon": "ability_rogue_feint"
+    }
+  },
+  "9239": {
+    "id": 173387,
+    "index": 0,
+    "spell": {
+      "id": 363344,
+      "name": "Horn of the Frostwyrm",
+      "icon": "inv_misc_horn_02"
+    }
+  },
+  "9240": {
+    "id": 173388,
+    "index": 0,
+    "spell": {
+      "id": 361151,
+      "name": "Disengage",
+      "icon": "ability_rogue_feint"
+    }
+  },
+  "9241": {
+    "id": 173389,
+    "index": 0,
+    "spell": {
+      "id": 361151,
+      "name": "Disengage",
+      "icon": "ability_rogue_feint"
+    }
+  },
+  "9242": {
+    "id": 173390,
+    "index": 0,
+    "spell": {
+      "id": 363344,
+      "name": "Horn of the Frostwyrm",
+      "icon": "inv_misc_horn_02"
+    }
+  },
+  "9243": {
+    "id": 173387,
+    "index": 0,
+    "spell": {
+      "id": 363344,
+      "name": "Horn of the Frostwyrm",
+      "icon": "inv_misc_horn_02"
+    }
+  },
+  "9244": {
+    "id": 173394,
+    "index": 0,
+    "spell": {
+      "id": 363344,
+      "name": "Horn of the Frostwyrm",
+      "icon": "inv_misc_horn_02"
+    }
+  },
+  "9245": {
+    "id": 173396,
+    "index": 0,
+    "spell": {
+      "id": 363344,
+      "name": "Horn of the Frostwyrm",
+      "icon": "inv_misc_horn_02"
+    }
+  },
+  "9246": {
+    "id": 173397,
+    "index": 0,
+    "spell": {
+      "id": 361138,
+      "name": "Roll",
+      "icon": "ability_monk_roll"
+    }
+  },
+  "9247": {
+    "id": 173398,
+    "index": 0,
+    "spell": {
+      "id": 361138,
+      "name": "Roll",
+      "icon": "ability_monk_roll"
+    }
+  },
+  "9248": {
+    "id": 173399,
+    "index": 0,
+    "spell": {
+      "id": 361138,
+      "name": "Roll",
+      "icon": "ability_monk_roll"
+    }
+  },
+  "9249": {
+    "id": 173400,
+    "index": 0,
+    "spell": {
+      "id": 361138,
+      "name": "Roll",
+      "icon": "ability_monk_roll"
+    }
+  },
+  "9250": {
+    "id": 173403,
+    "index": 0,
+    "spell": {
+      "id": 401219,
+      "name": "Arclight Spanner",
+      "icon": "inv_engineering_815_uberspanner"
+    }
+  },
+  "9251": {
+    "id": 173404,
+    "index": 0,
+    "spell": {
+      "id": 401219,
+      "name": "Arclight Spanner",
+      "icon": "inv_engineering_815_uberspanner"
+    }
+  },
+  "9252": {
+    "id": 173405,
+    "index": 0,
+    "spell": {
+      "id": 401219,
+      "name": "Arclight Spanner",
+      "icon": "inv_engineering_815_uberspanner"
+    }
+  },
+  "9253": {
+    "id": 173407,
+    "index": 0,
+    "spell": {
+      "id": 401219,
+      "name": "Arclight Spanner",
+      "icon": "inv_engineering_815_uberspanner"
+    }
+  },
+  "9254": {
+    "id": 173409,
+    "index": 0,
+    "spell": {
+      "id": 394809,
+      "name": "Shield Block",
+      "icon": "inv_shield_1h_newplayer_a_01"
+    }
+  },
+  "9255": {
+    "id": 173411,
+    "index": 0,
+    "spell": {
+      "id": 394809,
+      "name": "Shield Block",
+      "icon": "inv_shield_1h_newplayer_a_01"
+    }
+  },
+  "9256": {
+    "id": 173412,
+    "index": 0,
+    "spell": {
+      "id": 394809,
+      "name": "Shield Block",
+      "icon": "inv_shield_1h_newplayer_a_01"
+    }
+  },
+  "9257": {
+    "id": 173413,
+    "index": 0,
+    "spell": {
+      "id": 394809,
+      "name": "Shield Block",
+      "icon": "inv_shield_1h_newplayer_a_01"
+    }
+  },
+  "9258": {
+    "id": 173433,
+    "index": 0,
+    "spell": {
+      "id": 402380,
+      "name": "Molten Boulder",
+      "icon": "spell_mage_flameorb"
+    }
+  },
+  "9259": {
+    "id": 173434,
+    "index": 0,
+    "spell": {
+      "id": 402436,
+      "name": "Molten Boulder",
+      "icon": "spell_mage_flameorb"
+    }
+  },
+  "9260": {
+    "id": 173435,
+    "index": 0,
+    "spell": {
+      "id": 402442,
+      "name": "Molten Boulder",
+      "icon": "spell_mage_flameorb"
+    }
+  },
+  "9261": {
+    "id": 173436,
+    "index": 0,
+    "spell": {
+      "id": 402449,
+      "name": "Molten Boulder",
+      "icon": "spell_mage_flameorb"
+    }
+  },
+  "9262": {
+    "id": 173404,
+    "index": 0,
+    "spell": {
+      "id": 401219,
+      "name": "Arclight Spanner",
+      "icon": "inv_engineering_815_uberspanner"
+    }
+  },
+  "9352": {
+    "id": 173842,
+    "index": 0,
+    "spell": {
+      "id": 394019,
+      "name": "Fisticuffs",
+      "icon": "inv_relics_totemofrage"
+    }
+  },
+  "9353": {
+    "id": 173843,
+    "index": 0,
+    "spell": {
+      "id": 385212,
+      "name": "Guard",
+      "icon": "ability_warrior_shieldmastery"
+    }
+  },
+  "9360": {
+    "id": 173912,
+    "index": 0
+  },
+  "9364": {
+    "id": 173922,
+    "index": 0,
+    "spell": {
+      "id": 376361,
+      "name": "Hellfire",
+      "icon": "spell_fire_incinerate"
+    }
+  },
+  "9379": {
+    "id": 174110,
+    "index": 0,
+    "spell": {
+      "id": 406254,
+      "name": "Roiling Shadowflame",
+      "icon": "inv_shadowflame_buff"
+    }
+  },
+  "9399": {
+    "id": 174198,
+    "index": 0,
+    "spell": {
+      "id": 377360,
+      "name": "Precognition",
+      "icon": "spell_nature_focusedmind"
+    }
+  },
+  "9400": {
+    "id": 178239,
+    "index": 0,
+    "spell": {
+      "id": 411126,
+      "name": "Determination",
+      "icon": "ability_paladin_swiftretribution"
+    }
+  },
+  "9412": {
+    "id": 174517,
+    "index": 0,
+    "spell": {
+      "id": 409838,
+      "name": "Reserve Parachute",
+      "icon": "inv_parachute_01"
+    }
+  },
+  "9416": {
+    "id": 174553,
+    "index": 0,
+    "spell": {
+      "id": 409923,
+      "name": "Medical Wrap Kit",
+      "icon": "inv_misc_food_legion_goochocovanilla_bottle"
+    }
+  },
+  "9496": {
+    "id": 178629,
+    "index": 0
+  },
+  "9521": {
+    "id": 179513,
+    "index": 0,
+    "spell": {
+      "id": 418410,
+      "name": "Verdant Conduit",
+      "icon": "inv_legion_faction_dreamweavers"
+    }
+  },
+  "9532": {
+    "id": 179870,
+    "index": 0,
+    "spell": {
+      "id": 419368,
+      "name": "Dreamtender's Charm",
+      "icon": "inv_10_jewelcrafting_trinket_stonedragon3_color3"
+    }
+  },
+  "9614": {
+    "id": 180720,
+    "index": 0,
+    "spell": {
+      "id": 426552,
+      "name": "Verdant Tether",
+      "icon": "trade_engineering"
+    }
+  },
+  "10236": {
+    "id": 181118,
+    "index": 0,
+    "spell": {
+      "id": 427054,
+      "name": "Opportunist",
+      "icon": "spell_druid_savagery"
+    }
+  },
+  "10242": {
+    "id": 181124,
+    "index": 0,
+    "spell": {
+      "id": 429214,
+      "name": "Sunstrider's Flourish",
+      "icon": "ability_mage_firestarter"
+    }
+  },
+  "10381": {
+    "id": 181637,
+    "index": 0,
+    "spell": {
+      "id": 438407,
+      "name": "Health Brew",
+      "icon": "inv_drink_32_disgustingrotgut_color04"
+    }
+  },
+  "10391": {
+    "id": 181649,
+    "index": 0,
+    "spell": {
+      "id": 471633,
+      "name": "Combo Attack",
+      "icon": "inv_sword_1h_kultirasquest_b_01"
+    }
+  },
+  "10405": {
+    "id": 181705,
+    "index": 0,
+    "spell": {
+      "id": 429389,
+      "name": "Fervor",
+      "icon": "spell_holy_greaterblessingofkings"
+    }
+  },
+  "10406": {
+    "id": 181706,
+    "index": 0,
+    "spell": {
+      "id": 429270,
+      "name": "Arcanist's Edge",
+      "icon": "spell_arcane_arcanepotency"
+    }
+  },
+  "10427": {
+    "id": 181865,
+    "index": 0,
+    "spell": {
+      "id": 431501,
+      "name": "Mana Sphere",
+      "icon": "ability_monk_forcesphere_arcane"
+    }
+  },
+  "10428": {
+    "id": 181867,
+    "index": 0,
+    "spell": {
+      "id": 432490,
+      "name": "Searing Axe",
+      "icon": "inv_axe_1h_pvp400_c_01"
+    }
+  },
+  "10429": {
+    "id": 181897,
+    "index": 0,
+    "spell": {
+      "id": 435276,
+      "name": "Rime Arrow",
+      "icon": "spell_frost_iceshard"
+    }
+  },
+  "10430": {
+    "id": 181869,
+    "index": 0,
+    "spell": {
+      "id": 431777,
+      "name": "Fire Whirl",
+      "icon": "spell_shaman_stormearthfire"
+    }
+  },
+  "10431": {
+    "id": 181893,
+    "index": 0,
+    "spell": {
+      "id": 432547,
+      "name": "Fade to Shadow",
+      "icon": "ability_rogue_vigor"
+    }
+  },
+  "10432": {
+    "id": 181871,
+    "index": 0,
+    "spell": {
+      "id": 434598,
+      "name": "Steel Traps",
+      "icon": "ability_hunter_steeltrap"
+    }
+  },
+  "10433": {
+    "id": 181872,
+    "index": 0,
+    "spell": {
+      "id": 432594,
+      "name": "Faeform",
+      "icon": "ability_nightfae_flicker"
+    }
+  },
+  "10434": {
+    "id": 181873,
+    "index": 0,
+    "spell": {
+      "id": 432541,
+      "name": "Explosive Caltrops",
+      "icon": "inv_misc_bomb_02"
+    }
+  },
+  "10435": {
+    "id": 181874,
+    "index": 0
+  },
+  "10436": {
+    "id": 181881,
+    "index": 0,
+    "spell": {
+      "id": 432752,
+      "name": "Searing Axe",
+      "icon": "inv_axe_1h_pvp400_c_01"
+    }
+  },
+  "10437": {
+    "id": 181882,
+    "index": 0,
+    "spell": {
+      "id": 432754,
+      "name": "Searing Axe",
+      "icon": "inv_axe_1h_pvp400_c_01"
+    }
+  },
+  "10438": {
+    "id": 181883,
+    "index": 0,
+    "spell": {
+      "id": 432756,
+      "name": "Searing Axe",
+      "icon": "inv_axe_1h_pvp400_c_01"
+    }
+  },
+  "10439": {
+    "id": 181884,
+    "index": 0,
+    "spell": {
+      "id": 434679,
+      "name": "Steel Traps",
+      "icon": "ability_hunter_steeltrap"
+    }
+  },
+  "10440": {
+    "id": 181885,
+    "index": 0,
+    "spell": {
+      "id": 434681,
+      "name": "Steel Traps",
+      "icon": "ability_hunter_steeltrap"
+    }
+  },
+  "10441": {
+    "id": 181886,
+    "index": 0,
+    "spell": {
+      "id": 434684,
+      "name": "Steel Traps",
+      "icon": "ability_hunter_steeltrap"
+    }
+  },
+  "10442": {
+    "id": 181887,
+    "index": 0,
+    "spell": {
+      "id": 432730,
+      "name": "Mana Sphere",
+      "icon": "ability_monk_forcesphere_arcane"
+    }
+  },
+  "10443": {
+    "id": 181888,
+    "index": 0,
+    "spell": {
+      "id": 432737,
+      "name": "Mana Sphere",
+      "icon": "ability_monk_forcesphere_arcane"
+    }
+  },
+  "10444": {
+    "id": 181889,
+    "index": 0,
+    "spell": {
+      "id": 432744,
+      "name": "Mana Sphere",
+      "icon": "ability_monk_forcesphere_arcane"
+    }
+  },
+  "10445": {
+    "id": 181890,
+    "index": 0,
+    "spell": {
+      "id": 432768,
+      "name": "Faeform",
+      "icon": "ability_nightfae_flicker"
+    }
+  },
+  "10446": {
+    "id": 181891,
+    "index": 0,
+    "spell": {
+      "id": 432769,
+      "name": "Faeform",
+      "icon": "ability_nightfae_flicker"
+    }
+  },
+  "10447": {
+    "id": 181892,
+    "index": 0,
+    "spell": {
+      "id": 432770,
+      "name": "Faeform",
+      "icon": "ability_nightfae_flicker"
+    }
+  },
+  "10448": {
+    "id": 181894,
+    "index": 0,
+    "spell": {
+      "id": 432765,
+      "name": "Fade to Shadow",
+      "icon": "ability_rogue_vigor"
+    }
+  },
+  "10449": {
+    "id": 181895,
+    "index": 0,
+    "spell": {
+      "id": 432766,
+      "name": "Fade to Shadow",
+      "icon": "ability_rogue_vigor"
+    }
+  },
+  "10450": {
+    "id": 181896,
+    "index": 0,
+    "spell": {
+      "id": 432767,
+      "name": "Fade to Shadow",
+      "icon": "ability_rogue_vigor"
+    }
+  },
+  "10451": {
+    "id": 181898,
+    "index": 0,
+    "spell": {
+      "id": 435288,
+      "name": "Rime Arrow",
+      "icon": "spell_frost_iceshard"
+    }
+  },
+  "10452": {
+    "id": 181899,
+    "index": 0,
+    "spell": {
+      "id": 435290,
+      "name": "Rime Arrow",
+      "icon": "spell_frost_iceshard"
+    }
+  },
+  "10453": {
+    "id": 181900,
+    "index": 0,
+    "spell": {
+      "id": 435295,
+      "name": "Rime Arrow",
+      "icon": "spell_frost_iceshard"
+    }
+  },
+  "10454": {
+    "id": 181901,
+    "index": 0,
+    "spell": {
+      "id": 432746,
+      "name": "Fire Whirl",
+      "icon": "spell_shaman_stormearthfire"
+    }
+  },
+  "10455": {
+    "id": 181902,
+    "index": 0,
+    "spell": {
+      "id": 432748,
+      "name": "Fire Whirl",
+      "icon": "spell_shaman_stormearthfire"
+    }
+  },
+  "10456": {
+    "id": 181903,
+    "index": 0,
+    "spell": {
+      "id": 432750,
+      "name": "Fire Whirl",
+      "icon": "spell_shaman_stormearthfire"
+    }
+  },
+  "10457": {
+    "id": 181904,
+    "index": 0
+  },
+  "10458": {
+    "id": 181905,
+    "index": 0
+  },
+  "10459": {
+    "id": 181906,
+    "index": 0
+  },
+  "10460": {
+    "id": 181907,
+    "index": 0,
+    "spell": {
+      "id": 432759,
+      "name": "Explosive Caltrops",
+      "icon": "inv_misc_bomb_02"
+    }
+  },
+  "10461": {
+    "id": 181908,
+    "index": 0,
+    "spell": {
+      "id": 432762,
+      "name": "Explosive Caltrops",
+      "icon": "inv_misc_bomb_02"
+    }
+  },
+  "10462": {
+    "id": 181909,
+    "index": 0,
+    "spell": {
+      "id": 432764,
+      "name": "Explosive Caltrops",
+      "icon": "inv_misc_bomb_02"
+    }
+  },
+  "10463": {
+    "id": 181910,
+    "index": 0,
+    "spell": {
+      "id": 432442,
+      "name": "Enkindle",
+      "icon": "spell_fire_playingwithfire"
+    }
+  },
+  "10464": {
+    "id": 181945,
+    "index": 0,
+    "spell": {
+      "id": 432333,
+      "name": "Explosive Barrage",
+      "icon": "spell_shadow_rainoffire"
+    }
+  },
+  "10466": {
+    "id": 181957,
+    "index": 0,
+    "spell": {
+      "id": 432445,
+      "name": "Wildfire",
+      "icon": "ability_warlock_inferno"
+    }
+  },
+  "10467": {
+    "id": 181958,
+    "index": 0,
+    "spell": {
+      "id": 432402,
+      "name": "Meteor Storm",
+      "icon": "spell_fire_meteorstorm"
+    }
+  },
+  "10468": {
+    "id": 181959,
+    "index": 0,
+    "spell": {
+      "id": 432438,
+      "name": "Incendiary Terror",
+      "icon": "spell_fire_lavaspawn"
+    }
+  },
+  "10469": {
+    "id": 181995,
+    "index": 0,
+    "spell": {
+      "id": 433082,
+      "name": "Slicing Winds",
+      "icon": "ability_skyreach_wind_wall"
+    }
+  },
+  "10470": {
+    "id": 181996,
+    "index": 0,
+    "spell": {
+      "id": 433184,
+      "name": "Slicing Winds",
+      "icon": "ability_skyreach_wind_wall"
+    }
+  },
+  "10471": {
+    "id": 181997,
+    "index": 0,
+    "spell": {
+      "id": 433185,
+      "name": "Slicing Winds",
+      "icon": "ability_skyreach_wind_wall"
+    }
+  },
+  "10472": {
+    "id": 181998,
+    "index": 0,
+    "spell": {
+      "id": 433186,
+      "name": "Slicing Winds",
+      "icon": "ability_skyreach_wind_wall"
+    }
+  },
+  "10473": {
+    "id": 182001,
+    "index": 0,
+    "spell": {
+      "id": 435018,
+      "name": "Earthbreaker",
+      "icon": "ability_earthen_pillar"
+    }
+  },
+  "10474": {
+    "id": 182002,
+    "index": 0,
+    "spell": {
+      "id": 435021,
+      "name": "Earthbreaker",
+      "icon": "ability_earthen_pillar"
+    }
+  },
+  "10475": {
+    "id": 182003,
+    "index": 0,
+    "spell": {
+      "id": 435023,
+      "name": "Earthbreaker",
+      "icon": "ability_earthen_pillar"
+    }
+  },
+  "10476": {
+    "id": 182004,
+    "index": 0,
+    "spell": {
+      "id": 435025,
+      "name": "Earthbreaker",
+      "icon": "ability_earthen_pillar"
+    }
+  },
+  "10477": {
+    "id": 182039,
+    "index": 0,
+    "spell": {
+      "id": 433214,
+      "name": "Frost Armor",
+      "icon": "spell_frost_chillingarmor"
+    }
+  },
+  "10478": {
+    "id": 182041,
+    "index": 0,
+    "spell": {
+      "id": 433263,
+      "name": "Windstorm",
+      "icon": "ability_skyreach_four_wind"
+    }
+  },
+  "10479": {
+    "id": 182042,
+    "index": 0,
+    "spell": {
+      "id": 433256,
+      "name": "Windstorm",
+      "icon": "ability_skyreach_four_wind"
+    }
+  },
+  "10480": {
+    "id": 182043,
+    "index": 0,
+    "spell": {
+      "id": 433264,
+      "name": "Windstorm",
+      "icon": "ability_skyreach_four_wind"
+    }
+  },
+  "10481": {
+    "id": 182044,
+    "index": 0,
+    "spell": {
+      "id": 433265,
+      "name": "Windstorm",
+      "icon": "ability_skyreach_four_wind"
+    }
+  },
+  "10482": {
+    "id": 182099,
+    "index": 0,
+    "spell": {
+      "id": 433364,
+      "name": "Snowdrift",
+      "icon": "spell_frost_ring_of_frost"
+    }
+  },
+  "10483": {
+    "id": 182100,
+    "index": 0,
+    "spell": {
+      "id": 433373,
+      "name": "Snowdrift",
+      "icon": "spell_frost_ring_of_frost"
+    }
+  },
+  "10484": {
+    "id": 182101,
+    "index": 0,
+    "spell": {
+      "id": 433374,
+      "name": "Snowdrift",
+      "icon": "spell_frost_ring_of_frost"
+    }
+  },
+  "10485": {
+    "id": 182102,
+    "index": 0,
+    "spell": {
+      "id": 433375,
+      "name": "Snowdrift",
+      "icon": "spell_frost_ring_of_frost"
+    }
+  },
+  "10486": {
+    "id": 182116,
+    "index": 0,
+    "spell": {
+      "id": 433380,
+      "name": "Holy Shield",
+      "icon": "inv_shield_1h_hyrja_d_01"
+    }
+  },
+  "10487": {
+    "id": 182117,
+    "index": 0,
+    "spell": {
+      "id": 433472,
+      "name": "Holy Shield",
+      "icon": "inv_shield_1h_hyrja_d_01"
+    }
+  },
+  "10488": {
+    "id": 182118,
+    "index": 0,
+    "spell": {
+      "id": 433473,
+      "name": "Holy Shield",
+      "icon": "inv_shield_1h_hyrja_d_01"
+    }
+  },
+  "10489": {
+    "id": 182119,
+    "index": 0,
+    "spell": {
+      "id": 433474,
+      "name": "Holy Shield",
+      "icon": "inv_shield_1h_hyrja_d_01"
+    }
+  },
+  "10504": {
+    "id": 182395,
+    "index": 0,
+    "spell": {
+      "id": 434880,
+      "name": "Star Bomb",
+      "icon": "inv_cosmicvoid_nova"
+    }
+  },
+  "10505": {
+    "id": 182396,
+    "index": 0,
+    "spell": {
+      "id": 435030,
+      "name": "Star Bomb",
+      "icon": "inv_cosmicvoid_nova"
+    }
+  },
+  "10506": {
+    "id": 182397,
+    "index": 0,
+    "spell": {
+      "id": 435032,
+      "name": "Star Bomb",
+      "icon": "inv_cosmicvoid_nova"
+    }
+  },
+  "10507": {
+    "id": 182398,
+    "index": 0,
+    "spell": {
+      "id": 435034,
+      "name": "Star Bomb",
+      "icon": "inv_cosmicvoid_nova"
+    }
+  },
+  "10510": {
+    "id": 182486,
+    "index": 0,
+    "spell": {
+      "id": 435286,
+      "name": "Repel",
+      "icon": "spell_fire_twilightfireward"
+    }
+  },
+  "10511": {
+    "id": 182487,
+    "index": 0,
+    "spell": {
+      "id": 435292,
+      "name": "Repel",
+      "icon": "spell_fire_twilightfireward"
+    }
+  },
+  "10512": {
+    "id": 182488,
+    "index": 0,
+    "spell": {
+      "id": 435296,
+      "name": "Repel",
+      "icon": "spell_fire_twilightfireward"
+    }
+  },
+  "10513": {
+    "id": 182489,
+    "index": 0,
+    "spell": {
+      "id": 435298,
+      "name": "Repel",
+      "icon": "spell_fire_twilightfireward"
+    }
+  },
+  "10514": {
+    "id": 182812,
+    "index": 0,
+    "spell": {
+      "id": 435454,
+      "name": "Quaking Leap",
+      "icon": "ability_hanzandfranz_bodyslam"
+    }
+  },
+  "10515": {
+    "id": 182813,
+    "index": 0,
+    "spell": {
+      "id": 435510,
+      "name": "Quaking Leap",
+      "icon": "ability_hanzandfranz_bodyslam"
+    }
+  },
+  "10516": {
+    "id": 182814,
+    "index": 0,
+    "spell": {
+      "id": 435729,
+      "name": "Quaking Leap",
+      "icon": "ability_hanzandfranz_bodyslam"
+    }
+  },
+  "10517": {
+    "id": 182815,
+    "index": 0,
+    "spell": {
+      "id": 435757,
+      "name": "Quaking Leap",
+      "icon": "ability_hanzandfranz_bodyslam"
+    }
+  },
+  "10518": {
+    "id": 182911,
+    "index": 0,
+    "spell": {
+      "id": 435992,
+      "name": "Prismatic Null Stone",
+      "icon": "inv_enchant_prismaticsphere"
+    }
+  },
+  "10519": {
+    "id": 182920,
+    "index": 0,
+    "spell": {
+      "id": 436031,
+      "name": "Hunter's Chains",
+      "icon": "ability_demonhunter_infernalchains"
+    }
+  },
+  "10520": {
+    "id": 189340,
+    "index": 0,
+    "spell": {
+      "id": 461177,
+      "name": "Elemental Focusing Lens",
+      "icon": "inv_10_jewelcrafting3_rainbowprism_color2"
+    }
+  },
+  "10521": {
+    "id": 182939,
+    "index": 0,
+    "spell": {
+      "id": 460521,
+      "name": "Captured Starlight",
+      "icon": "spell_priest_divinestar_holy"
+    }
+  },
+  "10524": {
+    "id": 182942,
+    "index": 0,
+    "spell": {
+      "id": 436211,
+      "name": "Hunter's Chains",
+      "icon": "ability_demonhunter_infernalchains"
+    }
+  },
+  "10525": {
+    "id": 182943,
+    "index": 0,
+    "spell": {
+      "id": 436229,
+      "name": "Hunter's Chains",
+      "icon": "ability_demonhunter_infernalchains"
+    }
+  },
+  "10526": {
+    "id": 182944,
+    "index": 0,
+    "spell": {
+      "id": 436240,
+      "name": "Hunter's Chains",
+      "icon": "ability_demonhunter_infernalchains"
+    }
+  },
+  "10527": {
+    "id": 182996,
+    "index": 0,
+    "spell": {
+      "id": 436254,
+      "name": "Toxic Smackerel",
+      "icon": "inv_10_fishing_fishlava_color2"
+    }
+  },
+  "10528": {
+    "id": 182997,
+    "index": 0,
+    "spell": {
+      "id": 436308,
+      "name": "Toxic Smackerel",
+      "icon": "inv_10_fishing_fishlava_color2"
+    }
+  },
+  "10529": {
+    "id": 182998,
+    "index": 0,
+    "spell": {
+      "id": 436310,
+      "name": "Toxic Smackerel",
+      "icon": "inv_10_fishing_fishlava_color2"
+    }
+  },
+  "10530": {
+    "id": 182999,
+    "index": 0,
+    "spell": {
+      "id": 436312,
+      "name": "Toxic Smackerel",
+      "icon": "inv_10_fishing_fishlava_color2"
+    }
+  },
+  "10800": {
+    "id": 183028,
+    "index": 0,
+    "spell": {
+      "id": 429241,
+      "name": "Mark of Arrogance",
+      "icon": "ability_warlock_impoweredimp"
+    }
+  },
+  "10801": {
+    "id": 183029,
+    "index": 0,
+    "spell": {
+      "id": 429373,
+      "name": "Quick Strike",
+      "icon": "ability_rogue_versatility"
+    }
+  },
+  "10802": {
+    "id": 183030,
+    "index": 0,
+    "spell": {
+      "id": 429378,
+      "name": "Slay",
+      "icon": "ability_physical_taunt_purple"
+    }
+  },
+  "10803": {
+    "id": 183031,
+    "index": 0,
+    "spell": {
+      "id": 429230,
+      "name": "Tinkmaster's Shield",
+      "icon": "inv_gizmo_electrifiedether"
+    }
+  },
+  "10804": {
+    "id": 183032,
+    "index": 0,
+    "spell": {
+      "id": 429410,
+      "name": "Victory Fire",
+      "icon": "ability_racial_fireresist"
+    }
+  },
+  "10805": {
+    "id": 183033,
+    "index": 0,
+    "spell": {
+      "id": 439081,
+      "name": "Blink",
+      "icon": "inv_misc_gear_01"
+    }
+  },
+  "10806": {
+    "id": 183034,
+    "index": 0,
+    "spell": {
+      "id": 439054,
+      "name": "Heroic Leap",
+      "icon": "inv_misc_gear_01"
+    }
+  },
+  "10807": {
+    "id": 183035,
+    "index": 0,
+    "spell": {
+      "id": 439082,
+      "name": "Roll",
+      "icon": "inv_misc_gear_01"
+    }
+  },
+  "10808": {
+    "id": 183036,
+    "index": 0,
+    "spell": {
+      "id": 439083,
+      "name": "Sprint",
+      "icon": "inv_misc_gear_01"
+    }
+  },
+  "10822": {
+    "id": 183111,
+    "index": 0,
+    "spell": {
+      "id": 436565,
+      "name": "Hailstorm",
+      "icon": "inv_misc_permafrostshard"
+    }
+  },
+  "10823": {
+    "id": 183113,
+    "index": 0,
+    "spell": {
+      "id": 436573,
+      "name": "Cold Front",
+      "icon": "spell_frost_glacier"
+    }
+  },
+  "10824": {
+    "id": 183115,
+    "index": 0,
+    "spell": {
+      "id": 436578,
+      "name": "Brittle",
+      "icon": "ability_mage_coldasice"
+    }
+  },
+  "10825": {
+    "id": 183118,
+    "index": 0,
+    "spell": {
+      "id": 436583,
+      "name": "Memory of Vengeance",
+      "icon": "ability_evoker_terroroftheskies"
+    }
+  },
+  "10826": {
+    "id": 183120,
+    "index": 0,
+    "spell": {
+      "id": 436586,
+      "name": "Searing Light",
+      "icon": "spell_holy_pureofheart"
+    }
+  },
+  "10839": {
+    "id": 183128,
+    "index": 0,
+    "spell": {
+      "id": 435854,
+      "name": "Oblivion Sphere",
+      "icon": "inv_10_worlddroplevelingoptionalreagent_misc_orb_ice"
+    }
+  },
+  "10843": {
+    "id": 183132,
+    "index": 0,
+    "spell": {
+      "id": 436789,
+      "name": "Thundering Orb",
+      "icon": "ability_thunderking_balllightning"
+    }
+  },
+  "10846": {
+    "id": 183141,
+    "index": 0,
+    "spell": {
+      "id": 437014,
+      "name": "Lifestorm",
+      "icon": "achievement_bg_wineos"
+    }
+  },
+  "10847": {
+    "id": 183153,
+    "index": 0,
+    "spell": {
+      "id": 437072,
+      "name": "Chi-Ji, the Red Crane",
+      "icon": "inv_pet_cranegod"
+    }
+  },
+  "10848": {
+    "id": 183293,
+    "index": 0,
+    "spell": {
+      "id": 437495,
+      "name": "Morphing Elements",
+      "icon": "spell_arcane_portalstormshield"
+    }
+  },
+  "10859": {
+    "id": 183297,
+    "index": 0,
+    "spell": {
+      "id": 438570,
+      "name": "Timerunner's Grip",
+      "icon": "ability_warrior_titansgrip"
+    }
+  },
+  "10881": {
+    "id": 183316,
+    "index": 0,
+    "spell": {
+      "id": 438884,
+      "name": "[DNT] Socket Gem Tutorial Credit",
+      "icon": "trade_engineering"
+    }
+  },
+  "11029": {
+    "id": 183582,
+    "index": 0,
+    "spell": {
+      "id": 441092,
+      "name": "Vindication",
+      "icon": "ability_paladin_sheathoflight"
+    }
+  },
+  "11030": {
+    "id": 183587,
+    "index": 0,
+    "spell": {
+      "id": 441115,
+      "name": "Warmth",
+      "icon": "spell_paladin_clarityofpurpose"
+    }
+  },
+  "11031": {
+    "id": 183592,
+    "index": 0,
+    "spell": {
+      "id": 441150,
+      "name": "Savior",
+      "icon": "spell_holy_healingaura"
+    }
+  },
+  "11032": {
+    "id": 183598,
+    "index": 0,
+    "spell": {
+      "id": 441165,
+      "name": "Deliverance",
+      "icon": "ability_priest_archangel"
+    }
+  },
+  "11033": {
+    "id": 183600,
+    "index": 0,
+    "spell": {
+      "id": 441198,
+      "name": "Righteous Frenzy",
+      "icon": "spell_holy_revivechampion"
+    }
+  },
+  "11034": {
+    "id": 183602,
+    "index": 0,
+    "spell": {
+      "id": 441209,
+      "name": "Holy Martyr",
+      "icon": "spell_holy_heroism"
+    }
+  },
+  "11035": {
+    "id": 183608,
+    "index": 0,
+    "spell": {
+      "id": 441304,
+      "name": "Disengage",
+      "icon": "inv_misc_gear_01"
+    }
+  },
+  "11038": {
+    "id": 183619,
+    "index": 0,
+    "spell": {
+      "id": 441348,
+      "name": "Trailblazer",
+      "icon": "ability_hunter_aspectmastery"
+    }
+  },
+  "11039": {
+    "id": 183625,
+    "index": 0,
+    "spell": {
+      "id": 441472,
+      "name": "Leap of Faith",
+      "icon": "inv_misc_gear_01"
+    }
+  },
+  "11040": {
+    "id": 183627,
+    "index": 0,
+    "spell": {
+      "id": 441491,
+      "name": "Vanish",
+      "icon": "inv_misc_gear_01"
+    }
+  },
+  "11041": {
+    "id": 183629,
+    "index": 0,
+    "spell": {
+      "id": 441497,
+      "name": "Stampeding Roar",
+      "icon": "inv_misc_gear_01"
+    }
+  },
+  "11042": {
+    "id": 183641,
+    "index": 0,
+    "spell": {
+      "id": 441560,
+      "name": "Wild Charge",
+      "icon": "inv_misc_gear_01"
+    }
+  },
+  "11043": {
+    "id": 183644,
+    "index": 0,
+    "spell": {
+      "id": 441564,
+      "name": "Pursuit of Justice",
+      "icon": "ability_paladin_veneration"
+    }
+  },
+  "11044": {
+    "id": 183646,
+    "index": 0,
+    "spell": {
+      "id": 441570,
+      "name": "Door of Shadows",
+      "icon": "inv_misc_gear_01"
+    }
+  },
+  "11045": {
+    "id": 183648,
+    "index": 0,
+    "spell": {
+      "id": 441577,
+      "name": "Spirit Walk",
+      "icon": "inv_misc_gear_01"
+    }
+  },
+  "11046": {
+    "id": 183650,
+    "index": 0,
+    "spell": {
+      "id": 441619,
+      "name": "Spiritwalker's Grace",
+      "icon": "inv_misc_gear_01"
+    }
+  },
+  "11047": {
+    "id": 183660,
+    "index": 0,
+    "spell": {
+      "id": 441744,
+      "name": "Dark Pact",
+      "icon": "inv_misc_gear_01"
+    }
+  },
+  "11048": {
+    "id": 183662,
+    "index": 0,
+    "spell": {
+      "id": 441751,
+      "name": "Death's Advance",
+      "icon": "inv_misc_gear_01"
+    }
+  },
+  "11049": {
+    "id": 183664,
+    "index": 0,
+    "spell": {
+      "id": 441765,
+      "name": "Soulshape",
+      "icon": "inv_misc_gear_01"
+    }
+  },
+  "11075": {
+    "id": 183722,
+    "index": 0,
+    "spell": {
+      "id": 442371,
+      "name": "Lightning Bulwark",
+      "icon": "inv_shield_orgrimmarraid_d_02"
+    }
+  },
+  "11076": {
+    "id": 183723,
+    "index": 0,
+    "spell": {
+      "id": 442404,
+      "name": "Lightning Bulwark",
+      "icon": "inv_shield_orgrimmarraid_d_02"
+    }
+  },
+  "11077": {
+    "id": 183724,
+    "index": 0,
+    "spell": {
+      "id": 442407,
+      "name": "Lightning Bulwark",
+      "icon": "inv_shield_orgrimmarraid_d_02"
+    }
+  },
+  "11078": {
+    "id": 183725,
+    "index": 0,
+    "spell": {
+      "id": 442411,
+      "name": "Lightning Bulwark",
+      "icon": "inv_shield_orgrimmarraid_d_02"
+    }
+  },
+  "11096": {
+    "id": 183758,
+    "index": 0,
+    "spell": {
+      "id": 442445,
+      "name": "Storm Archon",
+      "icon": "spell_nature_elementalprecision_1"
+    }
+  },
+  "11097": {
+    "id": 183759,
+    "index": 0,
+    "spell": {
+      "id": 442819,
+      "name": "Storm Archon",
+      "icon": "spell_nature_elementalprecision_1"
+    }
+  },
+  "11098": {
+    "id": 183760,
+    "index": 0,
+    "spell": {
+      "id": 442840,
+      "name": "Storm Archon",
+      "icon": "spell_nature_elementalprecision_1"
+    }
+  },
+  "11099": {
+    "id": 183761,
+    "index": 0,
+    "spell": {
+      "id": 442862,
+      "name": "Storm Archon",
+      "icon": "spell_nature_elementalprecision_1"
+    }
+  },
+  "11100": {
+    "id": 183872,
+    "index": 0,
+    "spell": {
+      "id": 443417,
+      "name": "Locus of Power",
+      "icon": "ability_mage_missilebarrage"
+    }
+  },
+  "11101": {
+    "id": 183876,
+    "index": 0,
+    "spell": {
+      "id": 443471,
+      "name": "Lightning Rod",
+      "icon": "spell_nature_purge"
+    }
+  },
+  "11102": {
+    "id": 183909,
+    "index": 0,
+    "spell": {
+      "id": 443663,
+      "name": "Static Charge",
+      "icon": "ability_thunderking_overcharge"
+    }
+  },
+  "11103": {
+    "id": 183926,
+    "index": 0,
+    "spell": {
+      "id": 443743,
+      "name": "Blessed Weapon Grip",
+      "icon": "spell_holy_weaponmastery"
+    }
+  },
+  "11104": {
+    "id": 183919,
+    "index": 0,
+    "spell": {
+      "id": 443770,
+      "name": "Windweaver",
+      "icon": "ability_druid_galewinds"
+    }
+  },
+  "11107": {
+    "id": 183921,
+    "index": 0,
+    "spell": {
+      "id": 443772,
+      "name": "Storm Overload",
+      "icon": "spell_nature_unrelentingstorm"
+    }
+  },
+  "11108": {
+    "id": 183924,
+    "index": 0,
+    "spell": {
+      "id": 443855,
+      "name": "Vampiric Aura",
+      "icon": "spell_shadow_vampiricaura"
+    }
+  },
+  "11109": {
+    "id": 183927,
+    "index": 0,
+    "spell": {
+      "id": 443902,
+      "name": "Writhing Armor Banding",
+      "icon": "ability_warlock_everlastingaffliction"
+    }
+  },
+  "11110": {
+    "id": 183928,
+    "index": 0,
+    "spell": {
+      "id": 428854,
+      "name": "Grounding",
+      "icon": "spell_nature_groundingtotem"
+    }
+  },
+  "11111": {
+    "id": 183930,
+    "index": 0,
+    "spell": {
+      "id": 427064,
+      "name": "Ankh of Reincarnation",
+      "icon": "inv_jewelry_talisman_06"
+    }
+  },
+  "11112": {
+    "id": 183937,
+    "index": 0,
+    "spell": {
+      "id": 429026,
+      "name": "Freedom",
+      "icon": "ability_rogue_fleetfooted"
+    }
+  },
+  "11113": {
+    "id": 183939,
+    "index": 0,
+    "spell": {
+      "id": 429007,
+      "name": "Brilliance",
+      "icon": "inv_staff_07"
+    }
+  },
+  "11114": {
+    "id": 183966,
+    "index": 0,
+    "spell": {
+      "id": 444136,
+      "name": "Tireless Spirit",
+      "icon": "sanctum_features_animadiversion_ardenweald"
+    }
+  },
+  "11115": {
+    "id": 184000,
+    "index": 0,
+    "spell": {
+      "id": 444435,
+      "name": "Bloodthirsty Coral",
+      "icon": "inv_misc_food_legion_seashelle1"
+    }
+  },
+  "11116": {
+    "id": 184083,
+    "index": 0,
+    "spell": {
+      "id": 444666,
+      "name": "Soul Tether",
+      "icon": "spell_necro_deathall"
+    }
+  },
+  "11117": {
+    "id": 184080,
+    "index": 0,
+    "spell": {
+      "id": 445055,
+      "name": "Ward of Salvation",
+      "icon": "spell_holy_aspiration"
+    }
+  },
+  "11118": {
+    "id": 184104,
+    "index": 0,
+    "spell": {
+      "id": 444982,
+      "name": "Precipice of Madness",
+      "icon": "inv_cosmicvoid_buff"
+    }
+  },
+  "11134": {
+    "id": 184689,
+    "index": 0,
+    "spell": {
+      "id": 447565,
+      "name": "Funeral Pyre",
+      "icon": "achievement_firelands_raid_ragnaros"
+    }
+  },
+  "11135": {
+    "id": 184816,
+    "index": 0,
+    "spell": {
+      "id": 447592,
+      "name": "Bulwark of the Black Ox",
+      "icon": "ability_monk_leeroftheox"
+    }
+  },
+  "11192": {
+    "id": 186304,
+    "index": 0,
+    "spell": {
+      "id": 452767,
+      "name": "Heartseeking Health Injector",
+      "icon": "inv_trinket_mawraid_02_blue"
+    }
+  },
+  "11193": {
+    "id": 186319,
+    "index": 0,
+    "spell": {
+      "id": 452883,
+      "name": "Lightning Tether",
+      "icon": "inv_misc_enggizmos_12"
+    }
+  },
+  "11194": {
+    "id": 186320,
+    "index": 0,
+    "spell": {
+      "id": 385520,
+      "name": "Breath of Neltharion",
+      "icon": "inv_10_engineering_device_flamethrower_flame"
+    }
+  },
+  "11195": {
+    "id": 186321,
+    "index": 0,
+    "spell": {
+      "id": 452929,
+      "name": "Earthen Delivery Drill",
+      "icon": "inv_misc_enggizmos_15"
+    }
+  },
+  "11208": {
+    "id": 186415,
+    "index": 0,
+    "spell": {
+      "id": 453488,
+      "name": "Recalibrated Safety Fuses",
+      "icon": "inv_eng_metalblingronear"
+    }
+  },
+  "11209": {
+    "id": 186418,
+    "index": 0,
+    "spell": {
+      "id": 453503,
+      "name": "Pouch of Pocket Grenades",
+      "icon": "inv_misc_bomb_08"
+    }
+  },
+  "11210": {
+    "id": 186441,
+    "index": 0,
+    "spell": {
+      "id": 453813,
+      "name": "Concealed Chaos Component",
+      "icon": "inv_misc_bomb_09"
+    }
+  },
+  "11216": {
+    "id": 186553,
+    "index": 0,
+    "spell": {
+      "id": 454450,
+      "name": "Blame Redirection Device",
+      "icon": "achievement_bg_returnxflags_def_wsg"
+    }
+  },
+  "11217": {
+    "id": 186554,
+    "index": 0,
+    "spell": {
+      "id": 454455,
+      "name": "Complicated Fuse Box",
+      "icon": "inv_engineering_sonicenvironmentenhancer"
+    }
+  },
+  "11219": {
+    "id": 186557,
+    "index": 0
+  },
+  "11220": {
+    "id": 186596,
+    "index": 0,
+    "spell": {
+      "id": 384098,
+      "name": "Alarm-O-Turret",
+      "icon": "ability_hunter_snipershot"
+    }
+  },
+  "11221": {
+    "id": 186595,
+    "index": 0,
+    "spell": {
+      "id": 384081,
+      "name": "Plane Displacer",
+      "icon": "inv_10_engineering2_tinkermodules_color6"
+    }
+  },
+  "11222": {
+    "id": 186597,
+    "index": 0,
+    "spell": {
+      "id": 384044,
+      "name": "Supercollide-O-Tron",
+      "icon": "ability_hunter_snipershot"
+    }
+  },
+  "11223": {
+    "id": 186598,
+    "index": 0,
+    "spell": {
+      "id": 407949,
+      "name": "Shadowflame Rockets",
+      "icon": "inv_10_engineering2_tinkermodules_color3"
+    }
+  },
+  "11226": {
+    "id": 186832,
+    "index": 0,
+    "spell": {
+      "id": 455147,
+      "name": "Energy Redistribution Beacon",
+      "icon": "inv_misc_enggizmos_24"
+    }
+  },
+  "11228": {
+    "id": 186986,
+    "index": 0,
+    "spell": {
+      "id": 455799,
+      "name": "Excavation",
+      "icon": "inv_axe_1h_earthenpickaxe_b_01"
+    }
+  },
+  "11230": {
+    "id": 187159,
+    "index": 0,
+    "spell": {
+      "id": 456535,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "11231": {
+    "id": 187166,
+    "index": 0,
+    "spell": {
+      "id": 456957,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "11232": {
+    "id": 187167,
+    "index": 0,
+    "spell": {
+      "id": 456979,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "11233": {
+    "id": 187168,
+    "index": 0,
+    "spell": {
+      "id": 456995,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "11235": {
+    "id": 187170,
+    "index": 0,
+    "spell": {
+      "id": 456550,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "11236": {
+    "id": 187171,
+    "index": 0,
+    "spell": {
+      "id": 456958,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "11237": {
+    "id": 187172,
+    "index": 0,
+    "spell": {
+      "id": 456980,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "11238": {
+    "id": 187173,
+    "index": 0,
+    "spell": {
+      "id": 456996,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "11240": {
+    "id": 187176,
+    "index": 0,
+    "spell": {
+      "id": 456551,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "11241": {
+    "id": 187177,
+    "index": 0,
+    "spell": {
+      "id": 456959,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "11242": {
+    "id": 187178,
+    "index": 0,
+    "spell": {
+      "id": 456981,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "11243": {
+    "id": 187179,
+    "index": 0,
+    "spell": {
+      "id": 456997,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "11245": {
+    "id": 187182,
+    "index": 0,
+    "spell": {
+      "id": 456552,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "11246": {
+    "id": 187183,
+    "index": 0,
+    "spell": {
+      "id": 456960,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "11247": {
+    "id": 187184,
+    "index": 0,
+    "spell": {
+      "id": 456982,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "11248": {
+    "id": 187185,
+    "index": 0,
+    "spell": {
+      "id": 456998,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "11250": {
+    "id": 187189,
+    "index": 0,
+    "spell": {
+      "id": 456553,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "11251": {
+    "id": 187190,
+    "index": 0,
+    "spell": {
+      "id": 456962,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "11252": {
+    "id": 187191,
+    "index": 0,
+    "spell": {
+      "id": 456983,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "11253": {
+    "id": 187192,
+    "index": 0,
+    "spell": {
+      "id": 456999,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "11255": {
+    "id": 187194,
+    "index": 0,
+    "spell": {
+      "id": 456554,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "11256": {
+    "id": 187195,
+    "index": 0,
+    "spell": {
+      "id": 456972,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "11257": {
+    "id": 187196,
+    "index": 0,
+    "spell": {
+      "id": 456994,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "11258": {
+    "id": 187197,
+    "index": 0,
+    "spell": {
+      "id": 457008,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "11260": {
+    "id": 187200,
+    "index": 0,
+    "spell": {
+      "id": 456555,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "11261": {
+    "id": 187201,
+    "index": 0,
+    "spell": {
+      "id": 456963,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "11262": {
+    "id": 187202,
+    "index": 0,
+    "spell": {
+      "id": 456984,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "11263": {
+    "id": 187203,
+    "index": 0,
+    "spell": {
+      "id": 457001,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "11265": {
+    "id": 187206,
+    "index": 0,
+    "spell": {
+      "id": 456556,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "11266": {
+    "id": 187207,
+    "index": 0,
+    "spell": {
+      "id": 456965,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "11267": {
+    "id": 187208,
+    "index": 0,
+    "spell": {
+      "id": 456987,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "11268": {
+    "id": 187209,
+    "index": 0,
+    "spell": {
+      "id": 457002,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "11270": {
+    "id": 187212,
+    "index": 0,
+    "spell": {
+      "id": 456557,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "11271": {
+    "id": 187213,
+    "index": 0,
+    "spell": {
+      "id": 456966,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "11272": {
+    "id": 187214,
+    "index": 0,
+    "spell": {
+      "id": 456988,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "11273": {
+    "id": 187215,
+    "index": 0,
+    "spell": {
+      "id": 457003,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "11275": {
+    "id": 187218,
+    "index": 0,
+    "spell": {
+      "id": 456558,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "11276": {
+    "id": 187219,
+    "index": 0,
+    "spell": {
+      "id": 456967,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "11277": {
+    "id": 187220,
+    "index": 0,
+    "spell": {
+      "id": 456989,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "11278": {
+    "id": 187221,
+    "index": 0,
+    "spell": {
+      "id": 457004,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "11280": {
+    "id": 187224,
+    "index": 0,
+    "spell": {
+      "id": 456559,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "11281": {
+    "id": 187225,
+    "index": 0,
+    "spell": {
+      "id": 456969,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "11282": {
+    "id": 187226,
+    "index": 0,
+    "spell": {
+      "id": 456990,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "11283": {
+    "id": 187227,
+    "index": 0,
+    "spell": {
+      "id": 457005,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "11285": {
+    "id": 187230,
+    "index": 0,
+    "spell": {
+      "id": 456560,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "11286": {
+    "id": 187231,
+    "index": 0,
+    "spell": {
+      "id": 456970,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "11287": {
+    "id": 187232,
+    "index": 0,
+    "spell": {
+      "id": 456991,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "11288": {
+    "id": 187233,
+    "index": 0,
+    "spell": {
+      "id": 457006,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "11290": {
+    "id": 187236,
+    "index": 0,
+    "spell": {
+      "id": 456561,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "11291": {
+    "id": 187237,
+    "index": 0,
+    "spell": {
+      "id": 456971,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "11292": {
+    "id": 187238,
+    "index": 0,
+    "spell": {
+      "id": 456993,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "11293": {
+    "id": 187239,
+    "index": 0,
+    "spell": {
+      "id": 457007,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "11299": {
+    "id": 184082,
+    "index": 0,
+    "spell": {
+      "id": 454558,
+      "name": "Radiant Focus",
+      "icon": "inv_inscriptions_darkmoondeckshine_0"
+    }
+  },
+  "11300": {
+    "id": 187512,
+    "index": 0,
+    "spell": {
+      "id": 458573,
+      "name": "Ascendance",
+      "icon": "inv_inscriptions_darkmoondeckevolution_0"
+    }
+  },
+  "11301": {
+    "id": 187510,
+    "index": 0,
+    "spell": {
+      "id": 454857,
+      "name": "Vivacity",
+      "icon": "inv_10_inscription3_darkmoondeckbox_black"
+    }
+  },
+  "11302": {
+    "id": 187511,
+    "index": 0,
+    "spell": {
+      "id": 463232,
+      "name": "Symbiosis",
+      "icon": "inv_inscriptions_darkmoondeckshine_0"
+    }
+  },
+  "11303": {
+    "id": 187453,
+    "index": 0,
+    "spell": {
+      "id": 457665,
+      "name": "Dawnthread Lining",
+      "icon": "trade_engineering"
+    }
+  },
+  "11304": {
+    "id": 187454,
+    "index": 0,
+    "spell": {
+      "id": 457677,
+      "name": "Duskthread Lining",
+      "icon": "trade_engineering"
+    }
+  },
+  "11941": {
+    "id": 190239,
+    "index": 0,
+    "spell": {
+      "id": 463429,
+      "name": "Griftah's All-Purpose Embellishing Powder",
+      "icon": "inv_misc_powder_mithril"
+    }
+  },
+  "12008": {
+    "id": 190538,
+    "index": 0,
+    "spell": {
+      "id": 464659,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "12009": {
+    "id": 190544,
+    "index": 0,
+    "spell": {
+      "id": 464725,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "12010": {
+    "id": 190545,
+    "index": 0,
+    "spell": {
+      "id": 464726,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "12011": {
+    "id": 190546,
+    "index": 0,
+    "spell": {
+      "id": 464727,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "12062": {
+    "id": 193026,
+    "index": 0,
+    "spell": {
+      "id": 471717,
+      "name": "Celestial Barrage",
+      "icon": "inv_ability_eluneschosendruid_boundlessmoonlight"
+    }
+  },
+  "12063": {
+    "id": 193027,
+    "index": 0,
+    "spell": {
+      "id": 472390,
+      "name": "Celestial Barrage",
+      "icon": "inv_ability_eluneschosendruid_boundlessmoonlight"
+    }
+  },
+  "12064": {
+    "id": 193028,
+    "index": 0,
+    "spell": {
+      "id": 472403,
+      "name": "Celestial Barrage",
+      "icon": "inv_ability_eluneschosendruid_boundlessmoonlight"
+    }
+  },
+  "12065": {
+    "id": 193029,
+    "index": 0,
+    "spell": {
+      "id": 472406,
+      "name": "Celestial Barrage",
+      "icon": "inv_ability_eluneschosendruid_boundlessmoonlight"
+    }
+  },
+  "12085": {
+    "id": 193234,
+    "index": 0,
+    "spell": {
+      "id": 472696,
+      "name": "Void Tear",
+      "icon": "ability_hunter_readiness"
+    }
+  },
+  "12086": {
+    "id": 193244,
+    "index": 0,
+    "spell": {
+      "id": 472852,
+      "name": "Void Tear",
+      "icon": "ability_hunter_readiness"
+    }
+  },
+  "12087": {
+    "id": 193245,
+    "index": 0,
+    "spell": {
+      "id": 472859,
+      "name": "Void Tear",
+      "icon": "ability_hunter_readiness"
+    }
+  },
+  "12088": {
+    "id": 193246,
+    "index": 0,
+    "spell": {
+      "id": 472866,
+      "name": "Void Tear",
+      "icon": "ability_hunter_readiness"
+    }
+  },
+  "12089": {
+    "id": 193264,
+    "index": 0,
+    "spell": {
+      "id": 472908,
+      "name": "G.R.A.V. Glove",
+      "icon": "inv_mechanicalhandpet"
+    }
+  },
+  "12097": {
+    "id": 193342,
+    "index": 0,
+    "spell": {
+      "id": 473810,
+      "name": "Aura of Zealotry",
+      "icon": "ability_paladin_artofwar"
+    }
+  },
+  "12098": {
+    "id": 193344,
+    "index": 0,
+    "spell": {
+      "id": 473819,
+      "name": "Aura of Zealotry",
+      "icon": "ability_paladin_artofwar"
+    }
+  },
+  "12099": {
+    "id": 193345,
+    "index": 0,
+    "spell": {
+      "id": 473823,
+      "name": "Aura of Zealotry",
+      "icon": "ability_paladin_artofwar"
+    }
+  },
+  "12100": {
+    "id": 193346,
+    "index": 0,
+    "spell": {
+      "id": 473828,
+      "name": "Aura of Zealotry",
+      "icon": "ability_paladin_artofwar"
+    }
+  },
+  "12101": {
+    "id": 203151,
+    "index": 0,
+    "spell": {
+      "id": 474121,
+      "name": "Call Galefeather",
+      "icon": "inv_eagle2windmount_sepia"
+    }
+  },
+  "12102": {
+    "id": 203433,
+    "index": 0,
+    "spell": {
+      "id": 474559,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "12103": {
+    "id": 203499,
+    "index": 0,
+    "spell": {
+      "id": 474561,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "12104": {
+    "id": 203500,
+    "index": 0,
+    "spell": {
+      "id": 474562,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "12105": {
+    "id": 203501,
+    "index": 0,
+    "spell": {
+      "id": 474563,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "12106": {
+    "id": 203613,
+    "index": 0,
+    "spell": {
+      "id": 474650,
+      "name": "Call Galefeather",
+      "icon": "inv_eagle2windmount_sepia"
+    }
+  },
+  "12107": {
+    "id": 203614,
+    "index": 0,
+    "spell": {
+      "id": 474651,
+      "name": "Call Galefeather",
+      "icon": "inv_eagle2windmount_sepia"
+    }
+  },
+  "12108": {
+    "id": 203615,
+    "index": 0,
+    "spell": {
+      "id": 474652,
+      "name": "Call Galefeather",
+      "icon": "inv_eagle2windmount_sepia"
+    }
+  },
+  "12113": {
+    "id": 203502,
+    "index": 0,
+    "spell": {
+      "id": 474572,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "12114": {
+    "id": 203503,
+    "index": 0,
+    "spell": {
+      "id": 474580,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "12115": {
+    "id": 203504,
+    "index": 0,
+    "spell": {
+      "id": 474579,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "12116": {
+    "id": 203505,
+    "index": 0,
+    "spell": {
+      "id": 474581,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "12117": {
+    "id": 203506,
+    "index": 0,
+    "spell": {
+      "id": 474573,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "12118": {
+    "id": 203507,
+    "index": 0,
+    "spell": {
+      "id": 474582,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "12119": {
+    "id": 203508,
+    "index": 0,
+    "spell": {
+      "id": 474583,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "12120": {
+    "id": 203509,
+    "index": 0,
+    "spell": {
+      "id": 474584,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "12121": {
+    "id": 203510,
+    "index": 0,
+    "spell": {
+      "id": 474574,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "12122": {
+    "id": 203511,
+    "index": 0,
+    "spell": {
+      "id": 474588,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "12123": {
+    "id": 203512,
+    "index": 0,
+    "spell": {
+      "id": 474589,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "12124": {
+    "id": 203513,
+    "index": 0,
+    "spell": {
+      "id": 474590,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "12125": {
+    "id": 203514,
+    "index": 0,
+    "spell": {
+      "id": 474576,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "12126": {
+    "id": 203515,
+    "index": 0,
+    "spell": {
+      "id": 474585,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "12127": {
+    "id": 203516,
+    "index": 0,
+    "spell": {
+      "id": 474586,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "12128": {
+    "id": 203517,
+    "index": 0,
+    "spell": {
+      "id": 474587,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "12129": {
+    "id": 203518,
+    "index": 0,
+    "spell": {
+      "id": 474577,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "12130": {
+    "id": 203519,
+    "index": 0,
+    "spell": {
+      "id": 474594,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "12131": {
+    "id": 203520,
+    "index": 0,
+    "spell": {
+      "id": 474595,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "12132": {
+    "id": 203521,
+    "index": 0,
+    "spell": {
+      "id": 474596,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "12133": {
+    "id": 203522,
+    "index": 0,
+    "spell": {
+      "id": 474578,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "12134": {
+    "id": 203523,
+    "index": 0,
+    "spell": {
+      "id": 474591,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "12135": {
+    "id": 203524,
+    "index": 0,
+    "spell": {
+      "id": 474592,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "12136": {
+    "id": 203525,
+    "index": 0,
+    "spell": {
+      "id": 474593,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "12137": {
+    "id": 203470,
+    "index": 0,
+    "spell": {
+      "id": 474608,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "12138": {
+    "id": 203471,
+    "index": 0,
+    "spell": {
+      "id": 474612,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "12139": {
+    "id": 203472,
+    "index": 0,
+    "spell": {
+      "id": 474613,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "12140": {
+    "id": 203473,
+    "index": 0,
+    "spell": {
+      "id": 474614,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "12141": {
+    "id": 203474,
+    "index": 0,
+    "spell": {
+      "id": 474607,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "12142": {
+    "id": 203475,
+    "index": 0,
+    "spell": {
+      "id": 474609,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "12143": {
+    "id": 203476,
+    "index": 0,
+    "spell": {
+      "id": 474610,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "12144": {
+    "id": 203477,
+    "index": 0,
+    "spell": {
+      "id": 474611,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "12145": {
+    "id": 203478,
+    "index": 0,
+    "spell": {
+      "id": 474606,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "12146": {
+    "id": 203479,
+    "index": 0,
+    "spell": {
+      "id": 474618,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "12147": {
+    "id": 203480,
+    "index": 0,
+    "spell": {
+      "id": 474619,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "12148": {
+    "id": 203481,
+    "index": 0,
+    "spell": {
+      "id": 474620,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "12149": {
+    "id": 203482,
+    "index": 0,
+    "spell": {
+      "id": 474605,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "12150": {
+    "id": 203483,
+    "index": 0,
+    "spell": {
+      "id": 474615,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "12151": {
+    "id": 203484,
+    "index": 0,
+    "spell": {
+      "id": 474616,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "12152": {
+    "id": 203485,
+    "index": 0,
+    "spell": {
+      "id": 474617,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "12153": {
+    "id": 203486,
+    "index": 0,
+    "spell": {
+      "id": 474601,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "12154": {
+    "id": 203487,
+    "index": 0,
+    "spell": {
+      "id": 474624,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "12155": {
+    "id": 203488,
+    "index": 0,
+    "spell": {
+      "id": 474625,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "12156": {
+    "id": 203489,
+    "index": 0,
+    "spell": {
+      "id": 474626,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "12157": {
+    "id": 203490,
+    "index": 0,
+    "spell": {
+      "id": 474600,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "12158": {
+    "id": 203491,
+    "index": 0,
+    "spell": {
+      "id": 474621,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "12159": {
+    "id": 203492,
+    "index": 0,
+    "spell": {
+      "id": 474622,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "12160": {
+    "id": 203493,
+    "index": 0,
+    "spell": {
+      "id": 474623,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "12161": {
+    "id": 203494,
+    "index": 0,
+    "spell": {
+      "id": 474599,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "12162": {
+    "id": 203495,
+    "index": 0,
+    "spell": {
+      "id": 474627,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "12163": {
+    "id": 203496,
+    "index": 0,
+    "spell": {
+      "id": 474628,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "12164": {
+    "id": 203497,
+    "index": 0,
+    "spell": {
+      "id": 474629,
+      "name": "Adding",
+      "icon": "inv_cape_special_explorer_b_03"
+    }
+  },
+  "12169": {
+    "id": 205093,
+    "index": 0
+  },
+  "12170": {
+    "id": 205094,
+    "index": 0
+  },
+  "12171": {
+    "id": 205095,
+    "index": 0
+  },
+  "12172": {
+    "id": 205096,
+    "index": 0
+  },
+  "12173": {
+    "id": 205124,
+    "index": 0,
+    "spell": {
+      "id": 1217214,
+      "name": "C.H.E.T.T. List",
+      "icon": "inv_misc_punchcards_prismatic"
+    }
+  },
+  "12174": {
+    "id": 205125,
+    "index": 0,
+    "spell": {
+      "id": 1219241,
+      "name": "C.H.E.T.T. List",
+      "icon": "inv_misc_punchcards_prismatic"
+    }
+  },
+  "12215": {
+    "id": 206859,
+    "index": 0,
+    "spell": {
+      "id": 1223886,
+      "name": "Hallowed Tome of the Abbot",
+      "icon": "inv_artifact_tome01"
+    }
+  },
+  "12216": {
+    "id": 206860,
+    "index": 0,
+    "spell": {
+      "id": 1223899,
+      "name": "Hallowed Tome of the Zealot",
+      "icon": "inv_artifact_tome01"
+    }
+  },
+  "12217": {
+    "id": 206861,
+    "index": 0,
+    "spell": {
+      "id": 1223902,
+      "name": "Hallowed Tome of the Crusader",
+      "icon": "inv_artifact_tome01"
+    }
+  },
+  "12218": {
+    "id": 206862,
+    "index": 0,
+    "spell": {
+      "id": 1223904,
+      "name": "Hallowed Tome of the Cleric",
+      "icon": "inv_artifact_tome01"
+    }
+  },
+  "12219": {
+    "id": 207468,
+    "index": 0,
+    "spell": {
+      "id": 1225232,
+      "name": "Excerpt on Dark Summons",
+      "icon": "inv_misc_book_01"
+    }
+  },
+  "12220": {
+    "id": 207469,
+    "index": 0,
+    "spell": {
+      "id": 1225233,
+      "name": "Excerpt on Sacrificial Rituals",
+      "icon": "inv_misc_book_01"
+    }
+  },
+  "12221": {
+    "id": 207470,
+    "index": 0,
+    "spell": {
+      "id": 1225234,
+      "name": "Excerpt on Prophetic Death",
+      "icon": "inv_misc_book_01"
+    }
+  },
+  "12222": {
+    "id": 191351,
+    "index": 0,
+    "spell": {
+      "id": 468034,
+      "name": "Darktide Wavebender's Orb",
+      "icon": "spell_nature_crystalball"
+    }
+  }
+}
