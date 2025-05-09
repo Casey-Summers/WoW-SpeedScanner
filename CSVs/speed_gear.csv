@@ -1,23 +1,103 @@
 realm,item_id,name,ilvl,buyout_gold
-Bleeding Hollow,159593,Wavecaller Cutlass,55,120000
-Bleeding Hollow,121027,Azurewing Signet,55,299999
-Bleeding Hollow,121053,Temporal Scholar's Sandals,55,129999
-Bleeding Hollow,121024,Llothien Waistband,55,75090
-Bleeding Hollow,121048,Temporal Scholar's Cord,55,199999
-Stonemaul,224604,Underscout's Cord,603,35000
-Terenas,224605,Underscout's Bracers,603,27315
-Saurfang,159186,Foxhollow Leggings,55,29999
-Dalaran,224589,Deep-Dweller's Cincture,564,85230
-Dalaran,170120,Handmaiden's Longstaff,56,63099
-Dalaran,224593,Spinner's Circlet,600,29420
-Darkspear,159521,Dockyard Dagger,55,8888
-Drakkari,159556,Loa-Blessed Greathammer,55,974
-Thaurissan,224604,Underscout's Cord,600,27315
-Ysera,224605,Underscout's Bracers,603,4500
-Emerald Dream,224593,Spinner's Circlet,597,9368
-Emerald Dream,224591,Deep-Dweller's Wraps,597,48999
-Emerald Dream,224592,Spinner's Hoop,597,48999
-Emerald Dream,224593,Spinner's Circlet,597,48999
-Emerald Dream,224593,Spinner's Circlet,597,48999
-Emerald Dream,121020,Llothien Gloves,55,1999
-Emerald Dream,224591,Deep-Dweller's Wraps,561,54899
+Zangarmarsh,224592,Spinner's Hoop,597,1486
+Zangarmarsh,224592,Spinner's Hoop,597,500
+Zangarmarsh,224592,Spinner's Hoop,600,3300
+Zangarmarsh,224592,Spinner's Hoop,600,3300
+Thorium Brotherhood,224592,Spinner's Hoop,597,1111
+Thorium Brotherhood,224593,Spinner's Circlet,603,4000
+Gallywix,224592,Spinner's Hoop,597,1500
+Trollbane,224593,Spinner's Circlet,597,9368
+Trollbane,224593,Spinner's Circlet,600,3518
+Trollbane,224593,Spinner's Circlet,597,3000
+Trollbane,224593,Spinner's Circlet,600,3518
+Trollbane,224593,Spinner's Circlet,597,490
+Trollbane,224592,Spinner's Hoop,597,5500
+Tanaris,224593,Spinner's Circlet,600,5990
+Hyjal,224592,Spinner's Hoop,597,1826
+Hyjal,224593,Spinner's Circlet,597,1792
+Hyjal,224593,Spinner's Circlet,597,1792
+Hyjal,224593,Spinner's Circlet,600,7439
+Hyjal,224593,Spinner's Circlet,597,1792
+Hyjal,224593,Spinner's Circlet,600,7439
+Hyjal,121247,Nightfall Loop,55,199
+Hyjal,224593,Spinner's Circlet,561,799
+Hyjal,224593,Spinner's Circlet,603,15803
+Illidan,224593,Spinner's Circlet,600,22000
+Illidan,224593,Spinner's Circlet,597,22000
+Illidan,224593,Spinner's Circlet,597,22000
+Illidan,224592,Spinner's Hoop,600,4524
+Illidan,224593,Spinner's Circlet,603,30000
+Illidan,224593,Spinner's Circlet,600,25000
+Illidan,224593,Spinner's Circlet,600,24999
+Illidan,224593,Spinner's Circlet,561,54899
+Illidan,224592,Spinner's Hoop,558,44899
+Illidan,224592,Spinner's Hoop,564,74419
+Illidan,224592,Spinner's Hoop,561,54899
+Illidan,224593,Spinner's Circlet,558,44899
+Illidan,160136,Golden City Signet,55,8497
+Illidan,224592,Spinner's Hoop,603,4999
+Illidan,224592,Spinner's Hoop,603,4999
+Illidan,224593,Spinner's Circlet,600,4366
+Illidan,224592,Spinner's Hoop,603,3800
+Illidan,224592,Spinner's Hoop,603,10000
+Illidan,224592,Spinner's Hoop,597,1284
+Illidan,224592,Spinner's Hoop,600,5041
+Illidan,224593,Spinner's Circlet,597,5285
+Illidan,224593,Spinner's Circlet,597,5285
+Illidan,224592,Spinner's Hoop,600,8705
+Illidan,224593,Spinner's Circlet,600,9354
+Illidan,224593,Spinner's Circlet,600,2500
+Illidan,224593,Spinner's Circlet,600,4800
+Illidan,160170,Arid Caravan Band,55,58451
+Kil'jaeden,224592,Spinner's Hoop,561,333
+Kil'jaeden,224592,Spinner's Hoop,600,5000
+Winterhoof,224593,Spinner's Circlet,600,7800
+Winterhoof,224592,Spinner's Hoop,600,7800
+Steamwheedle Cartel,224592,Spinner's Hoop,603,12840
+Lightbringer,224593,Spinner's Circlet,597,1807
+Lightbringer,224593,Spinner's Circlet,600,1538
+Lightbringer,224592,Spinner's Hoop,597,1619
+Twisting Nether,224592,Spinner's Hoop,603,5000
+Twisting Nether,121027,Azurewing Signet,55,2637
+Mal'Ganis,224592,Spinner's Hoop,564,4991
+Mal'Ganis,224592,Spinner's Hoop,603,11450
+Mal'Ganis,224593,Spinner's Circlet,597,498
+Mal'Ganis,224592,Spinner's Hoop,564,2800
+Mal'Ganis,224593,Spinner's Circlet,597,498
+Mal'Ganis,224593,Spinner's Circlet,597,24420
+Mal'Ganis,224593,Spinner's Circlet,603,12380
+Mal'Ganis,224592,Spinner's Hoop,600,4000
+Rexxar,224593,Spinner's Circlet,558,84331
+Rexxar,224593,Spinner's Circlet,597,5000
+Rexxar,224592,Spinner's Hoop,600,6998
+Moon Guard,160170,Arid Caravan Band,55,52526
+Moon Guard,224592,Spinner's Hoop,603,14960
+Moon Guard,224592,Spinner's Hoop,564,1998
+Moon Guard,224593,Spinner's Circlet,603,11939
+Moon Guard,224592,Spinner's Hoop,597,1170
+Moon Guard,224592,Spinner's Hoop,600,5000
+Moon Guard,224593,Spinner's Circlet,603,11929
+Vek'nilash,121137,Stormwing Band,55,45
+Proudmoore,224592,Spinner's Hoop,564,1873
+Proudmoore,224593,Spinner's Circlet,603,9000
+Proudmoore,224592,Spinner's Hoop,600,12000
+Proudmoore,224593,Spinner's Circlet,600,2000
+Proudmoore,224592,Spinner's Hoop,597,500
+Proudmoore,224592,Spinner's Hoop,600,12000
+Proudmoore,224593,Spinner's Circlet,561,743
+Proudmoore,224593,Spinner's Circlet,597,1745
+Proudmoore,224593,Spinner's Circlet,597,743
+Proudmoore,224593,Spinner's Circlet,597,743
+Quel'Thalas,224593,Spinner's Circlet,600,2300
+Quel'Thalas,224593,Spinner's Circlet,603,4990
+Ragnaros,224592,Spinner's Hoop,600,5000
+Ragnaros,121247,Nightfall Loop,55,1500
+Ragnaros,121082,Thunder Totem Band,55,2543
+Ragnaros,224593,Spinner's Circlet,597,3500
+Ragnaros,224592,Spinner's Hoop,561,650
+Ragnaros,224592,Spinner's Hoop,600,2499
+Ragnaros,224592,Spinner's Hoop,597,1500
+Uldaman,224592,Spinner's Hoop,603,25000
+Uldaman,224593,Spinner's Circlet,597,10000
+Uldaman,224593,Spinner's Circlet,564,5000
+Uther,224593,Spinner's Circlet,600,4800

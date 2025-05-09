@@ -52,12 +52,15 @@ SCAN_PROFILES = {
     },
     "custom": {
         # Filters by different armour bonuses
-        "FILTER_TYPE": ["Speed", "Haste", "Prismatic"],
+        "FILTER_TYPE": ["Haste", "Prismatic"],
 
         # Defines the allowed item slots for filtering
-        "ALLOWED_ARMOR_SLOTS": ["Waist", "Legs", "Wrist", "Hands", "Back", "Feet"],
-        "ALLOWED_WEAPON_SLOTS": ["One-Hand", "Two-Hand", "Main-Hand", "Off-Hand"],
-        "ALLOWED_ACCESSORY_SLOTS": ["Finger", "Trinket", "Held In Off-hand"],
+        # "ALLOWED_ARMOR_SLOTS": ["Waist", "Legs", "Wrist", "Hands", "Back", "Feet"]
+        "ALLOWED_ARMOR_SLOTS": [],
+        # "ALLOWED_WEAPON_SLOTS": ["One-Hand", "Two-Hand", "Main-Hand", "Off-Hand"]
+        "ALLOWED_WEAPON_SLOTS": [],
+        # "ALLOWED_ACCESSORY_SLOTS": ["Finger", "Trinket", "Held In Off-hand"]
+        "ALLOWED_ACCESSORY_SLOTS": ["Finger"],
 
         # Defines the allowed armor types for filtering
         "ALLOWED_ARMOR_TYPES": ["Cloth", "Leather", "Miscellaneous"],
