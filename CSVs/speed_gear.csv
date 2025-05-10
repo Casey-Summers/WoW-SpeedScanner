@@ -1,18 +1,127 @@
 realm,item_id,name,ilvl,buyout_gold
-Saurfang,121105,Hagfeather Handwraps,55,10000
-Saurfang,121012,Azurewing Defender's Drape,55,9000
-Saurfang,121024,Llothien Waistband,55,1000
-Saurfang,159480,Bleached Bone Handaxe,55,300
-Saurfang,160127,Pterroleather Cloak,55,1087
-Saurfang,159548,Golden Fleet Mace,55,61
-Saurfang,170114,Flanged Mace,55,621
-Saurfang,224591,Deep-Dweller's Wraps,597,129
-Saurfang,224605,Underscout's Bracers,597,179
-Saurfang,224593,Spinner's Circlet,558,499
-Saurfang,224593,Spinner's Circlet,558,499
-Saurfang,121105,Hagfeather Handwraps,55,2999
-Saurfang,169399,Deeptide Gloves,55,19999
+Saurfang,224595,Deep-Dweller's Slippers,597,100
+Saurfang,121133,Haustvelt Shoulders,55,999
+Saurfang,121106,Hagfeather Leggings,55,7000
+Saurfang,224613,Expeditionary Epaulets,558,25000
+Saurfang,224612,Expeditionary Shinguards,561,20000
+Saurfang,121069,Brulwurm Scale,55,20000
+Saurfang,178948,Boneclutched Wand,101,9500
+Saurfang,210107,Harvest Guardian Deflectors,418,50474
+Saurfang,210107,Harvest Guardian Deflectors,421,46025
+Saurfang,210100,Maple Tender Mantle,421,66959
+Saurfang,210100,Maple Tender Mantle,418,69998
+Saurfang,210106,Maple Tender Wristbands,421,46025
+Saurfang,210089,Maple Tender Gloves,418,46025
+Saurfang,210090,Wind Wolf Gauntlets,421,46025
+Saurfang,198986,Drakewatcher's Sandals,197,320
+Saurfang,224591,Deep-Dweller's Wraps,564,40516
+Saurfang,179334,Wingblade Staff,101,3246
+Saurfang,177793,Night Guardian Pauldrons,101,8431
+Saurfang,233464,Rebel Spike Bindings,597,1500
+Saurfang,224627,Arathi Arquebus,600,110
+Saurfang,224611,Expeditionary Helm,561,39999
+Saurfang,210120,Autumn Druid Treads,424,69998
+Saurfang,210095,Maple Tender Leggings,424,69998
+Saurfang,224621,Earthforged Shoulder Scales,561,39999
+Saurfang,227692,Arathi Sword,564,49999
+Saurfang,208430,Whispering Fanged Cord,444,280000
+Saurfang,224628,Arathi Claymore,558,24999
+Saurfang,204945,Starless Breastplate,376,20500
+Saurfang,180163,Blackthorn Harvester,158,88888
+Saurfang,204935,Sunless Bracers,376,16310
+Saurfang,119337,Ripswallow Plate Belt,46,442710
+Saurfang,224638,Underscout's Glaive,597,90
+Saurfang,224634,Arathi Mace,600,150
+Saurfang,232661,Bootleg Wrynn Shoulderplates,655,750000
+Saurfang,224638,Underscout's Glaive,564,20613
+Saurfang,178949,Blackhound Claymore,101,29999
+Saurfang,224625,Expeditionary Spear,603,29999
+Saurfang,224605,Underscout's Bracers,600,19999
+Saurfang,159475,Shipwrecker Axe,55,19999
+Saurfang,180795,Gore-Smudged Bonesaw,101,19999
+Saurfang,121023,Llothien Shoulders,55,19999
+Saurfang,176986,Bloodskin Cord,101,29999
+Saurfang,177778,Depraved Darkblade's Belt,101,29999
+Saurfang,176992,Warflesh Bracers,101,29999
+Saurfang,121184,Smolderhide Britches,55,29999
+Saurfang,121184,Smolderhide Britches,55,19999
+Saurfang,121184,Smolderhide Britches,55,19999
+Saurfang,224633,Arathi Greataxe,558,19999
+Saurfang,224604,Underscout's Cord,558,19999
+Saurfang,198989,Drakewatcher's Pantaloons,197,19999
+Saurfang,224593,Spinner's Circlet,597,29999
+Saurfang,121079,Icepine Waistband,55,19999
+Saurfang,121182,Smolderhide Bindings,55,19999
+Saurfang,121182,Smolderhide Bindings,55,19999
+Saurfang,121050,Temporal Scholar's Handwraps,55,19999
+Saurfang,177816,Dredhollow Cape,101,19999
+Saurfang,224589,Deep-Dweller's Cincture,603,19999
+Saurfang,121181,Mangler's Mark,55,29999
+Saurfang,121048,Temporal Scholar's Cord,55,19999
+Saurfang,169404,Deeptide Cuffs,55,19999
+Saurfang,224636,Deep-Dweller's Dirk,558,19999
+Saurfang,224638,Underscout's Glaive,597,19999
+Saurfang,159283,Barrowknoll Cloak,55,19999
+Saurfang,224609,Expeditionary Boots,597,19999
+Saurfang,224608,Expeditionary Brigandine,603,19999
+Saurfang,224597,Deep-Dweller's Kaftan,558,19999
+Saurfang,160163,Sandscout Footwraps,55,19999
+Saurfang,121177,Vale Walker's Cloak,55,29999
+Saurfang,159569,Wavecaller Spire,55,29999
+Saurfang,121192,Vale Walker's Circle,55,19999
+Saurfang,121235,Sashj'tar Brooch,55,29999
+Saurfang,177774,Depraved Darkblade's Treads,101,19999
+Saurfang,159230,Ashvane Company Cloak,55,29999
+Saurfang,159820,Ironcrest Lantern,55,19999
+Saurfang,159228,Freehold Cape,55,29999
+Saurfang,159228,Freehold Cape,55,29999
+Saurfang,198987,Drakewatcher's Handwraps,197,19999
+Saurfang,224622,Stalwart Girdle,600,19999
+Saurfang,176802,Meditator's Blade,101,19999
+Saurfang,224619,Earthforged Handguards,603,19999
+Saurfang,159168,Freehold Boots,55,29999
+Saurfang,177772,Avowed Tormenter's Cord,101,19999
+Saurfang,121240,Ambervale Gloves,55,19999
+Saurfang,224613,Expeditionary Epaulets,564,19999
+Saurfang,176778,Umbrawing Leggings,101,19999
+Saurfang,176772,Umbrawing Handwraps,101,19999
+Saurfang,224632,Underscout's Kukri,564,19999
+Saurfang,159188,Foxhollow Sandals,55,29999
+Saurfang,121213,Crescent Vale Cord,55,19999
+Saurfang,121213,Crescent Vale Cord,55,29999
+Saurfang,224596,Deep-Dweller's Mitts,600,19999
+Saurfang,159519,Ironcrest Knife,55,19999
+Saurfang,176772,Umbrawing Handwraps,101,8475
 Saurfang,159186,Foxhollow Leggings,55,29999
-Saurfang,224592,Spinner's Hoop,603,8500
-Saurfang,170201,Deeptide Scroll,55,1000
-Saurfang,224593,Spinner's Circlet,597,799
+Saurfang,176791,Steelscale Bracers,101,3756
+Saurfang,224593,Spinner's Circlet,597,29999
+Saurfang,210082,Harvest Guardian Sabatons,424,69998
+Saurfang,210082,Harvest Guardian Sabatons,421,50446
+Saurfang,210101,Wind Wolf Epaulets,418,61910
+Saurfang,210108,Wind Wolf Cuffs,421,47617
+Saurfang,224602,Underscout's Cap,600,9315
+Saurfang,224602,Underscout's Cap,597,9315
+Saurfang,224604,Underscout's Cord,597,11368
+Saurfang,224609,Expeditionary Boots,597,7263
+Saurfang,224608,Expeditionary Brigandine,603,9368
+Saurfang,224605,Underscout's Bracers,600,12421
+Saurfang,224592,Spinner's Hoop,597,11368
+Saurfang,224593,Spinner's Circlet,597,11368
+Saurfang,224593,Spinner's Circlet,597,11368
+Saurfang,224624,Spinner's Shawl,597,11368
+Saurfang,233454,Mechforged Sabatons,603,30000
+Saurfang,232663,Undermine Merc's Dog Tags,655,975000
+Saurfang,224633,Arathi Greataxe,597,1323
+Saurfang,224627,Arathi Arquebus,558,1737
+Saurfang,159609,Golden Fleet Wand,55,71
+Saurfang,224599,Deep-Dweller's Shoulderpads,603,18999
+Saurfang,224637,Deep-Dweller's Orb,603,10000
+Saurfang,224598,Deep-Dweller's Leggings,597,599
+Saurfang,224603,Underscout's Trousers,600,1250
+Saurfang,224629,Arathi Hatchet,558,2085
+Saurfang,224600,Underscout's Striders,603,5000
+Saurfang,224618,Earthforged Sabatons,597,565
+Saurfang,224600,Underscout's Striders,597,5000
+Saurfang,224618,Earthforged Sabatons,597,5000
+Saurfang,210122,Breezekeeper's Staff,418,1999999
+Saurfang,180162,Drustwrought Scythe,158,68100

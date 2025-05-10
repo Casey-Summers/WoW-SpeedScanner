@@ -52,7 +52,7 @@ SCAN_PROFILES = {
     },
     "custom": {
         # Filters by different armour bonuses
-        "FILTER_TYPE": ["Haste", "Prismatic"],
+        "FILTER_TYPE": ["Haste", "Speed", "Prismatic"],
 
         # Defines the allowed item slots for filtering
         "ALLOWED_ARMOR_SLOTS": ["Waist", "Legs", "Wrist", "Hands", "Back", "Feet"],
@@ -1033,9 +1033,9 @@ def main():
         # Sort and print output to terminal
         all_results.sort(key=lambda x: x['ilvl'], reverse=True)
 
-        # Print table header (aligned)
-        print(f"\n{'Realm':<21} {'Item ID':<10} {'Type':<14} {'Slot':<15} {'Name':<33} {'ilvl':>10} {'Buyout':>10}")
-        
+               # Print table header (aligned)
+        print(f"\n{'Realm':<21} {'Item ID':<10} {'Type':<15} {'Slot':<16} {'Name':<36} {'ilvl':>8} {'Buyout':>11}")
+
         for r in all_results:
             realm_name = next((n for i, n in realms if i == r['realm_id']), f"Realm-{r['realm_id']}")
             item_id = r['item_id']
@@ -1049,13 +1049,13 @@ def main():
             item_slot = item_info.get('slot_type', 'Unknown')
 
             # Apply spacing BEFORE coloring
-            realm_str = f"✅ {realm_name:<19}"  # Include checkmark inside column
-            item_id_str = f"{item_id:<11}"
-            type_str = f"{item_type:<15}"
-            slot_str = f"{item_slot:<16}"
-            name_str = f"{name:<35}"
-            ilvl_str = f"{ilvl:>8}"
-            gold_str = f"{gold:>12,}".replace(",", "'")
+            realm_str = f"✅ {realm_name:<19}"         # Total width = 22 incl. checkmark
+            item_id_str = f"{item_id:<11}"             # Matches header width
+            type_str = f"{item_type:<16}"              # Matches header width
+            slot_str = f"{item_slot:<17}"              # Matches header width
+            name_str = f"{name:<36}"                   # Matches header width
+            ilvl_str = f"{ilvl:>8}"                    # Matches header width
+            gold_str = f"{gold:>13,}".replace(",", "'")  # Matches header width
 
             # Apply colors AFTER spacing
             ilvl_str = f"\033[94m{ilvl_str}\033[0m"
