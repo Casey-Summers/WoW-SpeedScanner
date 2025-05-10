@@ -7,7 +7,7 @@ with open("RaidBots_APIs/bonus_data_cache.json", "r", encoding="utf-8") as f:
 haste_ids = []
 
 print("=== BONUS IDS WITH HASTE STATS ===\n")
-print(f"{'ID':<6} {'Suffix':<25} {'Stat 1':<20} {'Stat 2':<20}")
+print(f"{'ID':<6} {'Suffix':<25} {'Stat 1':<30} {'Stat 2':<30}")
 
 for bid_str, bonus in bonus_data.items():
     bid = int(bid_str)
@@ -18,14 +18,22 @@ for bid_str, bonus in bonus_data.items():
     if not isinstance(stats, list):
         continue
 
+    # Detect haste using stat ID 36 (safe, regardless of label)
     has_haste = any(
-        s.get("name") == "Haste" and isinstance(s.get("amount"), int)
+        s.get("stat") == 36 and isinstance(s.get("amount"), (int, float))
         for s in stats
     )
+
     if has_haste:
-        stat1 = f"{stats[0]['name']} ({stats[0]['amount']})" if len(stats) > 0 else "-"
-        stat2 = f"{stats[1]['name']} ({stats[1]['amount']})" if len(stats) > 1 else "-"
-        print(f"{bid:<6} {name:<25} {stat1:<20} {stat2:<20}")
+        stat1 = (
+            f"{stats[0].get('name', stats[0].get('stat'))} ({stats[0].get('amount')})"
+            if len(stats) > 0 else "-"
+        )
+        stat2 = (
+            f"{stats[1].get('name', stats[1].get('stat'))} ({stats[1].get('amount')})"
+            if len(stats) > 1 else "-"
+        )
+        print(f"{bid:<6} {name:<25} {stat1:<30} {stat2:<30}")
         haste_ids.append(bid)
 
 # Summary
