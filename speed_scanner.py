@@ -19,9 +19,9 @@ from urllib.parse import urlparse  # Parse URLs for realm mapping
 from dotenv import load_dotenv  # Load environment variables from a .env file
 from tqdm import tqdm  # Display progress bars for realm scanning
 import re  # Regular expressions for parsing item level strings
-from collections import Counter # Count occurrences of items
 from time import perf_counter # Measure elapsed time for performance tracking
 import sys # System-specific parameters and functions
+from pathlib import Path # Handle file paths in a cross-platform way
 
 # === SCAN PROFILE DEFINITIONS ===
 SCAN_PROFILES = {
@@ -34,15 +34,15 @@ SCAN_PROFILES = {
         # E.g. ["Head", "Chest", "Shoulder", "Waist", "Legs", "Wrist", "Hands", "Back", "Feet"]
         "ALLOWED_ARMOR_SLOTS": ["Head", "Chest", "Shoulder", "Waist", "Legs", "Wrist", "Hands", "Back", "Feet"],
         # E.g. ["One-Hand", "Two-Hand", "Main-Hand", "Off-Hand", "Ranged"]
-        "ALLOWED_WEAPON_SLOTS": ["One-Hand", "Two-Hand", "Main-Hand", "Off-Hand", "Ranged"],
+        "ALLOWED_WEAPON_SLOTS": ["One-Hand", "Two-Hand", "Main-Hand", "Off-Hand", "Off Hand", "Ranged"],
         # E.g. ["Finger", "Trinket", "Held In Off-hand", "Neck"]
         "ALLOWED_ACCESSORY_SLOTS": ["Finger", "Trinket", "Held In Off-hand", "Neck"],
 
         # Defines the allowed armor types for filtering
         # E.g. ["Cloth", "Leather", "Mail", "Plate", "Miscellaneous"]
         "ALLOWED_ARMOR_TYPES": ["Cloth", "Leather", "Mail", "Plate", "Miscellaneous"],
-        # E.g. ["Dagger", "Sword", "Axe", "Mace", "Fist Weapon", "Polearm", "Staff", "Warglaives", "Gun", "Bow", "Crossbow", "Thrown", "Wand"]
-        "ALLOWED_WEAPON_TYPES": ["Dagger", "Sword", "Axe", "Mace", "Fist Weapon", "Polearm", "Staff", "Warglaives", "Gun", "Bow", "Crossbow", "Thrown", "Wand"]
+        # E.g. ["Dagger", "Sword", "Axe", "Mace", "Fist Weapon", "Polearm", "Staff", "Warglaives", "Gun", "Bow", "Crossbow", "Thrown", "Shield", "Wand"]
+        "ALLOWED_WEAPON_TYPES": ["Dagger", "Sword", "Axe", "Mace", "Fist Weapon", "Polearm", "Staff", "Warglaives", "Gun", "Bow", "Crossbow", "Thrown", "Shield", "Wand"]
     },
     "custom": {
         # Filters by different armour bonuses
@@ -67,7 +67,7 @@ MAX_ILVL = 668
 MAX_REALMS = 10
 
 # Toggles full debugging metadata
-PRINT_FULL_METADATA = False  # Set to True to print full auction metadata per matching item
+PRINT_FULL_METADATA = True  # Set to True to print full auction metadata per matching item
 suppress_inline_debug = False  # Global override for suppressing debug prints during formatted output
 
 # Limits the number of requests to Blizzard's API
@@ -91,6 +91,13 @@ LOADED_SERVERS_CSV = 'CSVs/loaded_servers.csv'
 TOKEN_CACHE = 'Tokens/token_cache.json'
 BONUS_DATA_FILE = 'RaidBots_APIs/bonus_data_cache.json'
 BONUS_DATA_URL = 'https://www.raidbots.com/static/data/live/bonuses.json' # Provides bonus ID adjustments (level increases per bonus)
+
+# Mapping of bonus IDs to their respective filter types
+FILTER_ID_MAP = {
+    "Speed": SPEED_IDS,
+    "Prismatic": PRISMATIC_IDS,
+    "Haste": HASTE_IDS
+}
 
 # Human-readable mapping for armor subclass IDs
 ARMOR_TYPE_MAP = {
@@ -146,6 +153,15 @@ INVENTORY_TYPE_MAP = {
     26: "Ranged Right",
     28: "Relic"
 }
+
+# Mapping from minimum required level to interpolated player level
+PLAYER_LEVEL_MAP = [
+    (70, 80),
+    (60, 70),
+    (56, 60),
+    (51, 50),
+    (45, 45),
+]
 
 # Global tracking for rate control
 throttle_tracker = {
@@ -301,8 +317,10 @@ def parse_ilevel_string(ilevel_str, player_level):
     """
     Convert a string like '5 @plvl 1 - 357 @plvl 357' into an estimated ilvl using linear interpolation.
     """
-    match = re.match(r"(\d+)\s+@plvl\s+(\d+)\s*-\s*(\d+)\s+@plvl\s+(\d+)", ilevel_str)
+    pattern = r"(\d+)\s+@plvl\s+(\d+)\s*-\s*(\d+)\s+@plvl\s+(\d+)"
+    match = re.match(pattern, ilevel_str)
     if not match:
+        logging.warning(f"⚠️ Unexpected ilevel string format: '{ilevel_str}'")
         return 0
 
     ilvl_low, plvl_low, ilvl_high, plvl_high = map(int, match.groups())
@@ -312,7 +330,6 @@ def parse_ilevel_string(ilevel_str, player_level):
     elif player_level >= plvl_high:
         return ilvl_high
 
-    # Interpolate linearly between points
     ratio = (player_level - plvl_low) / (plvl_high - plvl_low)
     return round(ilvl_low + ratio * (ilvl_high - ilvl_low))
 
@@ -367,17 +384,10 @@ def convert_required_level_to_player_level(required_level):
     Returns:
         int: Estimated player level to use for interpolation.
     """
-    if required_level >= 60:
-        return 70
-    elif required_level >= 56:
-        return 60
-    elif required_level >= 51:
-        return 50
-    elif required_level >= 45:
-        return 45
-    else:
-        return required_level  # fallback
-
+    for min_level, player_level in PLAYER_LEVEL_MAP:
+        if required_level >= min_level:
+            return player_level
+    return required_level  # fallback for very low legacy items
 
 
 # === AUTHENTICATION AND TOKEN MANAGEMENT ===
@@ -787,12 +797,12 @@ def fetch_item_info(session, headers, item_id, cache):
 
     # Save to cache
     cache[item_id] = {
-        'ilvl': ilvl,
-        'name': name,
-        'item_type': item_type,         # e.g., Plate, Bow, etc.
-        'item_category': item_category, # e.g., Armor, Weapon, Misc
+        'name': name, 
+        'ilvl': ilvl, 
+        'required_level': required_level,
+        'item_category': item_category,
+        'item_type': item_type,
         'slot_type': slot_type,
-        'required_level': required_level
     }
 
     return cache[item_id]
@@ -837,11 +847,16 @@ def scan_realm_with_bonus_analysis(session, headers, realm_id, realm_name, item_
     results = []
 
     for auc in data.get('auctions', []):
-        item = auc['item']
+        item = auc.get('item')
+        if not item or not isinstance(item, dict):
+            if PRINT_FULL_METADATA:
+                print("⛔ Skipping auction: missing or invalid 'item' field")
+            continue
+
         bonuses = list(set(auc.get('bonus_lists', []) + item.get('bonus_lists', [])))
 
         # Skip items that don't match the active filters
-        if any(not any(b in bonuses for b in active_filters[f]) for f in active_filters):
+        if not all(set(bonuses) & active_filters[f] for f in active_filters):
             continue
 
         info = fetch_item_info(session, headers, item['id'], item_cache)
@@ -876,6 +891,8 @@ def scan_realm_with_bonus_analysis(session, headers, realm_id, realm_name, item_
             'ilvl': final_ilvl,
             'quantity': auc.get('quantity'),
             'buyout': auc.get('buyout'),
+            'type': info.get('item_type'),
+            'slot': info.get('slot_type'),
         }
 
         if PRINT_FULL_METADATA:
@@ -982,6 +999,31 @@ def select_scan_type():
         return True, test_realm
     return False, None
 
+def print_item_row(r, realms, color=True):
+    """Prints a formatted row of item data to the console."""
+    realm_name = next((n for i, n in realms if i == r['realm_id']), f"Realm-{r['realm_id']}")
+    item_id = r['item_id']
+    name = r['name']
+    ilvl = r['ilvl']
+    gold = int(r['buyout']) // 10000 if r['buyout'] else 0
+    item_type = r.get('type', 'Unknown')
+    item_slot = r.get('slot', 'Unknown')
+
+    # Pre-format fields
+    realm_str = f"✅ {realm_name:<19}"
+    item_id_str = f"{item_id:<11}"
+    type_str = f"{item_type:<16}"
+    slot_str = f"{item_slot:<17}"
+    name_str = f"{name:<36}"
+    ilvl_str = f"{ilvl:>8}"
+    gold_str = f"{gold:>13,}".replace(",", "'")
+
+    if color:
+        ilvl_str = f"\033[94m{ilvl_str}\033[0m"
+        gold_str = f"{gold_str}\033[33mg\033[0m"
+
+    print(f"{realm_str}{item_id_str}{type_str}{slot_str}{name_str}{ilvl_str} {gold_str}")
+
 
 # === MAIN EXECUTION ===
 def main():
@@ -1015,7 +1057,6 @@ def main():
         fallback_data = json.load(f)
 
     # Load curve data once
-    from pathlib import Path
     with open(Path(os.path.dirname(BONUS_DATA_FILE)) / "item-curves.json", 'r', encoding='utf-8') as f:
         curve_data = json.load(f)
 
@@ -1030,14 +1071,8 @@ def main():
             logging.warning(f"⚠️ Failed to load scan order. Falling back to default order. Reason: {e}")
             realms = [(info['id'], info['name']) for info in realm_map.values()][:MAX_REALMS]
 
-    # Compute filter dictionary once
-    BONUS_FILTER_MAP = {
-        "Speed": SPEED_IDS,
-        "Prismatic": PRISMATIC_IDS,
-        "Haste": HASTE_IDS
-    }
     active_filters = {
-        f: set(BONUS_FILTER_MAP[f]) for f in scan_config.filter_type if f in BONUS_FILTER_MAP
+        f: set(FILTER_ID_MAP[f]) for f in scan_config.filter_type if f in FILTER_ID_MAP
     }
 
     # Format the list of filters into a readable string like: "Prismatic, Haste, Speed"
@@ -1073,41 +1108,11 @@ def main():
         # Sort and print output to terminal
         all_results.sort(key=lambda x: x['ilvl'], reverse=True)
 
-        # Suppress inline debug messages
-        global suppress_inline_debug
-        suppress_inline_debug = True
-
         # Print table header (aligned)
         print(f"\n{'Realm':<21} {'Item ID':<10} {'Type':<15} {'Slot':<16} {'Name':<36} {'ilvl':>8} {'Buyout':>11}")
         for r in all_results:
-            realm_name = next((n for i, n in realms if i == r['realm_id']), f"Realm-{r['realm_id']}")
-            item_id = r['item_id']
-            name = r['name']
-            ilvl = r['ilvl']
-            gold = int(r['buyout']) // 10000 if r['buyout'] else 0
-
-            # Fetch additional details for Type and Slot
-            item_info = fetch_item_info(session, headers, item_id, item_cache)
-            item_type = item_info.get('item_type', 'Unknown')
-            item_slot = item_info.get('slot_type', 'Unknown')
-
-            # Apply spacing BEFORE coloring
-            realm_str = f"✅ {realm_name:<19}"         # Total width = 22 incl. checkmark
-            item_id_str = f"{item_id:<11}"             # Matches header width
-            type_str = f"{item_type:<16}"              # Matches header width
-            slot_str = f"{item_slot:<17}"              # Matches header width
-            name_str = f"{name:<36}"                   # Matches header width
-            ilvl_str = f"{ilvl:>8}"                    # Matches header width
-            gold_str = f"{gold:>13,}".replace(",", "'")  # Matches header width
-
-            # Apply colors AFTER spacing
-            ilvl_str = f"\033[94m{ilvl_str}\033[0m"
-            gold_str = f"{gold_str}\033[33mg\033[0m"
-
-            print(f"{realm_str}{item_id_str}{type_str}{slot_str}{name_str}{ilvl_str} {gold_str}")
-
+            print_item_row(r, realms)
         print(f"\033[92m\nFound \033[93m{len(all_results)} \033[92mitems matching the filters: \033[94m{filter_str}\033[0m\n")
-        suppress_inline_debug = True
 
     else:
         logging.info("❌ No matching Speed-stat items found.")

@@ -61,7 +61,7 @@ def benchmark_rate_limit(token, max_test_rps=100):
 
         elapsed = time.time() - start
         actual_rps = successes / elapsed if elapsed > 0 else 0
-        print(f"  ▶️ {test_rps} attempted => {successes} success / {failures} fail ({elapsed:.2f}s) | Actual RPS: {actual_rps:.2f}")
+        print(f"  ▶️  {test_rps} attempted => {successes} success / {failures} fail ({elapsed:.2f}s) | Actual RPS: {actual_rps:.2f}")
 
         if failures > 0:
             break
