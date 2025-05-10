@@ -1,6 +1,4 @@
 realm,item_id,name,ilvl,buyout_gold
-Saurfang,224595,Deep-Dweller's Slippers,597,100
-Saurfang,121133,Haustvelt Shoulders,55,999
 Saurfang,121106,Hagfeather Leggings,55,7000
 Saurfang,224613,Expeditionary Epaulets,558,25000
 Saurfang,224612,Expeditionary Shinguards,561,20000
@@ -93,7 +91,6 @@ Saurfang,224596,Deep-Dweller's Mitts,600,19999
 Saurfang,159519,Ironcrest Knife,55,19999
 Saurfang,176772,Umbrawing Handwraps,101,8475
 Saurfang,159186,Foxhollow Leggings,55,29999
-Saurfang,176791,Steelscale Bracers,101,3756
 Saurfang,224593,Spinner's Circlet,597,29999
 Saurfang,210082,Harvest Guardian Sabatons,424,69998
 Saurfang,210082,Harvest Guardian Sabatons,421,50446
@@ -114,7 +111,6 @@ Saurfang,232663,Undermine Merc's Dog Tags,655,975000
 Saurfang,224633,Arathi Greataxe,597,1323
 Saurfang,224627,Arathi Arquebus,558,1737
 Saurfang,159609,Golden Fleet Wand,55,71
-Saurfang,224599,Deep-Dweller's Shoulderpads,603,18999
 Saurfang,224637,Deep-Dweller's Orb,603,10000
 Saurfang,224598,Deep-Dweller's Leggings,597,599
 Saurfang,224603,Underscout's Trousers,600,1250
@@ -125,3 +121,79 @@ Saurfang,224600,Underscout's Striders,597,5000
 Saurfang,224618,Earthforged Sabatons,597,5000
 Saurfang,210122,Breezekeeper's Staff,418,1999999
 Saurfang,180162,Drustwrought Scythe,158,68100
+Saurfang,141589,Treia's Handcrafted Shroud,50,99999
+Saurfang,224600,Underscout's Striders,603,800
+Saurfang,210103,Maple Tender Sash,421,32875
+Saurfang,210103,Maple Tender Sash,418,32875
+Saurfang,210103,Maple Tender Sash,421,32875
+Saurfang,210103,Maple Tender Sash,418,32875
+Saurfang,210121,Ring of Season's Sunset,418,32875
+Saurfang,210130,Wildleaf Javelin,418,56875
+Saurfang,210237,Nipping Night's Necklace,418,32875
+Saurfang,210237,Nipping Night's Necklace,421,32875
+Saurfang,210237,Nipping Night's Necklace,418,32875
+Saurfang,210237,Nipping Night's Necklace,418,32875
+Saurfang,210082,Harvest Guardian Sabatons,418,32875
+Saurfang,210082,Harvest Guardian Sabatons,421,50446
+Saurfang,210134,Wind Wolf Shroud,421,32875
+Saurfang,210133,Harvest Guardian Cloak,421,32875
+Saurfang,210133,Harvest Guardian Cloak,418,32875
+Saurfang,210108,Wind Wolf Cuffs,421,47617
+Saurfang,210108,Wind Wolf Cuffs,421,32875
+Saurfang,210108,Wind Wolf Cuffs,418,32875
+Saurfang,210088,Harvest Guardian Handguards,418,32875
+Saurfang,209957,Fang of the Frenzied Nightclaw,418,32875
+Saurfang,209957,Fang of the Frenzied Nightclaw,421,32875
+Saurfang,210104,Wind Wolf Chain,421,32875
+Saurfang,210104,Wind Wolf Chain,421,32875
+Saurfang,210104,Wind Wolf Chain,418,32875
+Saurfang,210128,Autumn Defender's Claymore,421,56875
+Saurfang,210107,Harvest Guardian Deflectors,418,32875
+Saurfang,210107,Harvest Guardian Deflectors,421,46025
+Saurfang,210107,Harvest Guardian Deflectors,418,32875
+Saurfang,210107,Harvest Guardian Deflectors,421,32875
+Saurfang,210091,Maple Tender Crown,418,32875
+Saurfang,210094,Harvest Guardian Legplates,424,32875
+Saurfang,210094,Harvest Guardian Legplates,418,32875
+Saurfang,210094,Harvest Guardian Legplates,421,32875
+Saurfang,210106,Maple Tender Wristbands,418,32875
+Saurfang,210106,Maple Tender Wristbands,421,46025
+Saurfang,210106,Maple Tender Wristbands,418,32875
+Saurfang,210102,Harvest Guardian Girdle,418,32875
+Saurfang,210102,Harvest Guardian Girdle,418,32875
+Saurfang,209955,Root of Fire,421,32875
+Saurfang,209955,Root of Fire,418,32875
+Saurfang,210113,Wildleaf Glaive,418,56875
+Saurfang,210105,Autumn Druid Belt,421,32875
+Saurfang,210105,Autumn Druid Belt,418,32875
+Saurfang,210105,Autumn Druid Belt,418,32875
+Saurfang,210123,Wildleaf Hammer,421,56875
+Saurfang,210087,Autumn Druid Grips,418,32875
+Saurfang,210087,Autumn Druid Grips,421,32875
+Saurfang,210132,Wildleaf Greatsword,418,56875
+Saurfang,233478,Shimmerthread Sandals,597,32875
+Saurfang,208350,Ochre Field Signet,418,32875
+Saurfang,208350,Ochre Field Signet,418,32875
+Saurfang,209958,Rune of the Umbramane,418,32875
+Saurfang,209958,Rune of the Umbramane,421,32875
+Saurfang,210125,Breezekeeper's Handaxe,418,56875
+Saurfang,210125,Breezekeeper's Handaxe,421,56875
+Saurfang,210109,Autumn Druid Bracers,418,32875
+Saurfang,210090,Wind Wolf Gauntlets,421,46025
+Saurfang,210090,Wind Wolf Gauntlets,418,32875
+Saurfang,209953,Dancing Dream Blossoms,421,32875
+Saurfang,209953,Dancing Dream Blossoms,418,32875
+Saurfang,210114,Autumn Defender's Saber,418,56875
+Saurfang,210089,Maple Tender Gloves,421,32875
+Saurfang,210089,Maple Tender Gloves,418,46025
+Saurfang,210126,Breezekeeper's Mallet,421,56875
+Saurfang,210127,Autumn Defender's Gavel,418,56875
+Saurfang,210096,Wind Wolf Legguards,418,32875
+Saurfang,210096,Wind Wolf Legguards,421,32875
+Saurfang,210118,Maple Tender Slippers,418,32875
+Saurfang,210097,Autumn Druid Trousers,418,32875
+Saurfang,210097,Autumn Druid Trousers,421,32875
+Saurfang,210095,Maple Tender Leggings,418,32875
+Saurfang,210095,Maple Tender Leggings,421,32875
+Saurfang,224619,Earthforged Handguards,597,333
+Saurfang,121208,Dreadroot Linked Greaves,55,200

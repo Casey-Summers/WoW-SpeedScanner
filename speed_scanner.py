@@ -19,15 +19,9 @@ from urllib.parse import urlparse  # Parse URLs for realm mapping
 from dotenv import load_dotenv  # Load environment variables from a .env file
 from tqdm import tqdm  # Display progress bars for realm scanning
 import re  # Regular expressions for parsing item level strings
-
-FILTER_TYPE = []
-ALLOWED_ARMOR_SLOTS = []
-ALLOWED_WEAPON_SLOTS = []
-ALLOWED_ACCESSORY_SLOTS = []
-ALLOWED_SLOTS = []
-ALLOWED_ARMOR_TYPES = []
-ALLOWED_WEAPON_TYPES = []
-ALLOWED_TYPES = []
+from collections import Counter # Count occurrences of items
+from time import perf_counter # Measure elapsed time for performance tracking
+import sys # System-specific parameters and functions
 
 # === SCAN PROFILE DEFINITIONS ===
 SCAN_PROFILES = {
@@ -70,10 +64,14 @@ MIN_ILVL = 1
 MAX_ILVL = 668
 
 # Maximum number of realms to scan
-MAX_REALMS = 25
+MAX_REALMS = 10
 
 # Toggles full debugging metadata
-PRINT_FULL_METADATA = False  # Set to True to print full auction metadata per matching item
+PRINT_FULL_METADATA = True  # Set to True to print full auction metadata per matching item
+suppress_inline_debug = False  # Global override for suppressing debug prints during formatted output
+
+# Limits the number of requests to Blizzard's API
+MAX_REQUESTS_PER_SEC = 3.5
 
 # Region to query ('us' or 'eu')
 REGION = 'us' 
@@ -146,35 +144,29 @@ INVENTORY_TYPE_MAP = {
     28: "Relic"
 }
 
-# Build filter presence dictionary
-def apply_scan_profile(profile_name):
-    """
-    Applies the selected scan profile to the global constants used throughout the scan logic.
-    """
-    profile = SCAN_PROFILES.get(profile_name)
-    if not profile:
-        raise ValueError(f"Unknown scan profile: {profile_name}")
+# Global tracking for rate control
+throttle_tracker = {
+    'start_time': None,
+    'request_count': 0
+}
 
-    globals()["FILTER_TYPE"] = profile["FILTER_TYPE"]
-    globals()["ALLOWED_ARMOR_SLOTS"] = profile["ALLOWED_ARMOR_SLOTS"]
-    globals()["ALLOWED_WEAPON_SLOTS"] = profile["ALLOWED_WEAPON_SLOTS"]
-    globals()["ALLOWED_ACCESSORY_SLOTS"] = profile["ALLOWED_ACCESSORY_SLOTS"]
-    globals()["ALLOWED_SLOTS"] = (
-        profile["ALLOWED_ARMOR_SLOTS"] +
-        profile["ALLOWED_WEAPON_SLOTS"] +
-        profile["ALLOWED_ACCESSORY_SLOTS"]
-    )
-    globals()["ALLOWED_ARMOR_TYPES"] = profile["ALLOWED_ARMOR_TYPES"]
-    globals()["ALLOWED_WEAPON_TYPES"] = profile["ALLOWED_WEAPON_TYPES"]
-    globals()["ALLOWED_TYPES"] = (
-        profile["ALLOWED_ARMOR_TYPES"] +
-        profile["ALLOWED_WEAPON_TYPES"]
-    )
+debug_stats = {
+    'blizzard_requests': 0,
+    'item_metadata_hits': 0,
+    'item_metadata_misses': 0,
+    'auction_calls': 0,
+    'realms_scanned': 0,
+}
 
+# === Conditional global logging based on debug flag ===
+LOG_LEVEL = logging.DEBUG if PRINT_FULL_METADATA else logging.INFO
+logging.basicConfig(
+    level=LOG_LEVEL,
+    format='[%(levelname)s] %(message)s',
+    stream=sys.stderr
+)
+logging.getLogger("urllib3").setLevel(LOG_LEVEL)
 
-
-# Configure global logging format and level
-logging.basicConfig(level=logging.INFO, format='[%(levelname)s] %(message)s')
 # Ensure tqdm lock is acquired to display progress safely
 tqdm.get_lock()
 
@@ -193,7 +185,29 @@ BASE_URL = 'https://{region}.api.blizzard.com'
 # In-memory map of realm slugs to their connected realm IDs and names
 realm_map = {}
 
-# === BONUS ID SYSTEM ===
+
+class ScanConfig:
+    def __init__(self, profile_data):
+        self.filter_type = profile_data["FILTER_TYPE"]
+        self.allowed_armor_slots = profile_data["ALLOWED_ARMOR_SLOTS"]
+        self.allowed_weapon_slots = profile_data["ALLOWED_WEAPON_SLOTS"]
+        self.allowed_accessory_slots = profile_data["ALLOWED_ACCESSORY_SLOTS"]
+        self.allowed_slots = (
+            self.allowed_armor_slots +
+            self.allowed_weapon_slots +
+            self.allowed_accessory_slots
+        )
+        self.allowed_armor_types = profile_data["ALLOWED_ARMOR_TYPES"]
+        self.allowed_weapon_types = profile_data["ALLOWED_WEAPON_TYPES"]
+        self.allowed_types = self.allowed_armor_types + self.allowed_weapon_types
+
+def get_scan_config(profile_name):
+    profile = SCAN_PROFILES.get(profile_name)
+    if not profile:
+        raise ValueError(f"Unknown scan profile: {profile_name}")
+    return ScanConfig(profile)
+
+
 # === BONUS ID SYSTEM ===
 def fetch_raidbots_data(force_refresh=False):
     """
@@ -278,7 +292,6 @@ def fetch_raidbots_data(force_refresh=False):
             local_data[name] = {}
 
     return local_data
-
 
 
 def parse_ilevel_string(ilevel_str, player_level):
@@ -426,7 +439,9 @@ def get_token() -> str:
 
 def request_with_retry(session, method, url, params=None, retries=3):
     """
-    Perform an HTTP request with retry logic for rate limits and token expiry.
+    Perform an HTTP request with retry logic and dynamic rate-limiting.
+
+    Throttles global request rate to stay below MAX_REQUESTS_PER_SEC.
 
     Args:
         session (requests.Session): HTTP session with headers set.
@@ -441,23 +456,53 @@ def request_with_retry(session, method, url, params=None, retries=3):
     Raises:
         RuntimeError: If unauthorized or retries are exhausted.
     """
+    # === Throttle to max 3.5 requests/sec ===
+    now = time.time()
+    if throttle_tracker['start_time'] is None:
+        throttle_tracker['start_time'] = now
+        throttle_tracker['request_count'] = 0
+
+    throttle_tracker['request_count'] += 1
+    debug_stats['blizzard_requests'] += 1
+    elapsed = now - throttle_tracker['start_time']
+    actual_rps = throttle_tracker['request_count'] / elapsed if elapsed > 0 else 0
+    
+    if PRINT_FULL_METADATA:
+        print(f"\n[Throttle] Requests: {throttle_tracker['request_count']}, Elapsed: {elapsed:.2f}s, RPS: {actual_rps:.2f}")
+
+    if actual_rps > MAX_REQUESTS_PER_SEC:
+        ideal_delay = (throttle_tracker['request_count'] / MAX_REQUESTS_PER_SEC) - elapsed
+        if ideal_delay > 0:
+            time.sleep(ideal_delay)
+
+    # === Retry logic ===
     for attempt in range(1, retries + 1):
+        
+        # Prints full metadata for debugging
+        if PRINT_FULL_METADATA:
+            if "connected-realm" in url and "auctions" in url:
+                logging.debug("📡 Auction House request")
+                debug_stats['auction_calls'] += 1
+            elif "item/" in url:
+                logging.debug("📦 Item metadata request")
+            else:
+                logging.debug(f"🔍 Other Blizzard API request: {url}")
+
+        # Get a new token if expired
         resp = session.request(method, url, params=params)
         if resp.status_code == 200:
             return resp.json()
         if resp.status_code == 429:
-            # Handle Blizzard rate limiting
             retry_after = int(resp.headers.get('Retry-After', '1'))
             logging.warning("⚠️ Rate limited; sleeping %ds (attempt %d/%d)", retry_after, attempt, retries)
             time.sleep(retry_after)
             continue
         if resp.status_code == 401:
-            # Token may be invalid; clear cache and error
             if os.path.isfile(TOKEN_CACHE):
                 os.remove(TOKEN_CACHE)
             raise RuntimeError("Unauthorized: cached token invalid or expired")
-        # For other errors, raise HTTPError
         resp.raise_for_status()
+
     raise RuntimeError(f"Failed {method} {url} after {retries} attempts")
 
 # === REALM MAPPING ===
@@ -668,7 +713,7 @@ def update_single_scan_timestamp(realm_id, realm_name, filename=LOADED_SERVERS_C
 # === ITEM AND AUCTION LOGIC ===
 def fetch_item_info(session, headers, item_id, cache):
     """
-    Retrieve item metadata (level, name, armor type, and slot) from Blizzard API or cache.
+    Retrieve item metadata (level, name, item type, and slot) from Blizzard API or cache.
 
     Args:
         session (requests.Session): Active HTTP session.
@@ -677,57 +722,55 @@ def fetch_item_info(session, headers, item_id, cache):
         cache (dict): Local cache mapping IDs to metadata.
 
     Returns:
-        dict: Cached metadata including armor_type and slot_type.
+        dict: Cached metadata including item_type, item_category, slot_type, and required_level.
     """
     if item_id in cache:
+        debug_stats['item_metadata_hits'] += 1
+        if PRINT_FULL_METADATA and not globals().get('suppress_inline_debug', False):
+            print(f"[DEBUG] 📦 [Cache Hit] Item {item_id}", file=sys.stderr)
         return cache[item_id]
+
+    debug_stats['item_metadata_misses'] += 1
 
     url = f"{BASE_URL.format(region=REGION)}/data/wow/item/{item_id}"
     params = {'namespace': REGION_NS[REGION]['static'], 'locale': 'en_US'}
     data = request_with_retry(session, 'GET', url, params)
 
-    # Item name
+    # Extract item fields
     name_field = data.get('name')
     name = name_field if isinstance(name_field, str) else name_field.get('en_US', f"item_{item_id}")
     ilvl = data.get('level', 0)
 
-    # Accurate required level
-    required_level_exact = data.get("requirements", {}).get("level", {}).get("value")
-    if required_level_exact is None:
-        required_level_exact = data.get('required_level', 60)
+    # Required level
+    required_level = data.get("requirements", {}).get("level", {}).get("value") or data.get('required_level', 60)
 
-    # Determine item type based on item class ID
-    item_class_id = data.get('item_class', {}).get('id')
-    subclass_id = data.get('item_subclass', {}).get('id')
+    # Determine item type (e.g., Plate, Bow) and category (Weapon, Armor, etc.)
+    subclass_info = data.get("item_subclass", {})
+    item_type = subclass_info.get("name", "Unknown")
+    item_class_id = data.get("item_class", {}).get("id")
 
-    if item_class_id == 2:  # Weapon
-        armor_type = WEAPON_TYPE_MAP.get(subclass_id, 'Miscellaneous')
-    elif item_class_id == 4:  # Armor
-        armor_type = ARMOR_TYPE_MAP.get(subclass_id, 'Miscellaneous')
+    if item_class_id == 2:
+        item_category = "Weapon"
+    elif item_class_id == 4:
+        item_category = "Armor"
     else:
-        armor_type = 'Miscellaneous'
+        item_category = "Misc"
 
-    # Slot Type
-    inventory_data = data.get('inventory_type', {})
-    inv_id = inventory_data.get('id')
-    inv_type = inventory_data.get('type', '')
-    inv_name = inventory_data.get('name', '')
+    # Determine inventory slot
+    inv_data = data.get('inventory_type', {})
+    slot_id = inv_data.get('id')
+    slot_type = INVENTORY_TYPE_MAP.get(slot_id) or inv_data.get("name") or inv_data.get("type", "Other")
 
-    # Fallback logic for slot name
-    slot_type = INVENTORY_TYPE_MAP.get(inv_id)
-    if not slot_type:
-        slot_type = inv_name or inv_type or "Other"
-
-    # Store in cache
+    # Save to cache
     cache[item_id] = {
         'ilvl': ilvl,
         'name': name,
-        'armor_type': armor_type,
+        'item_type': item_type,         # e.g., Plate, Bow, etc.
+        'item_category': item_category, # e.g., Armor, Weapon, Misc
         'slot_type': slot_type,
-        'required_level': required_level_exact
+        'required_level': required_level
     }
 
-    time.sleep(0.1)  # Be gentle with Blizzard
     return cache[item_id]
 
 
@@ -757,22 +800,11 @@ def get_observed_ilvl(auc, info):
     return info.get("ilvl", 0)
 
 
-def scan_realm_with_bonus_analysis(session, headers, realm_id, realm_name, item_cache, raidbots_data, fallback_data, curve_data):
+def scan_realm_with_bonus_analysis(session, headers, realm_id, realm_name, item_cache,
+                                   raidbots_data, fallback_data, curve_data,
+                                   scan_config, active_filters):
     """
-    Scan auction data for a single connected-realm ID, filtering by required bonuses.
-
-    Args:
-        session (requests.Session): HTTP session.
-        headers (dict): Authorization headers.
-        realm_id (int): Connected realm identifier.
-        realm_name (str): Human-readable realm name.
-        item_cache (dict): Cache for item metadata.
-        raidbots_data (dict): Live bonus-level data.
-        fallback_data (dict): Cached bonus-level data.
-        curve_data (dict): Preloaded item-curves.json.
-
-    Returns:
-        list[dict]: List of auction entries matching Speed stat.
+    Scan a realm's auction data using bonuses and config rules.
     """
     logging.info(f"🔍 Scanning realm ID {realm_id}: {realm_name}")
     url = f"{BASE_URL.format(region=REGION)}/data/wow/connected-realm/{realm_id}/auctions"
@@ -781,124 +813,96 @@ def scan_realm_with_bonus_analysis(session, headers, realm_id, realm_name, item_
 
     results = []
 
-    # Build dynamic filter checks using the active FILTER_TYPE (applied at runtime)
-    BONUS_FILTER_MAP = {
-        "Speed": SPEED_IDS,
-        "Prismatic": PRISMATIC_IDS,
-        "Haste": HASTE_IDS
-    }
-
-    try:
-        ACTIVE_FILTERS = {
-            f: set(BONUS_FILTER_MAP[f]) for f in FILTER_TYPE if f in BONUS_FILTER_MAP
-        }
-    except NameError:
-        raise RuntimeError("FILTER_TYPE is not defined. Make sure apply_scan_profile() is called before scanning.")
-
     for auc in data.get('auctions', []):
         item = auc['item']
         bonuses = list(set(auc.get('bonus_lists', []) + item.get('bonus_lists', [])))
 
-        # Dynamically check all required filters
-        if any(not any(b in bonuses for b in ACTIVE_FILTERS[f]) for f in ACTIVE_FILTERS):
+        # Skip items that don't match the active filters
+        if any(not any(b in bonuses for b in active_filters[f]) for f in active_filters):
             continue
 
         info = fetch_item_info(session, headers, item['id'], item_cache)
 
         observed_ilvl = get_observed_ilvl(auc, info)
-        base_ilvl = observed_ilvl  # Use this for curve inference
+        base_ilvl = observed_ilvl
         inferred_level = None
 
-        # Try to find a bonus entry with curveId
-        curve_id = None
-        for b in bonuses:
-            bonus_data = raidbots_data.get(str(b)) or fallback_data.get(str(b))
-            if bonus_data and "curveId" in bonus_data:
-                curve_id = bonus_data["curveId"]
-                break
+        curve_id = next(
+            (bonus.get("curveId") for b in bonuses
+             if (bonus := raidbots_data.get(str(b)) or fallback_data.get(str(b))) and "curveId" in bonus),
+            None
+        )
 
         if curve_id:
             points = curve_data.get(str(curve_id), {}).get("points", [])
             inferred_level, corrected_ilvl = infer_player_level_from_ilvl(base_ilvl, points)
             final_ilvl = corrected_ilvl or observed_ilvl
         else:
-            # Fallback to bonus-based adjustment
             final_ilvl = infer_ilvl_from_bonus_ids(
-                base_ilvl,
-                bonuses,
-                raidbots_data,
-                fallback_data,
+                base_ilvl, bonuses, raidbots_data, fallback_data,
                 player_level=info.get('required_level', 60)
             ) or observed_ilvl
 
-        if MIN_ILVL <= final_ilvl <= MAX_ILVL:
-            result = {
-                'realm_id': realm_id,
-                'item_id': item['id'],
-                'name': info['name'],
-                'ilvl': final_ilvl,
-                'quantity': auc.get('quantity'),
-                'buyout': auc.get('buyout'),
-            }
+        if not (MIN_ILVL <= final_ilvl <= MAX_ILVL):
+            continue
 
+        result = {
+            'realm_id': realm_id,
+            'item_id': item['id'],
+            'name': info['name'],
+            'ilvl': final_ilvl,
+            'quantity': auc.get('quantity'),
+            'buyout': auc.get('buyout'),
+        }
+
+        if PRINT_FULL_METADATA:
+            sys.stderr.flush()
+            print(f"📦 Full Metadata for '{info['name']}'")
+            print(f"🧾 {'Item ID':<14}: {item['id']}")
+            print(f"📏 {'Default ilvl':<14}: {observed_ilvl}")
+            print(f"📈 {'Adjusted ilvl':<14}: {final_ilvl}")
+            print(f"🎚️  {'Requires Level':<14}: {info.get('required_level', '—')}")
+            print(f"⛓️  {'Item Type':<14}: {info.get('item_type', 'Unknown')}")
+            print(f"🎯 {'Slot Type':<14}: {info.get('slot_type', 'Unknown')}")
+            print(f"🎫 {'Bonus IDs':<14}: {bonuses}")
+            print(f"💰 {'Buyout':<14}: {auc.get('buyout')}")
+            print(f"🔢 {'Quantity':<14}: {auc.get('quantity')}")
+            print("-" * 60)
+
+        slot = info['slot_type']
+        item_type = info['item_type']
+
+        is_armor_slot = slot in scan_config.allowed_armor_slots
+        is_weapon_slot = slot in scan_config.allowed_weapon_slots
+        is_accessory_slot = slot in scan_config.allowed_accessory_slots
+
+        is_armor_type = item_type in scan_config.allowed_armor_types
+        is_weapon_type = item_type in scan_config.allowed_weapon_types
+
+        if slot not in scan_config.allowed_slots:
             if PRINT_FULL_METADATA:
-                print(f"\n📦 Full Metadata for '{info['name']}'")
-                print(f"🧾 Item ID     : {item['id']}")
-                print(f"📏 Observed ilvl: {observed_ilvl}")
-                print(f"📈 Final ilvl  : {final_ilvl}")
-                print(f"🎚️  Required Level: {info.get('required_level', '—')}")
-                print(f"⛓️  Armor Type  : {info.get('armor_type', 'Unknown')}")
-                print(f"🎯 Slot Type   : {info.get('slot_type', 'Unknown')}")
-                print(f"🎫 Bonus IDs   : {bonuses}")
-                print(f"🧩 Modifiers   : {auc.get('item_modifiers', [])}")
-                print(f"💰 Buyout      : {auc.get('buyout')}")
-                print(f"🔢 Quantity    : {auc.get('quantity')}")
-                print("-" * 60)
+                print(f"⛔ Rejected: Slot '{slot}' not in allowed slot list")
+            continue
 
-            slot = info['slot_type']
-            armor_type = info['armor_type']
-
-            # Identify slot categories
-            is_armor_slot = slot in ALLOWED_ARMOR_SLOTS
-            is_weapon_slot = slot in ALLOWED_WEAPON_SLOTS
-            is_accessory_slot = slot in ALLOWED_ACCESSORY_SLOTS
-
-            # Identify type categories
-            is_armor_type = armor_type in ALLOWED_ARMOR_TYPES
-            is_weapon_type = armor_type in ALLOWED_WEAPON_TYPES
-
-            # Final validation: only reject if not in allowed slots at all
-            if slot not in ALLOWED_SLOTS:
-                if PRINT_FULL_METADATA:
-                    print(f"⛔ Rejected: Slot '{slot}' not in allowed slot list")
-                continue
-
-            # Strict match: armor slot must have armor type
-            if is_armor_slot and not is_armor_type:
-                if PRINT_FULL_METADATA:
-                    print(f"⛔ Rejected due to mismatch: Armor slot '{slot}' with type '{armor_type}'")
-                continue
-
-            # Relaxed: weapon slot accepted regardless of armor_type
-            if is_weapon_slot and not is_weapon_type:
-                if PRINT_FULL_METADATA:
-                    print(f"⚠️ Warning: Weapon slot '{slot}' with ambiguous type '{armor_type}' (accepted)")
-                # Do not continue — accept
-
-            # Strict accessory logic (optional)
-            if is_accessory_slot and armor_type not in ALLOWED_TYPES:
-                if PRINT_FULL_METADATA:
-                    print(f"⛔ Rejected: Accessory slot '{slot}' with unlisted type '{armor_type}'")
-                continue
-
-            # All checks passed, add to results
+        if is_armor_slot and not is_armor_type:
             if PRINT_FULL_METADATA:
-                print(f"✅ Accepted | armor_type: '{info['armor_type']}' in 'ALLOWED_TYPES'\n              "
-                      f"slot_type:  '{info['slot_type']}' in 'ALLOWED_SLOTS'")
+                print(f"⛔ Rejected due to mismatch: Armor slot '{slot}' with type '{item_type}'")
+            continue
 
-            results.append(result)
+        if is_weapon_slot and not is_weapon_type:
+            if PRINT_FULL_METADATA:
+                print(f"⚠️ Warning: Weapon slot '{slot}' with ambiguous type '{item_type}' (accepted)")
 
-    time.sleep(1)  # Throttle between realm scans
+        if is_accessory_slot and item_type not in scan_config.allowed_types:
+            if PRINT_FULL_METADATA:
+                print(f"⛔ Rejected: Accessory slot '{slot}' with unlisted type '{item_type}'")
+            continue
+
+        if PRINT_FULL_METADATA:
+            print(f"✅ Accepted | item_type: '{item_type}' in allowed list\n              "
+                  f"slot_type: '{slot}' in allowed slots")
+
+        results.append(result)
     return results
 
 
@@ -962,7 +966,7 @@ def main():
     """
     # Prompt scan profile
     profile_name = select_scan_profile()
-    apply_scan_profile(profile_name)
+    scan_config = get_scan_config(profile_name)
 
     # Prompt user preferences
     test_mode, test_realm = select_scan_type()
@@ -1001,22 +1005,34 @@ def main():
             logging.warning(f"⚠️ Failed to load scan order. Falling back to default order. Reason: {e}")
             realms = [(info['id'], info['name']) for info in realm_map.values()][:MAX_REALMS]
 
+    # Compute filter dictionary once
+    BONUS_FILTER_MAP = {
+        "Speed": SPEED_IDS,
+        "Prismatic": PRISMATIC_IDS,
+        "Haste": HASTE_IDS
+    }
+    active_filters = {
+        f: set(BONUS_FILTER_MAP[f]) for f in scan_config.filter_type if f in BONUS_FILTER_MAP
+    }
 
     # Format the list of filters into a readable string like: "Prismatic, Haste, Speed"
-    filter_str = ", ".join(FILTER_TYPE)
+    filter_str = ", ".join(scan_config.filter_type)
 
     logging.info(
         f"🔍 Scanning {len(realms)} realm(s) for {filter_str} gear (ilvl {MIN_ILVL}-{MAX_ILVL})..."
     )
 
     # Scan each realm and collect results
+    start_time = perf_counter()
     all_results = []
     item_cache = {}
 
     for rid, display_name in tqdm(realms, desc='Scanning', unit='realm'):
         all_results.extend(
             scan_realm_with_bonus_analysis(
-                session, headers, rid, display_name, item_cache, raidbots_data, fallback_data, curve_data
+                session, headers, rid, display_name,
+                item_cache, raidbots_data, fallback_data, curve_data,
+                scan_config, active_filters
             )
         )
         if not test_mode:
@@ -1025,17 +1041,19 @@ def main():
             except Exception as e:
                 logging.warning(f"⚠️ Failed to write scan cache for realm {display_name} ({rid}): {e}")
 
-
-   # Write to CSV and/or print to console
+    # Write to CSV and/or print to console
     if all_results:
         write_csv(all_results)
 
         # Sort and print output to terminal
         all_results.sort(key=lambda x: x['ilvl'], reverse=True)
 
-               # Print table header (aligned)
-        print(f"\n{'Realm':<21} {'Item ID':<10} {'Type':<15} {'Slot':<16} {'Name':<36} {'ilvl':>8} {'Buyout':>11}")
+        # Suppress inline debug messages
+        global suppress_inline_debug
+        suppress_inline_debug = True
 
+        # Print table header (aligned)
+        print(f"\n{'Realm':<21} {'Item ID':<10} {'Type':<15} {'Slot':<16} {'Name':<36} {'ilvl':>8} {'Buyout':>11}")
         for r in all_results:
             realm_name = next((n for i, n in realms if i == r['realm_id']), f"Realm-{r['realm_id']}")
             item_id = r['item_id']
@@ -1045,7 +1063,7 @@ def main():
 
             # Fetch additional details for Type and Slot
             item_info = fetch_item_info(session, headers, item_id, item_cache)
-            item_type = item_info.get('armor_type', 'Unknown')
+            item_type = item_info.get('item_type', 'Unknown')
             item_slot = item_info.get('slot_type', 'Unknown')
 
             # Apply spacing BEFORE coloring
@@ -1063,9 +1081,32 @@ def main():
 
             print(f"{realm_str}{item_id_str}{type_str}{slot_str}{name_str}{ilvl_str} {gold_str}")
 
-        print(f"\033[92m\nFound \033[93m{len(all_results)} \033[92mitems matching the filters: \033[94m{', '.join(FILTER_TYPE)}\033[0m\n")
+        print(f"\033[92m\nFound \033[93m{len(all_results)} \033[92mitems matching the filters: \033[94m{filter_str}\033[0m\n")
+        suppress_inline_debug = True
+
     else:
         logging.info("❌ No matching Speed-stat items found.")
+
+    # === Final Efficiency Summary ===
+    total_time = perf_counter() - start_time
+    realms_scanned = len(realms)
+    rps_total = debug_stats['blizzard_requests'] / total_time if total_time > 0 else 0
+    metadata_total = debug_stats['item_metadata_hits'] + debug_stats['item_metadata_misses']
+    cache_hit_rate = debug_stats['item_metadata_hits'] / max(metadata_total, 1)
+
+    if PRINT_FULL_METADATA:
+        print("\n📊 === SCAN SUMMARY ===")
+        print(f"⏱️  Time Elapsed          : {total_time:.2f} seconds")
+        print(f"🌐 Realms Scanned        : {realms_scanned}")
+        print(f"📦 Item Metadata Requests: {metadata_total}")
+        print(f"    ├─ Cache Hits        : {debug_stats['item_metadata_hits']}")
+        print(f"    └─ Cache Misses      : {debug_stats['item_metadata_misses']}")
+        print(f"🎯 Cache Hit Rate        : {cache_hit_rate:.2%}")
+        print(f"🔁 Blizzard API Requests : {debug_stats['blizzard_requests']}")
+        print(f"    ├─ Auction Scans     : {debug_stats['auction_calls']}")
+        print(f"    └─ Metadata Fetches  : {debug_stats['blizzard_requests'] - debug_stats['auction_calls']}")
+        print(f"🚀 Effective RPS         : {rps_total:.2f}\n")
+        
 
 if __name__ == '__main__':
     main()
