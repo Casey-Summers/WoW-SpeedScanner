@@ -1,7 +1,7 @@
 import json
 
 # Load all bonus data
-with open("bonus_data_cache.json", "r", encoding="utf-8") as f:
+with open("RaidBots_APIs/bonus_data_cache.json", "r", encoding="utf-8") as f:
     bonus_data = json.load(f)
 
 haste_ids = []

@@ -67,11 +67,14 @@ MAX_ILVL = 668
 MAX_REALMS = 10
 
 # Toggles full debugging metadata
-PRINT_FULL_METADATA = True  # Set to True to print full auction metadata per matching item
+PRINT_FULL_METADATA = False  # Set to True to print full auction metadata per matching item
 suppress_inline_debug = False  # Global override for suppressing debug prints during formatted output
 
 # Limits the number of requests to Blizzard's API
-MAX_REQUESTS_PER_SEC = 3.5
+MAX_REQUESTS_PER_SEC = 3.7
+
+# Deletes records older than a specified duration in the scan cache
+SCAN_EXPIRY_DAYS = 2
 
 # Region to query ('us' or 'eu')
 REGION = 'us' 
@@ -468,7 +471,7 @@ def request_with_retry(session, method, url, params=None, retries=3):
     actual_rps = throttle_tracker['request_count'] / elapsed if elapsed > 0 else 0
     
     if PRINT_FULL_METADATA:
-        print(f"\n[Throttle] Requests: {throttle_tracker['request_count']}, Elapsed: {elapsed:.2f}s, RPS: {actual_rps:.2f}")
+        print(f"[Throttle] Requests: {throttle_tracker['request_count']}, Elapsed: {elapsed:.2f}s, RPS: {actual_rps:.2f}")
 
     if actual_rps > MAX_REQUESTS_PER_SEC:
         ideal_delay = (throttle_tracker['request_count'] / MAX_REQUESTS_PER_SEC) - elapsed
@@ -481,7 +484,7 @@ def request_with_retry(session, method, url, params=None, retries=3):
         # Prints full metadata for debugging
         if PRINT_FULL_METADATA:
             if "connected-realm" in url and "auctions" in url:
-                logging.debug("📡 Auction House request")
+                logging.debug("📡 Auction House request\n")
                 debug_stats['auction_calls'] += 1
             elif "item/" in url:
                 logging.debug("📦 Item metadata request")
@@ -631,36 +634,57 @@ def load_or_init_scan_order(realm_map, filename=LOADED_SERVERS_CSV):
         list of (realm_id, realm_name): Sorted by least recently scanned.
     """
     scan_records = {}
+    now = time.time()
+    expiry_threshold = now - (SCAN_EXPIRY_DAYS * 86400)
+    fresh_records = {}
 
+    # Load CSV cache if it exists
     if os.path.exists(filename):
         try:
             with open(filename, newline='', encoding='utf-8') as f:
                 reader = csv.DictReader(f)
                 for row in reader:
                     rid = int(row['realm_id'])
-                    scan_records[rid] = {
-                        'realm_name': row['realm_name'],
-                        'last_scanned': row.get('last_scanned', '0')
-                    }
+                    ts_str = row.get('last_scanned', '0')
+                    try:
+                        ts = time.mktime(time.strptime(ts_str, "%Y-%m-%dT%H:%M:%S"))
+                        if ts >= expiry_threshold:
+                            fresh_records[rid] = {
+                                'realm_name': row['realm_name'],
+                                'last_scanned': ts_str
+                            }
+                        else:
+                            logging.debug(f"🗑️  Expired scan record pruned: {row['realm_name']} ({rid})")
+                    except:
+                        logging.warning(f"⚠️ Malformed timestamp for realm {rid}: '{ts_str}'")
         except Exception as e:
             logging.warning(f"⚠️ Failed to load scan history: {e}")
 
-    # Add any new realms from realm_map not in cache
+    # Add new realms from realm_map
     for slug, info in realm_map.items():
         rid = info['id']
-        if rid not in scan_records:
-            scan_records[rid] = {
+        if rid not in fresh_records:
+            fresh_records[rid] = {
                 'realm_name': info['name'],
                 'last_scanned': '0'
             }
 
-    # Sort by oldest scan date
-    sorted_realms = sorted(
-        scan_records.items(),
-        key=lambda kv: kv[1]['last_scanned']
-    )
+    # Re-save pruned list
+    try:
+        with open(filename, 'w', newline='', encoding='utf-8') as f:
+            writer = csv.DictWriter(f, fieldnames=['realm_id', 'realm_name', 'last_scanned'])
+            writer.writeheader()
+            for rid, data in sorted(fresh_records.items(), key=lambda kv: kv[1]['last_scanned']):
+                writer.writerow({
+                    'realm_id': rid,
+                    'realm_name': data['realm_name'],
+                    'last_scanned': data['last_scanned']
+                })
+    except Exception as e:
+        logging.warning(f"⚠️ Failed to rewrite pruned scan cache: {e}")
 
-    return [(rid, data['realm_name']) for rid, data in sorted_realms[:MAX_REALMS]]
+    # Return sorted realm list
+    return [(rid, data['realm_name']) for rid, data in sorted(fresh_records.items(), key=lambda kv: kv[1]['last_scanned'])[:MAX_REALMS]]
 
 
 def update_single_scan_timestamp(realm_id, realm_name, filename=LOADED_SERVERS_CSV):
@@ -800,12 +824,11 @@ def get_observed_ilvl(auc, info):
     return info.get("ilvl", 0)
 
 
-def scan_realm_with_bonus_analysis(session, headers, realm_id, realm_name, item_cache,
-                                   raidbots_data, fallback_data, curve_data,
-                                   scan_config, active_filters):
+def scan_realm_with_bonus_analysis(session, headers, realm_id, realm_name, item_cache, raidbots_data, fallback_data, curve_data, scan_config, active_filters):
     """
     Scan a realm's auction data using bonuses and config rules.
     """
+    print(f"\n")
     logging.info(f"🔍 Scanning realm ID {realm_id}: {realm_name}")
     url = f"{BASE_URL.format(region=REGION)}/data/wow/connected-realm/{realm_id}/auctions"
     params = {'namespace': REGION_NS[REGION]['dynamic'], 'locale': 'en_US'}
@@ -881,26 +904,28 @@ def scan_realm_with_bonus_analysis(session, headers, realm_id, realm_name, item_
 
         if slot not in scan_config.allowed_slots:
             if PRINT_FULL_METADATA:
-                print(f"⛔ Rejected: Slot '{slot}' not in allowed slot list")
+                print(f"⛔ Rejected: Slot '{slot}' not in allowed slot list\n")
             continue
 
         if is_armor_slot and not is_armor_type:
             if PRINT_FULL_METADATA:
-                print(f"⛔ Rejected due to mismatch: Armor slot '{slot}' with type '{item_type}'")
+                print(f"⛔ Rejected due to mismatch: Armor slot '{slot}' with type '{item_type}'\n")
             continue
 
         if is_weapon_slot and not is_weapon_type:
             if PRINT_FULL_METADATA:
-                print(f"⚠️ Warning: Weapon slot '{slot}' with ambiguous type '{item_type}' (accepted)")
+                print(f"⛔ Rejected due to mismatch: Weapon slot '{slot}' with disallowed type '{item_type}'\n")
+            continue
+
 
         if is_accessory_slot and item_type not in scan_config.allowed_types:
             if PRINT_FULL_METADATA:
-                print(f"⛔ Rejected: Accessory slot '{slot}' with unlisted type '{item_type}'")
+                print(f"⛔ Rejected: Accessory slot '{slot}' with unlisted type '{item_type}'\n")
             continue
 
         if PRINT_FULL_METADATA:
             print(f"✅ Accepted | item_type: '{item_type}' in allowed list\n              "
-                  f"slot_type: '{slot}' in allowed slots")
+                  f"slot_type: '{slot}' in allowed slots\n")
 
         results.append(result)
     return results
@@ -1095,7 +1120,7 @@ def main():
     cache_hit_rate = debug_stats['item_metadata_hits'] / max(metadata_total, 1)
 
     if PRINT_FULL_METADATA:
-        print("\n📊 === SCAN SUMMARY ===")
+        print("📊 === SCAN SUMMARY ===")
         print(f"⏱️  Time Elapsed          : {total_time:.2f} seconds")
         print(f"🌐 Realms Scanned        : {realms_scanned}")
         print(f"📦 Item Metadata Requests: {metadata_total}")
