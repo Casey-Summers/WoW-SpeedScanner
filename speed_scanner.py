@@ -71,7 +71,7 @@ PRINT_FULL_METADATA = True  # Set to True to print full auction metadata per mat
 suppress_inline_debug = False  # Global override for suppressing debug prints during formatted output
 
 # Limits the number of requests to Blizzard's API
-MAX_REQUESTS_PER_SEC = 3.7
+MAX_REQUESTS_PER_SEC = 90
 
 # Deletes records older than a specified duration in the scan cache
 SCAN_EXPIRY_DAYS = 2
@@ -83,6 +83,7 @@ REGION = 'us'
 SPEED_IDS = [42]
 PRISMATIC_IDS = [523, 563, 564, 565, 572, 608, 1808, 3475, 3522, 4802, 6514, 6672, 6935, 7576, 7580, 7935, 8289, 8780, 8810, 9413, 9436, 9438, 9516, 10397, 10531, 10589, 10591, 10596, 10597, 10835, 10878, 11307, 12055, 12056]
 HASTE_IDS = [18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269, 270, 271, 272, 273, 274, 275, 276, 277, 278, 279, 364, 365, 366, 367, 368, 369, 370, 371, 372, 373, 374, 375, 376, 377, 378, 379, 380, 381, 382, 383, 384, 406, 407, 408, 409, 410, 411, 412, 413, 414, 415, 416, 417, 418, 419, 420, 421, 422, 423, 424, 425, 426, 487, 604, 1690, 1691, 1692, 1693, 1694, 1695, 1696, 1697, 1698, 1699, 1700, 1701, 1702, 1703, 1704, 1705, 1706, 1707, 1708, 1709, 1710, 1720, 1756, 1757, 1758, 1759, 1760, 1761, 1762, 1763, 1764, 1765, 1766, 1767, 1768, 1769, 1770, 1771, 1772, 1773, 1774, 1775, 1776, 1786, 3349, 3350, 3353, 3355, 3356, 3357, 3364, 3365, 3366, 3370, 3371, 3372, 3373, 3374, 3375, 3376, 3377, 3378, 3403, 3404, 3405, 6358, 6391, 6397, 6398, 6399, 6401, 6405, 7734, 7737, 7740, 7743, 7746, 8021, 8022, 8023, 8024, 8025, 8026, 8027, 8028, 8029, 8030, 8031, 8032, 8033, 8034, 8035, 8036, 8037, 8038, 8039, 8040, 8041, 8042, 8043, 8044, 8045, 8046, 8047, 8048, 8049, 8050, 8051, 8052, 8053, 8054, 8055, 8056, 8057, 8058, 8059, 8060, 8061, 8062, 8063, 8064, 8065, 8066, 8067, 8068, 8069, 8070, 8071, 8072, 8073, 8074, 8176, 8177, 8182, 8183, 8184, 8185, 9613, 10810, 10816, 10967, 11202, 11315, 12220]
+LEGACY_BONUS_IDS = [6654, 6655, 7968]
 
 # Filenames for output and caching
 CSV_FILENAME = 'CSVs/speed_gear.csv'
@@ -220,6 +221,7 @@ class ScanConfig:
         self.allowed_weapon_types = profile_data["ALLOWED_WEAPON_TYPES"]
         self.allowed_types = self.allowed_armor_types + self.allowed_weapon_types
 
+
 def get_scan_config(profile_name):
     profile = SCAN_PROFILES.get(profile_name)
     if not profile:
@@ -334,37 +336,29 @@ def parse_ilevel_string(ilevel_str, player_level):
     return round(ilvl_low + ratio * (ilvl_high - ilvl_low))
 
 
-def infer_ilvl_from_bonus_ids(base_ilvl, bonus_ids, raidbots_data, fallback_data, player_level):
-    """
-    Calculate an item's adjusted item level using both level bonuses and ilevel scaling curves.
-    """
+def infer_ilvl_from_bonus_ids(base_ilvl, bonus_ids, raidbots_data, fallback_data, player_level, modifiers=None):
     total_bonus = 0
     highest_scaled_ilvl = 0
+    effective_player_level = player_level
+
+    # Allow override via modifier 9
+    if modifiers:
+        for mod in modifiers:
+            if mod.get("type") == 9 and isinstance(mod.get("value"), int):
+                effective_player_level = mod["value"]
 
     for b in bonus_ids:
         bid = str(b)
         bonus = raidbots_data.get(bid) or fallback_data.get(bid)
-
         if not bonus:
             continue
-
-        # Handle flat level bonuses
         if 'level' in bonus:
             total_bonus += bonus['level']
-
-        # Handle curve-based ilevel scaling
         elif 'ilevel' in bonus:
-            # Map required level to player level used in ilevel scaling
-            scaling_plvl = convert_required_level_to_player_level(player_level)
-            scaled = parse_ilevel_string(bonus['ilevel'], scaling_plvl)
+            scaled = parse_ilevel_string(bonus['ilevel'], effective_player_level)
             highest_scaled_ilvl = max(highest_scaled_ilvl, scaled)
 
-    # Prefer scaled level if found
-    if highest_scaled_ilvl > 0:
-        return highest_scaled_ilvl
-
-    # Otherwise fallback to additive flat bonuses
-    return base_ilvl + total_bonus
+    return highest_scaled_ilvl or (base_ilvl + total_bonus)
 
 
 # === Utility: Infer player level from observed ilvl using curve ===
@@ -834,11 +828,52 @@ def get_observed_ilvl(auc, info):
     return info.get("ilvl", 0)
 
 
+def get_item_level_from_modifiers(modifiers, bonus_ids, bonuses_data, curves_data):
+    try:
+        # Step 1: Extract player level from modifier type 9
+        player_level = None
+        for mod in modifiers:
+            if mod.get("type") == 9:
+                player_level = int(mod.get("value"))
+                break
+
+        if player_level is None:
+            return None, "⛔ No modifier with type 9 found"
+
+        # Step 2: Find a curveId from bonus_ids
+        curve_id = None
+        for b_id in bonus_ids:
+            bonus = bonuses_data.get(str(b_id))
+            if bonus and "curveId" in bonus:
+                curve_id = str(bonus["curveId"])
+                break
+
+        if curve_id is None:
+            return None, "⛔ No curveId found from bonus_ids"
+
+        # Step 3: Lookup curve data and interpolate item level
+        curve = curves_data.get(curve_id)
+        if not curve or "points" not in curve:
+            return None, f"⛔ Curve ID {curve_id} missing or invalid"
+
+        # Step 4: Find item level for the exact or closest lower player level
+        points = curve["points"]
+        best_point = None
+        for point in points:
+            if point["playerLevel"] <= player_level:
+                best_point = point
+            else:
+                break
+
+        if best_point:
+            return best_point["itemLevel"], "✅ Successfully matched player level to curve"
+        else:
+            return None, "⛔ No suitable item level match found in curve"
+    except Exception as e:
+        return None, f"⛔ Exception during processing: {e}"
+
+
 def scan_realm_with_bonus_analysis(session, headers, realm_id, realm_name, item_cache, raidbots_data, fallback_data, curve_data, scan_config, active_filters):
-    """
-    Scan a realm's auction data using bonuses and config rules.
-    """
-    print(f"\n")
     logging.info(f"🔍 Scanning realm ID {realm_id}: {realm_name}")
     url = f"{BASE_URL.format(region=REGION)}/data/wow/connected-realm/{realm_id}/auctions"
     params = {'namespace': REGION_NS[REGION]['dynamic'], 'locale': 'en_US'}
@@ -853,33 +888,73 @@ def scan_realm_with_bonus_analysis(session, headers, realm_id, realm_name, item_
                 print("⛔ Skipping auction: missing or invalid 'item' field")
             continue
 
-        bonuses = list(set(auc.get('bonus_lists', []) + item.get('bonus_lists', [])))
+        modifiers = auc.get("modifiers") or auc.get("item_modifiers") or auc.get("item", {}).get("modifiers", [])
+        if not isinstance(modifiers, list):
+            modifiers = []
+        mod_str = ", ".join([f"{m['type']}→{m['value']}" for m in modifiers]) if modifiers else "None"
 
-        # Skip items that don't match the active filters
+        bonuses = list(set(auc.get('bonus_lists', []) + item.get('bonus_lists', [])))
         if not all(set(bonuses) & active_filters[f] for f in active_filters):
             continue
 
         info = fetch_item_info(session, headers, item['id'], item_cache)
-
         observed_ilvl = get_observed_ilvl(auc, info)
         base_ilvl = observed_ilvl
-        inferred_level = None
+        final_ilvl = None
+        level_reason = ""
 
-        curve_id = next(
-            (bonus.get("curveId") for b in bonuses
-             if (bonus := raidbots_data.get(str(b)) or fallback_data.get(str(b))) and "curveId" in bonus),
-            None
-        )
+        is_legacy = any(b in LEGACY_BONUS_IDS for b in bonuses)
 
-        if curve_id:
-            points = curve_data.get(str(curve_id), {}).get("points", [])
-            inferred_level, corrected_ilvl = infer_player_level_from_ilvl(base_ilvl, points)
-            final_ilvl = corrected_ilvl or observed_ilvl
+        if is_legacy:
+            try:
+                player_level = next((m["value"] for m in modifiers if m["type"] == 9), None)
+
+                if player_level:
+                    curve_id = None
+                    for b in bonuses:
+                        bonus_data = raidbots_data.get(str(b)) or fallback_data.get(str(b))
+                        if bonus_data and "curveId" in bonus_data:
+                            curve_id = str(bonus_data["curveId"])
+                            break
+
+                    if curve_id:
+                        points = curve_data.get(curve_id, {}).get("points", [])
+                        for pt in points:
+                            if pt["playerLevel"] <= player_level:
+                                final_ilvl = pt["itemLevel"]
+                            else:
+                                break
+                        level_reason = f"✅ Legacy curve {curve_id} @ level {player_level}"
+                    else:
+                        level_reason = "⛔ No curveId in legacy bonus IDs"
+                else:
+                    level_reason = "⛔ No modifier type 9 (player level)"
+            except Exception as e:
+                level_reason = f"⛔ Curve logic error: {e}"
+
+            if not final_ilvl:
+                final_ilvl = observed_ilvl
+                level_reason += " | fallback to observed"
         else:
-            final_ilvl = infer_ilvl_from_bonus_ids(
-                base_ilvl, bonuses, raidbots_data, fallback_data,
-                player_level=info.get('required_level', 60)
-            ) or observed_ilvl
+            # Use old logic (for retail/modern items)
+            curve_id = None
+            for b in bonuses:
+                bonus_data = raidbots_data.get(str(b)) or fallback_data.get(str(b))
+                if bonus_data and "curveId" in bonus_data:
+                    curve_id = bonus_data["curveId"]
+                    break
+
+            if curve_id:
+                points = curve_data.get(str(curve_id), {}).get("points", [])
+                inferred_level, corrected_ilvl = infer_player_level_from_ilvl(base_ilvl, points)
+                final_ilvl = corrected_ilvl or observed_ilvl
+                level_reason = f"✅ Retail curve {curve_id} inferred"
+            else:
+                final_ilvl = infer_ilvl_from_bonus_ids(
+                    base_ilvl, bonuses, raidbots_data, fallback_data,
+                    player_level=info.get('required_level', 60)
+                ) or observed_ilvl
+                level_reason = "✅ Fallback bonus-based ilvl"
 
         if not (MIN_ILVL <= final_ilvl <= MAX_ILVL):
             continue
@@ -897,18 +972,20 @@ def scan_realm_with_bonus_analysis(session, headers, realm_id, realm_name, item_
 
         if PRINT_FULL_METADATA:
             sys.stderr.flush()
-            print(f"📦 Full Metadata for '{info['name']}'")
-            print(f"🧾 {'Item ID':<14}: {item['id']}")
-            print(f"📏 {'Default ilvl':<14}: {observed_ilvl}")
-            print(f"📈 {'Adjusted ilvl':<14}: {final_ilvl}")
-            print(f"🎚️  {'Requires Level':<14}: {info.get('required_level', '—')}")
-            print(f"⛓️  {'Item Type':<14}: {info.get('item_type', 'Unknown')}")
-            print(f"🎯 {'Slot Type':<14}: {info.get('slot_type', 'Unknown')}")
-            print(f"🎫 {'Bonus IDs':<14}: {bonuses}")
-            print(f"💰 {'Buyout':<14}: {auc.get('buyout')}")
-            print(f"🔢 {'Quantity':<14}: {auc.get('quantity')}")
+            print(f"\n📦 Full Metadata for '{info['name']}'")
+            print(f"🧾 Item ID       : {item['id']}")
+            print(f"📏 Observed ilvl : {observed_ilvl}")
+            print(f"📈 Final ilvl    : {final_ilvl} ({level_reason})")
+            print(f"🎚️  Required Level: {info.get('required_level', '—')}")
+            print(f"⛓️  Item Type     : {info.get('item_type', 'Unknown')}")
+            print(f"🎯 Slot Type     : {info.get('slot_type', 'Unknown')}")
+            print(f"🎫 Bonus IDs     : {bonuses}")
+            print(f"🔧 Modifiers     : {mod_str}")
+            print(f"💰 Buyout        : {auc.get('buyout')}")
+            print(f"🔢 Quantity      : {auc.get('quantity')}")
             print("-" * 60)
 
+        # === Slot/type validation with scan_config
         slot = info['slot_type']
         item_type = info['item_type']
 
@@ -926,18 +1003,17 @@ def scan_realm_with_bonus_analysis(session, headers, realm_id, realm_name, item_
 
         if is_armor_slot and not is_armor_type:
             if PRINT_FULL_METADATA:
-                print(f"⛔ Rejected due to mismatch: Armor slot '{slot}' with type '{item_type}'\n")
+                print(f"⛔ Rejected: Armor slot '{slot}' with type '{item_type}' mismatch\n")
             continue
 
         if is_weapon_slot and not is_weapon_type:
             if PRINT_FULL_METADATA:
-                print(f"⛔ Rejected due to mismatch: Weapon slot '{slot}' with disallowed type '{item_type}'\n")
+                print(f"⛔ Rejected: Weapon slot '{slot}' with type '{item_type}' mismatch\n")
             continue
-
 
         if is_accessory_slot and item_type not in scan_config.allowed_types:
             if PRINT_FULL_METADATA:
-                print(f"⛔ Rejected: Accessory slot '{slot}' with unlisted type '{item_type}'\n")
+                print(f"⛔ Rejected: Accessory slot '{slot}' with type '{item_type}' mismatch\n")
             continue
 
         if PRINT_FULL_METADATA:
@@ -945,6 +1021,8 @@ def scan_realm_with_bonus_analysis(session, headers, realm_id, realm_name, item_
                   f"slot_type: '{slot}' in allowed slots\n")
 
         results.append(result)
+
+    time.sleep(1)
     return results
 
 

@@ -1,83 +1,88 @@
 import os
-import time
+import json
 import requests
 from dotenv import load_dotenv
 
 # === Setup ===
-REGION = 'us'
-TEST_ENDPOINT = f"https://{REGION}.api.blizzard.com/data/wow/connected-realm/index"
-
 load_dotenv()
 CLIENT_ID = os.getenv('BLIZZARD_CLIENT_ID')
 CLIENT_SECRET = os.getenv('BLIZZARD_CLIENT_SECRET')
 
+REGION = "us"
+LOCALE = "en_US"
+NAMESPACE_DYNAMIC = f"dynamic-{REGION}"
+TOKEN_URL = f"https://{REGION}.battle.net/oauth/token"
+CONNECTED_REALM_URL = f"https://{REGION}.api.blizzard.com/data/wow/realm/caelestrasz?namespace={NAMESPACE_DYNAMIC}&locale={LOCALE}"
 
+# === Token Handling ===
 def get_token():
-    """Requests a new token from Blizzard API using client credentials."""
-    url = 'https://oauth.battle.net/token'
-    data = {'grant_type': 'client_credentials'}
-    resp = requests.post(url, data=data, auth=(CLIENT_ID, CLIENT_SECRET))
-    resp.raise_for_status()
-    j = resp.json()
-    return j['access_token']
+    try:
+        res = requests.post(TOKEN_URL, data={"grant_type": "client_credentials"}, auth=(CLIENT_ID, CLIENT_SECRET))
+        res.raise_for_status()
+        token = res.json().get("access_token")
+        print("✅ Token acquired.")
+        return token
+    except Exception as e:
+        print(f"❌ Token error: {e}")
+        exit(1)
 
+# === Realm ID Resolver ===
+def get_realm_id(token):
+    try:
+        headers = {"Authorization": f"Bearer {token}"}
+        res = requests.get(CONNECTED_REALM_URL, headers=headers)
+        res.raise_for_status()
+        realm_data = res.json()
+        # Extract realm ID from the connected_realm.href URL
+        href = realm_data["connected_realm"]["href"]
+        realm_id = href.split("/connected-realm/")[-1].split("?")[0]
+        print(f"✅ Caelestrasz Realm ID: {realm_id}")
+        return realm_id
+    except Exception as e:
+        print(f"❌ Failed to resolve Caelestrasz realm ID: {e}")
+        exit(1)
 
-def benchmark_rate_limit(token, max_test_rps=100):
-    """
-    Benchmarks the max safe request-per-second rate before hitting 429 errors.
+# === Auction Searcher ===
+def fetch_auctions(realm_id, token):
+    url = f"https://{REGION}.api.blizzard.com/data/wow/connected-realm/{realm_id}/auctions?namespace={NAMESPACE_DYNAMIC}&locale={LOCALE}"
+    headers = {"Authorization": f"Bearer {token}"}
+    try:
+        res = requests.get(url, headers=headers)
+        res.raise_for_status()
+        print(f"✅ Retrieved auction data.")
+        return res.json().get("auctions", [])
+    except Exception as e:
+        print(f"❌ Auction fetch failed: {e}")
+        print(f"🔎 URL: {url}")
+        exit(1)
 
-    Args:
-        token (str): Blizzard OAuth token.
-        max_test_rps (int): Max RPS to try before bailing out.
+# === Auction Metadata Printer ===
+def print_auction_metadata(auction):
+    print(f"\n📦 Auction ID: {auction.get('id')}")
+    print(json.dumps(auction, indent=4))
 
-    Returns:
-        float: Safe delay (in seconds) between requests.
-    """
-    headers = {'Authorization': f'Bearer {token}'}
-    params = {'namespace': f'dynamic-{REGION}', 'locale': 'en_US'}
-    session = requests.Session()
-    session.headers.update(headers)
+# === Main Flow ===
+def main():
+    token = get_token()
+    realm_id = get_realm_id(token)
 
-    print("🔬 Benchmarking safe Blizzard API request rate...")
-    rps_safe = 0
+    item_id_input = input("🔍 Enter WoW Item ID to search for: ").strip()
+    if not item_id_input.isdigit():
+        print("❌ Invalid item ID. Must be a number.")
+        return
+    item_id = int(item_id_input)
 
-    for test_rps in range(1, max_test_rps + 1):
-        successes = 0
-        failures = 0
-        start = time.time()
+    auctions = fetch_auctions(realm_id, token)
+    matches = [a for a in auctions if a.get("item", {}).get("id") == item_id]
 
-        for _ in range(test_rps):
-            try:
-                resp = session.get(TEST_ENDPOINT, params=params)
-                if resp.status_code == 429:
-                    failures += 1
-                    break  # Immediate break on rate-limit
-                elif resp.status_code != 200:
-                    failures += 1
-                else:
-                    successes += 1
-            except Exception:
-                failures += 1
+    if not matches:
+        print(f"❌ No auction listings found for item ID {item_id} on Caelestrasz.")
+        return
 
-        elapsed = time.time() - start
-        actual_rps = successes / elapsed if elapsed > 0 else 0
-        print(f"  ▶️ {test_rps} attempted => {successes} success / {failures} fail ({elapsed:.2f}s) | Actual RPS: {actual_rps:.2f}")
+    print(f"\n✅ Found {len(matches)} auctions for item ID {item_id} on Caelestrasz.")
 
-        if failures > 0:
-            break
-        else:
-            rps_safe = test_rps
-
-    if rps_safe == 0:
-        print("❌ No safe request rate found. Try lowering test range.")
-        return 1.0
-
-    buffer_ratio = 0.85
-    safe_delay = 1.0 / (rps_safe * buffer_ratio)
-    print(f"\n✅ Max Attempted: {rps_safe} | Buffered delay: {safe_delay:.3f} seconds/request")
-    return round(safe_delay, 3)
-
+    for a in matches:
+        print_auction_metadata(a)
 
 if __name__ == "__main__":
-    token = get_token()
-    delay = benchmark_rate_limit(token)
+    main()
