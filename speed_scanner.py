@@ -27,14 +27,14 @@ from pathlib import Path # Handle file paths in a cross-platform way
 SCAN_PROFILES = {
     "full": {
         # Filters by different armour bonuses
-        # E.g. any combination of ["Speed", "Prismatic", "Haste"]
+        # E.g. any combination of ["Speed", "Prismatic", "{Stat}", "Max-{Stat}"]
         "FILTER_TYPE": ["Speed"],
 
         # Defines the allowed item slots for filtering
         # E.g. ["Head", "Chest", "Shoulder", "Waist", "Legs", "Wrist", "Hands", "Back", "Feet"]
         "ALLOWED_ARMOR_SLOTS": ["Head", "Chest", "Shoulder", "Waist", "Legs", "Wrist", "Hands", "Back", "Feet"],
         # E.g. ["One-Hand", "Two-Hand", "Main-Hand", "Off-Hand", "Ranged"]
-        "ALLOWED_WEAPON_SLOTS": ["One-Hand", "Two-Hand", "Main-Hand", "Off-Hand", "Off Hand", "Ranged"],
+        "ALLOWED_WEAPON_SLOTS": ["One-Hand", "Two-Hand", "Main-Hand", "Held In Off-hand", "Off-Hand", "Off Hand", "Ranged", "Ranged Right"],
         # E.g. ["Finger", "Trinket", "Held In Off-hand", "Neck"]
         "ALLOWED_ACCESSORY_SLOTS": ["Finger", "Trinket", "Held In Off-hand", "Neck"],
 
@@ -42,29 +42,31 @@ SCAN_PROFILES = {
         # E.g. ["Cloth", "Leather", "Mail", "Plate", "Miscellaneous"]
         "ALLOWED_ARMOR_TYPES": ["Cloth", "Leather", "Mail", "Plate", "Miscellaneous"],
         # E.g. ["Dagger", "Sword", "Axe", "Mace", "Fist Weapon", "Polearm", "Staff", "Warglaives", "Gun", "Bow", "Crossbow", "Thrown", "Shield", "Wand"]
-        "ALLOWED_WEAPON_TYPES": ["Dagger", "Sword", "Axe", "Mace", "Fist Weapon", "Polearm", "Staff", "Warglaives", "Gun", "Bow", "Crossbow", "Thrown", "Shield", "Wand"]
+        "ALLOWED_WEAPON_TYPES": ["Dagger", "Sword", "Axe", "Mace", "Fist Weapon", "Polearm", "Staff", "Off-Hand", "Warglaives", "Gun", "Bow", "Crossbow", "Thrown", "Shield", "Wand", "Off Hand", "Ranged Right"]
     },
     "custom": {
-        # Filters by different armour bonuses
-        "FILTER_TYPE": ["Haste", "Speed"],
+        # Filters by different armour bonuses and stats
+        "FILTER_TYPE": ["Haste", "Speed", "Prismatic"],
 
         # Defines the allowed item slots for filtering
-        "ALLOWED_ARMOR_SLOTS": ["Waist", "Legs", "Wrist", "Hands", "Back", "Feet"],
+        # "ALLOWED_ARMOR_SLOTS": ["Waist", "Legs", "Wrist", "Hands", "Back", "Feet"],
+        "ALLOWED_ARMOR_SLOTS": [],
         "ALLOWED_WEAPON_SLOTS": ["One-Hand", "Two-Hand", "Main-Hand", "Off-Hand"],
-        "ALLOWED_ACCESSORY_SLOTS": ["Finger", "Trinket", "Held In Off-hand"],
+        # "ALLOWED_ACCESSORY_SLOTS": ["Finger", "Trinket", "Held In Off-hand"],
+        "ALLOWED_ACCESSORY_SLOTS": ["Held In Off-hand"],
 
         # Defines the allowed armor types for filtering
         "ALLOWED_ARMOR_TYPES": ["Cloth", "Leather", "Miscellaneous"],
-        "ALLOWED_WEAPON_TYPES": ["Dagger", "Mace", "Fist Weapon", "Polearm", "Staff"]
+        "ALLOWED_WEAPON_TYPES": ["Dagger", "Mace", "Fist Weapon", "Polearm", "Staff", "Off Hand"]
     }
 }
 
-# Minimum and maximum item levels to include
-MIN_ILVL = 1
-MAX_ILVL = 668
+# Minimum and maximum item levels to fitler by (inclusive)
+MIN_ILVL = 320
+MAX_ILVL = 357
 
-# Maximum number of realms to scan
-MAX_REALMS = 50
+# Maximum number of connected-realms to scan (Max=83)
+MAX_REALMS = 83
 
 # Toggles full debugging metadata
 PRINT_FULL_METADATA = False  # Set to True to print full auction metadata per matching item
@@ -234,6 +236,18 @@ class ScanConfig:
         self.allowed_armor_types = profile_data["ALLOWED_ARMOR_TYPES"]
         self.allowed_weapon_types = profile_data["ALLOWED_WEAPON_TYPES"]
         self.allowed_types = self.allowed_armor_types + self.allowed_weapon_types
+
+
+def parse_filter_types(filter_list):
+    """Separates normal and max-stat filters."""
+    normal_filters = []
+    max_stat_filters = set()
+    for f in filter_list:
+        if f.startswith("Max-"):
+            max_stat_filters.add(f[4:])
+        else:
+            normal_filters.append(f)
+    return normal_filters, max_stat_filters
 
 
 def get_scan_config(profile_name):
@@ -640,69 +654,81 @@ def resolve_realm_input(user_input):
     raise ValueError(f"Unknown realm input: {user_input}")
 
 
+def parse_timestamp(ts_str):
+    try:
+        return time.mktime(time.strptime(ts_str, "%Y-%m-%dT%H:%M:%S"))
+    except:
+        return 0
+        
+
 def load_or_init_scan_order(realm_map, filename=LOADED_SERVERS_CSV):
     """
-    Load scan order from CSV or initialize if missing. Realms not yet recorded are treated as outdated.
-
-    Args:
-        realm_map (dict): Current loaded realm mapping.
-        filename (str): Path to the loaded server CSV.
-
-    Returns:
-        list of (realm_id, realm_name): Sorted by least recently scanned.
+    Load scan order from CSV or initialize if missing.
+    Prioritizes: (1) never scanned, (2) outdated, (3) least recently scanned (until MAX_REALMS).
     """
-    scan_records = {}
     now = time.time()
     expiry_threshold = now - (SCAN_EXPIRY_DAYS * 86400)
-    fresh_records = {}
+    all_known = {}
 
-    # Load CSV cache if it exists
+    # Merge realm_map with scan history to ensure all realms are present
+    all_known = {}
+    scan_cache = {}
+
+    # Load existing scan history if available
     if os.path.exists(filename):
         try:
             with open(filename, newline='', encoding='utf-8') as f:
                 reader = csv.DictReader(f)
                 for row in reader:
                     rid = int(row['realm_id'])
-                    ts_str = row.get('last_scanned', '0')
-                    try:
-                        ts = time.mktime(time.strptime(ts_str, "%Y-%m-%dT%H:%M:%S"))
-                        if ts >= expiry_threshold:
-                            fresh_records[rid] = {
-                                'realm_name': row['realm_name'],
-                                'last_scanned': ts_str
-                            }
-                        else:
-                            logging.debug(f"🗑️  Expired scan record pruned: {row['realm_name']} ({rid})")
-                    except:
-                        logging.warning(f"⚠️ Malformed timestamp for realm {rid}: '{ts_str}'")
+                    scan_cache[rid] = {
+                        'realm_name': row['realm_name'],
+                        'last_scanned': row.get('last_scanned', '0')
+                    }
         except Exception as e:
             logging.warning(f"⚠️ Failed to load scan history: {e}")
 
-    # Add new realms from realm_map
+    # For every realm in realm_map, apply scan history or mark as never scanned
     for slug, info in realm_map.items():
         rid = info['id']
-        if rid not in fresh_records:
-            fresh_records[rid] = {
-                'realm_name': info['name'],
-                'last_scanned': '0'
-            }
+        cached = scan_cache.get(rid, {})
+        all_known[rid] = {
+            'realm_name': info['name'],
+            'last_scanned': cached.get('last_scanned', '0')
+        }
 
-    # Re-save pruned list
+    # Rewrite the full merged scan cache
     try:
+        # Write back updated file without reordering
         with open(filename, 'w', newline='', encoding='utf-8') as f:
             writer = csv.DictWriter(f, fieldnames=['realm_id', 'realm_name', 'last_scanned'])
             writer.writeheader()
-            for rid, data in sorted(fresh_records.items(), key=lambda kv: kv[1]['last_scanned']):
+            for rid, data in all_known.items():
                 writer.writerow({
                     'realm_id': rid,
                     'realm_name': data['realm_name'],
                     'last_scanned': data['last_scanned']
                 })
     except Exception as e:
-        logging.warning(f"⚠️ Failed to rewrite pruned scan cache: {e}")
+        logging.warning(f"⚠️ Failed to write updated scan cache: {e}")
+        
+    # Force preferred realm name for connected realm 3721
+    if 3721 in all_known:
+        all_known[3721]['realm_name'] = "Caelestrasz"
 
-    # Return sorted realm list
-    return [(rid, data['realm_name']) for rid, data in sorted(fresh_records.items(), key=lambda kv: kv[1]['last_scanned'])[:MAX_REALMS]]
+    # === Prioritize: never scanned > stale > recent (sorted by oldest scan time)
+    def sort_priority(entry):
+        ts = parse_timestamp(entry[1]['last_scanned'])
+        if ts == 0:
+            return (0, 0)  # Never scanned
+        elif ts < expiry_threshold:
+            return (1, ts)  # Outdated scan
+        else:
+            return (2, ts)  # Recent scan (least recently scanned last)
+
+    sorted_realms = sorted(all_known.items(), key=sort_priority)
+
+    return [(rid, data['realm_name']) for rid, data in sorted_realms[:MAX_REALMS]]
 
 
 def update_single_scan_timestamp(realm_id, realm_name, filename=LOADED_SERVERS_CSV):
@@ -811,6 +837,7 @@ def fetch_item_info(session, headers, item_id, cache):
         'item_category': item_category,
         'item_type': item_type,
         'slot_type': slot_type,
+        'raw_stats': data.get('stats', [])
     }
 
     return cache[item_id]
@@ -887,7 +914,7 @@ def get_item_level_from_modifiers(modifiers, bonus_ids, bonuses_data, curves_dat
         return None, f"⛔ Exception during processing: {e}"
 
 
-def scan_realm_with_bonus_analysis(session, headers, realm_id, realm_name, item_cache, raidbots_data, fallback_data, curve_data, scan_config, active_filters):
+def scan_realm_with_bonus_analysis(session, headers, realm_id, realm_name, item_cache, raidbots_data, fallback_data, curve_data, scan_config, active_filters, max_stat_filters):
     logging.info(f"🔍 Scanning realm ID {realm_id}: {realm_name}")
     url = f"{BASE_URL.format(region=REGION)}/data/wow/connected-realm/{realm_id}/auctions"
     params = {'namespace': REGION_NS[REGION]['dynamic'], 'locale': 'en_US'}
@@ -908,8 +935,27 @@ def scan_realm_with_bonus_analysis(session, headers, realm_id, realm_name, item_
         mod_str = ", ".join([f"{m['type']}→{m['value']}" for m in modifiers]) if modifiers else "None"
 
         bonuses = list(set(auc.get('bonus_lists', []) + item.get('bonus_lists', [])))
+        # Check standard filters (e.g., Haste, Speed, Prismatic)
         if not all(set(bonuses) & active_filters[f] for f in active_filters):
             continue
+
+        # Check for "Max-" stat conditions
+        if max_stat_filters:
+            found_max = False
+            for bid in bonuses:
+                bonus = raidbots_data.get(str(bid)) or fallback_data.get(str(bid))
+                if bonus and 'stats' in bonus:
+                    stats_cleaned = [p.strip().split(" [")[0] for p in bonus['stats'].split(",")]
+                    for s in stats_cleaned:
+                        if s.startswith("71% "):
+                            stat_name = s[4:]
+                            if stat_name in max_stat_filters:
+                                found_max = True
+                                break
+                if found_max:
+                    break
+            if not found_max:
+                continue
 
         info = fetch_item_info(session, headers, item['id'], item_cache)
         observed_ilvl = get_observed_ilvl(auc, info)
@@ -922,7 +968,6 @@ def scan_realm_with_bonus_analysis(session, headers, realm_id, realm_name, item_
         if is_legacy:
             try:
                 player_level = next((m["value"] for m in modifiers if m["type"] == 9), None)
-
                 if player_level:
                     curve_id = None
                     for b in bonuses:
@@ -950,7 +995,6 @@ def scan_realm_with_bonus_analysis(session, headers, realm_id, realm_name, item_
                 final_ilvl = observed_ilvl
                 level_reason += " | fallback to observed"
         else:
-            # Use old logic (for retail/modern items)
             curve_id = None
             for b in bonuses:
                 bonus_data = raidbots_data.get(str(b)) or fallback_data.get(str(b))
@@ -969,9 +1013,6 @@ def scan_realm_with_bonus_analysis(session, headers, realm_id, realm_name, item_
                     player_level=info.get('required_level', 60)
                 ) or observed_ilvl
                 level_reason = "✅ Fallback bonus-based ilvl"
-
-        if not (MIN_ILVL <= final_ilvl <= MAX_ILVL):
-            continue
 
         result = {
             'realm_id': realm_id,
@@ -1011,6 +1052,11 @@ def scan_realm_with_bonus_analysis(session, headers, realm_id, realm_name, item_
         is_armor_type = item_type in scan_config.allowed_armor_types
         is_weapon_type = item_type in scan_config.allowed_weapon_types
 
+        if not (MIN_ILVL <= final_ilvl <= MAX_ILVL):
+            if PRINT_FULL_METADATA:
+                print(f"⛔ Rejected: ilvl {final_ilvl} outside range {MIN_ILVL}-{MAX_ILVL}\n")
+            continue
+
         if slot not in scan_config.allowed_slots:
             if PRINT_FULL_METADATA:
                 print(f"⛔ Rejected: Slot '{slot}' not in allowed slot list\n")
@@ -1021,7 +1067,8 @@ def scan_realm_with_bonus_analysis(session, headers, realm_id, realm_name, item_
                 print(f"⛔ Rejected: Armor slot '{slot}' with type '{item_type}' mismatch\n")
             continue
 
-        if is_weapon_slot and not is_weapon_type:
+        offhand_style_slots = {"Held In Off-hand", "Off-Hand", "Off Hand", "Holdable"}
+        if is_weapon_slot and not (is_weapon_type or (item_type == "Miscellaneous" and slot in offhand_style_slots)):
             if PRINT_FULL_METADATA:
                 print(f"⛔ Rejected: Weapon slot '{slot}' with type '{item_type}' mismatch\n")
             continue
@@ -1035,9 +1082,40 @@ def scan_realm_with_bonus_analysis(session, headers, realm_id, realm_name, item_
             print(f"✅ Accepted | item_type: '{item_type}' in allowed list\n              "
                   f"slot_type: '{slot}' in allowed slots\n")
 
+        # === Stat fallback debug trace ===
+        matched_stat_ids = []
+        for bid in bonuses:
+            bonus_data = raidbots_data.get(str(bid)) or fallback_data.get(str(bid))
+            if not bonus_data:
+                print(f"⛔ Stat fallback: Missing bonus ID {bid} in both sources.")
+                continue
+            if 'stats' not in bonus_data and 'rawStats' in bonus_data:
+                print(f"⛔ Stat fallback: Bonus ID {bid} missing 'stats' field, attempting fallback from 'rawStats'.")
+                matched_stat_ids.append(bid)
+
+        if not matched_stat_ids:
+            print(f"⛔ No valid stat strings found for item '{info['name']}' with bonuses: {bonuses}")
+
+            # === Attempt fallback from raw_stats ===
+            raw_stats = item_cache.get(item['id'], {}).get("raw_stats", [])
+            secondary_stats = [
+                s for s in raw_stats if not s.get("is_negated") and s.get("stat") in [32, 36, 40, 49]
+            ]
+            total = sum(s.get("amount", 0) for s in secondary_stats)
+
+            if total > 0:
+                sorted_stats = sorted(secondary_stats, key=lambda s: -s["amount"])
+                pct_parts = [f"{round(s['amount'] / total * 100)}% {s['name']}" for s in sorted_stats[:2]]
+
+                # ✅ FIX: Assign fallback values so they are used later
+                stat1 = pct_parts[0]
+                stat2 = pct_parts[1] if len(pct_parts) > 1 else "—"
+                print(f"♻️  Fallback stats used for item {item['id']}: {stat1}, {stat2}")
+            else:
+                print(f"❌ No usable raw_stats found for item {item['id']}")
+
         results.append(result)
 
-    time.sleep(1)
     return results
 
 
@@ -1093,10 +1171,8 @@ def select_scan_type():
     return False, None
 
 
-def print_item_row(r, realms, raidbots_data, color=True):
-    """Prints a formatted row of item data to the console, using stats field and filtering via authoritative ID lists."""
-    import re
-
+def print_item_row(r, realms, raidbots_data, item_cache, color=True):
+    """Prints a formatted row of item data to the console, using bonus stats first, then falling back to base item stats."""
     realm_name = next((n for i, n in realms if i == r['realm_id']), f"Realm-{r['realm_id']}")
     item_id = r['item_id']
     name = r['name']
@@ -1106,31 +1182,59 @@ def print_item_row(r, realms, raidbots_data, color=True):
     item_slot = r.get('slot', 'Unknown')
     bonus_ids = set(r.get('bonus_lists', []))
 
-        # === Extract stat info ===
+    # === Extract stat info ===
     stat1 = "—"
     stat2 = "—"
 
+    # Primary method: use Raidbots bonus stats
     for bid in bonus_ids:
-        if bid not in HASTE_IDS and bid not in CRIT_IDS and bid not in VERS_IDS and bid not in MASTERY_IDS:
-            continue
-
         bonus = raidbots_data.get(str(bid))
         if not bonus or 'stats' not in bonus:
             continue
 
-        parts = [p.strip().split(' [')[0] for p in bonus['stats'].split(',')]
+        stat_string = bonus['stats']
+        if not any(stat_name in stat_string for stat_name in ("Haste", "Crit", "Vers", "Mastery")):
+            continue
 
-        # Reorder: force Haste stat first
+        # Strip trailing [x.xxxx] and force Haste to be first
+        parts = [p.strip().split(' [')[0] for p in stat_string.split(',')]
         parts.sort(key=lambda s: 0 if "Haste" in s else 1)
 
         def color_max_stat(s):
-            return f"\033[33mMax {s[4:]}\033[0m" if s.startswith("71% ") else s
+            if s.startswith("71% "):
+                return f"\033[33mMax {s[4:]}\033[0m"
+            if s.startswith("100% "):
+                return f"\033[33m100% {s[5:]}\033[0m"
+            return s
 
         if len(parts) > 0:
-            stat1 = color_max_stat(parts[0])
+            stat1 = color_max_stat(parts[0]) if color else parts[0]
         if len(parts) > 1:
-            stat2 = color_max_stat(parts[1])
-        break
+            stat2 = color_max_stat(parts[1]) if color else parts[1]
+        break  # Only use the first valid bonus block
+
+    # Fallback: use base item stats from item metadata if no bonus stats were found
+    if all(s == "—" for s in (stat1, stat2)):
+
+        item_info = item_cache.get(item_id, {})
+        raw_stats = item_info.get("raw_stats", [])
+        secondary_stats = [
+            s for s in raw_stats if not s.get("is_negated") and s.get("stat", 0) in [32, 36, 40, 49]
+        ]
+
+        total = sum(s.get("amount", 0) for s in secondary_stats)
+        if total > 0:
+            sorted_stats = sorted(secondary_stats, key=lambda s: -s["amount"])
+            pct_parts = [f"{round(s['amount']/total*100)}% {s['name']}" for s in sorted_stats[:2]]
+            if len(pct_parts) > 0:
+                stat1 = pct_parts[0]
+            if len(pct_parts) > 1:
+                stat2 = pct_parts[1]
+
+            if color:
+                def grey_text(s): return f"\033[2m{s}\033[0m"
+                stat1 = grey_text(stat1)
+                stat2 = grey_text(stat2)
 
     # === Align ANSI-colored stat columns ===
     def strip_ansi(text):
@@ -1203,8 +1307,9 @@ def main():
             logging.warning(f"⚠️ Failed to load scan order. Falling back to default order. Reason: {e}")
             realms = [(info['id'], info['name']) for info in realm_map.values()][:MAX_REALMS]
 
+    normal_filters, max_stat_filters = parse_filter_types(scan_config.filter_type)
     active_filters = {
-        f: set(FILTER_ID_MAP[f]) for f in scan_config.filter_type if f in FILTER_ID_MAP
+        f: set(FILTER_ID_MAP[f]) for f in normal_filters if f in FILTER_ID_MAP
     }
 
     # Format the list of filters into a readable string like: "Prismatic, Haste, Speed"
@@ -1224,7 +1329,7 @@ def main():
             scan_realm_with_bonus_analysis(
                 session, headers, rid, display_name,
                 item_cache, raidbots_data, fallback_data, curve_data,
-                scan_config, active_filters
+                scan_config, active_filters, max_stat_filters
             )
         )
         if not test_mode:
@@ -1241,9 +1346,9 @@ def main():
         all_results.sort(key=lambda x: x['ilvl'], reverse=True)
 
         # Print table header (aligned)
-        print(f"\n{'Realm':<21} {'Item ID':<10} {'Type':<15} {'Slot':<16} {'Stat 1':<16} {'Stat 2':<16} {'Name':<36} {'ilvl':>8} {'Buyout':>11}")
+        print(f"\n{'Realm':<21} {'Item ID':<10} {'Type':<15} {'Slot':<16} {'Stat 1':<15} {'Stat 2':<15} {'Name':<36} {'ilvl':>8} {'Buyout':>11}")
         for r in all_results:
-            print_item_row(r, realms, raidbots_data)
+            print_item_row(r, realms, raidbots_data, item_cache)
         print(f"\033[92m\nFound \033[93m{len(all_results)} \033[92mitems matching the filters: \033[94m{filter_str}\033[0m\n")
 
     else:

@@ -79,11 +79,18 @@ def append_missing_servers():
     known_ids = load_existing_realm_ids()
     name_map = load_realm_name_map()
 
+    print(f"\n🔍 Connected Realms Fetched from Blizzard:")
+    for rid in sorted(all_realms):
+        realm_name = name_map.get(rid, f"Realm-{rid}")
+        print(f"🧾 Realm ID: {rid:<6} | Name: {realm_name}")
+
+    print(f"\n📊 Total connected realm IDs fetched: {len(all_realms)}")
+
     missing = all_realms - known_ids
-    print(f"📌 {len(missing)} missing realm(s) found.")
+    print(f"\n📌 {len(missing)} realm(s) are missing from cache and will be added.\n")
 
     if not missing:
-        print("✅ All realms are already listed.")
+        print("✅ All realms are already listed in loaded_servers.csv.")
         return
 
     with open(CACHE_PATH, "a", newline='', encoding='utf-8') as f:
@@ -92,12 +99,15 @@ def append_missing_servers():
             writer.writeheader()
 
         for rid in sorted(missing):
+            realm_name = name_map.get(rid, f"Realm-{rid}")
             writer.writerow({
                 "realm_id": rid,
-                "realm_name": name_map.get(rid, f"Realm-{rid}"),
+                "realm_name": realm_name,
                 "last_scanned": "0"
             })
-            print(f"➕ Added realm ID {rid} ({name_map.get(rid, f'Realm-{rid}')})")
+            print(f"➕ Added to cache: Realm ID {rid} ({realm_name})")
+
+    print(f"\n✅ Missing realms appended to {CACHE_PATH}.")
 
 # === Main ===
 if __name__ == "__main__":
