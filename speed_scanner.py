@@ -46,7 +46,7 @@ SCAN_PROFILES = {
     },
     "custom": {
         # Filters by different armour bonuses
-        "FILTER_TYPE": ["Haste", "Speed", "Prismatic"],
+        "FILTER_TYPE": ["Haste", "Speed"],
 
         # Defines the allowed item slots for filtering
         "ALLOWED_ARMOR_SLOTS": ["Waist", "Legs", "Wrist", "Hands", "Back", "Feet"],
@@ -979,6 +979,7 @@ def scan_realm_with_bonus_analysis(session, headers, realm_id, realm_name, item_
             'buyout': auc.get('buyout'),
             'type': info.get('item_type'),
             'slot': info.get('slot_type'),
+            'bonus_lists': bonuses,
         }
 
         if PRINT_FULL_METADATA:
@@ -1088,7 +1089,7 @@ def select_scan_type():
         return True, test_realm
     return False, None
 
-def print_item_row(r, realms, color=True):
+def print_item_row(r, realms, raidbots_data, color=True):
     """Prints a formatted row of item data to the console."""
     realm_name = next((n for i, n in realms if i == r['realm_id']), f"Realm-{r['realm_id']}")
     item_id = r['item_id']
@@ -1097,12 +1098,41 @@ def print_item_row(r, realms, color=True):
     gold = int(r['buyout']) // 10000 if r['buyout'] else 0
     item_type = r.get('type', 'Unknown')
     item_slot = r.get('slot', 'Unknown')
+    
+    # Extract stat % from bonus_ids
+    stat1 = "—"
+    stat2 = "—"
+    for bid in r.get('bonus_lists', []):
+        bonus = raidbots_data.get(str(bid))
+        if bonus and 'stats' in bonus:
+            parts = bonus['stats'].split(',')
+            if len(parts) > 0:
+                s1 = parts[0].strip().split(' [')[0]
+                stat1 = f"\033[33mMax {s1[4:]}\033[0m" if s1.startswith("71% ") else s1
+            else:
+                stat1 = "—"
+
+            if len(parts) > 1:
+                s2 = parts[1].strip().split(' [')[0]
+                stat2 = f"\033[33mMax {s2[4:]}\033[0m" if s2.startswith("71% ") else s2
+            else:
+                stat2 = "—"
+            break
+        
+    # Helper function to strip ANSI codes    
+    def strip_ansi(text):
+        return re.sub(r'\x1b\[[0-9;]*m', '', text)
 
     # Pre-format fields
     realm_str = f"✅ {realm_name:<19}"
     item_id_str = f"{item_id:<11}"
     type_str = f"{item_type:<16}"
     slot_str = f"{item_slot:<17}"
+    raw1 = strip_ansi(stat1)
+    raw2 = strip_ansi(stat2)
+    stat1_str = stat1 + ' ' * (16 - len(raw1)) if len(raw1) < 16 else stat1
+    stat2_str = stat2 + ' ' * (16 - len(raw2)) if len(raw2) < 16 else stat2
+
     name_str = f"{name:<36}"
     ilvl_str = f"{ilvl:>8}"
     gold_str = f"{gold:>13,}".replace(",", "'")
@@ -1111,7 +1141,7 @@ def print_item_row(r, realms, color=True):
         ilvl_str = f"\033[94m{ilvl_str}\033[0m"
         gold_str = f"{gold_str}\033[33mg\033[0m"
 
-    print(f"{realm_str}{item_id_str}{type_str}{slot_str}{name_str}{ilvl_str} {gold_str}")
+    print(f"{realm_str}{item_id_str}{type_str}{slot_str}{stat1_str}{stat2_str}{name_str}{ilvl_str} {gold_str}")
 
 
 # === MAIN EXECUTION ===
@@ -1198,9 +1228,9 @@ def main():
         all_results.sort(key=lambda x: x['ilvl'], reverse=True)
 
         # Print table header (aligned)
-        print(f"\n{'Realm':<21} {'Item ID':<10} {'Type':<15} {'Slot':<16} {'Name':<36} {'ilvl':>8} {'Buyout':>11}")
+        print(f"\n{'Realm':<21} {'Item ID':<10} {'Type':<15} {'Slot':<16} {'Stat 1':<16} {'Stat 2':<16} {'Name':<36} {'ilvl':>8} {'Buyout':>11}")
         for r in all_results:
-            print_item_row(r, realms)
+            print_item_row(r, realms, raidbots_data)
         print(f"\033[92m\nFound \033[93m{len(all_results)} \033[92mitems matching the filters: \033[94m{filter_str}\033[0m\n")
 
     else:
