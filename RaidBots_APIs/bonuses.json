@@ -91828,47 +91828,5 @@
   "12542": {
     "id": 12542,
     "quality": 2
-  },
-
-
-  
-  "3431": {
-    "id": 3431,
-    "rawStats": [
-      {
-        "stat": 32,
-        "amount": 300,
-        "name": "Crit"
-      },
-      {
-        "stat": 36,
-        "amount": 200,
-        "name": "Haste"
-      }
-    ],
-    "stats": "60% Crit [0.3000], 40% Haste [0.2000]",
-    "name": "of the Fireflash"
-  },
-  "9501": {
-    "id": 9501,
-    "rawStats": [
-      {
-        "stat": 36,
-        "amount": 18700,
-        "name": "Haste"
-      },
-      {
-        "stat": 49,
-        "amount": 14400,
-        "name": "Mastery"
-      },
-      {
-        "stat": 40,
-        "amount": 14200,
-        "name": "Speed"
-      }
-    ],
-    "stats": "40% Haste [0.4000], 31% Mastery [0.3100]",
-    "name": "of the Feverflare"
   }
 }

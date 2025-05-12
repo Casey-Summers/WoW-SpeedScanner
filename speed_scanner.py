@@ -29,6 +29,19 @@ SCAN_PROFILES = {
         # Filters by different armour bonuses
         # E.g. any combination of ["Speed", "Prismatic", "{Stat}", "Max-{Stat}"]
         "FILTER_TYPE": ["Speed"],
+        
+        # Item level filtering (minimum and maximum)
+        "MIN_ILVL": 596,
+        "MAX_ILVL": 1000,
+
+        # Stat distribution thresholds per stat
+        # E.g. 0=no threshold, 100=pure stat distribution
+        "STAT_DISTRIBUTION_THRESHOLDS": {
+            "Haste": 0,
+            "Crit": 0,
+            "Vers": 0,
+            "Mastery": 0
+        },
 
         # Defines the allowed item slots for filtering
         # E.g. ["Head", "Chest", "Shoulder", "Waist", "Legs", "Wrist", "Hands", "Back", "Feet"]
@@ -46,7 +59,19 @@ SCAN_PROFILES = {
     },
     "custom": {
         # Filters by different armour bonuses and stats
-        "FILTER_TYPE": ["Haste", "Speed", "Prismatic"],
+        "FILTER_TYPE": ["Speed", "Prismatic"],
+        
+        # Item level filtering (minimum and maximum)
+        "MIN_ILVL": 0,
+        "MAX_ILVL": 1000,
+
+        # Stat distribution thresholds per stat
+        "STAT_DISTRIBUTION_THRESHOLDS": {
+            "Haste": 51,
+            "Crit": 100,
+            "Vers": 100,
+            "Mastery": 100
+        },
 
         # Defines the allowed item slots for filtering
         "ALLOWED_ARMOR_SLOTS": ["Waist", "Legs", "Wrist", "Hands", "Back", "Feet"],
@@ -59,15 +84,11 @@ SCAN_PROFILES = {
     }
 }
 
-# Minimum and maximum item levels to fitler by (inclusive)
-MIN_ILVL = 320
-MAX_ILVL = 357
-
 # Maximum number of connected-realms to scan (Max=83)
 MAX_REALMS = 83
 
 # Toggles full debugging metadata
-PRINT_FULL_METADATA = True  # Set to True to print full auction metadata per matching item
+PRINT_FULL_METADATA = False  # Set to True to print full auction metadata per matching item
 suppress_inline_debug = False  # Global override for suppressing debug prints during formatted output
 
 # Limits the number of requests to Blizzard's API
@@ -100,7 +121,10 @@ BONUS_DATA_URL = 'https://www.raidbots.com/static/data/live/bonuses.json' # Prov
 FILTER_ID_MAP = {
     "Speed": SPEED_IDS,
     "Prismatic": PRISMATIC_IDS,
-    "Haste": HASTE_IDS
+    "Haste": HASTE_IDS,
+    "Crit": CRIT_IDS,
+    "Vers": VERS_IDS,
+    "Mastery": MASTERY_IDS
 }
 
 # Human-readable mapping for armor subclass IDs
@@ -222,6 +246,11 @@ realm_map = {}
 
 class ScanConfig:
     def __init__(self, profile_data):
+        # Ensure the profile has the necessary integer attributes
+        if "MIN_ILVL" not in profile_data or "MAX_ILVL" not in profile_data or "STAT_DISTRIBUTION_THRESHOLDS" not in profile_data:
+            raise ValueError("Profile is missing one or more required fields: MIN_ILVL, MAX_ILVL, STAT_DISTRIBUTION_THRESHOLDS")
+
+        # Read and assign string-based attributes
         self.filter_type = profile_data["FILTER_TYPE"]
         self.allowed_armor_slots = profile_data["ALLOWED_ARMOR_SLOTS"]
         self.allowed_weapon_slots = profile_data["ALLOWED_WEAPON_SLOTS"]
@@ -234,6 +263,14 @@ class ScanConfig:
         self.allowed_armor_types = profile_data["ALLOWED_ARMOR_TYPES"]
         self.allowed_weapon_types = profile_data["ALLOWED_WEAPON_TYPES"]
         self.allowed_types = self.allowed_armor_types + self.allowed_weapon_types
+
+        # **Directly assign integer values** from the profile data
+        try:
+            self.MIN_ILVL = int(profile_data["MIN_ILVL"])  # Ensure it is treated as an integer
+            self.MAX_ILVL = int(profile_data["MAX_ILVL"])  # Ensure it is treated as an integer
+            self.STAT_DISTRIBUTION_THRESHOLDS = profile_data.get("STAT_DISTRIBUTION_THRESHOLDS", {})
+        except ValueError as e:
+            raise ValueError(f"Invalid integer value in profile data: {e}")
 
 
 def parse_filter_types(filter_list):
@@ -252,6 +289,7 @@ def get_scan_config(profile_name):
     profile = SCAN_PROFILES.get(profile_name)
     if not profile:
         raise ValueError(f"Unknown scan profile: {profile_name}")
+    # Return the ScanConfig object which is properly initialized
     return ScanConfig(profile)
 
 
@@ -835,7 +873,7 @@ def fetch_item_info(session, headers, item_id, cache):
         'item_category': item_category,
         'item_type': item_type,
         'slot_type': slot_type,
-        'raw_stats': data.get('stats', [])
+        'raw_stats': data.get('preview_item', {}).get('stats', [])
     }
 
     return cache[item_id]
@@ -910,6 +948,98 @@ def get_item_level_from_modifiers(modifiers, bonus_ids, bonuses_data, curves_dat
             return None, "⛔ No suitable item level match found in curve"
     except Exception as e:
         return None, f"⛔ Exception during processing: {e}"
+    
+    
+def filter_stat_bonuses(bonuses, raidbots_data, fallback_data, scan_config, info=None):
+    """
+    Filter and process stat bonuses based on per-stat thresholds from scan_config.
+
+    Args:
+        bonuses (list): List of bonus IDs associated with the item.
+        raidbots_data (dict): Data from Raidbots API.
+        fallback_data (dict): Fallback data for stat bonuses.
+        scan_config (ScanConfig): The current scan configuration.
+        info (dict): Item metadata with raw stats (for fallback).
+
+    Returns:
+        tuple: (bool passed, list of stat check lines, reason string)
+    """
+
+    # Mapping long stat names to filter keys
+    STAT_NAME_MAP = {
+        "Critical Strike": "Crit",
+        "Versatility": "Vers",
+        "Mastery": "Mastery",
+        "Haste": "Haste"
+    }
+
+    thresholds = scan_config.STAT_DISTRIBUTION_THRESHOLDS or {}
+    appended_stats = set()
+    stat_check_details = []
+    stat_above_threshold = False
+    stat_threshold_reason = "(⛔ No stat met required threshold)"
+
+    # Helper to process and track results
+    def process_stat(stat_str, short_stat, pct_val):
+        if stat_str not in appended_stats:
+            appended_stats.add(stat_str)
+            threshold = thresholds.get(short_stat, 0)
+            if pct_val >= threshold:
+                stat_check_details.append(f"{stat_str} → ✅ PASS")
+                return True
+            else:
+                stat_check_details.append(f"{stat_str} → FAIL")
+        return False
+
+    # === Check Raidbots bonuses first ===
+    all_stat_ids = set(HASTE_IDS + CRIT_IDS + VERS_IDS + MASTERY_IDS)
+    for bid in bonuses:
+        if bid not in all_stat_ids:
+            continue
+        bonus = raidbots_data.get(str(bid)) or fallback_data.get(str(bid))
+        if not bonus or 'stats' not in bonus:
+            continue
+
+        # Clean stats and extract percentages
+        stat_entries = [p.strip().split(" [")[0] for p in bonus['stats'].split(",")]
+        for stat in stat_entries:
+            if "%" not in stat:
+                continue
+            try:
+                pct_val = int(stat.split("%")[0])
+                stat_name_full = stat.split("%")[1].strip()
+                short_stat = STAT_NAME_MAP.get(stat_name_full, stat_name_full)
+                if process_stat(stat, short_stat, pct_val):
+                    stat_above_threshold = True
+                    stat_threshold_reason = f"(✅ {short_stat} ≥ {pct_val}%)"
+                    break
+            except Exception:
+                continue
+        if stat_above_threshold:
+            break
+
+    # === Fallback to raw_stats if needed ===
+    if not stat_above_threshold and info:
+        raw_stats = info.get("raw_stats", [])
+        secondary_stats = [
+            s for s in raw_stats
+            if not s.get("is_negated") and s.get("type", {}).get("name") in STAT_NAME_MAP
+        ]
+        total = sum(s.get("amount", 0) or s.get("value", 0) for s in secondary_stats)
+
+        if total > 0:
+            for s in secondary_stats:
+                val = s.get("amount", 0) or s.get("value", 0)
+                pct = (val / total) * 100
+                full_name = s['type']['name']
+                short_stat = STAT_NAME_MAP.get(full_name, full_name)
+                stat_str = f"{round(pct)}% {full_name}"
+                if process_stat(stat_str, short_stat, pct):
+                    stat_above_threshold = True
+                    stat_threshold_reason = f"(✅ {round(pct)}% {full_name})"
+                    break
+
+    return stat_above_threshold, stat_check_details, stat_threshold_reason
 
 
 def scan_realm_with_bonus_analysis(session, headers, realm_id, realm_name, item_cache, raidbots_data, fallback_data, curve_data, scan_config, active_filters, max_stat_filters):
@@ -923,8 +1053,6 @@ def scan_realm_with_bonus_analysis(session, headers, realm_id, realm_name, item_
     for auc in data.get('auctions', []):
         item = auc.get('item')
         if not item or not isinstance(item, dict):
-            if PRINT_FULL_METADATA:
-                print("⛔ Skipping auction: missing or invalid 'item' field")
             continue
 
         modifiers = auc.get("modifiers") or auc.get("item_modifiers") or auc.get("item", {}).get("modifiers", [])
@@ -933,11 +1061,9 @@ def scan_realm_with_bonus_analysis(session, headers, realm_id, realm_name, item_
         mod_str = ", ".join([f"{m['type']}→{m['value']}" for m in modifiers]) if modifiers else "None"
 
         bonuses = list(set(auc.get('bonus_lists', []) + item.get('bonus_lists', [])))
-        # Check standard filters (e.g., Haste, Speed, Prismatic)
         if not all(set(bonuses) & active_filters[f] for f in active_filters):
             continue
 
-        # Check for "Max-" stat conditions
         if max_stat_filters:
             found_max = False
             for bid in bonuses:
@@ -956,6 +1082,10 @@ def scan_realm_with_bonus_analysis(session, headers, realm_id, realm_name, item_
                 continue
 
         info = fetch_item_info(session, headers, item['id'], item_cache)
+
+        # In main(), ensure scan_config is passed as the full ScanConfig object
+        stat_above_threshold, stat_check_details, stat_threshold_reason = filter_stat_bonuses(bonuses, raidbots_data, fallback_data, scan_config, info)
+   
         observed_ilvl = get_observed_ilvl(auc, info)
         base_ilvl = observed_ilvl
         final_ilvl = None
@@ -967,13 +1097,8 @@ def scan_realm_with_bonus_analysis(session, headers, realm_id, realm_name, item_
             try:
                 player_level = next((m["value"] for m in modifiers if m["type"] == 9), None)
                 if player_level:
-                    curve_id = None
-                    for b in bonuses:
-                        bonus_data = raidbots_data.get(str(b)) or fallback_data.get(str(b))
-                        if bonus_data and "curveId" in bonus_data:
-                            curve_id = str(bonus_data["curveId"])
-                            break
-
+                    curve_id = next((str(bonus["curveId"]) for b in bonuses
+                                     if (bonus := raidbots_data.get(str(b)) or fallback_data.get(str(b))) and "curveId" in bonus), None)
                     if curve_id:
                         points = curve_data.get(curve_id, {}).get("points", [])
                         for pt in points:
@@ -993,16 +1118,11 @@ def scan_realm_with_bonus_analysis(session, headers, realm_id, realm_name, item_
                 final_ilvl = observed_ilvl
                 level_reason += " | fallback to observed"
         else:
-            curve_id = None
-            for b in bonuses:
-                bonus_data = raidbots_data.get(str(b)) or fallback_data.get(str(b))
-                if bonus_data and "curveId" in bonus_data:
-                    curve_id = bonus_data["curveId"]
-                    break
-
+            curve_id = next((bonus.get("curveId") for b in bonuses
+                             if (bonus := raidbots_data.get(str(b)) or fallback_data.get(str(b))) and "curveId" in bonus), None)
             if curve_id:
                 points = curve_data.get(str(curve_id), {}).get("points", [])
-                inferred_level, corrected_ilvl = infer_player_level_from_ilvl(base_ilvl, points)
+                _, corrected_ilvl = infer_player_level_from_ilvl(base_ilvl, points)
                 final_ilvl = corrected_ilvl or observed_ilvl
                 level_reason = f"✅ Retail curve {curve_id} inferred"
             else:
@@ -1011,10 +1131,9 @@ def scan_realm_with_bonus_analysis(session, headers, realm_id, realm_name, item_
                     player_level=info.get('required_level', 60)
                 ) or observed_ilvl
                 level_reason = "✅ Fallback bonus-based ilvl"
-                
-                # === Extract stat matches before printing ===
+
         stat_match_ids = []
-        match_sources = {}  # {1706: ['HASTE_IDS', 'VERS_IDS']}
+        match_sources = {}
         for bid in bonuses:
             matched = []
             if bid in HASTE_IDS: matched.append("HASTE_IDS")
@@ -1025,23 +1144,27 @@ def scan_realm_with_bonus_analysis(session, headers, realm_id, realm_name, item_
                 stat_match_ids.append(bid)
                 match_sources[bid] = matched
 
-        # === Optional fallback: raw_stats if no known match
         stat1 = "—"
         stat2 = "—"
         fallback_reason = ""
         if not stat_match_ids:
-            raw_stats = item_cache.get(item['id'], {}).get("raw_stats", [])
-            secondary_stats = [
-                s for s in raw_stats if not s.get("is_negated") and s.get("stat") in [32, 36, 40, 49]
-            ]
-            total = sum(s.get("amount", 0) for s in secondary_stats)
+            raw_stats = info.get("raw_stats", [])
+            secondary_stats = []
+            for s in raw_stats:
+                if s.get("is_negated"):
+                    continue
+                stat_name = s.get("type", {}).get("name", "")
+                stat_value = s.get("value") or s.get("amount", 0)
+                if stat_name in ("Haste", "Critical Strike", "Versatility", "Mastery") and stat_value > 0:
+                    secondary_stats.append({"name": stat_name, "amount": stat_value})
 
+            total = sum(s["amount"] for s in secondary_stats)
             if total > 0:
                 sorted_stats = sorted(secondary_stats, key=lambda s: -s["amount"])
                 pct_parts = [f"{round(s['amount'] / total * 100)}% {s['name']}" for s in sorted_stats[:2]]
                 stat1 = pct_parts[0]
                 stat2 = pct_parts[1] if len(pct_parts) > 1 else "—"
-                fallback_reason = f"♻️  Fallback stats used for item {item['id']}: {stat1}, {stat2}"
+                fallback_reason = f"♻️  Fallback used. Results: {stat1}, {stat2}"
             else:
                 fallback_reason = f"❌ No usable raw_stats found for item {item['id']}"
 
@@ -1057,6 +1180,7 @@ def scan_realm_with_bonus_analysis(session, headers, realm_id, realm_name, item_
             'bonus_lists': bonuses,
         }
 
+        # === Print Full Metadata ===
         if PRINT_FULL_METADATA:
             sys.stderr.flush()
             print(f"📦 Full Metadata for '{info['name']}'")
@@ -1071,45 +1195,43 @@ def scan_realm_with_bonus_analysis(session, headers, realm_id, realm_name, item_
                 summary = ', '.join(f"{bid} ({'/'.join(match_sources[bid])})" for bid in stat_match_ids)
                 print(f"🧬 Stat Info     : [{', '.join(map(str, stat_match_ids))}] (✅ Bonus ID match: {summary})")
             else:
-                print(f"🧬 Stat Info     : [] (⛔ No matched bonus IDs)")
-                print(fallback_reason)
+                tag = "No matching stat above 71%"
+                print(f"🧬 Stat Info     : {tag}")
+            print(f"🧪 Stat Check    : {'| '.join(stat_check_details)}")
             print(f"🔧 Modifiers     : {mod_str}")
             print(f"💰 Buyout        : {auc.get('buyout')}")
             print("-" * 60)
 
-        # === Slot/type validation with scan_config
+        # === Filtering by stat distribution ===
+        if not stat_above_threshold:
+            if PRINT_FULL_METADATA:
+                print(f"⛔ Rejected: Stat distribution below threshold {stat_threshold_reason}\n")
+            continue
+
+        # === Filtering by slot and type ===
         slot = info['slot_type']
         item_type = info['item_type']
 
-        is_armor_slot = slot in scan_config.allowed_armor_slots
-        is_weapon_slot = slot in scan_config.allowed_weapon_slots
-        is_accessory_slot = slot in scan_config.allowed_accessory_slots
-
-        is_armor_type = item_type in scan_config.allowed_armor_types
-        is_weapon_type = item_type in scan_config.allowed_weapon_types
-
-        if not (MIN_ILVL <= final_ilvl <= MAX_ILVL):
+        if not (scan_config.MIN_ILVL <= final_ilvl <= scan_config.MAX_ILVL):
             if PRINT_FULL_METADATA:
-                print(f"⛔ Rejected: ilvl {final_ilvl} outside range {MIN_ILVL}-{MAX_ILVL}\n")
+                print(f"⛔ Rejected: ilvl {final_ilvl} outside range {scan_config.MIN_ILVL}-{scan_config.MAX_ILVL}\n")
             continue
 
         if slot not in scan_config.allowed_slots:
             if PRINT_FULL_METADATA:
                 print(f"⛔ Rejected: Slot '{slot}' not in allowed slot list\n")
             continue
-
-        if is_armor_slot and not is_armor_type:
+        if slot in scan_config.allowed_armor_slots and item_type not in scan_config.allowed_armor_types:
             if PRINT_FULL_METADATA:
                 print(f"⛔ Rejected: Armor slot '{slot}' with type '{item_type}' mismatch\n")
             continue
-
-        offhand_style_slots = {"Held In Off-hand", "Off-Hand", "Off Hand", "Holdable"}
-        if is_weapon_slot and not (is_weapon_type or (item_type == "Miscellaneous" and slot in offhand_style_slots)):
-            if PRINT_FULL_METADATA:
-                print(f"⛔ Rejected: Weapon slot '{slot}' with type '{item_type}' mismatch\n")
-            continue
-
-        if is_accessory_slot and item_type not in scan_config.allowed_types:
+        if slot in scan_config.allowed_weapon_slots:
+            if not (item_type in scan_config.allowed_weapon_types or
+                    (item_type == "Miscellaneous" and slot in {"Held In Off-hand", "Off-Hand", "Off Hand", "Holdable"})):
+                if PRINT_FULL_METADATA:
+                    print(f"⛔ Rejected: Weapon slot '{slot}' with type '{item_type}' mismatch\n")
+                continue
+        if slot in scan_config.allowed_accessory_slots and item_type not in scan_config.allowed_types:
             if PRINT_FULL_METADATA:
                 print(f"⛔ Rejected: Accessory slot '{slot}' with type '{item_type}' mismatch\n")
             continue
@@ -1219,24 +1341,36 @@ def print_item_row(r, realms, raidbots_data, item_cache, color=True):
 
     # Fallback: use base item stats from item metadata if no bonus stats were found
     if all(s == "—" for s in (stat1, stat2)):
-
         item_info = item_cache.get(item_id, {})
         raw_stats = item_info.get("raw_stats", [])
-        secondary_stats = [
-            s for s in raw_stats if not s.get("is_negated") and s.get("stat", 0) in [32, 36, 40, 49]
-        ]
+        secondary_stats = []
+        for s in raw_stats:
+            if s.get("is_negated"):
+                continue
+            stat_name = s.get("type", {}).get("name", "")
+            stat_value = s.get("value") or s.get("amount", 0)
+            if stat_name in ("Haste", "Critical Strike", "Versatility", "Mastery") and stat_value > 0:
+                secondary_stats.append({"name": stat_name, "amount": stat_value})
 
-        total = sum(s.get("amount", 0) for s in secondary_stats)
+        total = sum(s["amount"] for s in secondary_stats)
         if total > 0:
-            sorted_stats = sorted(secondary_stats, key=lambda s: -s["amount"])
-            pct_parts = [f"{round(s['amount']/total*100)}% {s['name']}" for s in sorted_stats[:2]]
-            if len(pct_parts) > 0:
-                stat1 = pct_parts[0]
-            if len(pct_parts) > 1:
-                stat2 = pct_parts[1]
+            def short(s):
+                return (
+                    "Crit" if s == "Critical Strike" else
+                    "Vers" if s == "Versatility" else s
+                )
+            # Sorts Haste first, then by descending value
+            sorted_stats = sorted(
+                secondary_stats,
+                key=lambda s: (0 if s["name"] == "Haste" else 1, -s["amount"])
+            )
+            pct_parts = [f"{round(s['amount'] / total * 100)}% {short(s['name'])}" for s in sorted_stats[:2]]
+            stat1 = pct_parts[0]
+            stat2 = pct_parts[1] if len(pct_parts) > 1 else "—"
 
+            # Adds colour identification to identify fallback method stats
             if color:
-                def grey_text(s): return f"\033[2m{s}\033[0m"
+                def grey_text(s): return f"\033[90m{s}\033[0m"
                 stat1 = grey_text(stat1)
                 stat2 = grey_text(stat2)
 
@@ -1320,7 +1454,7 @@ def main():
     filter_str = ", ".join(scan_config.filter_type)
 
     logging.info(
-        f"🔍 Scanning {len(realms)} realm(s) for {filter_str} gear (ilvl {MIN_ILVL}-{MAX_ILVL})..."
+        f"🔍 Scanning {len(realms)} realm(s) for {filter_str} gear (ilvl {scan_config.MIN_ILVL}-{scan_config.MAX_ILVL})..."  # Access through scan_config
     )
 
     # Scan each realm and collect results
