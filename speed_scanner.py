@@ -49,11 +49,9 @@ SCAN_PROFILES = {
         "FILTER_TYPE": ["Haste", "Speed", "Prismatic"],
 
         # Defines the allowed item slots for filtering
-        # "ALLOWED_ARMOR_SLOTS": ["Waist", "Legs", "Wrist", "Hands", "Back", "Feet"],
-        "ALLOWED_ARMOR_SLOTS": [],
+        "ALLOWED_ARMOR_SLOTS": ["Waist", "Legs", "Wrist", "Hands", "Back", "Feet"],
         "ALLOWED_WEAPON_SLOTS": ["One-Hand", "Two-Hand", "Main-Hand", "Off-Hand"],
-        # "ALLOWED_ACCESSORY_SLOTS": ["Finger", "Trinket", "Held In Off-hand"],
-        "ALLOWED_ACCESSORY_SLOTS": ["Held In Off-hand"],
+        "ALLOWED_ACCESSORY_SLOTS": ["Finger", "Trinket", "Held In Off-hand"],
 
         # Defines the allowed armor types for filtering
         "ALLOWED_ARMOR_TYPES": ["Cloth", "Leather", "Miscellaneous"],
@@ -69,7 +67,7 @@ MAX_ILVL = 357
 MAX_REALMS = 83
 
 # Toggles full debugging metadata
-PRINT_FULL_METADATA = False  # Set to True to print full auction metadata per matching item
+PRINT_FULL_METADATA = True  # Set to True to print full auction metadata per matching item
 suppress_inline_debug = False  # Global override for suppressing debug prints during formatted output
 
 # Limits the number of requests to Blizzard's API
@@ -83,7 +81,7 @@ REGION = 'us'
 
 # IDs for specific bonuses
 SPEED_IDS = [42]
-PRISMATIC_IDS = [523, 563, 564, 565, 572, 608, 1808, 3475, 3522, 4802, 6514, 6672, 6935, 7576, 7580, 7935, 8289, 8780, 8810, 9413, 9436, 9438, 9516, 10397, 10531, 10589, 10591, 10596, 10597, 10835, 10878, 11307, 12055, 12056]
+PRISMATIC_IDS = [523, 563, 564, 565, 572, 608, 1808, 3475, 3522, 4802, 6514, 6672, 6935, 7576, 7580, 7935, 8289, 8780, 8781, 8782, 8810, 9413, 9436, 9438, 9516, 10397, 10531, 10589, 10591, 10596, 10597, 10835, 10878, 11307, 12055, 12056]
 HASTE_IDS = [18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269, 270, 271, 272, 273, 274, 275, 276, 277, 278, 279, 364, 365, 366, 367, 368, 369, 370, 371, 372, 373, 374, 375, 376, 377, 378, 379, 380, 381, 382, 383, 384, 406, 407, 408, 409, 410, 411, 412, 413, 414, 415, 416, 417, 418, 419, 420, 421, 422, 423, 424, 425, 426, 487, 604, 1690, 1691, 1692, 1693, 1694, 1695, 1696, 1697, 1698, 1699, 1700, 1701, 1702, 1703, 1704, 1705, 1706, 1707, 1708, 1709, 1710, 1720, 1756, 1757, 1758, 1759, 1760, 1761, 1762, 1763, 1764, 1765, 1766, 1767, 1768, 1769, 1770, 1771, 1772, 1773, 1774, 1775, 1776, 1786, 3349, 3350, 3353, 3355, 3356, 3357, 3364, 3365, 3366, 3370, 3371, 3372, 3373, 3374, 3375, 3376, 3377, 3378, 3403, 3404, 3405, 3431, 6358, 6391, 6397, 6398, 6399, 6401, 6405, 7734, 7737, 7740, 7743, 7746, 8021, 8022, 8023, 8024, 8025, 8026, 8027, 8028, 8029, 8030, 8031, 8032, 8033, 8034, 8035, 8036, 8037, 8038, 8039, 8040, 8041, 8042, 8043, 8044, 8045, 8046, 8047, 8048, 8049, 8050, 8051, 8052, 8053, 8054, 8055, 8056, 8057, 8058, 8059, 8060, 8061, 8062, 8063, 8064, 8065, 8066, 8067, 8068, 8069, 8070, 8071, 8072, 8073, 8074, 8176, 8177, 8182, 8183, 8184, 8185, 9501, 9613, 10810, 10816, 10967, 11202, 11315, 12220]
 CRIT_IDS = [17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313, 314, 315, 316, 317, 318, 319, 320, 321, 343, 344, 345, 346, 347, 348, 349, 350, 351, 352, 353, 354, 355, 356, 357, 358, 359, 360, 361, 362, 363, 486, 489, 603, 606, 1676, 1677, 1678, 1679, 1680, 1681, 1682, 1683, 1684, 1685, 1686, 1687, 1688, 1689, 1690, 1691, 1692, 1693, 1694, 1695, 1696, 1718, 1742, 1743, 1744, 1745, 1746, 1747, 1748, 1749, 1750, 1751, 1752, 1753, 1754, 1755, 1756, 1757, 1758, 1759, 1760, 1761, 1762, 1784, 3343, 3344, 3345, 3346, 3347, 3348, 3349, 3350, 3351, 3352, 3353, 3354, 3361, 3362, 3363, 3370, 3371, 3372, 3401, 3402, 3403, 6357, 6390, 6394, 6395, 6396, 6400, 6404, 7733, 7736, 7739, 7742, 7745, 7985, 7986, 7987, 7988, 7989, 7990, 7991, 7992, 7993, 7994, 7995, 7996, 7997, 7998, 7999, 8000, 8001, 8002, 8003, 8004, 8005, 8006, 8007, 8008, 8009, 8010, 8011, 8012, 8013, 8014, 8015, 8016, 8017, 8018, 8019, 8020, 8021, 8022, 8023, 8024, 8025, 8026, 8027, 8028, 8029, 8030, 8031, 8032, 8033, 8034, 8035, 8036, 8037, 8038, 8176, 8177, 8178, 8179, 8180, 8181, 9618, 10809, 10815, 10966, 11201, 11316, 12221]
 VERS_IDS = [87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 196, 197, 198, 199, 200, 201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 263, 264, 265, 266, 267, 268, 269, 270, 271, 272, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282, 283, 284, 285, 286, 287, 288, 289, 290, 291, 292, 293, 294, 295, 296, 297, 298, 299, 300, 301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313, 314, 315, 316, 317, 318, 319, 320, 321, 322, 323, 324, 325, 326, 327, 328, 329, 330, 331, 332, 333, 334, 335, 336, 337, 338, 339, 340, 341, 342, 343, 344, 345, 346, 347, 348, 349, 350, 351, 352, 353, 354, 355, 356, 357, 358, 359, 360, 361, 362, 363, 364, 365, 366, 367, 368, 369, 370, 371, 372, 373, 374, 375, 376, 377, 378, 379, 380, 381, 382, 383, 384, 385, 386, 387, 388, 389, 390, 391, 392, 393, 394, 395, 396, 397, 398, 399, 400, 401, 402, 403, 404, 405, 406, 407, 408, 409, 410, 411, 412, 413, 414, 415, 416, 417, 418, 419, 420, 421, 422, 423, 424, 425, 426, 427, 428, 429, 430, 431, 432, 433, 434, 435, 436, 437, 438, 439, 440, 441, 442, 443, 444, 445, 446, 447, 490, 491, 492, 607, 1676, 1677, 1678, 1679, 1680, 1681, 1682, 1704, 1705, 1706, 1707, 1708, 1709, 1710, 1711, 1712, 1713, 1714, 1715, 1716, 1717, 1719, 1742, 1743, 1744, 1745, 1746, 1747, 1748, 1770, 1771, 1772, 1773, 1774, 1775, 1776, 1777, 1778, 1779, 1780, 1781, 1782, 1783, 1785, 3343, 3344, 3345, 3358, 3359, 3360, 3361, 3362, 3363, 3364, 3365, 3366, 3367, 3368, 3369, 3376, 3377, 3378, 3401, 3405, 3406, 3618, 6393, 6403, 6407, 7985, 7986, 7987, 7988, 7989, 7990, 7991, 7992, 7993, 7994, 7995, 7996, 7997, 7998, 7999, 8000, 8001, 8002, 8057, 8058, 8059, 8060, 8061, 8062, 8063, 8064, 8065, 8066, 8067, 8068, 8069, 8070, 8071, 8072, 8073, 8074, 8075, 8076, 8077, 8078, 8079, 8080, 8081, 8082, 8083, 8084, 8085, 8086, 8087, 8088, 8089, 8090, 8091, 8092, 8180, 8181, 8184, 8185, 8186, 8187, 10972, 11123, 11124, 11125, 11207, 11317]
@@ -1013,6 +1011,39 @@ def scan_realm_with_bonus_analysis(session, headers, realm_id, realm_name, item_
                     player_level=info.get('required_level', 60)
                 ) or observed_ilvl
                 level_reason = "✅ Fallback bonus-based ilvl"
+                
+                # === Extract stat matches before printing ===
+        stat_match_ids = []
+        match_sources = {}  # {1706: ['HASTE_IDS', 'VERS_IDS']}
+        for bid in bonuses:
+            matched = []
+            if bid in HASTE_IDS: matched.append("HASTE_IDS")
+            if bid in CRIT_IDS: matched.append("CRIT_IDS")
+            if bid in VERS_IDS: matched.append("VERS_IDS")
+            if bid in MASTERY_IDS: matched.append("MASTERY_IDS")
+            if matched:
+                stat_match_ids.append(bid)
+                match_sources[bid] = matched
+
+        # === Optional fallback: raw_stats if no known match
+        stat1 = "—"
+        stat2 = "—"
+        fallback_reason = ""
+        if not stat_match_ids:
+            raw_stats = item_cache.get(item['id'], {}).get("raw_stats", [])
+            secondary_stats = [
+                s for s in raw_stats if not s.get("is_negated") and s.get("stat") in [32, 36, 40, 49]
+            ]
+            total = sum(s.get("amount", 0) for s in secondary_stats)
+
+            if total > 0:
+                sorted_stats = sorted(secondary_stats, key=lambda s: -s["amount"])
+                pct_parts = [f"{round(s['amount'] / total * 100)}% {s['name']}" for s in sorted_stats[:2]]
+                stat1 = pct_parts[0]
+                stat2 = pct_parts[1] if len(pct_parts) > 1 else "—"
+                fallback_reason = f"♻️  Fallback stats used for item {item['id']}: {stat1}, {stat2}"
+            else:
+                fallback_reason = f"❌ No usable raw_stats found for item {item['id']}"
 
         result = {
             'realm_id': realm_id,
@@ -1028,7 +1059,7 @@ def scan_realm_with_bonus_analysis(session, headers, realm_id, realm_name, item_
 
         if PRINT_FULL_METADATA:
             sys.stderr.flush()
-            print(f"\n📦 Full Metadata for '{info['name']}'")
+            print(f"📦 Full Metadata for '{info['name']}'")
             print(f"🧾 Item ID       : {item['id']}")
             print(f"📏 Observed ilvl : {observed_ilvl}")
             print(f"📈 Final ilvl    : {final_ilvl} ({level_reason})")
@@ -1036,9 +1067,14 @@ def scan_realm_with_bonus_analysis(session, headers, realm_id, realm_name, item_
             print(f"⛓️  Item Type     : {info.get('item_type', 'Unknown')}")
             print(f"🎯 Slot Type     : {info.get('slot_type', 'Unknown')}")
             print(f"🎫 Bonus IDs     : {bonuses}")
+            if stat_match_ids:
+                summary = ', '.join(f"{bid} ({'/'.join(match_sources[bid])})" for bid in stat_match_ids)
+                print(f"🧬 Stat Info     : [{', '.join(map(str, stat_match_ids))}] (✅ Bonus ID match: {summary})")
+            else:
+                print(f"🧬 Stat Info     : [] (⛔ No matched bonus IDs)")
+                print(fallback_reason)
             print(f"🔧 Modifiers     : {mod_str}")
             print(f"💰 Buyout        : {auc.get('buyout')}")
-            print(f"🔢 Quantity      : {auc.get('quantity')}")
             print("-" * 60)
 
         # === Slot/type validation with scan_config
@@ -1081,38 +1117,6 @@ def scan_realm_with_bonus_analysis(session, headers, realm_id, realm_name, item_
         if PRINT_FULL_METADATA:
             print(f"✅ Accepted | item_type: '{item_type}' in allowed list\n              "
                   f"slot_type: '{slot}' in allowed slots\n")
-
-        # === Stat fallback debug trace ===
-        matched_stat_ids = []
-        for bid in bonuses:
-            bonus_data = raidbots_data.get(str(bid)) or fallback_data.get(str(bid))
-            if not bonus_data:
-                print(f"⛔ Stat fallback: Missing bonus ID {bid} in both sources.")
-                continue
-            if 'stats' not in bonus_data and 'rawStats' in bonus_data:
-                print(f"⛔ Stat fallback: Bonus ID {bid} missing 'stats' field, attempting fallback from 'rawStats'.")
-                matched_stat_ids.append(bid)
-
-        if not matched_stat_ids:
-            print(f"⛔ No valid stat strings found for item '{info['name']}' with bonuses: {bonuses}")
-
-            # === Attempt fallback from raw_stats ===
-            raw_stats = item_cache.get(item['id'], {}).get("raw_stats", [])
-            secondary_stats = [
-                s for s in raw_stats if not s.get("is_negated") and s.get("stat") in [32, 36, 40, 49]
-            ]
-            total = sum(s.get("amount", 0) for s in secondary_stats)
-
-            if total > 0:
-                sorted_stats = sorted(secondary_stats, key=lambda s: -s["amount"])
-                pct_parts = [f"{round(s['amount'] / total * 100)}% {s['name']}" for s in sorted_stats[:2]]
-
-                # ✅ FIX: Assign fallback values so they are used later
-                stat1 = pct_parts[0]
-                stat2 = pct_parts[1] if len(pct_parts) > 1 else "—"
-                print(f"♻️  Fallback stats used for item {item['id']}: {stat1}, {stat2}")
-            else:
-                print(f"❌ No usable raw_stats found for item {item['id']}")
 
         results.append(result)
 
