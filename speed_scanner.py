@@ -31,8 +31,11 @@ SCAN_PROFILES = {
         "FILTER_TYPE": ["Speed"],
         
         # Item level filtering (minimum and maximum)
-        "MIN_ILVL": 596,
+        "MIN_ILVL": 0,
         "MAX_ILVL": 1000,
+        
+        # Filters by max Buyout Price (in gold) 
+        "MAX_BUYOUT": 10000000,
 
         # Stat distribution thresholds per stat
         # E.g. 0=no threshold, 100=pure stat distribution
@@ -64,6 +67,9 @@ SCAN_PROFILES = {
         # Item level filtering (minimum and maximum)
         "MIN_ILVL": 0,
         "MAX_ILVL": 1000,
+        
+        # Filters by max Buyout Price (in gold) 
+        "MAX_BUYOUT": 20000,
 
         # Stat distribution thresholds per stat
         "STAT_DISTRIBUTION_THRESHOLDS": {
@@ -88,7 +94,7 @@ SCAN_PROFILES = {
 MAX_REALMS = 83
 
 # Toggles full debugging metadata
-PRINT_FULL_METADATA = False  # Set to True to print full auction metadata per matching item
+PRINT_FULL_METADATA = True  # Set to True to print full auction metadata per matching item
 suppress_inline_debug = False  # Global override for suppressing debug prints during formatted output
 
 # Limits the number of requests to Blizzard's API
@@ -271,6 +277,13 @@ class ScanConfig:
             self.STAT_DISTRIBUTION_THRESHOLDS = profile_data.get("STAT_DISTRIBUTION_THRESHOLDS", {})
         except ValueError as e:
             raise ValueError(f"Invalid integer value in profile data: {e}")
+        
+        if "MAX_BUYOUT_GOLD" in profile_data:
+            self.MAX_BUYOUT = int(profile_data["MAX_BUYOUT_GOLD"]) * 10000
+        else:
+            # Convert MAX_BUYOUT (in gold) to copper internally
+            gold_value = profile_data.get("MAX_BUYOUT", 999999)
+            self.MAX_BUYOUT = int(gold_value) * 10000
 
 
 def parse_filter_types(filter_list):
@@ -1201,6 +1214,14 @@ def scan_realm_with_bonus_analysis(session, headers, realm_id, realm_name, item_
             print(f"🔧 Modifiers     : {mod_str}")
             print(f"💰 Buyout        : {auc.get('buyout')}")
             print("-" * 60)
+
+        # === Filtering by buyout price ===
+        buyout = auc.get('buyout')
+        if buyout is not None and buyout > scan_config.MAX_BUYOUT:
+            if PRINT_FULL_METADATA:
+                g_price = buyout // 10000
+                print(f"⛔ Rejected: Buyout {g_price}g exceeds max {scan_config.MAX_BUYOUT // 10000}g\n")
+            continue
 
         # === Filtering by stat distribution ===
         if not stat_above_threshold:
