@@ -87,6 +87,34 @@ SCAN_PROFILES = {
         # Defines the allowed armor types for filtering
         "ALLOWED_ARMOR_TYPES": ["Cloth", "Leather", "Miscellaneous"],
         "ALLOWED_WEAPON_TYPES": ["Dagger", "Mace", "Fist Weapon", "Polearm", "Staff", "Off Hand"]
+    },
+    "profitable": {
+        # Filters by different armour bonuses and stats
+        "FILTER_TYPE": ["Speed", "Prismatic"],
+
+        # Item level filtering (minimum and maximum)
+        "MIN_ILVL": 580,
+        "MAX_ILVL": 1000,
+
+        # Filters by max Buyout Price (in gold) 
+        "MAX_BUYOUT": 2000,  # e.g. 2000g
+
+        # Stat distribution thresholds per stat
+        "STAT_DISTRIBUTION_THRESHOLDS": {
+            "Haste": 0,
+            "Crit": 0,
+            "Vers": 0,
+            "Mastery": 0
+        },
+
+        # Defines the allowed item slots for filtering
+        "ALLOWED_ARMOR_SLOTS": ["Waist", "Legs", "Wrist", "Hands", "Back"],
+        "ALLOWED_WEAPON_SLOTS": ["One-Hand", "Two-Hand", "Main-Hand", "Held In Off-hand", "Off-Hand", "Off Hand", "Ranged", "Ranged Right"],
+        "ALLOWED_ACCESSORY_SLOTS": ["Finger", "Trinket", "Held In Off-hand"],
+
+        # Defines the allowed armor types for filtering
+        "ALLOWED_ARMOR_TYPES": ["Cloth", "Leather", "Mail", "Plate", "Miscellaneous"],
+        "ALLOWED_WEAPON_TYPES": ["Dagger", "Sword", "Axe", "Mace", "Fist Weapon", "Polearm", "Staff", "Off-Hand", "Warglaives", "Gun", "Bow", "Crossbow", "Thrown", "Shield", "Wand", "Off Hand", "Ranged Right"]
     }
 }
 
@@ -94,7 +122,7 @@ SCAN_PROFILES = {
 MAX_REALMS = 83
 
 # Toggles full debugging metadata
-PRINT_FULL_METADATA = True  # Set to True to print full auction metadata per matching item
+PRINT_FULL_METADATA = False  # Set to True to print full auction metadata per matching item
 suppress_inline_debug = False  # Global override for suppressing debug prints during formatted output
 
 # Limits the number of requests to Blizzard's API
@@ -1281,11 +1309,13 @@ def write_csv(results, filename=CSV_FILENAME):
 # === USER INTERFACE ===
 def select_scan_profile():
     """Prompts the user to choose between full and custom scan profiles."""
-    choice = input(f"{'Item Profile':<13} | Custom(1) or Everything(2): ").strip() or "1"
+    choice = input(f"{'Item Profile':<13} | Custom(1), Everything(2), Profitable(3): ").strip() or "1"
     if choice == "1":
         return "custom"
     elif choice == "2":
         return "full"
+    elif choice == "3":
+        return "profitable"
     else:
         print("❌ Invalid choice. Defaulting to 'full' scan profile.")
         return "full"
@@ -1401,7 +1431,7 @@ def display_results(results, realms, raidbots_data, item_cache, filter_str):
         write_csv(results)
         results.sort(key=lambda x: x['ilvl'], reverse=True)
 
-        print(f"\n{'Realm':<21} {'Item ID':<10} {'Type':<15} {'Slot':<16} {'Stat 1':<15} {'Stat 2':<15} {'Name':<36} {'ilvl':>8} {'Buyout':>11}")
+        print(f"\n{'Realm':<22} {'Item ID':<10} {'Type':<15} {'Slot':<16} {'Stat 1':<15} {'Stat 2':<15} {'Name':<36} {'ilvl':>8} {'Buyout':>11}")
         for r in results:
             print_item_row(r, realms, raidbots_data, item_cache)
         print(f"\033[92m\nFound \033[93m{len(results)} \033[92mitems matching the filters: \033[94m{filter_str}\033[0m\n")
