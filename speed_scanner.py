@@ -62,21 +62,21 @@ SCAN_PROFILES = {
     },
     "custom": {
         # Filters by different armour bonuses and stats
-        "FILTER_TYPE": ["Speed", "Prismatic"],
+        "FILTER_TYPE": ["Speed", "Haste", "Prismatic"],
         
         # Item level filtering (minimum and maximum)
         "MIN_ILVL": 0,
         "MAX_ILVL": 1000,
         
         # Filters by max Buyout Price (in gold) 
-        "MAX_BUYOUT": 20000,
+        "MAX_BUYOUT": 40000,
 
         # Stat distribution thresholds per stat
         "STAT_DISTRIBUTION_THRESHOLDS": {
-            "Haste": 51,
-            "Crit": 100,
-            "Vers": 100,
-            "Mastery": 100
+            "Haste": 0,
+            "Crit": 0,
+            "Vers": 0,
+            "Mastery": 0
         },
 
         # Defines the allowed item slots for filtering
@@ -916,51 +916,6 @@ def get_observed_ilvl(auc, info):
 
     # Priority 3: fallback to item metadata
     return info.get("ilvl", 0)
-
-
-def get_item_level_from_modifiers(modifiers, bonus_ids, bonuses_data, curves_data):
-    try:
-        # Step 1: Extract player level from modifier type 9
-        player_level = None
-        for mod in modifiers:
-            if mod.get("type") == 9:
-                player_level = int(mod.get("value"))
-                break
-
-        if player_level is None:
-            return None, "⛔ No modifier with type 9 found"
-
-        # Step 2: Find a curveId from bonus_ids
-        curve_id = None
-        for b_id in bonus_ids:
-            bonus = bonuses_data.get(str(b_id))
-            if bonus and "curveId" in bonus:
-                curve_id = str(bonus["curveId"])
-                break
-
-        if curve_id is None:
-            return None, "⛔ No curveId found from bonus_ids"
-
-        # Step 3: Lookup curve data and interpolate item level
-        curve = curves_data.get(curve_id)
-        if not curve or "points" not in curve:
-            return None, f"⛔ Curve ID {curve_id} missing or invalid"
-
-        # Step 4: Find item level for the exact or closest lower player level
-        points = curve["points"]
-        best_point = None
-        for point in points:
-            if point["playerLevel"] <= player_level:
-                best_point = point
-            else:
-                break
-
-        if best_point:
-            return best_point["itemLevel"], "✅ Successfully matched player level to curve"
-        else:
-            return None, "⛔ No suitable item level match found in curve"
-    except Exception as e:
-        return None, f"⛔ Exception during processing: {e}"
     
     
 def filter_stat_bonuses(bonuses, raidbots_data, fallback_data, scan_config, info=None):
@@ -1053,6 +1008,77 @@ def filter_stat_bonuses(bonuses, raidbots_data, fallback_data, scan_config, info
                     break
 
     return stat_above_threshold, stat_check_details, stat_threshold_reason
+
+
+def extract_stat_display_strings(item_id, bonus_ids, raidbots_data, item_cache, color=True):
+    """
+    Extracts and formats stat1 and stat2 display strings from bonus stats or fallback metadata.
+
+    Returns:
+        tuple: (stat1_str, stat2_str)
+    """
+    stat1 = "—"
+    stat2 = "—"
+
+    # === Primary: Use Raidbots bonus stats ===
+    for bid in bonus_ids:
+        bonus = raidbots_data.get(str(bid))
+        if not bonus or 'stats' not in bonus:
+            continue
+
+        stat_string = bonus['stats']
+        if not any(stat_name in stat_string for stat_name in ("Haste", "Crit", "Vers", "Mastery")):
+            continue
+
+        parts = [p.strip().split(' [')[0] for p in stat_string.split(',')]
+        parts.sort(key=lambda s: 0 if "Haste" in s else 1)
+
+        def color_max_stat(s):
+            if s.startswith("71% "):
+                return f"\033[33mMax {s[4:]}\033[0m"
+            if s.startswith("100% "):
+                return f"\033[33m100% {s[5:]}\033[0m"
+            return s
+
+        if len(parts) > 0:
+            stat1 = color_max_stat(parts[0]) if color else parts[0]
+        if len(parts) > 1:
+            stat2 = color_max_stat(parts[1]) if color else parts[1]
+        return stat1, stat2  # Return early on first valid bonus
+
+    # === Fallback: Use raw stats from item metadata ===
+    item_info = item_cache.get(item_id, {})
+    raw_stats = item_info.get("raw_stats", [])
+    secondary_stats = []
+    for s in raw_stats:
+        if s.get("is_negated"):
+            continue
+        stat_name = s.get("type", {}).get("name", "")
+        stat_value = s.get("value") or s.get("amount", 0)
+        if stat_name in ("Haste", "Critical Strike", "Versatility", "Mastery") and stat_value > 0:
+            secondary_stats.append({"name": stat_name, "amount": stat_value})
+
+    total = sum(s["amount"] for s in secondary_stats)
+    if total > 0:
+        def short(s):
+            return (
+                "Crit" if s == "Critical Strike" else
+                "Vers" if s == "Versatility" else s
+            )
+        sorted_stats = sorted(
+            secondary_stats,
+            key=lambda s: (0 if s["name"] == "Haste" else 1, -s["amount"])
+        )
+        pct_parts = [f"{round(s['amount'] / total * 100)}% {short(s['name'])}" for s in sorted_stats[:2]]
+        stat1 = pct_parts[0]
+        stat2 = pct_parts[1] if len(pct_parts) > 1 else "—"
+
+        if color:
+            def grey_text(s): return f"\033[90m{s}\033[0m"
+            stat1 = grey_text(stat1)
+            stat2 = grey_text(stat2)
+
+    return stat1, stat2
 
 
 def scan_realm_with_bonus_analysis(session, headers, realm_id, realm_name, item_cache, raidbots_data, fallback_data, curve_data, scan_config, active_filters, max_stat_filters):
@@ -1157,29 +1183,12 @@ def scan_realm_with_bonus_analysis(session, headers, realm_id, realm_name, item_
                 stat_match_ids.append(bid)
                 match_sources[bid] = matched
 
-        stat1 = "—"
-        stat2 = "—"
-        fallback_reason = ""
         if not stat_match_ids:
-            raw_stats = info.get("raw_stats", [])
-            secondary_stats = []
-            for s in raw_stats:
-                if s.get("is_negated"):
-                    continue
-                stat_name = s.get("type", {}).get("name", "")
-                stat_value = s.get("value") or s.get("amount", 0)
-                if stat_name in ("Haste", "Critical Strike", "Versatility", "Mastery") and stat_value > 0:
-                    secondary_stats.append({"name": stat_name, "amount": stat_value})
-
-            total = sum(s["amount"] for s in secondary_stats)
-            if total > 0:
-                sorted_stats = sorted(secondary_stats, key=lambda s: -s["amount"])
-                pct_parts = [f"{round(s['amount'] / total * 100)}% {s['name']}" for s in sorted_stats[:2]]
-                stat1 = pct_parts[0]
-                stat2 = pct_parts[1] if len(pct_parts) > 1 else "—"
-                fallback_reason = f"♻️  Fallback used. Results: {stat1}, {stat2}"
-            else:
-                fallback_reason = f"❌ No usable raw_stats found for item {item['id']}"
+            stat1, stat2 = extract_stat_display_strings(item['id'], bonuses, raidbots_data, item_cache, color=PRINT_FULL_METADATA)
+            fallback_reason = f"♻️  Fallback used. Results: {stat1}, {stat2}"
+        else:
+            stat1 = "—"
+            stat2 = "—"
 
         result = {
             'realm_id': realm_id,
@@ -1329,71 +1338,7 @@ def print_item_row(r, realms, raidbots_data, item_cache, color=True):
     item_slot = r.get('slot', 'Unknown')
     bonus_ids = set(r.get('bonus_lists', []))
 
-    # === Extract stat info ===
-    stat1 = "—"
-    stat2 = "—"
-
-    # Primary method: use Raidbots bonus stats
-    for bid in bonus_ids:
-        bonus = raidbots_data.get(str(bid))
-        if not bonus or 'stats' not in bonus:
-            continue
-
-        stat_string = bonus['stats']
-        if not any(stat_name in stat_string for stat_name in ("Haste", "Crit", "Vers", "Mastery")):
-            continue
-
-        # Strip trailing [x.xxxx] and force Haste to be first
-        parts = [p.strip().split(' [')[0] for p in stat_string.split(',')]
-        parts.sort(key=lambda s: 0 if "Haste" in s else 1)
-
-        def color_max_stat(s):
-            if s.startswith("71% "):
-                return f"\033[33mMax {s[4:]}\033[0m"
-            if s.startswith("100% "):
-                return f"\033[33m100% {s[5:]}\033[0m"
-            return s
-
-        if len(parts) > 0:
-            stat1 = color_max_stat(parts[0]) if color else parts[0]
-        if len(parts) > 1:
-            stat2 = color_max_stat(parts[1]) if color else parts[1]
-        break  # Only use the first valid bonus block
-
-    # Fallback: use base item stats from item metadata if no bonus stats were found
-    if all(s == "—" for s in (stat1, stat2)):
-        item_info = item_cache.get(item_id, {})
-        raw_stats = item_info.get("raw_stats", [])
-        secondary_stats = []
-        for s in raw_stats:
-            if s.get("is_negated"):
-                continue
-            stat_name = s.get("type", {}).get("name", "")
-            stat_value = s.get("value") or s.get("amount", 0)
-            if stat_name in ("Haste", "Critical Strike", "Versatility", "Mastery") and stat_value > 0:
-                secondary_stats.append({"name": stat_name, "amount": stat_value})
-
-        total = sum(s["amount"] for s in secondary_stats)
-        if total > 0:
-            def short(s):
-                return (
-                    "Crit" if s == "Critical Strike" else
-                    "Vers" if s == "Versatility" else s
-                )
-            # Sorts Haste first, then by descending value
-            sorted_stats = sorted(
-                secondary_stats,
-                key=lambda s: (0 if s["name"] == "Haste" else 1, -s["amount"])
-            )
-            pct_parts = [f"{round(s['amount'] / total * 100)}% {short(s['name'])}" for s in sorted_stats[:2]]
-            stat1 = pct_parts[0]
-            stat2 = pct_parts[1] if len(pct_parts) > 1 else "—"
-
-            # Adds colour identification to identify fallback method stats
-            if color:
-                def grey_text(s): return f"\033[90m{s}\033[0m"
-                stat1 = grey_text(stat1)
-                stat2 = grey_text(stat2)
+    stat1, stat2 = extract_stat_display_strings(item_id, bonus_ids, raidbots_data, item_cache, color)
 
     # === Align ANSI-colored stat columns ===
     def strip_ansi(text):
