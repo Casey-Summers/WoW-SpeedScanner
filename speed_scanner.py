@@ -65,11 +65,11 @@ SCAN_PROFILES = {
         "FILTER_TYPE": ["Speed", "Haste", "Prismatic"],
         
         # Item level filtering (minimum and maximum)
-        "MIN_ILVL": 0,
-        "MAX_ILVL": 1000,
+        "MIN_ILVL": 320,
+        "MAX_ILVL": 357,
         
         # Filters by max Buyout Price (in gold) 
-        "MAX_BUYOUT": 40000,
+        "MAX_BUYOUT": 10000000,
 
         # Stat distribution thresholds per stat
         "STAT_DISTRIBUTION_THRESHOLDS": {

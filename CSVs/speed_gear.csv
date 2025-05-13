@@ -1,11 +1,5 @@
 realm,item_id,type,slot,stat1,stat2,name,ilvl,buyout_gold
-Winterhoof,224615,Mail,Wrist,50% Crit,50% Mastery,Expeditionary Bracers,600,150
-Steamwheedle Cartel,224593,Miscellaneous,Finger,34% Mastery,66% Vers,Spinner's Circlet,597,979
-Stormrage,224614,Mail,Waist,29% Haste,71% Vers,Expeditionary Belt,603,399
-Area 52,224623,Plate,Wrist,50% Haste,50% Vers,Earthforged Cuffs,603,755
-Staghelm,224589,Cloth,Waist,71% Mastery,29% Vers,Deep-Dweller's Cincture,603,915
-Barthilas,224591,Cloth,Wrist,50% Crit,50% Mastery,Deep-Dweller's Wraps,597,361
-Dalaran,224615,Mail,Wrist,36% Haste,64% Crit,Expeditionary Bracers,600,300
-Shattered Halls,233449,Plate,Waist,41% Haste,59% Crit,Mechforged Girdle,597,400
-Shu'halo,224591,Cloth,Wrist,36% Crit,64% Mastery,Deep-Dweller's Wraps,603,375
-Tanaris,224615,Mail,Wrist,57% Haste,43% Vers,Expeditionary Bracers,597,2000
+Saurfang,159229,Cloth,Back,71% Haste,29% Mastery,Mistfall Greatcloak,320,29999
+Saurfang,159218,Cloth,Hands,57% Haste,43% Vers,Sagehold Gloves,320,29999
+Saurfang,159186,Cloth,Legs,71% Haste,29% Vers,Foxhollow Leggings,320,29999
+Saurfang,159229,Cloth,Back,64% Haste,36% Mastery,Mistfall Greatcloak,320,29999
