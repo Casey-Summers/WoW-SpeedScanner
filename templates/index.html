@@ -9,8 +9,9 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
   <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </head>
-<body>
+
 <body>
 <div class="container-fluid">
   <div class="row">
@@ -19,57 +20,109 @@
     <div class="col-md-3 bg-light p-3 min-vh-100 d-flex flex-column">
       <h5 class="text-white">Filters</h5>
       <form id="scanForm" class="flex-grow-1 d-flex flex-column justify-content-between">
-        <div>
-          <div class="form-check"><input class="form-check-input" type="checkbox" id="haste" name="haste"><label class="form-check-label" for="haste">Haste</label></div>
-          <div class="form-check"><input class="form-check-input" type="checkbox" id="crit" name="crit"><label class="form-check-label" for="crit">Crit</label></div>
-          <div class="form-check"><input class="form-check-input" type="checkbox" id="vers" name="vers"><label class="form-check-label" for="vers">Vers</label></div>
-          <div class="form-check"><input class="form-check-input" type="checkbox" id="mastery" name="mastery"><label class="form-check-label" for="mastery">Mastery</label></div>
-          <div class="form-check"><input class="form-check-input" type="checkbox" id="speed" name="speed"><label class="form-check-label" for="speed">Speed</label></div>
-          <div class="form-check"><input class="form-check-input" type="checkbox" id="prismatic" name="prismatic"><label class="form-check-label" for="prismatic">Prismatic</label></div>
 
-          <hr>
-          <h6>Item Level Range</h6>
-          <input type="number" class="form-control mb-2" name="min_ilvl" placeholder="Min ilvl">
-          <input type="number" class="form-control mb-2" name="max_ilvl" placeholder="Max ilvl">
+        <!-- Item Level and Buyout (TOP) -->
+        <h6>Item Level Range</h6>
+        <input type="number" class="form-control mb-2" name="min_ilvl" placeholder="Min ilvl">
+        <input type="number" class="form-control mb-2" name="max_ilvl" placeholder="Max ilvl">
 
-          <h6 class="mt-3">Max Buyout (Gold)</h6>
-          <input type="number" class="form-control mb-2" name="max_buyout" placeholder="Max Gold">
-          <hr>
+        <h6 class="mt-3">Max Buyout (Gold)</h6>
+        <input type="number" class="form-control mb-3" name="max_buyout" placeholder="Max Gold">
 
-          <h6>Slot Filters</h6>
-          <div class="row">
-            <!-- Left column: Armor -->
-            <div class="col-6 pe-1">
-              <h6 class="text-muted">Armor</h6>
-              <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1" data-slot="Head">Head</button>
-              <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1" data-slot="Shoulder">Shoulder</button>
-              <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1" data-slot="Chest">Chest</button>
-              <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1" data-slot="Legs">Legs</button>
-              <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1" data-slot="Feet">Feet</button>
-              <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1" data-slot="Back">Back</button>
-              <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1" data-slot="Wrist">Wrist</button>
-              <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1" data-slot="Hands">Hands</button>
-            </div>
+        <!-- Accordion Filters -->
+        <div class="accordion mb-3" id="filterAccordion">
 
-            <!-- Right column: Weapons/Accessories -->
-            <div class="col-6 ps-1">
-              <h6 class="text-muted">Weapons</h6>
-              <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1" data-slot="One-Hand">One-Hand</button>
-              <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1" data-slot="Two-Hand">Two-Hand</button>
-              <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1" data-slot="Main-Hand">Main-Hand</button>
-              <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1" data-slot="Off-Hand">Off-Hand</button>
-              <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1" data-slot="Trinket">Trinket</button>
-              <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1" data-slot="Finger">Finger</button>
-              <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1" data-slot="Neck">Neck</button>
+          <!-- Stat Filters -->
+          <div class="accordion-item bg-dark text-light">
+            <h2 class="accordion-header" id="headingStats">
+              <button class="accordion-button bg-secondary text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseStats" aria-expanded="true" aria-controls="collapseStats">
+                Stat Filters
+              </button>
+            </h2>
+            <div id="collapseStats" class="accordion-collapse collapse show" aria-labelledby="headingStats" data-bs-parent="#filterAccordion">
+              <div class="accordion-body">
+                <div class="form-check"><input class="form-check-input" type="checkbox" id="haste"><label class="form-check-label" for="haste">Haste</label></div>
+                <div class="form-check"><input class="form-check-input" type="checkbox" id="crit"><label class="form-check-label" for="crit">Crit</label></div>
+                <div class="form-check"><input class="form-check-input" type="checkbox" id="vers"><label class="form-check-label" for="vers">Vers</label></div>
+                <div class="form-check"><input class="form-check-input" type="checkbox" id="mastery"><label class="form-check-label" for="mastery">Mastery</label></div>
+                <div class="form-check"><input class="form-check-input" type="checkbox" id="speed"><label class="form-check-label" for="speed">Speed</label></div>
+                <div class="form-check"><input class="form-check-input" type="checkbox" id="prismatic"><label class="form-check-label" for="prismatic">Prismatic</label></div>
+              </div>
             </div>
           </div>
+
+          <!-- Armour Filters -->
+          <div class="accordion-item bg-dark text-light">
+            <h2 class="accordion-header" id="headingArmour">
+              <button class="accordion-button bg-secondary text-white collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseArmour" aria-expanded="false" aria-controls="collapseArmour">
+                Armour Filters
+              </button>
+            </h2>
+            <div id="collapseArmour" class="accordion-collapse collapse" aria-labelledby="headingArmour" data-bs-parent="#filterAccordion">
+              <div class="accordion-body">
+                <div class="row">
+                  <div class="col-6">
+                    <h6 class="text-muted">Armour Types</h6>
+                    <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1" data-slot="Cloth">Cloth</button>
+                    <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1" data-slot="Leather">Leather</button>
+                    <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1" data-slot="Mail">Mail</button>
+                    <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1" data-slot="Plate">Plate</button>
+                    <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1" data-slot="Miscellaneous">Miscellaneous</button>
+                  </div>
+                  <div class="col-6">
+                    <h6 class="text-muted">Armour Slots</h6>
+                    <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1" data-slot="Head">Head</button>
+                    <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1" data-slot="Shoulder">Shoulder</button>
+                    <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1" data-slot="Chest">Chest</button>
+                    <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1" data-slot="Waist">Waist</button>
+                    <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1" data-slot="Legs">Legs</button>
+                    <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1" data-slot="Feet">Feet</button>
+                    <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1" data-slot="Back">Back</button>
+                    <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1" data-slot="Wrist">Wrist</button>
+                    <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1" data-slot="Hands">Hands</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Weaponry Filters -->
+          <div class="accordion-item bg-dark text-light">
+            <h2 class="accordion-header" id="headingWeapons">
+              <button class="accordion-button bg-secondary text-white collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWeapons" aria-expanded="false" aria-controls="collapseWeapons">
+                Weaponry Filters
+              </button>
+            </h2>
+            <div id="collapseWeapons" class="accordion-collapse collapse" aria-labelledby="headingWeapons" data-bs-parent="#filterAccordion">
+              <div class="accordion-body">
+                <div class="row">
+                  <div class="col-6">
+                    <h6 class="text-muted">Weapon Slots</h6>
+                    <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1" data-slot="One-Hand">One-Hand</button>
+                    <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1" data-slot="Two-Hand">Two-Hand</button>
+                    <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1" data-slot="Main-Hand">Main-Hand</button>
+                    <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1" data-slot="Off-Hand">Off-Hand</button>
+                    <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1" data-slot="Held In Off-hand">Held In Off-hand</button>
+                    <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1" data-slot="Ranged">Ranged</button>
+                    <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1" data-slot="Ranged Right">Ranged Right</button>
+                  </div>
+                  <div class="col-6">
+                    <h6 class="text-muted">Accessories</h6>
+                    <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1" data-slot="Finger">Finger</button>
+                    <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1" data-slot="Trinket">Trinket</button>
+                    <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1" data-slot="Neck">Neck</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
 
-        <div>
-          <button type="submit" class="btn btn-success w-100 mt-3">Run Scan</button>
-          <div id="scanStatus" class="mt-2 text-center"></div>
-          <pre id="scanConfigPreview" class="bg-dark text-white p-2 mt-2 rounded small" style="max-height: 200px; overflow-y: auto;"></pre>
-        </div>
+        <!-- Submit -->
+        <button type="submit" class="btn btn-success w-100 mt-3">Run Scan</button>
+        <div id="scanStatus" class="mt-2 text-center"></div>
+        <pre id="scanConfigPreview" class="bg-dark text-white p-2 mt-2 rounded small" style="max-height: 200px; overflow-y: auto;"></pre>
       </form>
     </div>
 
@@ -117,159 +170,7 @@
   </div>
 </div>
 
-<script>
-$(document).ready(function() {
-  $('#gearTable').DataTable();
-
-  let activeSlots = new Set();
-
-  $('.slot-button').click(function () {
-    const slot = $(this).data('slot');
-    $(this).toggleClass('active');
-    if (activeSlots.has(slot)) {
-      activeSlots.delete(slot);
-    } else {
-      activeSlots.add(slot);
-    }
-  });
-
-  $('#scanForm').on('submit', function (e) {
-    e.preventDefault();
-    $('#scanStatus').html('⏳ Running scan...');
-
-    const config = {
-      haste: $('#haste').is(':checked'),
-      crit: $('#crit').is(':checked'),
-      vers: $('#vers').is(':checked'),
-      mastery: $('#mastery').is(':checked'),
-      speed: $('#speed').is(':checked'),
-      prismatic: $('#prismatic').is(':checked'),
-      min_ilvl: $('input[name="min_ilvl"]').val(),
-      max_ilvl: $('input[name="max_ilvl"]').val(),
-      max_buyout: $('input[name="max_buyout"]').val(),
-      slots: Array.from(activeSlots)
-    };
-
-    $.ajax({
-      type: 'POST',
-      url: '/scan',
-      contentType: 'application/json',
-      data: JSON.stringify(config),
-      success: function (response) {
-        if (response.success) {
-          $('#scanStatus').html('✅ Scan complete. Reloading...');
-          setTimeout(reloadTable, 1000);
-        } else {
-          $('#scanStatus').html('❌ Scan failed: ' + response.error);
-        }
-      },
-      error: function () {
-        $('#scanStatus').html('❌ AJAX error');
-      }
-    });
-  });
-
-  function reloadTable() {
-    $.get('/reload', function (data) {
-      const table = $('#gearTable').DataTable();
-      table.clear();
-      for (const row of data) {
-        table.row.add([
-          row.realm,
-          row.item_id,
-          row.type,
-          row.slot,
-          row.stat1,
-          row.stat2,
-          row.name,
-          row.ilvl,
-          row.buyout_gold
-        ]);
-      }
-      table.draw();
-      $('#scanStatus').html('✅ Data refreshed.');
-    });
-  }
-
-  function applyPreset(presetName) {
-    const preset = presets[presetName];
-    if (!preset) return;
-
-    // Reset all checkboxes
-    $("#scanForm input[type='checkbox']").prop("checked", false);
-
-    // Apply stats
-    for (let key of ["haste", "crit", "vers", "mastery", "speed", "prismatic"]) {
-      if (preset[key]) {
-        $(`#${key}`).prop("checked", true);
-      }
-    }
-
-  // Applies item level range
-  $("input[name='min_ilvl']").val(preset.min_ilvl || "");
-  $("input[name='max_ilvl']").val(preset.max_ilvl || "");
-
-  // Applies max buyout threshold
-  $("input[name='max_buyout']").val(preset.max_buyout || "");
-
-  // Reset slot visuals and state
-  $(".slot-button").removeClass("active");
-  activeSlots.clear();
-
-  for (let slot of preset.slots) {
-    const btn = $(`.slot-button[data-slot='${slot}']`);
-    if (btn.length) {
-      btn.addClass("active");
-      activeSlots.add(slot);
-    }
-  }
-
-  // ✅ Do not auto-submit; let user see and manually scan
-}
-
-  // === Attach event handler for preset buttons ===
-  $('.btn-preset').click(function () {
-    // Remove active class from all preset buttons
-    $('.btn-preset').removeClass('active');
-
-    // Add to the clicked one
-    $(this).addClass('active');
-
-    // Load preset config
-    const presetName = $(this).data('preset');
-    applyPreset(presetName);
-  });
-});  // ✅ END of $(document).ready()
-
-// === Preset Profile Definitions ===
-const presets = {
-  full: {
-    haste: true, crit: true, vers: true, mastery: true, speed: true, prismatic: true,
-    min_ilvl: 1,
-    max_ilvl: 1000,
-    max_buyout: 999999,
-    slots: [
-      "Head", "Shoulder", "Chest", "Waist", "Legs", "Wrist", "Hands", "Back", "Feet",
-      "One-Hand", "Two-Hand", "Main-Hand", "Off-Hand", "Held In Off-hand", "Ranged", "Ranged Right",
-      "Finger", "Trinket", "Neck"
-    ]
-  },
-  custom: {
-    haste: true, speed: true, prismatic: true,
-    min_ilvl: 320,
-    max_ilvl: 357,
-    max_buyout: 1000000,
-    slots: ["Waist", "Legs", "Wrist", "Hands", "Back", "Feet", "One-Hand", "Two-Hand", "Trinket"]
-  },
-  profitable: {
-    speed: true, prismatic: true,
-    min_ilvl: 580,
-    max_ilvl: 1000,
-    max_buyout: 2000,
-    slots: ["Waist", "Legs", "Wrist", "Hands", "Back", "Finger", "Trinket"]
-  }
-};
-</script>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
 
 </body>
 </html>
