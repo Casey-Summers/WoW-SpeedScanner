@@ -1,0 +1,15 @@
+{
+  "haste": false,
+  "crit": false,
+  "vers": false,
+  "mastery": false,
+  "speed": false,
+  "prismatic": false,
+  "min_buyout": "",
+  "max_buyout": "",
+  "slots": [
+    "Two-Hand",
+    "Legs",
+    "Finger"
+  ]
+}

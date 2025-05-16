@@ -1,5 +1,4 @@
 realm,item_id,type,slot,stat1,stat2,name,ilvl,buyout_gold
-Saurfang,159229,Cloth,Back,71% Haste,29% Mastery,Mistfall Greatcloak,320,29999
-Saurfang,159218,Cloth,Hands,57% Haste,43% Vers,Sagehold Gloves,320,29999
-Saurfang,159186,Cloth,Legs,71% Haste,29% Vers,Foxhollow Leggings,320,29999
-Saurfang,159229,Cloth,Back,64% Haste,36% Mastery,Mistfall Greatcloak,320,29999
+Stormrage,159186,Cloth,Legs,29% Haste,71% Mastery,Foxhollow Leggings,320,7500
+Azralon,159522,Dagger,One-Hand,36% Haste,64% Crit,Stagheart Knife,320,964
+Saurfang,159557,Mace,Two-Hand,43% Haste,57% Vers,Zem'lan Headsmasher,320,39999

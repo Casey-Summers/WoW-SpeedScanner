@@ -1,0 +1,114 @@
+/* === Global Dark Theme === */
+body {
+  background-color: #1e1e1e;
+  color: #e4e4e4;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container-fluid {
+  padding-top: 20px;
+}
+
+/* === Sidebar === */
+.bg-light {
+  background-color: #2a2a2a !important;
+  border-right: 1px solid #444;
+  color: #e4e4e4;
+}
+
+/* === Bootstrap Elements === */
+.form-control,
+.form-check-input {
+  background-color: #333;
+  color: #fff;
+  border-color: #555;
+}
+
+.form-check-label {
+  color: #ccc;
+}
+
+.btn-outline-primary {
+  color: #ccc;
+  border-color: #555;
+}
+
+.btn-outline-primary:hover,
+.slot-button.active {
+  background-color: #5c5c5c;
+  color: #fff;
+  border-color: #888;
+}
+
+.btn-success {
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+}
+
+/* === Table Styles === */
+table.dataTable {
+  background-color: #2c2c2c;
+  color: #eaeaea;
+}
+
+table.dataTable thead th {
+  background-color: #3c3c3c;
+  color: #f0f0f0;
+}
+
+table.dataTable td {
+  background-color: #2c2c2c;
+  color: #ddd;
+}
+
+table.dataTable tbody tr:hover {
+  background-color: #444;
+}
+
+/* === Custom Stat Highlighting === */
+.stat-max {
+  color: gold;
+  font-weight: bold;
+}
+
+.stat-fallback {
+  color: #999;
+  font-style: italic;
+}
+
+/* === Scan Status === */
+#scanStatus {
+  font-weight: bold;
+  padding-top: 6px;
+  color: #ffc107;
+}
+
+/* === Slot Buttons === */
+.slot-button {
+  font-size: 0.9rem;
+  border-radius: 0.25rem;
+  margin-bottom: 4px;
+  transition: all 0.2s ease;
+}
+
+.slot-button.active {
+  background-color: #6c757d;
+  color: white;
+  border-color: #8a8a8a;
+}
+
+.min-vh-100 {
+  min-height: 100vh !important;
+}
+
+/* === Preset Button Active State === */
+.btn-preset.active {
+  background-color: #17a2b8;
+  color: white;
+  border-color: #17a2b8;
+}
+

@@ -22,6 +22,9 @@ import re  # Regular expressions for parsing item level strings
 from time import perf_counter # Measure elapsed time for performance tracking
 import sys # System-specific parameters and functions
 from pathlib import Path # Handle file paths in a cross-platform way
+import argparse
+import json
+
 
 # === SCAN PROFILE DEFINITIONS ===
 SCAN_PROFILES = {
@@ -73,10 +76,10 @@ SCAN_PROFILES = {
 
         # Stat distribution thresholds per stat
         "STAT_DISTRIBUTION_THRESHOLDS": {
-            "Haste": 51,
-            "Crit": 100,
-            "Vers": 100,
-            "Mastery": 100
+            "Haste": 0,
+            "Crit": 0,
+            "Vers": 0,
+            "Mastery": 0
         },
 
         # Defines the allowed item slots for filtering
@@ -229,6 +232,57 @@ debug_stats = {
     'auction_calls': 0,
     'realms_scanned': 0,
 }
+
+# === Command-line argument parsing ===
+parser = argparse.ArgumentParser()
+parser.add_argument('--config', type=str, help='Path to JSON config file')
+args = parser.parse_args()
+
+if args.config:
+    with open(args.config, "r") as f:
+        config_data = json.load(f)
+        # Apply to your constants (FILTER_TYPE, ALLOWED_SLOTS, etc.)
+        
+# === Handle command-line config ===
+parser = argparse.ArgumentParser()
+parser.add_argument("--config", type=str, help="Path to scan config JSON")
+args = parser.parse_args()
+
+# Default profile to load
+profile_name = "custom"
+
+# Load config from file if passed
+if args.config and os.path.exists(args.config):
+    with open(args.config, "r") as f:
+        config = json.load(f)
+        # Extract filters from the file
+        CUSTOM_PROFILE = {
+            "MIN_ILVL": 1,
+            "MAX_ILVL": 1000,
+            "MAX_BUYOUT": int(config.get("max_buyout", 99999999)),
+            "FILTER_TYPE": [],
+            "ALLOWED_SLOTS": config.get("slots", []),
+            "REQUIRE_PRISMATIC": config.get("prismatic", False),
+            "STAT_DISTRIBUTION_THRESHOLDS": {
+                "Haste": 71 if config.get("haste") else 0,
+                "Crit": 71 if config.get("crit") else 0,
+                "Vers": 71 if config.get("vers") else 0,
+                "Mastery": 71 if config.get("mastery") else 0,
+                "Speed": 71 if config.get("speed") else 0
+            }
+        }
+
+        # Assign FILTER_TYPE based on enabled stats
+        if config.get("haste"): CUSTOM_PROFILE["FILTER_TYPE"].append("Haste")
+        if config.get("crit"): CUSTOM_PROFILE["FILTER_TYPE"].append("Crit")
+        if config.get("vers"): CUSTOM_PROFILE["FILTER_TYPE"].append("Vers")
+        if config.get("mastery"): CUSTOM_PROFILE["FILTER_TYPE"].append("Mastery")
+        if config.get("speed"): CUSTOM_PROFILE["FILTER_TYPE"].append("Speed")
+
+        # Inject this into SCAN_PROFILES
+        SCAN_PROFILES["custom"] = CUSTOM_PROFILE
+        profile_name = "custom"
+
 
 # === Conditional global logging based on debug flag ===
 LOG_LEVEL = logging.DEBUG if PRINT_FULL_METADATA else logging.INFO
