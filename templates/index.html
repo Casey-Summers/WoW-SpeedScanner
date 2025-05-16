@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,164 +14,239 @@
 </head>
 
 <body>
-<div class="container-fluid">
-  <div class="row">
+  <div class="container-fluid">
+    <div class="row">
 
-    <!-- Sidebar -->
-    <div class="col-md-3 bg-light p-3 min-vh-100 d-flex flex-column">
-      <h5 class="text-white">Filters</h5>
-      <form id="scanForm" class="flex-grow-1 d-flex flex-column justify-content-between">
+      <!-- Sidebar -->
+      <div class="col-md-3 bg-light p-3 min-vh-100 d-flex flex-column">
+        <h5 class="text-white">Filters</h5>
+        <form id="scanForm" class="flex-grow-1 d-flex flex-column justify-content-between">
+          <div class="d-flex flex-column h-100">
 
-        <!-- Item Level and Buyout (TOP) -->
-        <h6>Item Level Range</h6>
-        <input type="number" class="form-control mb-2" name="min_ilvl" placeholder="Min ilvl">
-        <input type="number" class="form-control mb-2" name="max_ilvl" placeholder="Max ilvl">
-
-        <h6 class="mt-3">Max Buyout (Gold)</h6>
-        <input type="number" class="form-control mb-3" name="max_buyout" placeholder="Max Gold">
-
-        <!-- Accordion Filters -->
-        <div class="accordion mb-3" id="filterAccordion">
-
-          <!-- Stat Filters -->
-          <div class="accordion-item bg-dark text-light">
-            <h2 class="accordion-header" id="headingStats">
-              <button class="accordion-button bg-secondary text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseStats" aria-expanded="true" aria-controls="collapseStats">
-                Stat Filters
-              </button>
-            </h2>
-            <div id="collapseStats" class="accordion-collapse collapse show" aria-labelledby="headingStats" data-bs-parent="#filterAccordion">
-              <div class="accordion-body">
-                <div class="form-check"><input class="form-check-input" type="checkbox" id="haste"><label class="form-check-label" for="haste">Haste</label></div>
-                <div class="form-check"><input class="form-check-input" type="checkbox" id="crit"><label class="form-check-label" for="crit">Crit</label></div>
-                <div class="form-check"><input class="form-check-input" type="checkbox" id="vers"><label class="form-check-label" for="vers">Vers</label></div>
-                <div class="form-check"><input class="form-check-input" type="checkbox" id="mastery"><label class="form-check-label" for="mastery">Mastery</label></div>
-                <div class="form-check"><input class="form-check-input" type="checkbox" id="speed"><label class="form-check-label" for="speed">Speed</label></div>
-                <div class="form-check"><input class="form-check-input" type="checkbox" id="prismatic"><label class="form-check-label" for="prismatic">Prismatic</label></div>
+            <!-- Top: Static Filters -->
+            <div class="static-filters mb-3">
+              <!-- Scan Mode -->
+              <h6 class="mb-2">Scan Mode</h6>
+              <div class="form-check mb-1">
+                <input class="form-check-input" type="radio" name="scan_mode" id="scan_all" value="all" checked>
+                <label class="form-check-label" for="scan_all">All Realms</label>
               </div>
-            </div>
-          </div>
+              <div class="form-check mb-2">
+                <input class="form-check-input" type="radio" name="scan_mode" id="scan_single" value="single">
+                <label class="form-check-label" for="scan_single">Single Realm</label>
+              </div>
+              <div id="single-realm-input" class="mb-3" style="display: none;">
+                <label for="realm_input" class="form-label">Realm Name or ID</label>
+                <input type="text" class="form-control" id="realm_input" placeholder="e.g. Saurfang or 3721">
+              </div>
 
-          <!-- Armour Filters -->
-          <div class="accordion-item bg-dark text-light">
-            <h2 class="accordion-header" id="headingArmour">
-              <button class="accordion-button bg-secondary text-white collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseArmour" aria-expanded="false" aria-controls="collapseArmour">
-                Armour Filters
-              </button>
-            </h2>
-            <div id="collapseArmour" class="accordion-collapse collapse" aria-labelledby="headingArmour" data-bs-parent="#filterAccordion">
-              <div class="accordion-body">
-                <div class="row">
-                  <div class="col-6">
-                    <h6 class="text-muted">Armour Types</h6>
-                    <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1" data-slot="Cloth">Cloth</button>
-                    <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1" data-slot="Leather">Leather</button>
-                    <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1" data-slot="Mail">Mail</button>
-                    <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1" data-slot="Plate">Plate</button>
-                    <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1" data-slot="Miscellaneous">Miscellaneous</button>
-                  </div>
-                  <div class="col-6">
-                    <h6 class="text-muted">Armour Slots</h6>
-                    <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1" data-slot="Head">Head</button>
-                    <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1" data-slot="Shoulder">Shoulder</button>
-                    <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1" data-slot="Chest">Chest</button>
-                    <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1" data-slot="Waist">Waist</button>
-                    <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1" data-slot="Legs">Legs</button>
-                    <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1" data-slot="Feet">Feet</button>
-                    <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1" data-slot="Back">Back</button>
-                    <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1" data-slot="Wrist">Wrist</button>
-                    <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1" data-slot="Hands">Hands</button>
+              <!-- ilvl Range -->
+              <h6 class="mt-3 mb-2">Item Level Range</h6>
+              <div class="row g-2 mb-3">
+                <div class="col">
+                  <input type="number" class="form-control" name="min_ilvl" placeholder="Min ilvl">
+                </div>
+                <div class="col">
+                  <input type="number" class="form-control" name="max_ilvl" placeholder="Max ilvl">
+                </div>
+              </div>
+
+              <!-- Buyout -->
+              <h6 class="mb-2">Max Buyout (Gold)</h6>
+              <input type="number" class="form-control mb-3" name="max_buyout" placeholder="Max Gold">
+            </div>
+
+            <!-- 🔻 Bottom 2/3: Accordion Filters -->
+            <div class="accordion flex-grow-1 overflow-auto" id="filterAccordion" style="flex: 1 1 67%; min-height: 0;">
+
+              <!-- Stat Filters (with Normal/Advanced toggle) -->
+              <div class="accordion-item bg-dark text-light">
+                <h2 class="accordion-header" id="headingStatFilters">
+                  <button class="accordion-button bg-secondary text-white collapsed" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#collapseStatFilters" aria-expanded="false"
+                    aria-controls="collapseStatFilters">
+                    Stat Filters
+                  </button>
+                </h2>
+                <div id="collapseStatFilters" class="accordion-collapse collapse" aria-labelledby="headingStatFilters"
+                  data-bs-parent="#filterAccordion">
+                  <div class="accordion-body">
+
+                    <!-- Toggle Switch -->
+                    <div class="form-check form-switch mb-3">
+                      <input class="form-check-input" type="checkbox" id="statModeSwitch">
+                      <label class="form-check-label" for="statModeSwitch" id="statModeLabel">Mode: Normal</label>
+                    </div>
+
+                    <!-- Normal Mode: Max 2 Stats -->
+                    <div id="stat-normal-mode">
+                      <div class="form-check"><input class="form-check-input stat-check" type="checkbox"
+                          id="haste"><label class="form-check-label" for="haste">Haste</label></div>
+                      <div class="form-check"><input class="form-check-input stat-check" type="checkbox"
+                          id="crit"><label class="form-check-label" for="crit">Crit</label></div>
+                      <div class="form-check"><input class="form-check-input stat-check" type="checkbox"
+                          id="vers"><label class="form-check-label" for="vers">Vers</label></div>
+                      <div class="form-check"><input class="form-check-input stat-check" type="checkbox"
+                          id="mastery"><label class="form-check-label" for="mastery">Mastery</label></div>
+                    </div>
+
+                    <!-- Advanced Mode: Percentage Fields -->
+                    <div id="stat-advanced-mode" style="display: none;">
+                      <div class="mb-2"><label class="form-label">Haste (%)</label><input type="number" id="haste-val"
+                          class="form-control" min="0" max="100" value="0"></div>
+                      <div class="mb-2"><label class="form-label">Crit (%)</label><input type="number" id="crit-val"
+                          class="form-control" min="0" max="100" value="0"></div>
+                      <div class="mb-2"><label class="form-label">Vers (%)</label><input type="number" id="vers-val"
+                          class="form-control" min="0" max="100" value="0"></div>
+                      <div class="mb-2"><label class="form-label">Mastery (%)</label><input type="number"
+                          id="mastery-val" class="form-control" min="0" max="100" value="0"></div>
+                    </div>
+
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
 
-          <!-- Weaponry Filters -->
-          <div class="accordion-item bg-dark text-light">
-            <h2 class="accordion-header" id="headingWeapons">
-              <button class="accordion-button bg-secondary text-white collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWeapons" aria-expanded="false" aria-controls="collapseWeapons">
-                Weaponry Filters
-              </button>
-            </h2>
-            <div id="collapseWeapons" class="accordion-collapse collapse" aria-labelledby="headingWeapons" data-bs-parent="#filterAccordion">
-              <div class="accordion-body">
-                <div class="row">
-                  <div class="col-6">
-                    <h6 class="text-muted">Weapon Slots</h6>
-                    <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1" data-slot="One-Hand">One-Hand</button>
-                    <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1" data-slot="Two-Hand">Two-Hand</button>
-                    <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1" data-slot="Main-Hand">Main-Hand</button>
-                    <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1" data-slot="Off-Hand">Off-Hand</button>
-                    <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1" data-slot="Held In Off-hand">Held In Off-hand</button>
-                    <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1" data-slot="Ranged">Ranged</button>
-                    <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1" data-slot="Ranged Right">Ranged Right</button>
-                  </div>
-                  <div class="col-6">
-                    <h6 class="text-muted">Accessories</h6>
-                    <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1" data-slot="Finger">Finger</button>
-                    <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1" data-slot="Trinket">Trinket</button>
-                    <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1" data-slot="Neck">Neck</button>
+              <!-- Armour Filters -->
+              <div class="accordion-item bg-dark text-light">
+                <h2 class="accordion-header" id="headingArmour">
+                  <button class="accordion-button bg-secondary text-white collapsed" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#collapseArmour" aria-expanded="false"
+                    aria-controls="collapseArmour">
+                    Armour Filters
+                  </button>
+                </h2>
+                <div id="collapseArmour" class="accordion-collapse collapse" aria-labelledby="headingArmour"
+                  data-bs-parent="#filterAccordion">
+                  <div class="accordion-body">
+                    <div class="row">
+                      <div class="col-6">
+                        <h6 class="text-muted">Armour Types</h6>
+                        <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1"
+                          data-slot="Cloth">Cloth</button>
+                        <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1"
+                          data-slot="Leather">Leather</button>
+                        <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1"
+                          data-slot="Mail">Mail</button>
+                        <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1"
+                          data-slot="Plate">Plate</button>
+                        <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1"
+                          data-slot="Miscellaneous">Miscellaneous</button>
+                      </div>
+                      <div class="col-6">
+                        <h6 class="text-muted">Armour Slots</h6>
+                        <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1"
+                          data-slot="Head">Head</button>
+                        <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1"
+                          data-slot="Shoulder">Shoulder</button>
+                        <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1"
+                          data-slot="Chest">Chest</button>
+                        <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1"
+                          data-slot="Waist">Waist</button>
+                        <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1"
+                          data-slot="Legs">Legs</button>
+                        <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1"
+                          data-slot="Feet">Feet</button>
+                        <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1"
+                          data-slot="Back">Back</button>
+                        <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1"
+                          data-slot="Wrist">Wrist</button>
+                        <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1"
+                          data-slot="Hands">Hands</button>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
+
+              <!-- Weaponry Filters -->
+              <div class="accordion-item bg-dark text-light">
+                <h2 class="accordion-header" id="headingWeapons">
+                  <button class="accordion-button bg-secondary text-white collapsed" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#collapseWeapons" aria-expanded="false"
+                    aria-controls="collapseWeapons">
+                    Weaponry Filters
+                  </button>
+                </h2>
+                <div id="collapseWeapons" class="accordion-collapse collapse" aria-labelledby="headingWeapons"
+                  data-bs-parent="#filterAccordion">
+                  <div class="accordion-body">
+                    <div class="row">
+                      <div class="col-6">
+                        <h6 class="text-muted">Weapon Slots</h6>
+                        <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1"
+                          data-slot="One-Hand">One-Hand</button>
+                        <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1"
+                          data-slot="Two-Hand">Two-Hand</button>
+                        <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1"
+                          data-slot="Main-Hand">Main-Hand</button>
+                        <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1"
+                          data-slot="Off-Hand">Off-Hand</button>
+                        <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1"
+                          data-slot="Held In Off-hand">Held In Off-hand</button>
+                        <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1"
+                          data-slot="Ranged">Ranged</button>
+                        <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1"
+                          data-slot="Ranged Right">Ranged Right</button>
+                      </div>
+                      <div class="col-6">
+                        <h6 class="text-muted">Accessories</h6>
+                        <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1"
+                          data-slot="Finger">Finger</button>
+                        <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1"
+                          data-slot="Trinket">Trinket</button>
+                        <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1"
+                          data-slot="Neck">Neck</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div> <!-- End Accordion -->
+
+            <!-- Fixed Bottom Sidebar Footer -->
+            <div id="sidebar-footer">
+              <hr class="mb-2 mt-2">
+              <button type="submit" class="btn btn-success w-100">Run Scan</button>
+              <div id="scanStatus" class="mt-2 text-center"></div>
             </div>
-          </div>
-
-        </div>
-
-        <!-- Submit -->
-        <button type="submit" class="btn btn-success w-100 mt-3">Run Scan</button>
-        <div id="scanStatus" class="mt-2 text-center"></div>
-        <pre id="scanConfigPreview" class="bg-dark text-white p-2 mt-2 rounded small" style="max-height: 200px; overflow-y: auto;"></pre>
-      </form>
-    </div>
-
-    <!-- Main Content -->
-    <div class="col-md-9 p-4 bg-dark text-light min-vh-100">
-      <div class="d-flex justify-content-between align-items-center mb-3">
-        <h2 class="text-white">Speed Gear Results</h2>
-        <div>
-          <button class="btn btn-outline-info me-1 btn-preset" data-preset="full">Full</button>
-          <button class="btn btn-outline-info me-1 btn-preset" data-preset="custom">Custom</button>
-          <button class="btn btn-outline-info btn-preset" data-preset="profitable">Profitable</button>
-        </div>
+          </div> <!-- End Flex Container -->
+        </form>
       </div>
-      <table id="gearTable" class="display" style="width:100%">
-        <thead>
-        <tr>
-          <th>Realm</th>
-          <th>Item ID</th>
-          <th>Type</th>
-          <th>Slot</th>
-          <th>Stat 1</th>
-          <th>Stat 2</th>
-          <th>Name</th>
-          <th>ilvl</th>
-          <th>Buyout</th>
-        </tr>
-        </thead>
-        <tbody>
-        {% for row in table_data %}
-          <tr>
-            <td>{{ row.realm }}</td>
-            <td>{{ row.item_id }}</td>
-            <td>{{ row.type }}</td>
-            <td>{{ row.slot }}</td>
-            <td>{{ row.stat1 }}</td>
-            <td>{{ row.stat2 }}</td>
-            <td>{{ row.name }}</td>
-            <td>{{ row.ilvl }}</td>
-            <td>{{ row.buyout_gold }}</td>
-          </tr>
-        {% endfor %}
-        </tbody>
-      </table>
+
+      <!-- Main Content -->
+      <div class="col-md-9 p-4 bg-dark text-light min-vh-100">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h2 class="text-white">Speed Gear Results</h2>
+          <div>
+            <button class="btn btn-outline-info me-1 btn-preset" data-preset="full">Full</button>
+            <button class="btn btn-outline-info me-1 btn-preset" data-preset="custom">Custom</button>
+            <button class="btn btn-outline-info btn-preset" data-preset="profitable">Profitable</button>
+          </div>
+        </div>
+        <table id="gearTable" class="display" style="width:100%">
+          <thead>
+            <tr>
+              <th>Realm</th>
+              <th>Item ID</th>
+              <th>Type</th>
+              <th>Slot</th>
+              <th>Stat 1</th>
+              <th>Stat 2</th>
+              <th>Name</th>
+              <th>ilvl</th>
+              <th>Buyout</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
-</div>
 
-<script src="{{ url_for('static', filename='script.js') }}"></script>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
 
 </body>
+
 </html>

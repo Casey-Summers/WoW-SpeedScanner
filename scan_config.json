@@ -1,15 +1,26 @@
 {
-  "haste": false,
+  "haste": true,
   "crit": false,
   "vers": false,
   "mastery": false,
   "speed": false,
   "prismatic": false,
-  "min_buyout": "",
-  "max_buyout": "",
+  "min_ilvl": "320",
+  "max_ilvl": "357",
+  "max_buyout": "1000000",
   "slots": [
-    "Two-Hand",
+    "Waist",
     "Legs",
-    "Finger"
+    "Wrist",
+    "Hands",
+    "Back",
+    "Feet",
+    "One-Hand",
+    "Two-Hand",
+    "Trinket"
+  ],
+  "stat_mode": "normal",
+  "FILTER_TYPE": [
+    "on"
   ]
 }

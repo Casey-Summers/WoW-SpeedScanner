@@ -1,4 +1,181 @@
 realm,item_id,type,slot,stat1,stat2,name,ilvl,buyout_gold
-Stormrage,159186,Cloth,Legs,29% Haste,71% Mastery,Foxhollow Leggings,320,7500
-Azralon,159522,Dagger,One-Hand,36% Haste,64% Crit,Stagheart Knife,320,964
+Saurfang,210107,Plate,Wrist,55% Haste,45% Mastery,Harvest Guardian Deflectors,418,47735
+Saurfang,210107,Plate,Wrist,55% Haste,45% Mastery,Harvest Guardian Deflectors,421,46025
+Saurfang,210106,Cloth,Wrist,60% Vers,40% Crit,Maple Tender Wristbands,421,46025
+Saurfang,210089,Cloth,Hands,40% Haste,60% Vers,Maple Tender Gloves,418,46025
+Saurfang,224602,Leather,Head,29% Crit,Max Mastery,Underscout's Cap,603,10421
+Saurfang,224602,Leather,Head,29% Crit,Max Vers,Underscout's Cap,600,9315
+Saurfang,224602,Leather,Head,57% Crit,43% Mastery,Underscout's Cap,597,9315
+Saurfang,224624,Cloth,Back,64% Haste,36% Vers,Spinner's Shawl,597,11368
+Saurfang,224609,Mail,Feet,Max Mastery,29% Vers,Expeditionary Boots,597,7263
+Saurfang,224609,Mail,Feet,36% Crit,64% Vers,Expeditionary Boots,597,7263
+Saurfang,224605,Leather,Wrist,43% Haste,57% Vers,Underscout's Bracers,600,12421
+Saurfang,224593,Miscellaneous,Finger,29% Haste,Max Crit,Spinner's Circlet,597,11368
+Saurfang,224593,Miscellaneous,Finger,29% Crit,Max Vers,Spinner's Circlet,597,11368
+Saurfang,224626,Staff,Two-Hand,29% Haste,Max Vers,Deep-Dweller's Staff,603,15526
+Saurfang,224603,Leather,Legs,64% Haste,36% Mastery,Underscout's Trousers,597,11368
+Saurfang,224604,Leather,Waist,Max Haste,29% Crit,Underscout's Cord,597,11368
+Saurfang,224608,Mail,Chest,64% Mastery,36% Vers,Expeditionary Brigandine,603,9368
+Saurfang,121263,Mail,Feet,64% Haste,36% Mastery,Warpwind Greaves,214,1500
+Saurfang,233462,Mail,Feet,52% Vers,48% Crit,Scrapcoil Striders,603,2000
+Saurfang,224636,Dagger,One-Hand,Max Haste,29% Vers,Deep-Dweller's Dirk,603,400
+Saurfang,163956,Staff,Two-Hand,62% Haste,38% Crit,Treiya's Shining Pillar,60,111360
+Saurfang,224611,Mail,Head,57% Haste,43% Vers,Expeditionary Helm,561,39999
+Saurfang,210120,Leather,Feet,65% Crit,35% Vers,Autumn Druid Treads,424,69998
+Saurfang,210095,Cloth,Legs,45% Haste,55% Crit,Maple Tender Leggings,424,69998
+Saurfang,224621,Plate,Shoulder,43% Crit,57% Mastery,Earthforged Shoulder Scales,561,39999
+Saurfang,227692,Sword,One-Hand,43% Crit,57% Vers,Arathi Sword,564,49999
+Saurfang,208430,Cloth,Waist,70% Mastery,30% Crit,Whispering Fanged Cord,444,280000
+Saurfang,224628,Sword,Two-Hand,64% Haste,36% Crit,Arathi Claymore,558,24999
+Saurfang,224630,Axe,One-Hand,Max Haste,29% Vers,Deep-Dweller's Battleaxe,600,93
+Saurfang,210122,Staff,Two-Hand,65% Haste,35% Crit,Breezekeeper's Staff,418,1999999
+Saurfang,159609,Wand,Ranged,64% Crit,36% Mastery,Golden Fleet Wand,320,71
+Saurfang,121133,Leather,Shoulder,43% Mastery,57% Vers,Haustvelt Shoulders,214,999
+Saurfang,224633,Axe,Two-Hand,36% Crit,64% Mastery,Arathi Greataxe,600,17000
+Saurfang,229073,Leather,Legs,57% Mastery,43% Vers,Azra's Spare Trousers,564,28000
+Saurfang,210082,Plate,Feet,60% Crit,40% Vers,Harvest Guardian Sabatons,424,69998
+Saurfang,210082,Plate,Feet,60% Crit,40% Vers,Harvest Guardian Sabatons,421,49129
+Saurfang,210100,Cloth,Shoulder,55% Vers,45% Mastery,Maple Tender Mantle,421,64551
+Saurfang,210100,Cloth,Shoulder,55% Vers,45% Mastery,Maple Tender Mantle,418,68871
+Saurfang,210101,Mail,Shoulder,65% Vers,35% Crit,Wind Wolf Epaulets,418,55392
+Saurfang,210108,Mail,Wrist,40% Haste,60% Vers,Wind Wolf Cuffs,421,52461
+Saurfang,210090,Mail,Hands,40% Haste,60% Crit,Wind Wolf Gauntlets,421,46025
+Saurfang,233454,Plate,Feet,46% Haste,54% Mastery,Mechforged Sabatons,603,15000
+Saurfang,224614,Mail,Waist,29% Haste,Max Vers,Expeditionary Belt,597,70
+Saurfang,224638,Warglaives,One-Hand,43% Mastery,57% Vers,Underscout's Glaive,564,24458
+Saurfang,224591,Cloth,Wrist,Max Crit,29% Vers,Deep-Dweller's Wraps,564,56956
+Saurfang,233448,Plate,Wrist,52% Vers,48% Mastery,Mechforged Armplates,603,10000
+Saurfang,233484,Miscellaneous,Finger,57% Mastery,43% Crit,Lucky-Streak Signet,603,85000
+Saurfang,224591,Cloth,Wrist,50% Mastery,50% Vers,Deep-Dweller's Wraps,603,2000
+Saurfang,179334,Staff,Two-Hand,29% Haste,Max Mastery,Wingblade Staff,320,3246
+Saurfang,177793,Plate,Shoulder,36% Mastery,64% Vers,Night Guardian Pauldrons,320,8431
+Saurfang,224590,Cloth,Head,43% Haste,57% Mastery,Deep-Dweller's Cowl,597,5000
+Saurfang,180162,Staff,Two-Hand,29% Crit,Max Vers,Drustwrought Scythe,5,68100
+Saurfang,224615,Mail,Wrist,57% Haste,43% Crit,Expeditionary Bracers,597,100
+Saurfang,224618,Plate,Feet,57% Haste,43% Vers,Earthforged Sabatons,597,19999
+Saurfang,224618,Plate,Feet,29% Haste,Max Vers,Earthforged Sabatons,597,19999
+Saurfang,224630,Axe,One-Hand,50% Crit,50% Vers,Deep-Dweller's Battleaxe,597,19999
+Saurfang,224630,Axe,One-Hand,64% Mastery,36% Vers,Deep-Dweller's Battleaxe,603,19999
+Saurfang,224633,Axe,Two-Hand,64% Crit,36% Mastery,Arathi Greataxe,558,19999
+Saurfang,224633,Axe,Two-Hand,64% Haste,36% Crit,Arathi Greataxe,597,19999
+Saurfang,224633,Axe,Two-Hand,36% Haste,64% Mastery,Arathi Greataxe,597,19999
+Saurfang,224633,Axe,Two-Hand,64% Crit,36% Mastery,Arathi Greataxe,603,19999
+Saurfang,224633,Axe,Two-Hand,50% Haste,50% Vers,Arathi Greataxe,600,19999
+Saurfang,178949,Sword,Two-Hand,Max Haste,29% Mastery,Blackhound Claymore,320,29999
+Saurfang,224625,Polearm,Two-Hand,Max Haste,29% Mastery,Expeditionary Spear,603,29999
+Saurfang,224605,Leather,Wrist,43% Crit,57% Vers,Underscout's Bracers,600,19999
+Saurfang,159475,Axe,One-Hand,Max Mastery,29% Vers,Shipwrecker Axe,320,19999
+Saurfang,180795,Dagger,One-Hand,29% Crit,Max Vers,Gore-Smudged Bonesaw,320,19999
+Saurfang,121023,Leather,Shoulder,Max Haste,29% Mastery,Llothien Shoulders,357,19999
+Saurfang,176986,Cloth,Waist,Max Haste,29% Mastery,Bloodskin Cord,320,29999
+Saurfang,224610,Mail,Hands,29% Mastery,Max Vers,Expeditionary Gauntlets,603,19999
+Saurfang,224610,Mail,Hands,36% Mastery,64% Vers,Expeditionary Gauntlets,603,19999
+Saurfang,224610,Mail,Hands,50% Haste,50% Vers,Expeditionary Gauntlets,603,19999
+Saurfang,224622,Plate,Waist,Max Haste,29% Crit,Stalwart Girdle,603,39999
+Saurfang,224622,Plate,Waist,29% Haste,Max Crit,Stalwart Girdle,603,39999
+Saurfang,224629,Axe,One-Hand,64% Mastery,36% Vers,Arathi Hatchet,597,19999
+Saurfang,177778,Leather,Waist,Max Haste,29% Crit,Depraved Darkblade's Belt,320,29999
+Saurfang,224614,Mail,Waist,29% Haste,Max Vers,Expeditionary Belt,603,39999
+Saurfang,176992,Leather,Wrist,57% Mastery,43% Vers,Warflesh Bracers,320,29999
+Saurfang,224593,Miscellaneous,Finger,34% Mastery,66% Vers,Spinner's Circlet,597,29999
+Saurfang,224593,Miscellaneous,Finger,66% Haste,34% Mastery,Spinner's Circlet,597,39999
+Saurfang,224593,Miscellaneous,Finger,29% Haste,Max Vers,Spinner's Circlet,597,29999
+Saurfang,121184,Leather,Legs,Max Crit,29% Vers,Smolderhide Britches,357,29999
+Saurfang,121184,Leather,Legs,57% Haste,43% Crit,Smolderhide Britches,357,19999
+Saurfang,121184,Leather,Legs,43% Haste,57% Vers,Smolderhide Britches,357,19999
+Saurfang,224627,Gun,Ranged,36% Mastery,64% Vers,Arathi Arquebus,603,19999
+Saurfang,224627,Gun,Ranged,29% Haste,Max Vers,Arathi Arquebus,603,19999
+Saurfang,224627,Gun,Ranged,29% Crit,Max Vers,Arathi Arquebus,603,19999
+Saurfang,224611,Mail,Head,64% Crit,36% Mastery,Expeditionary Helm,597,19999
+Saurfang,224596,Cloth,Hands,43% Haste,57% Crit,Deep-Dweller's Mitts,603,19999
+Saurfang,224596,Cloth,Hands,50% Mastery,50% Vers,Deep-Dweller's Mitts,600,19999
+Saurfang,224596,Cloth,Hands,29% Crit,Max Vers,Deep-Dweller's Mitts,603,19999
+Saurfang,224634,Mace,One-Hand,29% Crit,Max Mastery,Arathi Mace,600,19999
+Saurfang,224634,Mace,One-Hand,50% Crit,50% Mastery,Arathi Mace,597,19999
+Saurfang,224592,Miscellaneous,Finger,54% Haste,46% Mastery,Spinner's Hoop,564,39999
+Saurfang,224592,Miscellaneous,Finger,Max Haste,29% Mastery,Spinner's Hoop,558,39999
+Saurfang,198989,Cloth,Legs,64% Mastery,36% Vers,Drakewatcher's Pantaloons,357,19999
+Saurfang,233538,Sword,One-Hand,41% Haste,59% Crit,Gold-Plated Blade,597,19999
+Saurfang,121079,Leather,Waist,50% Crit,50% Vers,Icepine Waistband,357,19999
+Saurfang,121182,Leather,Wrist,36% Crit,64% Vers,Smolderhide Bindings,357,19999
+Saurfang,121182,Leather,Wrist,Max Haste,29% Mastery,Smolderhide Bindings,357,19999
+Saurfang,224617,Plate,Chest,64% Crit,36% Vers,Earthforged Haubergeon,603,19999
+Saurfang,121050,Cloth,Hands,Max Crit,29% Vers,Temporal Scholar's Handwraps,357,19999
+Saurfang,224632,Dagger,One-Hand,36% Crit,64% Mastery,Underscout's Kukri,597,19999
+Saurfang,224632,Dagger,One-Hand,57% Haste,43% Crit,Underscout's Kukri,564,19999
 Saurfang,159557,Mace,Two-Hand,43% Haste,57% Vers,Zem'lan Headsmasher,320,39999
+Saurfang,177816,Cloth,Back,57% Mastery,43% Vers,Dredhollow Cape,296,19999
+Saurfang,224595,Cloth,Feet,57% Crit,43% Mastery,Deep-Dweller's Slippers,597,19999
+Saurfang,224623,Plate,Wrist,50% Haste,50% Vers,Earthforged Cuffs,603,39999
+Saurfang,224623,Plate,Wrist,64% Mastery,36% Vers,Earthforged Cuffs,603,19999
+Saurfang,224623,Plate,Wrist,43% Mastery,57% Vers,Earthforged Cuffs,603,19999
+Saurfang,224623,Plate,Wrist,50% Crit,50% Mastery,Earthforged Cuffs,603,19999
+Saurfang,121181,Miscellaneous,Trinket,Max Crit,—,Mangler's Mark,357,29999
+Saurfang,233532,Polearm,Two-Hand,46% Haste,54% Vers,Gold-Plated Polearm,597,19999
+Saurfang,233532,Polearm,Two-Hand,46% Haste,54% Vers,Gold-Plated Polearm,603,19999
+Saurfang,121048,Cloth,Waist,43% Crit,57% Mastery,Temporal Scholar's Cord,357,19999
+Saurfang,224636,Dagger,One-Hand,50% Crit,50% Mastery,Deep-Dweller's Dirk,603,19999
+Saurfang,169404,Cloth,Wrist,29% Mastery,Max Vers,Deeptide Cuffs,357,19999
+Saurfang,159162,Plate,Legs,Max Haste,29% Vers,Ashvane Company Greaves,320,19999
+Saurfang,159229,Cloth,Back,43% Haste,57% Mastery,Mistfall Greatcloak,320,29999
+Saurfang,159229,Cloth,Back,Max Haste,29% Mastery,Mistfall Greatcloak,320,29999
+Saurfang,159229,Cloth,Back,64% Haste,36% Mastery,Mistfall Greatcloak,320,29999
+Saurfang,224631,Mace,One-Hand,43% Haste,57% Mastery,Deep-Dweller's Cudgel,597,19999
+Saurfang,224620,Plate,Legs,Max Haste,29% Crit,Earthforged Faulds,603,19999
+Saurfang,224638,Warglaives,One-Hand,36% Crit,64% Vers,Underscout's Glaive,597,19999
+Saurfang,224638,Warglaives,One-Hand,64% Haste,36% Mastery,Underscout's Glaive,603,19999
+Saurfang,224638,Warglaives,One-Hand,36% Haste,64% Crit,Underscout's Glaive,597,19999
+Saurfang,159283,Cloth,Back,64% Mastery,36% Vers,Barrowknoll Cloak,320,19999
+Saurfang,224609,Mail,Feet,57% Haste,43% Mastery,Expeditionary Boots,597,19999
+Saurfang,224608,Mail,Chest,57% Haste,43% Vers,Expeditionary Brigandine,603,19999
+Saurfang,224597,Cloth,Chest,36% Crit,64% Vers,Deep-Dweller's Kaftan,558,19999
+Saurfang,160163,Leather,Feet,64% Mastery,36% Vers,Sandscout Footwraps,320,19999
+Saurfang,121177,Cloth,Back,Max Crit,29% Vers,Vale Walker's Cloak,357,29999
+Saurfang,159569,Staff,Two-Hand,64% Crit,36% Mastery,Wavecaller Spire,320,29999
+Saurfang,121192,Miscellaneous,Finger,40% Crit,60% Vers,Vale Walker's Circle,357,19999
+Saurfang,224591,Cloth,Wrist,43% Mastery,57% Vers,Deep-Dweller's Wraps,603,19999
+Saurfang,121247,Miscellaneous,Finger,66% Haste,34% Vers,Nightfall Loop,357,29999
+Saurfang,121235,Miscellaneous,Trinket,Max Haste,—,Sashj'tar Brooch,357,29999
+Saurfang,224619,Plate,Hands,29% Haste,Max Mastery,Earthforged Handguards,597,19999
+Saurfang,177774,Leather,Feet,43% Crit,57% Vers,Depraved Darkblade's Treads,320,19999
+Saurfang,159218,Cloth,Hands,57% Haste,43% Vers,Sagehold Gloves,320,29999
+Saurfang,159230,Cloth,Back,36% Haste,64% Crit,Ashvane Company Cloak,320,29999
+Saurfang,159820,Miscellaneous,Held In Off-hand,Max Haste,29% Vers,Ironcrest Lantern,320,19999
+Saurfang,159228,Cloth,Back,43% Crit,57% Mastery,Freehold Cape,320,29999
+Saurfang,159228,Cloth,Back,43% Haste,57% Vers,Freehold Cape,320,29999
+Saurfang,176802,Dagger,One-Hand,50% Mastery,50% Vers,Meditator's Blade,320,19999
+Saurfang,224601,Leather,Hands,57% Crit,43% Vers,Underscout's Gloves,603,19999
+Saurfang,159168,Leather,Feet,64% Haste,36% Crit,Freehold Boots,320,29999
+Saurfang,233464,Leather,Wrist,44% Haste,56% Mastery,Rebel Spike Bindings,597,19999
+Saurfang,198987,Cloth,Hands,Max Crit,29% Mastery,Drakewatcher's Handwraps,357,19999
+Saurfang,177772,Cloth,Waist,50% Haste,50% Mastery,Avowed Tormenter's Cord,320,19999
+Saurfang,121240,Leather,Hands,Max Crit,29% Vers,Ambervale Gloves,357,19999
+Saurfang,224613,Mail,Shoulder,29% Mastery,Max Vers,Expeditionary Epaulets,564,19999
+Saurfang,176778,Cloth,Legs,43% Haste,57% Crit,Umbrawing Leggings,320,19999
+Saurfang,224598,Cloth,Legs,36% Crit,64% Mastery,Deep-Dweller's Leggings,603,19999
+Saurfang,183971,Dagger,One-Hand,64% Haste,36% Mastery,Depraved Ritualist's Kris,320,19999
+Saurfang,176772,Cloth,Hands,43% Crit,57% Mastery,Umbrawing Handwraps,320,19999
+Saurfang,176796,Polearm,Two-Hand,Max Haste,29% Crit,Elysian Dory,320,19999
+Saurfang,159188,Cloth,Feet,64% Haste,36% Mastery,Foxhollow Sandals,320,29999
+Saurfang,121213,Cloth,Waist,43% Haste,57% Mastery,Crescent Vale Cord,357,19999
+Saurfang,121213,Cloth,Waist,64% Haste,36% Crit,Crescent Vale Cord,357,29999
+Saurfang,159186,Cloth,Legs,Max Haste,29% Vers,Foxhollow Leggings,320,29999
+Saurfang,159519,Dagger,One-Hand,36% Crit,64% Vers,Ironcrest Knife,320,19999
+Saurfang,224600,Leather,Feet,43% Haste,57% Crit,Underscout's Striders,597,19999
+Saurfang,233462,Mail,Feet,52% Vers,48% Crit,Scrapcoil Striders,597,19999
+Saurfang,224637,Miscellaneous,Held In Off-hand,36% Crit,64% Vers,Deep-Dweller's Orb,603,2700
+Saurfang,224636,Dagger,One-Hand,36% Mastery,64% Vers,Deep-Dweller's Dirk,600,90
+Saurfang,119337,Plate,Waist,50% Crit,50% Mastery,Ripswallow Plate Belt,46,442710
+Saurfang,204935,Leather,Wrist,56% Haste,44% Mastery,Sunless Bracers,376,16310
+Saurfang,180163,Staff,Two-Hand,50% Mastery,50% Vers,Blackthorn Harvester,271,88888
+Saurfang,225723,Leather,Waist,66% Crit,34% Vers,Venom Stalker's Strap,590,298000
+Saurfang,224633,Axe,Two-Hand,Max Crit,29% Mastery,Arathi Greataxe,597,300
+Saurfang,121106,Cloth,Legs,29% Mastery,Max Vers,Hagfeather Leggings,344,7000
+Saurfang,224613,Mail,Shoulder,50% Crit,50% Mastery,Expeditionary Epaulets,558,25000
+Saurfang,224612,Mail,Legs,57% Haste,43% Mastery,Expeditionary Shinguards,561,20000
+Saurfang,121069,Miscellaneous,Trinket,Max Vers,—,Brulwurm Scale,357,20000
+Saurfang,232661,Plate,Shoulder,65% Haste,35% Mastery,Bootleg Wrynn Shoulderplates,655,600000
+Saurfang,184796,Plate,Feet,61% Mastery,39% Crit,Baetheas' Ironclad Warboots,207,102974
+Saurfang,224618,Plate,Feet,43% Haste,57% Vers,Earthforged Sabatons,597,5000
+Saurfang,224600,Leather,Feet,36% Haste,64% Vers,Underscout's Striders,603,5000
+Saurfang,224608,Mail,Chest,57% Haste,43% Mastery,Expeditionary Brigandine,603,1000

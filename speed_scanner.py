@@ -65,7 +65,7 @@ SCAN_PROFILES = {
     },
     "custom": {
         # Filters by different armour bonuses and stats
-        "FILTER_TYPE": ["Speed", "Haste", "Prismatic"],
+        "FILTER_TYPE": ["Speed", "Max-Haste"],
         
         # Item level filtering (minimum and maximum)
         "MIN_ILVL": 320,
@@ -125,7 +125,7 @@ SCAN_PROFILES = {
 MAX_REALMS = 83
 
 # Toggles full debugging metadata
-PRINT_FULL_METADATA = False  # Set to True to print full auction metadata per matching item
+PRINT_FULL_METADATA = True  # Set to True to print full auction metadata per matching item
 suppress_inline_debug = False  # Global override for suppressing debug prints during formatted output
 
 # Limits the number of requests to Blizzard's API
@@ -1341,6 +1341,13 @@ def write_csv(results, filename=CSV_FILENAME):
             for row in reader:
                 realm_names[int(row['connected_realm_id'])] = row['name']
 
+    def plain_max_label(s):
+        if s.startswith("71% "):
+            return f"Max {s[4:]}"
+        if s.startswith("100% "):
+            return f"Max {s[5:]}"
+        return s
+
     with open(filename, 'w', newline='', encoding='utf-8') as f:
         writer = csv.DictWriter(f, fieldnames=[
             'realm', 'item_id', 'type', 'slot', 'stat1', 'stat2', 'name', 'ilvl', 'buyout_gold'
@@ -1352,8 +1359,8 @@ def write_csv(results, filename=CSV_FILENAME):
                 'item_id': r['item_id'],
                 'type': r.get('type', 'Unknown'),
                 'slot': r.get('slot', 'Unknown'),
-                'stat1': r.get('stat1', '—'),
-                'stat2': r.get('stat2', '—'),
+                'stat1': plain_max_label(r.get('stat1', '—')),
+                'stat2': plain_max_label(r.get('stat2', '—')),
                 'name': r['name'],
                 'ilvl': r['ilvl'],
                 'buyout_gold': (int(r['buyout']) // 10000) if r['buyout'] else 0
@@ -1409,7 +1416,7 @@ def print_item_row(r, realms, raidbots_data, item_cache, color=True):
     stat2_str = stat2 + ' ' * max(0, 16 - len(raw2))
 
     # === Other fields ===
-    realm_str = f"✅ {realm_name:<19}"
+    realm_str = f"✅ {realm_name:<20}"
     item_id_str = f"{item_id:<11}"
     type_str = f"{item_type:<16}"
     slot_str = f"{item_slot:<17}"
@@ -1520,9 +1527,19 @@ def main():
     Main entry point for the script.
     Handles authentication, realm loading, scanning, and output.
     """
-    profile_name = select_scan_profile()
+    # === Determine scan profile
+    if args.config and os.path.exists(args.config):
+        with open(args.config, "r") as f:
+            config = json.load(f)
+            # Custom profile already injected earlier
+            profile_name = "custom"
+            test_mode = config.get("scan_mode") == "single"
+            test_realm = config.get("realm") if test_mode else None
+    else:
+        profile_name = select_scan_profile()
+        test_mode, test_realm = select_scan_type()
+
     scan_config = get_scan_config(profile_name)
-    test_mode, test_realm = select_scan_type()
 
     session, headers, raidbots_data, fallback_data, curve_data = prepare_session_and_data()
     realms = determine_realms(test_mode, test_realm)
