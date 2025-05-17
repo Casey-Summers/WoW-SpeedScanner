@@ -252,36 +252,36 @@ args = parser.parse_args()
 profile_name = "custom"
 
 # Load config from file if passed
-if args.config and os.path.exists(args.config):
-    with open(args.config, "r") as f:
-        config = json.load(f)
-        # Extract filters from the file
-        CUSTOM_PROFILE = {
-            "MIN_ILVL": 1,
-            "MAX_ILVL": 1000,
-            "MAX_BUYOUT": int(config.get("max_buyout", 99999999)),
-            "FILTER_TYPE": [],
-            "ALLOWED_SLOTS": config.get("slots", []),
-            "REQUIRE_PRISMATIC": config.get("prismatic", False),
-            "STAT_DISTRIBUTION_THRESHOLDS": {
-                "Haste": 71 if config.get("haste") else 0,
-                "Crit": 71 if config.get("crit") else 0,
-                "Vers": 71 if config.get("vers") else 0,
-                "Mastery": 71 if config.get("mastery") else 0,
-                "Speed": 71 if config.get("speed") else 0
-            }
-        }
+# if args.config and os.path.exists(args.config):
+#     with open(args.config, "r") as f:
+#         config = json.load(f)
+#         # Extract filters from the file
+#         CUSTOM_PROFILE = {
+#             "MIN_ILVL": 1,
+#             "MAX_ILVL": 1000,
+#             "MAX_BUYOUT": int(config.get("max_buyout", 99999999)),
+#             "FILTER_TYPE": [],
+#             "ALLOWED_SLOTS": config.get("slots", []),
+#             "REQUIRE_PRISMATIC": config.get("prismatic", False),
+#             "STAT_DISTRIBUTION_THRESHOLDS": {
+#                 "Haste": 71 if config.get("haste") else 0,
+#                 "Crit": 71 if config.get("crit") else 0,
+#                 "Vers": 71 if config.get("vers") else 0,
+#                 "Mastery": 71 if config.get("mastery") else 0,
+#                 "Speed": 71 if config.get("speed") else 0
+#             }
+#         }
 
-        # Assign FILTER_TYPE based on enabled stats
-        if config.get("haste"): CUSTOM_PROFILE["FILTER_TYPE"].append("Haste")
-        if config.get("crit"): CUSTOM_PROFILE["FILTER_TYPE"].append("Crit")
-        if config.get("vers"): CUSTOM_PROFILE["FILTER_TYPE"].append("Vers")
-        if config.get("mastery"): CUSTOM_PROFILE["FILTER_TYPE"].append("Mastery")
-        if config.get("speed"): CUSTOM_PROFILE["FILTER_TYPE"].append("Speed")
+#         # Assign FILTER_TYPE based on enabled stats
+#         if config.get("haste"): CUSTOM_PROFILE["FILTER_TYPE"].append("Haste")
+#         if config.get("crit"): CUSTOM_PROFILE["FILTER_TYPE"].append("Crit")
+#         if config.get("vers"): CUSTOM_PROFILE["FILTER_TYPE"].append("Vers")
+#         if config.get("mastery"): CUSTOM_PROFILE["FILTER_TYPE"].append("Mastery")
+#         if config.get("speed"): CUSTOM_PROFILE["FILTER_TYPE"].append("Speed")
 
-        # Inject this into SCAN_PROFILES
-        SCAN_PROFILES["custom"] = CUSTOM_PROFILE
-        profile_name = "custom"
+#         # Inject this into SCAN_PROFILES
+#         SCAN_PROFILES["custom"] = CUSTOM_PROFILE
+#         profile_name = "custom"
 
 
 # === Conditional global logging based on debug flag ===
@@ -342,6 +342,8 @@ class ScanConfig:
         
         gold_value = profile_data.get("MAX_BUYOUT_GOLD", profile_data.get("MAX_BUYOUT"))
         self.MAX_BUYOUT = int(gold_value) * 10000
+        self.scan_mode = profile_data.get("scan_mode", "all")
+        self.realm = profile_data.get("realm", None)
 
 
 def parse_filter_types(filter_list):
@@ -921,7 +923,10 @@ def fetch_item_info(session, headers, item_id, cache):
     # Determine inventory slot
     inv_data = data.get('inventory_type', {})
     slot_id = inv_data.get('id')
-    slot_type = INVENTORY_TYPE_MAP.get(slot_id) or inv_data.get("name") or inv_data.get("type", "Other")
+    slot_type = INVENTORY_TYPE_MAP.get(slot_id)
+    if not slot_type:
+        slot_type = inv_data.get("name") or inv_data.get("type") or "Unknown"
+    print(f"DEBUG: Slot ID {slot_id}, mapped to slot_type: {slot_type}")
 
     # Save to cache
     cache[item_id] = {
@@ -1299,7 +1304,7 @@ def scan_realm_with_bonus_analysis(session, headers, realm_id, realm_name, item_
                 print(f"⛔ Rejected: Item level {final_ilvl} is outside allowed range {scan_config.MIN_ILVL}–{scan_config.MAX_ILVL}\n")
             continue
 
-        if slot not in scan_config.allowed_slots:
+        if slot.strip().lower() not in {s.strip().lower() for s in scan_config.allowed_slots}:
             if PRINT_FULL_METADATA:
                 print(f"⛔ Rejected: Slot '{slot}' is not in allowed slot list (ALLOWED_ARMOR_SLOTS + ALLOWED_WEAPON_SLOTS + ALLOWED_ACCESSORY_SLOTS)\n")
             continue
@@ -1500,6 +1505,12 @@ def display_results(results, realms, raidbots_data, item_cache, filter_str):
         logging.info("❌ No matching Speed-stat items found.")
 
 
+def handle_config_load_error(reason):
+    print("❌ Scan aborted due to configuration error.")
+    print(f"⛔ Reason: {reason}")
+    sys.exit(1)
+    
+    
 def print_scan_summary(start_time, realms_scanned):
     """Prints performance and cache efficiency statistics."""
     total_time = perf_counter() - start_time
@@ -1521,37 +1532,63 @@ def print_scan_summary(start_time, realms_scanned):
         print(f"🚀 Effective RPS         : {rps_total:.2f}\n")
 
 
-# === MAIN EXECUTION ===
 def main():
     """
     Main entry point for the script.
     Handles authentication, realm loading, scanning, and output.
     """
-    # === Determine scan profile
+    parser = argparse.ArgumentParser(description="Scan WoW auctions for Speed gear.")
+    parser.add_argument('--config', type=str, help='Path to scan_config.json file')
+    args = parser.parse_args()
+
+    # === Load scan config from file or preset
     if args.config and os.path.exists(args.config):
-        with open(args.config, "r") as f:
-            config = json.load(f)
-            # Custom profile already injected earlier
+        try:
+            print(f"📄 Loading scan profile from config file: {args.config}")
+            with open(args.config, "r") as f:
+                config = json.load(f)
+
+            required_keys = [
+                "MIN_ILVL", "MAX_ILVL", "MAX_BUYOUT",
+                "ALLOWED_ARMOR_SLOTS", "ALLOWED_WEAPON_SLOTS", "ALLOWED_ACCESSORY_SLOTS",
+                "ALLOWED_ARMOR_TYPES", "ALLOWED_WEAPON_TYPES"
+            ]
+            missing = [k for k in required_keys if k not in config]
+            if missing:
+                raise ValueError(f"Missing required keys: {missing}")
+
+            scan_config = ScanConfig(config)
             profile_name = "custom"
-            test_mode = config.get("scan_mode") == "single"
-            test_realm = config.get("realm") if test_mode else None
+            test_mode = scan_config.scan_mode == "single"
+            test_realm = scan_config.realm if test_mode else None
+
+        except Exception as e:
+            handle_config_load_error(e)
     else:
         profile_name = select_scan_profile()
         test_mode, test_realm = select_scan_type()
+        scan_config = get_scan_config(profile_name)
 
-    scan_config = get_scan_config(profile_name)
-
+    # === Prepare Blizzard session and data
     session, headers, raidbots_data, fallback_data, curve_data = prepare_session_and_data()
+
+    # === Determine realms to scan
     realms = determine_realms(test_mode, test_realm)
 
+    # === Parse filters
     normal_filters, max_stat_filters = parse_filter_types(scan_config.filter_type)
     active_filters = {f: set(FILTER_ID_MAP[f]) for f in normal_filters if f in FILTER_ID_MAP}
     filter_str = ", ".join(scan_config.filter_type)
 
-    logging.info(f"🔍 Scanning {len(realms)} realm(s) for {filter_str} gear (ilvl {scan_config.MIN_ILVL}-{scan_config.MAX_ILVL})...")
+    logging.info(f"🔍 Scanning {len(realms)} realm(s) for {filter_str or 'any'} gear (ilvl {scan_config.MIN_ILVL}-{scan_config.MAX_ILVL})...")
 
+    # === Run scan and output results
     start_time = perf_counter()
-    results, item_cache = scan_realms(realms, session, headers, raidbots_data, fallback_data, curve_data, scan_config, active_filters, max_stat_filters, test_mode)
+    results, item_cache = scan_realms(
+        realms, session, headers,
+        raidbots_data, fallback_data, curve_data,
+        scan_config, active_filters, max_stat_filters, test_mode
+    )
     display_results(results, realms, raidbots_data, item_cache, filter_str)
     print_scan_summary(start_time, len(realms))
 

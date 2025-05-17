@@ -1,13 +1,42 @@
 {
-  "haste": true,
-  "crit": false,
-  "vers": false,
-  "mastery": false,
-  "speed": false,
-  "prismatic": false,
-  "min_ilvl": "320",
-  "max_ilvl": "357",
-  "max_buyout": "1000000",
+  "MIN_ILVL": 0,
+  "MAX_ILVL": 1000,
+  "MAX_BUYOUT": 99999999,
+  "FILTER_TYPE": [
+    "Haste",
+    "Max-Haste",
+    "Speed",
+    "Prismatic"
+  ],
+  "STAT_DISTRIBUTION_THRESHOLDS": {
+    "Haste": 0,
+    "Crit": 0,
+    "Vers": 0,
+    "Mastery": 0,
+    "Speed": 0
+  },
+  "ALLOWED_ARMOR_SLOTS": [
+    "Waist",
+    "Legs",
+    "Wrist",
+    "Hands",
+    "Back",
+    "Feet"
+  ],
+  "ALLOWED_WEAPON_SLOTS": [
+    "One-Hand",
+    "Two-Hand",
+    "Main-Hand",
+    "Off-Hand",
+    "Held In Off-hand"
+  ],
+  "ALLOWED_ACCESSORY_SLOTS": [
+    "Finger",
+    "Trinket",
+    "Held In Off-hand"
+  ],
+  "ALLOWED_ARMOR_TYPES": [],
+  "ALLOWED_WEAPON_TYPES": [],
   "slots": [
     "Waist",
     "Legs",
@@ -17,10 +46,12 @@
     "Feet",
     "One-Hand",
     "Two-Hand",
-    "Trinket"
+    "Main-Hand",
+    "Off-Hand",
+    "Finger",
+    "Trinket",
+    "Held In Off-hand"
   ],
-  "stat_mode": "normal",
-  "FILTER_TYPE": [
-    "on"
-  ]
+  "scan_mode": "all",
+  "realm": null
 }

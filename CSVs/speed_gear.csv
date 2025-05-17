@@ -1,7 +1,14 @@
 realm,item_id,type,slot,stat1,stat2,name,ilvl,buyout_gold
-Saurfang,159557,Mace,Two-Hand,43% Haste,57% Vers,Zem'lan Headsmasher,320,39999
-Saurfang,159229,Cloth,Back,43% Haste,57% Mastery,Mistfall Greatcloak,320,29999
-Saurfang,159229,Cloth,Back,Max Haste,29% Mastery,Mistfall Greatcloak,320,29999
-Saurfang,159229,Cloth,Back,64% Haste,36% Mastery,Mistfall Greatcloak,320,29999
-Saurfang,159218,Cloth,Hands,57% Haste,43% Vers,Sagehold Gloves,320,29999
-Saurfang,159186,Cloth,Legs,Max Haste,29% Vers,Foxhollow Leggings,320,29999
+Shadowmoon,224623,Plate,Wrist,29% Haste,Max Mastery,Earthforged Cuffs,603,1887
+Shattered Hand,224614,Mail,Waist,29% Haste,Max Vers,Expeditionary Belt,597,1109
+Ysera,224593,Miscellaneous,Finger,29% Mastery,Max Vers,Spinner's Circlet,597,1806
+Earthen Ring,224589,Cloth,Waist,43% Crit,57% Vers,Deep-Dweller's Cincture,597,500
+Trollbane,224589,Cloth,Waist,43% Mastery,57% Vers,Deep-Dweller's Cincture,603,994
+Illidan,224591,Cloth,Wrist,64% Crit,36% Mastery,Deep-Dweller's Wraps,597,104
+Kil'jaeden,224605,Leather,Wrist,50% Haste,50% Mastery,Underscout's Bracers,603,500
+Sargeras,233456,Mail,Wrist,59% Haste,41% Crit,Scrapcoil Bracers,597,712
+Sargeras,224614,Mail,Waist,29% Haste,Max Crit,Expeditionary Belt,597,2000
+Tichondrius,224591,Cloth,Wrist,64% Haste,36% Mastery,Deep-Dweller's Wraps,600,980
+Hakkar,224589,Cloth,Waist,Max Mastery,29% Vers,Deep-Dweller's Cincture,600,96
+Zul'jin,224589,Cloth,Waist,Max Haste,29% Vers,Deep-Dweller's Cincture,603,1919
+Llane,224622,Plate,Waist,36% Crit,64% Vers,Stalwart Girdle,597,295

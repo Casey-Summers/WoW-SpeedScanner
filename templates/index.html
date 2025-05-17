@@ -40,6 +40,18 @@
                 <input type="text" class="form-control" id="realm_input" placeholder="e.g. Saurfang or 3721">
               </div>
 
+              <!-- Speed + Prismatic checkboxes -->
+              <div class="d-flex gap-4 align-items-center mb-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="speed" value="Speed">
+                  <label class="form-check-label" for="speed">Speed</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="prismatic" value="Prismatic">
+                  <label class="form-check-label" for="prismatic">Prismatic</label>
+                </div>
+              </div>
+
               <!-- ilvl Range -->
               <h6 class="mt-3 mb-2">Item Level Range</h6>
               <div class="row g-2 mb-3">
@@ -80,17 +92,45 @@
 
                     <!-- Normal Mode: Max 2 Stats -->
                     <div id="stat-normal-mode">
-                      <small class="text-muted d-block mb-2">Select up to two stats. Leave all unchecked (or select 'All Stats') to search for any stat combinations.</small>
+                      <small class="text-muted d-block mb-2">Select up to two stats. Leave all unchecked (or select 'All
+                        Stats') to search for any stat combinations.</small>
 
                       <div class="form-check mb-2">
                         <input class="form-check-input" type="checkbox" id="all-stats" checked>
                         <label class="form-check-label" for="all-stats">All Stats</label>
                       </div>
 
-                      <div class="form-check"><input class="form-check-input stat-check" type="checkbox" id="haste" value="Haste"><label class="form-check-label" for="haste">Haste</label></div>
-                      <div class="form-check"><input class="form-check-input stat-check" type="checkbox" id="crit" value="Crit"><label class="form-check-label" for="crit">Crit</label></div>
-                      <div class="form-check"><input class="form-check-input stat-check" type="checkbox" id="vers" value="Vers"><label class="form-check-label" for="vers">Vers</label></div>
-                      <div class="form-check"><input class="form-check-input stat-check" type="checkbox" id="mastery" value="Mastery"><label class="form-check-label" for="mastery">Mastery</label></div>
+                      <div class="form-check"><input class="form-check-input stat-check" type="checkbox" id="haste"
+                          value="Haste"><label class="form-check-label" for="haste">Haste</label></div>
+                      <div class="form-check"><input class="form-check-input stat-check" type="checkbox" id="crit"
+                          value="Crit"><label class="form-check-label" for="crit">Crit</label></div>
+                      <div class="form-check"><input class="form-check-input stat-check" type="checkbox" id="vers"
+                          value="Vers"><label class="form-check-label" for="vers">Vers</label></div>
+                      <div class="form-check"><input class="form-check-input stat-check" type="checkbox" id="mastery"
+                          value="Mastery"><label class="form-check-label" for="mastery">Mastery</label></div>
+
+                      <div class="mt-3">
+                        <small class="text-muted d-block mb-2">Max Stat Filters (only one may be selected):</small>
+                        <div class="form-check">
+                          <input class="form-check-input max-stat-check" type="checkbox" id="max-haste"
+                            value="Max-Haste">
+                          value="Max-Haste">
+                          <label class="form-check-label" for="max-haste">Max Haste</label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input max-stat-check" type="checkbox" id="max-crit" value="Max-Crit">
+                          <label class="form-check-label" for="max-crit">Max Crit</label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input max-stat-check" type="checkbox" id="max-vers" value="Max-Vers">
+                          <label class="form-check-label" for="max-vers">Max Vers</label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input max-stat-check" type="checkbox" id="max-mastery"
+                            value="Max-Mastery">
+                          <label class="form-check-label" for="max-mastery">Max Mastery</label>
+                        </div>
+                      </div>
                     </div>
 
                     <!-- Advanced Mode: Percentage Fields -->
@@ -227,6 +267,16 @@
             <button class="btn btn-outline-info btn-preset" data-preset="profitable">Profitable</button>
           </div>
         </div>
+
+        <div id="scanProgress" class="alert alert-info d-none">
+          <strong>Running Scan...</strong>
+          <div id="scanDetails" class="small mt-1"></div>
+          <div class="progress mt-2" style="height: 20px;">
+            <div id="scanProgressBar" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+              style="width: 100%">Scanning...</div>
+          </div>
+        </div>
+
         <table id="gearTable" class="display" style="width:100%">
           <thead>
             <tr>
