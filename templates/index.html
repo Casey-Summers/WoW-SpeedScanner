@@ -25,30 +25,54 @@
 
             <!-- Top: Static Filters -->
             <div class="static-filters mb-3">
-              <!-- Scan Mode -->
-              <h6 class="mb-2">Scan Mode</h6>
-              <div class="form-check mb-1">
-                <input class="form-check-input" type="radio" name="scan_mode" id="scan_all" value="all" checked>
-                <label class="form-check-label" for="scan_all">All Realms</label>
-              </div>
-              <div class="form-check mb-2">
-                <input class="form-check-input" type="radio" name="scan_mode" id="scan_single" value="single">
-                <label class="form-check-label" for="scan_single">Single Realm</label>
-              </div>
-              <div id="single-realm-input" class="mb-3" style="display: none;">
-                <label for="realm_input" class="form-label">Realm Name or ID</label>
-                <input type="text" class="form-control" id="realm_input" placeholder="e.g. Saurfang or 3721">
-              </div>
+              <!-- Filter Mode & Bonus Toggles Container -->
+              <div class="filter-box px-3 py-3 mb-3">
+                <div class="d-flex flex-column align-items-center text-center">
 
-              <!-- Speed + Prismatic checkboxes -->
-              <div class="d-flex gap-4 align-items-center mb-3">
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" id="speed" value="Speed">
-                  <label class="form-check-label" for="speed">Speed</label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" id="prismatic" value="Prismatic">
-                  <label class="form-check-label" for="prismatic">Prismatic</label>
+                  <!-- Scan Mode Title -->
+                  <div class="mb-2">
+                    <strong>Realm Selection</strong>
+                    <p>Scan a single chosen realm, or all realms.</p>
+                  </div>
+
+                  <!-- Scan Mode Options -->
+                  <div class="d-flex gap-3 flex-wrap justify-content-center mb-3">
+                    <div class="form-check form-check-inline m-0">
+                      <input class="form-check-input" type="radio" name="scan_mode" id="scan_single" value="single">
+                      <label class="form-check-label" for="scan_single">Single Realm</label>
+                    </div>
+                    <div class="form-check form-check-inline m-0">
+                      <input class="form-check-input" type="radio" name="scan_mode" id="scan_all" value="all" checked>
+                      <label class="form-check-label" for="scan_all">All Realms</label>
+                    </div>
+                  </div>
+
+                  <!-- Realm Input Field (only shown if 'Single Realm' is selected) -->
+                  <div class="mb-3 w-100" id="single-realm-input" style="display: none;">
+                    <input type="text" id="realm_input" class="form-control" placeholder="Enter realm name (e.g., Caelestrasz)">
+                  </div>
+
+                  <!-- Subtle Divider -->
+                  <div class="w-100 border-top border-muted separator-spaced"></div>
+
+                  <!-- Bonus Filters Title -->
+                  <div class="mb-2">
+                    <strong>Bonus Filters</strong>
+                    <p>Filters by specific bonus features on all scanned items.</p>
+                  </div>
+
+                  <!-- Bonus Toggles -->
+                  <div class="d-flex gap-4 justify-content-center flex-wrap">
+                    <div class="form-check m-0">
+                      <input class="form-check-input" type="checkbox" id="speed" value="Speed">
+                      <label class="form-check-label" for="speed">Speed</label>
+                    </div>
+                    <div class="form-check m-0">
+                      <input class="form-check-input" type="checkbox" id="prismatic" value="Prismatic">
+                      <label class="form-check-label" for="prismatic">Prismatic</label>
+                    </div>
+                  </div>
+
                 </div>
               </div>
 
@@ -96,8 +120,8 @@
                         Stats') to search for any stat combinations.</small>
 
                       <div class="form-check mb-2">
-                        <input class="form-check-input" type="checkbox" id="all-stats" checked>
-                        <label class="form-check-label" for="all-stats">All Stats</label>
+                        <input class="form-check-input" type="checkbox" id="any-stats" checked>
+                        <label class="form-check-label" for="any-stats">Any Stats</label>
                       </div>
 
                       <div class="form-check"><input class="form-check-input stat-check" type="checkbox" id="haste"
@@ -114,7 +138,6 @@
                         <div class="form-check">
                           <input class="form-check-input max-stat-check" type="checkbox" id="max-haste"
                             value="Max-Haste">
-                          value="Max-Haste">
                           <label class="form-check-label" for="max-haste">Max Haste</label>
                         </div>
                         <div class="form-check">
@@ -273,9 +296,13 @@
           <div id="scanDetails" class="small mt-1"></div>
           <div class="progress mt-2" style="height: 20px;">
             <div id="scanProgressBar" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
-              style="width: 100%">Scanning...</div>
+              style="width: 100%">
+              <div class="spinner-border spinner-border-sm text-light me-2" role="status"></div> Scanning...
+            </div>
           </div>
         </div>
+
+        <div id="scanMessageArea" style="min-height: 0;"></div>
 
         <table id="gearTable" class="display" style="width:100%">
           <thead>

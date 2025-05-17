@@ -1,12 +1,9 @@
 {
-  "MIN_ILVL": 0,
+  "MIN_ILVL": 580,
   "MAX_ILVL": 1000,
-  "MAX_BUYOUT": 99999999,
+  "MAX_BUYOUT": 2000,
   "FILTER_TYPE": [
-    "Haste",
-    "Max-Haste",
-    "Speed",
-    "Prismatic"
+    "Speed"
   ],
   "STAT_DISTRIBUTION_THRESHOLDS": {
     "Haste": 0,
@@ -20,38 +17,64 @@
     "Legs",
     "Wrist",
     "Hands",
-    "Back",
-    "Feet"
+    "Back"
   ],
   "ALLOWED_WEAPON_SLOTS": [
     "One-Hand",
     "Two-Hand",
     "Main-Hand",
+    "Held In Off-hand",
     "Off-Hand",
-    "Held In Off-hand"
+    "Ranged",
+    "Ranged Right"
   ],
   "ALLOWED_ACCESSORY_SLOTS": [
+    "Held In Off-hand",
     "Finger",
-    "Trinket",
-    "Held In Off-hand"
+    "Trinket"
   ],
-  "ALLOWED_ARMOR_TYPES": [],
-  "ALLOWED_WEAPON_TYPES": [],
+  "ALLOWED_ARMOR_TYPES": [
+    "Cloth",
+    "Leather",
+    "Mail",
+    "Plate",
+    "Miscellaneous"
+  ],
+  "ALLOWED_WEAPON_TYPES": [
+    "Dagger",
+    "Sword",
+    "Axe",
+    "Mace",
+    "Fist Weapon",
+    "Polearm",
+    "Staff",
+    "Off-Hand",
+    "Warglaives",
+    "Gun",
+    "Bow",
+    "Crossbow",
+    "Thrown",
+    "Shield",
+    "Wand",
+    "Off Hand",
+    "Ranged Right"
+  ],
   "slots": [
     "Waist",
     "Legs",
     "Wrist",
     "Hands",
     "Back",
-    "Feet",
     "One-Hand",
     "Two-Hand",
     "Main-Hand",
+    "Held In Off-hand",
     "Off-Hand",
+    "Ranged",
+    "Ranged Right",
     "Finger",
-    "Trinket",
-    "Held In Off-hand"
+    "Trinket"
   ],
-  "scan_mode": "all",
-  "realm": null
+  "scan_mode": "single",
+  "realm": ""
 }

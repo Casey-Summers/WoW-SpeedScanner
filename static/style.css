@@ -1,4 +1,6 @@
-/* === Global Dark Theme === */
+/* ========================================
+   GLOBAL BASE THEME
+======================================== */
 body {
   background-color: #1e1e1e;
   color: #e4e4e4;
@@ -9,430 +11,30 @@ body {
   padding-top: 20px;
 }
 
-/* === Sidebar === */
-.bg-light {
-  background-color: #2a2a2a !important;
-  border-right: 1px solid #444;
-  color: #e4e4e4;
-}
-
-/* === Bootstrap Elements === */
-.form-control,
-.form-check-input {
-  background-color: #333;
-  color: #fff;
-  border-color: #555;
-}
-
-.form-control::placeholder {
-  color: #ccc;
-}
-
-.form-check-label {
-  color: #ccc;
-}
-
-.btn-outline-primary {
-  color: #ccc;
-  border-color: #555;
-}
-
-.btn-outline-primary:hover,
-.slot-button.active {
-  background-color: #5c5c5c;
-  color: #fff;
-  border-color: #888;
-}
-
-.btn-success {
-  background-color: #28a745;
-  border-color: #28a745;
-}
-
-.btn-success:hover {
-  background-color: #218838;
-}
-
-/* === Table Styles === */
-table.dataTable {
-  background-color: #2c2c2c;
-  color: #eaeaea;
-}
-
-table.dataTable thead th {
-  background-color: #3c3c3c;
-  color: #f0f0f0;
-}
-
-table.dataTable td {
-  background-color: #2c2c2c;
-  color: #ddd;
-}
-
-table.dataTable tbody tr:hover {
-  background-color: #444;
-}
-
-/* === DataTables Enhancements === */
-.dataTables_filter {
-  margin-bottom: 1rem;
-}
-
-#gearTable_wrapper {
-  margin-top: 1rem;
-}
-
-#gearTable th,
-#gearTable td {
-  vertical-align: middle;
-  font-size: 0.9rem;
-}
-
-/* === Custom Stat Highlighting === */
-.stat-max {
-  color: gold;
-  font-weight: bold;
-}
-
-.stat-fallback {
-  color: #999;
-  font-style: italic;
-}
-
-/* === Scan Status === */
-#scanStatus {
-  font-weight: bold;
-  padding-top: 6px;
-  color: #ffc107;
-}
-
-/* === Slot Buttons === */
-.slot-button {
-  font-size: 0.9rem;
-  border-radius: 0.25rem;
-  margin-bottom: 4px;
-  transition: all 0.2s ease;
-}
-
-.slot-button.active {
-  background-color: #6c757d;
-  color: white;
-  border-color: #8a8a8a;
-}
-
-/* === Form Layout === */
 .min-vh-100 {
   min-height: 100vh !important;
 }
 
-/* === Preset Button Active State === */
-.btn-preset.active {
-  background-color: #17a2b8;
-  color: white;
-  border-color: #17a2b8;
-}
-
-/* === Accordion Styling === */
-.accordion-button {
-  position: sticky;
-  top: 0;
-  z-index: 2;
-  background-color: #343a40;
-  color: #fff;
-}
-
-.accordion-button.collapsed {
-  transition: none !important;
-}
-
-.accordion-item .accordion-collapse {
-  transition: height 0.3s ease;
-  overflow: hidden;
-}
-
-.accordion-body {
-  padding-top: 0.25rem;
-  padding-bottom: 0.75rem;
-}
-
-.accordion-item {
-  margin-bottom: 0.25rem;
-  border-radius: 4px;
-  overflow: hidden;
-}
-
-/* === Stat Toggle Limits === */
-.stat-disabled {
-  pointer-events: none;
-  opacity: 0.4;
-}
-
-/* === Sidebar Scrolling === */
-.col-md-3 {
-  max-height: 100vh;
-  overflow-y: auto;
-}
-
-/* === Stat Switch Row === */
-.form-check.form-switch {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-weight: 500;
-}
-
-/* Make DataTables "Show x entries" text white */
-.dataTables_length label {
-  color: #fff;
-}
-
-/* Format specific stat text */
-.stat-max {
-  color: gold;
-  font-weight: bold;
-}
-
-.stat-ilvl {
-  color: #00bfff;
-  font-weight: bold;
-}
-
-.stat-buyout {
-  color: gold;
-  font-weight: bold;
-  white-space: nowrap;
-}
-
-/* === Sidebar Footer Fix === */
-#sidebar-footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  padding: 1rem;
-  background-color: #2a2a2a;
-  border-top: 1px solid #444;
-  z-index: 10;
-}
-
-#filterAccordion {
-  padding-bottom: 140px; /* prevent overlap by fixed footer */
-}
-
-.col-md-3 {
-  position: relative;
-  max-height: 100vh;
-  overflow-y: auto;
-  padding-bottom: 0; /* avoid extra internal scrollbars */
-}
-
-/* Ensure sidebar scrolls but footer remains visible */
-.sidebar-container {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  overflow: hidden;
-}
-
-.sidebar-scroll {
-  overflow-y: auto;
-  flex-grow: 1;
-  padding-bottom: 160px; /* Make room for footer */
-}
-
-#sidebar-footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 25%; /* Adjust to your sidebar width (col-md-3 ~ 25%) */
-  padding: 1rem;
-  background-color: #2a2a2a;
-  border-top: 1px solid #444;
-  z-index: 100;
-}
-
-/* === Layout Containers === */
-.sidebar-container {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  overflow: hidden;
-}
-
-.sidebar-scroll {
-  overflow-y: auto;
-  flex-grow: 1;
-  padding-bottom: 160px; /* Reserve space for footer */
-}
-
-#sidebar-footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 25%; /* Matches col-md-3 */
-  padding: 1rem;
-  background-color: #2a2a2a;
-  border-top: 1px solid #444;
-  z-index: 100;
-}
-
-/* === Accordion Styling === */
-.accordion-button {
-  position: sticky;
-  top: 0;
-  z-index: 2;
-  background-color: #343a40;
-  color: #fff;
-}
-
-.accordion-button.collapsed {
-  transition: none !important;
-}
-
-.accordion-item .accordion-collapse {
-  transition: height 0.3s ease;
-  overflow: hidden;
-}
-
-.accordion-body {
-  padding-top: 0.25rem;
-  padding-bottom: 0.75rem;
-}
-
-.accordion-item {
-  margin-bottom: 0.25rem;
-  border-radius: 4px;
-  overflow: hidden;
-}
-
-/* === Sidebar and Global UI === */
-.bg-light {
-  background-color: #2a2a2a !important;
-  border-right: 1px solid #444;
-  color: #e4e4e4;
-}
-
+/* ========================================
+   FORM ELEMENTS
+======================================== */
 .form-control,
-.form-check-input {
+.form-check-input,
+input.form-control {
   background-color: #333;
   color: #fff;
   border-color: #555;
+  border-radius: 6px;
 }
 
 .form-control::placeholder {
   color: #ccc;
 }
 
-.form-check-label {
+.form-check-label,
+.static-filters h6 {
   color: #ccc;
-}
-
-.btn-outline-primary {
-  color: #ccc;
-  border-color: #555;
-}
-
-.btn-outline-primary:hover,
-.slot-button.active {
-  background-color: #5c5c5c;
-  color: #fff;
-  border-color: #888;
-}
-
-.btn-success {
-  background-color: #28a745;
-  border-color: #28a745;
-}
-
-.btn-success:hover {
-  background-color: #218838;
-}
-
-.btn-preset.active {
-  background-color: #17a2b8;
-  color: white;
-  border-color: #17a2b8;
-}
-
-.slot-button {
-  font-size: 0.9rem;
-  border-radius: 0.25rem;
-  margin-bottom: 4px;
-  transition: all 0.2s ease;
-}
-
-/* === Table Formatting === */
-table.dataTable {
-  background-color: #2c2c2c;
-  color: #eaeaea;
-}
-
-table.dataTable thead th {
-  background-color: #3c3c3c;
-  color: #f0f0f0;
-}
-
-table.dataTable td {
-  background-color: #2c2c2c;
-  color: #ddd;
-}
-
-table.dataTable tbody tr:hover {
-  background-color: #444;
-}
-
-#gearTable th,
-#gearTable td {
-  vertical-align: middle;
-  font-size: 0.9rem;
-}
-
-#gearTable_wrapper {
-  margin-top: 1rem;
-}
-
-.dataTables_filter {
-  margin-bottom: 1rem;
-}
-
-.dataTables_length label {
-  color: white;
-}
-
-/* === Stat Highlighting === */
-.stat-max {
-  color: gold;
-  font-weight: bold;
-}
-
-.stat-ilvl {
-  color: #00bfff;
-  font-weight: bold;
-}
-
-.stat-buyout {
-  color: gold;
-  font-weight: bold;
-  white-space: nowrap;
-}
-
-.stat-fallback {
-  color: #999;
-  font-style: italic;
-}
-
-.stat-disabled {
-  pointer-events: none;
-  opacity: 0.4;
-}
-
-/* === Misc === */
-#scanStatus {
-  font-weight: bold;
-  padding-top: 6px;
-  color: #ffc107;
+  font-weight: 600;
 }
 
 .form-check.form-switch {
@@ -442,36 +44,281 @@ table.dataTable tbody tr:hover {
   font-weight: 500;
 }
 
-.min-vh-100 {
-  min-height: 100vh !important;
-}
-
-/* Better spacing for scan mode + inputs */
 .static-filters input[type="number"],
 .static-filters input[type="text"] {
   font-size: 0.9rem;
   padding: 6px 10px;
 }
 
-/* Match spacing of form elements */
-.static-filters h6 {
-  font-weight: 600;
-  color: #ccc;
+/* ========================================
+   BUTTONS
+======================================== */
+button,
+.btn {
+  transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
 }
 
-#realm_input {
-  background-color: #333;
-  border: 1px solid #555;
+.btn-outline-primary {
+  color: #ccc;
+  border-color: #555;
+}
+
+.btn-outline-primary:hover,
+.slot-button.active {
+  background-color: #5c5c5c;
+  color: #fff;
+  border-color: #888;
+}
+
+.btn-success {
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+}
+
+.btn-preset,
+.btn-preset.active {
+  border: 1px solid #17a2b8;
+  color: #17a2b8;
+  background-color: #1e1e1e;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.btn-preset:hover,
+.btn-preset.active {
+  background-color: #17a2b8;
+  color: #fff;
+  box-shadow: 0 0 12px #17a2b8;
+}
+
+/* ========================================
+   SLOT BUTTONS
+======================================== */
+.slot-button {
+  font-size: 1.1rem;
+  font-weight: 500;
+  border-radius: 0.375rem;
+  margin: 4px 0;
+  padding: 10px 12px;
+  height: 42px;
+  line-height: 1.2;
+  width: 100%;
+  transition: all 0.2s ease;
+  transform: scale(1.05);
+}
+
+/* ========================================
+   TABLES / DATATABLES
+======================================== */
+table.dataTable,
+table.dataTable td {
+  background-color: #2c2c2c;
+  color: #ddd;
+}
+
+table.dataTable thead th {
+  background-color: #3c3c3c;
+  color: #f0f0f0;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+#gearTable_wrapper {
+  margin-top: 1rem;
+}
+
+#gearTable th,
+#gearTable td {
+  vertical-align: middle;
+  font-size: 0.9rem;
+}
+
+#gearTable {
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.dataTables_filter,
+.dataTables_length label {
+  margin-bottom: 1rem;
   color: #fff;
 }
 
-/* === Stat Filter Note Fix === */
+.dataTables_length select {
+  background-color: #333;
+  color: white;
+  border: 1px solid #555;
+}
+
+.dataTables_length select option {
+  color: #fff;
+  background-color: #1e1e1e;
+}
+
+/* ========================================
+   CUSTOM STAT DISPLAY
+======================================== */
+.stat-max {
+  color: gold;
+  font-weight: bold;
+}
+
+.stat-ilvl {
+  color: #00bfff;
+  font-weight: bold;
+}
+
+.stat-buyout {
+  color: gold;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.stat-fallback {
+  color: #999;
+  font-style: italic;
+}
+
+.stat-disabled {
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+/* ========================================
+   ACCORDIONS
+======================================== */
+.accordion-button {
+  position: sticky;
+  top: 0;
+  background-color: #343a40;
+  color: #fff;
+  z-index: 2;
+}
+
+.accordion-button.collapsed,
+.accordion-item .accordion-collapse {
+  transition: none !important;
+  overflow: hidden;
+}
+
+.accordion-body {
+  padding-top: 0.25rem;
+  padding-bottom: 0.75rem;
+}
+
+.accordion-item {
+  margin-bottom: 0.25rem;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
 .accordion-body small {
-  color: #bbb !important; /* Brighter muted color for visibility on dark background */
+  color: #bbb !important;
   font-size: 0.85rem;
 }
 
-/* === Dark Theme Scrollbar (Webkit) === */
+/* ========================================
+   SIDEBAR + FOOTER
+======================================== */
+.bg-light {
+  background-color: #2a2a2a !important;
+  border-right: 1px solid #444;
+  color: #e4e4e4;
+}
+
+.sidebar-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.sidebar-scroll {
+  overflow-y: scroll;
+  flex-grow: 1;
+  padding-bottom: 160px;
+}
+
+#sidebar-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 25%;
+  padding: 1rem;
+  background-color: #2a2a2a;
+  border-top: 1px solid #444;
+  z-index: 100;
+}
+
+.col-md-3 {
+  max-height: 100vh;
+  overflow-y: auto;
+  padding-bottom: 0;
+}
+
+#filterAccordion {
+  padding-bottom: 140px;
+}
+
+/* ========================================
+   MISC STYLES
+======================================== */
+#scanStatus {
+  font-weight: bold;
+  padding-top: 6px;
+  color: #ffc107;
+}
+
+h2.text-white {
+  font-size: 1.8rem;
+  border-bottom: 2px solid #333;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+}
+
+.inline-separator {
+  color: #888;
+  margin: 0 6px;
+}
+
+.separator-spaced {
+  margin-top: 1em !important;
+  margin-bottom: 2.5rem !important;
+}
+
+.bg-body-tertiary {
+  background-color: #292929 !important;
+  border: 1px solid #444;
+}
+
+/* ========================================
+   FILTER BOX
+======================================== */
+.filter-box {
+  background-color: #1e1e1e;
+  border: 1px solid #ffffff80;
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+}
+
+.filter-box .form-check-label {
+  font-weight: 500;
+}
+
+.filter-box .text-muted {
+  font-size: 0.8rem;
+}
+
+/* ========================================
+   SCROLLBARS (WEBKIT)
+======================================== */
 .sidebar-scroll::-webkit-scrollbar {
   width: 8px;
 }
@@ -488,9 +335,3 @@ table.dataTable tbody tr:hover {
 .sidebar-scroll::-webkit-scrollbar-thumb:hover {
   background-color: #888;
 }
-
-/* Prevent layout jump when scrollbar appears */
-.sidebar-scroll {
-  overflow-y: scroll; /* Always show scrollbar space */
-}
-

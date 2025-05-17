@@ -37,17 +37,17 @@ def run_scan():
         f for f in raw.get("FILTER_TYPE", []) if f in valid_filter_values
     ]
     
-    if not raw["FILTER_TYPE"]:
-        raw.pop("FILTER_TYPE", None)  # omit it completely to trigger fallback
+    if not isinstance(raw.get("FILTER_TYPE"), list):
+        raw["FILTER_TYPE"] = []
 
     print("\n📥 Received scan config:")
     print(json.dumps(raw, indent=2))
 
     # === Convert UI config to full SCAN_PROFILE ===
     try:
-        ilvl_min = int(raw.get("min_ilvl", 0))
-        ilvl_max = int(raw.get("max_ilvl", 1000))
-        max_buyout = int(raw.get("max_buyout", 99999999))
+        ilvl_min = int(raw.get("min_ilvl") or raw.get("MIN_ILVL") or 0)
+        ilvl_max = int(raw.get("max_ilvl") or raw.get("MAX_ILVL") or 1000)
+        max_buyout = int(raw.get("max_buyout") or raw.get("MAX_BUYOUT") or 99999999)
 
         stat_thresholds = raw.get("STAT_DISTRIBUTION_THRESHOLDS") or {
             "Haste": 71 if raw.get("haste") else 0,
@@ -69,8 +69,8 @@ def run_scan():
                 "One-Hand", "Two-Hand", "Main-Hand", "Off-Hand", "Held In Off-hand", "Ranged", "Ranged Right"]],
             "ALLOWED_ACCESSORY_SLOTS": [s for s in raw.get("slots", []) if s in [
                 "Finger", "Trinket", "Neck", "Held In Off-hand"]],
-            "ALLOWED_ARMOR_TYPES": raw.get("armor_types", []),
-            "ALLOWED_WEAPON_TYPES": raw.get("weapon_types", []),
+            "ALLOWED_ARMOR_TYPES": raw.get("ALLOWED_ARMOR_TYPES") or raw.get("armor_types", []),
+            "ALLOWED_WEAPON_TYPES": raw.get("ALLOWED_WEAPON_TYPES") or raw.get("weapon_types", []),
             "slots": raw.get("slots", []),
             "scan_mode": raw.get("scan_mode", "all"),
             "realm": raw.get("realm", None),
@@ -88,8 +88,12 @@ def run_scan():
             stdout=sys.stdout,
             stderr=sys.stderr,
             text=True,
+            encoding="utf-8",
             check=True
         )
+        print(result.stdout)
+        if result.stderr:
+            print("❌ stderr:", result.stderr)
         print("✅ Scan completed successfully")
         return jsonify({"success": True})
 

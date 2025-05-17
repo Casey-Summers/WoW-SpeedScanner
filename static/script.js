@@ -31,10 +31,10 @@ $(document).ready(function () {
 
         // If none selected, enable 'All Stats'
         if (checked.length === 0 && $('.max-stat-check:checked').length === 0) {
-            $('#all-stats').prop('checked', true);
+            $('#any-stats').prop('checked', true);
             $('.stat-check, .max-stat-check').prop('disabled', true);
         } else {
-            $('#all-stats').prop('checked', false);
+            $('#any-stats').prop('checked', false);
             $('.stat-check, .max-stat-check').prop('disabled', false);
         }
     });
@@ -50,30 +50,51 @@ $(document).ready(function () {
             $('.stat-check:checked').length === 0 &&
             $('.max-stat-check:checked').length === 0
         ) {
-            $('#all-stats').prop('checked', true);
+            $('#any-stats').prop('checked', true);
             $('.stat-check, .max-stat-check').prop('disabled', true);
         } else {
-            $('#all-stats').prop('checked', false);
+            $('#any-stats').prop('checked', false);
             $('.stat-check, .max-stat-check').prop('disabled', false);
         }
     });
 
     // Toggle: All Stats checkbox
-    $('#all-stats').on('change', function () {
-        const isAll = $(this).is(':checked');
-        $('.stat-check, .max-stat-check').prop('disabled', isAll);
-        if (isAll) {
+    $('#any-stats').on('change', function () {
+        const isAny = $(this).is(':checked');
+        $('.stat-check, .max-stat-check').prop('disabled', isAny);
+        if (isAny) {
             $('.stat-check, .max-stat-check').prop('checked', false);
         }
     });
 
     $('#gearTable').DataTable({
-        columnDefs: [
-            { targets: 7, type: "num" },
-            { targets: 8, type: "num" }
-        ],
-        order: [],
-        autoWidth: false
+        pageLength: 25,
+        data: [],
+        columns: [
+            { data: 'realm' },
+            { data: 'item_id' },
+            { data: 'type' },
+            { data: 'slot' },
+            { data: 'stat1' },
+            { data: 'stat2' },
+            { data: 'name' },
+            {
+                data: 'ilvl',
+                render: function (data, type) {
+                    return type === 'display'
+                        ? `<span class="stat-ilvl">${data}</span>`
+                        : data;
+                }
+            },
+            {
+                data: 'buyout',
+                render: function (data, type) {
+                    return type === 'display'
+                        ? `<span class="stat-buyout">${data.toLocaleString()}g</span>`
+                        : data;
+                }
+            }
+        ]
     });
 
     let activeSlots = new Set();
@@ -114,11 +135,13 @@ $(document).ready(function () {
 
         const selectedSlots = Array.from(activeSlots);
         const selectedArmorTypes = Array.from(activeArmorTypes);
+        const min_ilvl_input = $('input[name="min_ilvl"]').val();
+        const max_ilvl_input = $('input[name="max_ilvl"]').val();
 
         const config = {
-            MIN_ILVL: parseInt($('input[name="min_ilvl"]').val()) || 0,
-            MAX_ILVL: parseInt($('input[name="max_ilvl"]').val()) || 1000,
-            MAX_BUYOUT: (parseInt($('input[name="max_buyout"]').val()) || 10000000) * 10000,
+            MIN_ILVL: min_ilvl_input !== "" ? parseInt(min_ilvl_input) : 0,
+            MAX_ILVL: max_ilvl_input !== "" ? parseInt(max_ilvl_input) : 1000,
+            MAX_BUYOUT: (parseInt($('input[name="max_buyout"]').val()) || 10000000),
 
             ALLOWED_ARMOR_SLOTS: selectedSlots.filter(s => [
                 "Head", "Shoulder", "Chest", "Waist", "Legs", "Feet", "Back", "Wrist", "Hands"
@@ -146,7 +169,6 @@ $(document).ready(function () {
         };
 
         config.slots = selectedSlots;
-
 
         // === Scan Mode Handling ===
         const scan_mode = $('input[name="scan_mode"]:checked').val();
@@ -177,7 +199,10 @@ $(document).ready(function () {
 
             const combined = [...selectedStats, ...selectedMax, ...otherFilters];
 
-            if (!$('#all-stats').is(':checked') && combined.length > 0) {
+            // === Prefer preset-defined FILTER_TYPE if available
+            if (window.activePresetFilterType?.length > 0) {
+                config.FILTER_TYPE = window.activePresetFilterType;
+            } else if (!$('#any-stats').is(':checked') && combined.length > 0) {
                 config.FILTER_TYPE = combined;
             }
         }
@@ -203,7 +228,7 @@ $(document).ready(function () {
                             .removeClass('progress-bar-animated')
                             .text('⚠️ No results found');
 
-                        $('#scanStatus').html('<span class="text-warning">⚠️ Scan completed but no results matched filters.</span>');
+                        showScanMessage('⚠️ Scan completed but no results matched filters.', 'warning');
 
                         $('#gearTable').DataTable().clear().draw(); // Optional: clear old table
                     } else {
@@ -213,7 +238,7 @@ $(document).ready(function () {
                             .removeClass('progress-bar-animated')
                             .text('✅ Scan complete');
 
-                        $('#scanStatus').html('<span class="text-success">✅ Scan completed with new results.</span>');
+                        showScanMessage('✅ Scan completed with new results.', 'success');
 
                         setTimeout(() => {
                             $('#scanProgress').addClass('d-none');
@@ -221,7 +246,6 @@ $(document).ready(function () {
                         }, 1000);
                     }
                 }
-
             },
             error: function () {
                 $('#scanProgressBar')
@@ -236,7 +260,6 @@ $(document).ready(function () {
     });
 
 
-
     // === Reloads table from backend data ===
     function reloadTable(force = false) {
         $.get('/reload', function (data) {
@@ -247,40 +270,41 @@ $(document).ready(function () {
                 const ilvl = parseInt(row.ilvl) || 0;
                 const gold = parseInt(row.buyout_gold) || 0;
 
-                // === Format cell contents
-                const stat1 = row.stat1 || "—";
-                const stat2 = row.stat2 || "—";
-                const itemType = row.type || "—";
-                const slot = row.slot || "—";
-                const name = row.name || "—";
-                const realm = row.realm || "—";
-                const item_id = row.item_id || "—";
+                // === Format stat cells
+                const stat1 = row.stat1 && row.stat1.startsWith("Max ")
+                    ? `<span class="stat-max">${row.stat1}</span>`
+                    : row.stat1 || "—";
 
+                const stat2 = row.stat2 && row.stat2.startsWith("Max ")
+                    ? `<span class="stat-max">${row.stat2}</span>`
+                    : row.stat2 || "—";
+
+                // === Format ilvl and buyout
                 const ilvlCell = `<span class="stat-ilvl" data-sort="${ilvl}">${ilvl}</span>`;
                 const goldCell = `<span class="stat-buyout" data-sort="${gold}">${gold.toLocaleString()}g</span>`;
 
-                table.row.add([
-                    realm,
-                    item_id,
-                    itemType,
-                    slot,
-                    stat1,
-                    stat2,
-                    name,
-                    ilvlCell,
-                    goldCell
-                ]);
+                // === Add row to table with formatted cells
+                table.row.add({
+                    realm: row.realm || "—",
+                    item_id: row.item_id || "—",
+                    type: row.type || "—",
+                    slot: row.slot || "—",
+                    stat1: stat1,
+                    stat2: stat2,
+                    name: row.name || "—",
+                    ilvl: ilvlCell,
+                    buyout: goldCell
+                });
             }
 
             table.draw();
 
             // Optional: visually confirm refresh if triggered manually
             if (force) {
-                $('#scanStatus').html('<span class="text-success">✅ Data refreshed</span>');
+                showScanMessage('✅ Data refreshed.', 'success');
             }
         });
     }
-
 
     function applyPreset(presetName) {
         const preset = presets[presetName];
@@ -298,16 +322,33 @@ $(document).ready(function () {
             "max-haste", "max-crit", "max-vers", "max-mastery",
             "speed", "prismatic"
         ];
+
+        // Clear all stat filters first
+        let statSelected = false;
         for (let key of allStatKeys) {
-            if (preset[key]) {
-                $(`#${key}`).prop("checked", true);
+            const isEnabled = preset[key] === true;
+            $(`#${key}`).prop("checked", isEnabled);
+
+            // Only count actual filtering stats, not speed/prismatic
+            if (
+                isEnabled &&
+                ["haste", "crit", "vers", "mastery", "max-haste", "max-crit", "max-vers", "max-mastery"].includes(key)
+            ) {
+                statSelected = true;
             }
         }
 
+        // === Auto-enable 'Any Stats' checkbox if no stat filters selected
+        if (!statSelected) {
+            $('#any-stats').prop("checked", true).trigger('change');
+        } else {
+            $('#any-stats').prop("checked", false).trigger('change');
+        }
+
         // === Apply numeric fields
-        $("input[name='min_ilvl']").val(preset.min_ilvl || "");
-        $("input[name='max_ilvl']").val(preset.max_ilvl || "");
-        $("input[name='max_buyout']").val(preset.max_buyout || "");
+        $("input[name='min_ilvl']").val(preset.min_ilvl ?? "");
+        $("input[name='max_ilvl']").val(preset.max_ilvl ?? "");
+        $("input[name='max_buyout']").val(preset.max_buyout ?? "");
 
         // === Apply slot buttons
         for (let slot of preset.slots || []) {
@@ -326,8 +367,47 @@ $(document).ready(function () {
                 activeArmorTypes.add(type);
             }
         }
+
+        // === Extract FILTER_TYPE from preset (NEW)
+        const filterTypes = [];
+        if (preset.speed) filterTypes.push("Speed");
+        if (preset.prismatic) filterTypes.push("Prismatic");
+        if (preset.haste) filterTypes.push("Haste");
+        if (preset.crit) filterTypes.push("Crit");
+        if (preset.vers) filterTypes.push("Vers");
+        if (preset.mastery) filterTypes.push("Mastery");
+        if (preset["max-haste"]) filterTypes.push("Max-Haste");
+        if (preset["max-crit"]) filterTypes.push("Max-Crit");
+        if (preset["max-vers"]) filterTypes.push("Max-Vers");
+        if (preset["max-mastery"]) filterTypes.push("Max-Mastery");
+
+        // Make available globally for the scan form handler
+        window.activePresetFilterType = filterTypes;
     }
 
+    function showScanMessage(message, type = 'info') {
+        const alertClass = {
+            success: 'alert-success',
+            warning: 'alert-warning',
+            danger: 'alert-danger',
+            info: 'alert-info'
+        }[type] || 'alert-info';
+
+        const $msg = $(`
+            <div class="alert ${alertClass} py-2 px-3 rounded shadow-sm fade show" role="alert">
+                ${message}
+            </div>
+        `);
+
+        $('#scanMessageArea').html($msg).css('margin-bottom', '1rem');
+
+        setTimeout(() => {
+            $msg.fadeOut(500, () => {
+                $msg.remove();
+                $('#scanMessageArea').css('margin-bottom', '0');
+            });
+        }, 4000);
+    }
 
     $('.btn-preset').click(function () {
         $('.btn-preset').removeClass('active');
@@ -373,7 +453,7 @@ const presets = {
         crit: false,
         vers: false,
         mastery: false,
-        "max-haste": true,
+        "max-haste": false,
         "max-crit": false,
         "max-vers": false,
         "max-mastery": false,
@@ -401,7 +481,7 @@ const presets = {
         "max-vers": false,
         "max-mastery": false,
         speed: true,
-        prismatic: true,
+        prismatic: false,
         min_ilvl: 580,
         max_ilvl: 1000,
         max_buyout: 2000,
