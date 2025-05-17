@@ -2,24 +2,24 @@ $(document).ready(function () {
 
     // Show/hide realm input depending on selected mode
     $('input[name="scan_mode"]').on('change', function () {
-    const mode = $('input[name="scan_mode"]:checked').val();
-    $('#single-realm-input').toggle(mode === 'single');
+        const mode = $('input[name="scan_mode"]:checked').val();
+        $('#single-realm-input').toggle(mode === 'single');
     });
 
     // Custom sort for ilvl column using data-order
     jQuery.extend(jQuery.fn.dataTable.ext.type.order, {
-    "ilvl-pre": function (data) {
-        const span = document.createElement("span");
-        span.innerHTML = data;
-        const raw = span.querySelector("span")?.getAttribute("data-order") || "0";
-        return parseInt(raw, 10);
-    },
-    "ilvl-asc": function (a, b) {
-        return a - b;
-    },
-    "ilvl-desc": function (a, b) {
-        return b - a;
-    }
+        "ilvl-pre": function (data) {
+            const span = document.createElement("span");
+            span.innerHTML = data;
+            const raw = span.querySelector("span")?.getAttribute("data-order") || "0";
+            return parseInt(raw, 10);
+        },
+        "ilvl-asc": function (a, b) {
+            return a - b;
+        },
+        "ilvl-desc": function (a, b) {
+            return b - a;
+        }
     });
 
     // Register custom type for buyout sorting
@@ -46,33 +46,66 @@ $(document).ready(function () {
         $('#stat-advanced-mode').toggle(isAdvanced);
     });
 
-    // === Enforce max 2 checkbox stats ===
+    // === 'All Stats' logic ===
+    $('#all-stats').on('change', function () {
+        const isAll = $(this).is(':checked');
+        if (isAll) {
+            $('.stat-check').prop('checked', false).prop('disabled', true);
+        } else {
+            $('.stat-check').prop('disabled', false);
+        }
+    });
+
+    // === Stat check auto-toggle 'All Stats' ===
     $('.stat-check').on('change', function () {
         const checked = $('.stat-check:checked');
         if (checked.length > 2) {
             this.checked = false;
             alert('You can select up to 2 stats.');
+            return;
+        }
+
+        if (checked.length === 0) {
+            $('#all-stats').prop('checked', true);
+            $('.stat-check').prop('disabled', true);
+        } else {
+            $('#all-stats').prop('checked', false);
+            $('.stat-check').prop('disabled', false);
         }
     });
 
     $('#gearTable').DataTable({
-    columnDefs: [
-        { targets: 7, type: "ilvl" },      // ilvl column custom sort
-        { targets: 8, type: "buyout" }     // buyout custom sort
-    ],
-    order: [],
-    autoWidth: false
+        columnDefs: [
+            { targets: 7, type: "ilvl" },      // ilvl column custom sort
+            { targets: 8, type: "buyout" }     // buyout custom sort
+        ],
+        order: [],
+        autoWidth: false
     });
 
     let activeSlots = new Set();
+    let activeArmorTypes = new Set();
 
     $('.slot-button').click(function () {
         const slot = $(this).data('slot');
+        const type = $(this).data('type');
+
         $(this).toggleClass('active');
-        if (activeSlots.has(slot)) {
-            activeSlots.delete(slot);
-        } else {
-            activeSlots.add(slot);
+
+        if (slot) {
+            if (activeSlots.has(slot)) {
+                activeSlots.delete(slot);
+            } else {
+                activeSlots.add(slot);
+            }
+        }
+
+        if (type) {
+            if (activeArmorTypes.has(type)) {
+                activeArmorTypes.delete(type);
+            } else {
+                activeArmorTypes.add(type);
+            }
         }
     });
 
@@ -82,10 +115,10 @@ $(document).ready(function () {
 
         const scan_mode = $('input[name="scan_mode"]:checked').val();
         if (scan_mode === "single") {
-        config.scan_mode = "single";
-        config.realm = $('#realm_input').val().trim();
+            config.scan_mode = "single";
+            config.realm = $('#realm_input').val().trim();
         } else {
-        config.scan_mode = "all";
+            config.scan_mode = "all";
         }
 
         const config = {
@@ -98,7 +131,8 @@ $(document).ready(function () {
             min_ilvl: $('input[name="min_ilvl"]').val(),
             max_ilvl: $('input[name="max_ilvl"]').val(),
             max_buyout: $('input[name="max_buyout"]').val(),
-            slots: Array.from(activeSlots)
+            slots: Array.from(activeSlots),
+            armor_types: Array.from(activeArmorTypes)
         };
 
         // Stat distribution logic
@@ -113,12 +147,15 @@ $(document).ready(function () {
             };
         } else {
             config.stat_mode = "normal";
-            config.FILTER_TYPE = [];
-            $('.stat-check:checked').each(function () {
-                config.FILTER_TYPE.push($(this).val());
-            });
-        }
+            const selectedStats = $('.stat-check:checked').map(function () {
+                return $(this).val();
+            }).get();
 
+            if (!$('#all-stats').is(':checked') && selectedStats.length > 0) {
+                config.FILTER_TYPE = selectedStats;
+            }
+            // Else: skip FILTER_TYPE to mean 'search all'
+        }
 
         $.ajax({
             type: 'POST',
@@ -179,31 +216,51 @@ $(document).ready(function () {
         });
     }
 
-
     function applyPreset(presetName) {
         const preset = presets[presetName];
         if (!preset) return;
 
+        // === Reset all stat filters ===
         $("#scanForm input[type='checkbox']").prop("checked", false);
+        $('.stat-check').prop("disabled", false);  // Re-enable by default
 
+        // === Apply stat checkboxes ===
         for (let key of ["haste", "crit", "vers", "mastery", "speed", "prismatic"]) {
             if (preset[key]) {
                 $(`#${key}`).prop("checked", true);
             }
         }
 
+        // === Handle 'All Stats' logic ===
+        const anyStatChecked = ["haste", "crit", "vers", "mastery"].some(stat => preset[stat]);
+        $('#all-stats').prop("checked", !anyStatChecked);
+        $('.stat-check').prop("disabled", !anyStatChecked);
+
+        // === Apply ilvl and buyout values ===
         $("input[name='min_ilvl']").val(preset.min_ilvl || "");
         $("input[name='max_ilvl']").val(preset.max_ilvl || "");
         $("input[name='max_buyout']").val(preset.max_buyout || "");
 
+        // === Reset all slot/armor buttons ===
         $(".slot-button").removeClass("active");
         activeSlots.clear();
+        activeArmorTypes.clear();
 
-        for (let slot of preset.slots) {
+        // === Apply slot buttons ===
+        for (let slot of preset.slots || []) {
             const btn = $(`.slot-button[data-slot='${slot}']`);
             if (btn.length) {
                 btn.addClass("active");
                 activeSlots.add(slot);
+            }
+        }
+
+        // === Apply armor types ===
+        for (let type of preset.armor_types || []) {
+            const btn = $(`.slot-button[data-type='${type}']`);
+            if (btn.length) {
+                btn.addClass("active");
+                activeArmorTypes.add(type);
             }
         }
     }
@@ -222,28 +279,47 @@ $(document).ready(function () {
 
 const presets = {
     full: {
-        haste: true, crit: true, vers: true, mastery: true, speed: true, prismatic: true,
-        min_ilvl: 1,
+        haste: false, crit: false, vers: false, mastery: false,
+        speed: true, prismatic: true,
+        min_ilvl: 0,
         max_ilvl: 1000,
-        max_buyout: 999999,
+        max_buyout: 10000000,
         slots: [
-            "Head", "Shoulder", "Chest", "Waist", "Legs", "Wrist", "Hands", "Back", "Feet",
-            "One-Hand", "Two-Hand", "Main-Hand", "Off-Hand", "Held In Off-hand", "Ranged", "Ranged Right",
-            "Finger", "Trinket", "Neck"
-        ]
+            "Head", "Chest", "Shoulder", "Waist", "Legs", "Wrist", "Hands", "Back", "Feet",
+            "One-Hand", "Two-Hand", "Main-Hand", "Held In Off-hand", "Off-Hand", "Off Hand", "Ranged", "Ranged Right",
+            "Finger", "Trinket", "Held In Off-hand", "Neck"
+        ],
+        armor_types: ["Cloth", "Leather", "Mail", "Plate", "Miscellaneous"],
+        weapon_types: ["Dagger", "Sword", "Axe", "Mace", "Fist Weapon", "Polearm", "Staff", "Off-Hand", "Warglaives", "Gun", "Bow", "Crossbow", "Thrown", "Shield", "Wand", "Off Hand", "Ranged Right"]
     },
+
     custom: {
-        haste: true, speed: true, prismatic: true,
+        haste: true, crit: false, vers: false, mastery: false,
+        speed: true, prismatic: true,
         min_ilvl: 320,
         max_ilvl: 357,
-        max_buyout: 1000000,
-        slots: ["Waist", "Legs", "Wrist", "Hands", "Back", "Feet", "One-Hand", "Two-Hand", "Trinket"]
+        max_buyout: 10000000,
+        slots: [
+            "Waist", "Legs", "Wrist", "Hands", "Back", "Feet",
+            "One-Hand", "Two-Hand", "Main-Hand", "Off-Hand",
+            "Finger", "Trinket", "Held In Off-hand"
+        ],
+        armor_types: ["Cloth", "Leather", "Miscellaneous"],
+        weapon_types: ["Dagger", "Mace", "Fist Weapon", "Polearm", "Staff", "Off Hand"]
     },
+
     profitable: {
+        haste: false, crit: false, vers: false, mastery: false,
         speed: true, prismatic: true,
         min_ilvl: 580,
         max_ilvl: 1000,
         max_buyout: 2000,
-        slots: ["Waist", "Legs", "Wrist", "Hands", "Back", "Finger", "Trinket"]
+        slots: [
+            "Waist", "Legs", "Wrist", "Hands", "Back",
+            "One-Hand", "Two-Hand", "Main-Hand", "Held In Off-hand", "Off-Hand", "Off Hand", "Ranged", "Ranged Right",
+            "Finger", "Trinket", "Held In Off-hand"
+        ],
+        armor_types: ["Cloth", "Leather", "Mail", "Plate", "Miscellaneous"],
+        weapon_types: ["Dagger", "Sword", "Axe", "Mace", "Fist Weapon", "Polearm", "Staff", "Off-Hand", "Warglaives", "Gun", "Bow", "Crossbow", "Thrown", "Shield", "Wand", "Off Hand", "Ranged Right"]
     }
 };

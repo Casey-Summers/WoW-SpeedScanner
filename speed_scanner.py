@@ -65,7 +65,7 @@ SCAN_PROFILES = {
     },
     "custom": {
         # Filters by different armour bonuses and stats
-        "FILTER_TYPE": ["Speed", "Max-Haste"],
+        "FILTER_TYPE": ["Speed", "Haste", "Prismatic"],
         
         # Item level filtering (minimum and maximum)
         "MIN_ILVL": 320,

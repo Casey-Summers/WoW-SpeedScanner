@@ -80,14 +80,17 @@
 
                     <!-- Normal Mode: Max 2 Stats -->
                     <div id="stat-normal-mode">
-                      <div class="form-check"><input class="form-check-input stat-check" type="checkbox"
-                          id="haste"><label class="form-check-label" for="haste">Haste</label></div>
-                      <div class="form-check"><input class="form-check-input stat-check" type="checkbox"
-                          id="crit"><label class="form-check-label" for="crit">Crit</label></div>
-                      <div class="form-check"><input class="form-check-input stat-check" type="checkbox"
-                          id="vers"><label class="form-check-label" for="vers">Vers</label></div>
-                      <div class="form-check"><input class="form-check-input stat-check" type="checkbox"
-                          id="mastery"><label class="form-check-label" for="mastery">Mastery</label></div>
+                      <small class="text-muted d-block mb-2">Select up to two stats. Leave all unchecked (or select 'All Stats') to search for any stat combinations.</small>
+
+                      <div class="form-check mb-2">
+                        <input class="form-check-input" type="checkbox" id="all-stats" checked>
+                        <label class="form-check-label" for="all-stats">All Stats</label>
+                      </div>
+
+                      <div class="form-check"><input class="form-check-input stat-check" type="checkbox" id="haste" value="Haste"><label class="form-check-label" for="haste">Haste</label></div>
+                      <div class="form-check"><input class="form-check-input stat-check" type="checkbox" id="crit" value="Crit"><label class="form-check-label" for="crit">Crit</label></div>
+                      <div class="form-check"><input class="form-check-input stat-check" type="checkbox" id="vers" value="Vers"><label class="form-check-label" for="vers">Vers</label></div>
+                      <div class="form-check"><input class="form-check-input stat-check" type="checkbox" id="mastery" value="Mastery"><label class="form-check-label" for="mastery">Mastery</label></div>
                     </div>
 
                     <!-- Advanced Mode: Percentage Fields -->
@@ -122,15 +125,15 @@
                       <div class="col-6">
                         <h6 class="text-muted">Armour Types</h6>
                         <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1"
-                          data-slot="Cloth">Cloth</button>
+                          data-type="Cloth">Cloth</button>
                         <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1"
-                          data-slot="Leather">Leather</button>
+                          data-type="Leather">Leather</button>
                         <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1"
-                          data-slot="Mail">Mail</button>
+                          data-type="Mail">Mail</button>
                         <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1"
-                          data-slot="Plate">Plate</button>
+                          data-type="Plate">Plate</button>
                         <button type="button" class="btn btn-outline-primary slot-button w-100 mb-1"
-                          data-slot="Miscellaneous">Miscellaneous</button>
+                          data-type="Miscellaneous">Miscellaneous</button>
                       </div>
                       <div class="col-6">
                         <h6 class="text-muted">Armour Slots</h6>
