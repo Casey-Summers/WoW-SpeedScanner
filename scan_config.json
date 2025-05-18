@@ -1,43 +1,23 @@
 {
-  "MIN_ILVL": 580,
-  "MAX_ILVL": 1000,
-  "MAX_BUYOUT": 2000,
+  "MIN_ILVL": 357,
+  "MAX_ILVL": 357,
+  "MAX_BUYOUT": 10000000,
   "FILTER_TYPE": [
-    "Speed"
+    "Prismatic"
   ],
   "STAT_DISTRIBUTION_THRESHOLDS": {
-    "Haste": 0,
+    "Haste": 60,
     "Crit": 0,
     "Vers": 0,
     "Mastery": 0,
     "Speed": 0
   },
-  "ALLOWED_ARMOR_SLOTS": [
-    "Waist",
-    "Legs",
-    "Wrist",
-    "Hands",
-    "Back"
-  ],
-  "ALLOWED_WEAPON_SLOTS": [
-    "One-Hand",
-    "Two-Hand",
-    "Main-Hand",
-    "Held In Off-hand",
-    "Off-Hand",
-    "Ranged",
-    "Ranged Right"
-  ],
+  "ALLOWED_ARMOR_SLOTS": [],
+  "ALLOWED_WEAPON_SLOTS": [],
   "ALLOWED_ACCESSORY_SLOTS": [
-    "Held In Off-hand",
-    "Finger",
-    "Trinket"
+    "Finger"
   ],
   "ALLOWED_ARMOR_TYPES": [
-    "Cloth",
-    "Leather",
-    "Mail",
-    "Plate",
     "Miscellaneous"
   ],
   "ALLOWED_WEAPON_TYPES": [
@@ -60,21 +40,8 @@
     "Ranged Right"
   ],
   "slots": [
-    "Waist",
-    "Legs",
-    "Wrist",
-    "Hands",
-    "Back",
-    "One-Hand",
-    "Two-Hand",
-    "Main-Hand",
-    "Held In Off-hand",
-    "Off-Hand",
-    "Ranged",
-    "Ranged Right",
-    "Finger",
-    "Trinket"
+    "Finger"
   ],
-  "scan_mode": "single",
-  "realm": ""
+  "scan_mode": "all",
+  "realm": null
 }

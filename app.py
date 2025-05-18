@@ -91,6 +91,13 @@ def run_scan():
             encoding="utf-8",
             check=True
         )
+        # Load results to check if CSV is empty
+        df = pd.read_csv(CSV_PATH)
+        if df.empty:
+            print("Scan completed but returned no matching results.")
+            return jsonify({"success": True, "no_results": True})
+        
+        # Print scan results
         print(result.stdout)
         if result.stderr:
             print("❌ stderr:", result.stderr)

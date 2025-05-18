@@ -182,13 +182,29 @@ $(document).ready(function () {
         // === Stat Mode Handling ===
         const isAdvanced = $('#statModeSwitch').is(':checked');
         if (isAdvanced) {
-            config.STAT_DISTRIBUTION_THRESHOLDS = {
-                Haste: parseInt($('#haste-val').val()) || 0,
-                Crit: parseInt($('#crit-val').val()) || 0,
-                Vers: parseInt($('#vers-val').val()) || 0,
-                Mastery: parseInt($('#mastery-val').val()) || 0,
-                Speed: $('#speed').is(':checked') ? 71 : 0
-            };
+            if (isAdvanced) {
+                const hasteVal = parseInt($('#haste-val').val()) || 0;
+                const critVal = parseInt($('#crit-val').val()) || 0;
+                const versVal = parseInt($('#vers-val').val()) || 0;
+                const masteryVal = parseInt($('#mastery-val').val()) || 0;
+                const speedChecked = $('#speed').is(':checked');
+                const prismaticChecked = $('#prismatic').is(':checked');
+
+                config.STAT_DISTRIBUTION_THRESHOLDS = {
+                    Haste: hasteVal,
+                    Crit: critVal,
+                    Vers: versVal,
+                    Mastery: masteryVal,
+                    Speed: speedChecked ? 71 : 0
+                };
+
+                // Auto-add stats to FILTER_TYPE only if thresholds are > 0
+                const filters = [];
+                if (speedChecked) filters.push("Speed");
+                if (prismaticChecked) filters.push("Prismatic");
+
+                config.FILTER_TYPE = filters;
+                }
         } else {
             const selectedStats = $('.stat-check:checked').map((_, el) => el.value).get();
             const selectedMax = $('.max-stat-check:checked').map((_, el) => el.value).get();
@@ -199,10 +215,10 @@ $(document).ready(function () {
 
             const combined = [...selectedStats, ...selectedMax, ...otherFilters];
 
-            // === Prefer preset-defined FILTER_TYPE if available
+            // ✅ Always include filters if anything selected
             if (window.activePresetFilterType?.length > 0) {
                 config.FILTER_TYPE = window.activePresetFilterType;
-            } else if (!$('#any-stats').is(':checked') && combined.length > 0) {
+            } else if (combined.length > 0) {
                 config.FILTER_TYPE = combined;
             }
         }
@@ -230,7 +246,12 @@ $(document).ready(function () {
 
                         showScanMessage('⚠️ Scan completed but no results matched filters.', 'warning');
 
-                        $('#gearTable').DataTable().clear().draw(); // Optional: clear old table
+                        $('#gearTable').DataTable().clear().draw();
+
+                        // ✅ Hide scan status after delay (only if no results)
+                        setTimeout(() => {
+                            $('#scanProgress').addClass('d-none');
+                        }, 4000);
                     } else {
                         $('#scanProgressBar')
                             .removeClass('bg-danger')
@@ -394,19 +415,13 @@ $(document).ready(function () {
         }[type] || 'alert-info';
 
         const $msg = $(`
-            <div class="alert ${alertClass} py-2 px-3 rounded shadow-sm fade show" role="alert">
+            <div class="alert ${alertClass} alert-dismissible fade show py-2 px-3 rounded shadow-sm" role="alert">
                 ${message}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         `);
 
         $('#scanMessageArea').html($msg).css('margin-bottom', '1rem');
-
-        setTimeout(() => {
-            $msg.fadeOut(500, () => {
-                $msg.remove();
-                $('#scanMessageArea').css('margin-bottom', '0');
-            });
-        }, 4000);
     }
 
     $('.btn-preset').click(function () {

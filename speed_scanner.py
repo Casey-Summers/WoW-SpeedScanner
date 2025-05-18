@@ -1502,6 +1502,12 @@ def display_results(results, realms, raidbots_data, item_cache, filter_str):
             print_item_row(r, realms, raidbots_data, item_cache)
         print(f"\033[92m\nFound \033[93m{len(results)} \033[92mitems matching the filters: \033[94m{filter_str}\033[0m\n")
     else:
+        # Clear CSV if no results found
+        with open(CSV_FILENAME, 'w', newline='', encoding='utf-8') as f:
+            writer = csv.DictWriter(f, fieldnames=[
+                'realm', 'item_id', 'type', 'slot', 'stat1', 'stat2', 'name', 'ilvl', 'buyout_gold'
+            ])
+            writer.writeheader()
         logging.info("❌ No matching Speed-stat items found.")
 
 
